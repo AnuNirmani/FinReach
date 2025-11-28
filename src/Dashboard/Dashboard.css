@@ -1,0 +1,883 @@
+@charset "utf-8";
+/* CSS Document */
+
+ /* --- Global Styles --- */
+        body {
+            font-family: 'Inter', sans-serif;
+			background-color: #ffffff;
+            /*background-color: #f8f9fa;*/
+            /* Adding padding-top so content doesn't get stuck under the fixed navbar */
+            padding-top: 80px; 
+        }
+
+        /* --- Custom Color Variables based on screenshot --- */
+        :root {
+            --finreach-teal: #0f3e5d; /* Dark blue/teal for 'Fin' */
+            --finreach-lime: #cddc39; /* Lime green for 'Reach' and Button */
+            --finreach-dark-text: #212529;
+        }
+
+@media (min-width: 1400px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 1400px;
+  }
+}
+
+
+        /* --- Navbar Styling --- */
+        .navbar {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            background-color: #ffffff !important;
+        }
+
+        /* Brand Logo Styling */
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Placeholder icon styling */
+        .brand-icon {
+            font-size: 1.8rem;
+            color: var(--finreach-teal);
+            margin-right: 8px;
+        }
+
+        .brand-fin {
+            color: var(--finreach-teal);
+        }
+
+        .brand-reach {
+            color: var(--finreach-lime);
+        }
+
+        /* Navigation Links Styling */
+        .navbar-nav .nav-link {
+            color: var(--finreach-dark-text) !important;
+            font-weight: 500;
+            padding-left: 1.2rem !important;
+            padding-right: 1.2rem !important;
+            transition: color 0.2s ease-in-out;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--finreach-teal) !important;
+        }
+        
+        /* Dropdown menu adjustment */
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        /* --- Custom CTA Button Styling --- */
+        .btn-finreach-cta {
+            background-color: var(--finreach-lime);
+            color: var(--finreach-teal); /* Dark text provides better contrast on lime */
+            font-weight: 600;
+            padding: 0.6rem 1.5rem;
+            border-radius: 8px; /* Rounded corners */
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-finreach-cta:hover {
+            background-color: #bfce35; /* Slightly darker lime on hover */
+            color: var(--finreach-teal);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(205, 220, 57, 0.4);
+        }
+
+
+
+/* ================= HERO SECTION STYLES ================= */
+
+.hero-section {
+    position: relative;
+    /* Using the specific image URL */
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Increased padding for better vertical spacing with the form */
+    padding: 100px 0; 
+    color: #ffffff;
+}
+
+/* The dark blue overlay to match the FinReach brand color */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* A deep teal/blue transparency to match the screenshot */
+    background-color: rgba(15, 62, 93, 0.85); 
+    z-index: 1;
+}
+
+/* Ensures content sits on top of the overlay */
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Headline Typography */
+.hero-title {
+    font-size: 3rem; /* Large bold text */
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #e0e0e0; /* Slightly off-white for better readability */
+}
+
+/* Hero Button Styling (Lime Green) */
+.btn-hero-primary {
+    background-color: #cddc39; /* The specific FinReach lime */
+    color: #0f3e5d; /* Dark text for contrast */
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 6px; /* Slightly rounded, not full pill */
+    border: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-hero-primary:hover {
+    background-color: #dce865;
+    color: #0f3e5d;
+    transform: translateY(-2px);
+}
+
+/* The small disclaimer text below the button */
+.hero-small-text {
+    font-size: 0.75rem; /* Very small */
+    margin-top: 1rem;
+    opacity: 0.9;
+    max-width: 400px;
+}
+
+/* Responsiveness: Adjust font size on mobile */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    .hero-section {
+        padding: 100px 0;
+    }
+}
+
+
+
+
+/* ================= BOOKING SECTION REVISED ================= */
+
+/* The outer container with the yellow border and gray background */
+.booking-outer-wrapper {
+    border: 2px solid #cddc39; /* FinReach Lime */
+    background-color: #f3f5f7; /* Very light gray background */
+    padding: 40px 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+	border-radius: 10px;
+}
+
+/* Typography */
+.booking-title {
+    font-weight: 700;
+    color: #1a202c;
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+}
+.wbrd{border-radius: 10px; padding-top: 30px; padding-bottom: 30px}
+.booking-subtitle {
+    color: #718096;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* The white card holding the form */
+.form-card-accurate {
+    /* Existing styles remain... */
+    background-color: #ffffff;
+    max-width: 540px; 
+    margin: 0 auto; 
+    padding: 40px 40px; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* Made shadow slightly stronger for contrast on dark bg */
+    border-radius: 4px;
+    /* New: Ensure space below it on mobile */
+    margin-bottom: 20px;
+}
+
+/* Form Controls Styling - Taller and Lighter */
+.form-label-acc {
+    font-weight: 600;
+    font-size: 0.875rem; /* 14px */
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+}
+
+.form-control-acc, .form-select-acc {
+    display: block;
+    width: 100%;
+    min-height: 40px; /* Taller inputs exactly like screenshot */
+    padding: 0.55rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #1a202c;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #e2e8f0; /* Very light gray border */
+    border-radius: 4px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* Styling the placeholder text specifically */
+.form-control-acc::placeholder {
+    color: #a0aec0; /* Lighter gray placeholder */
+    opacity: 1;
+}
+
+/* Spacing between form groups */
+.form-group-spacing {
+    margin-bottom: 1.5rem;
+}
+
+/* Checkbox area */
+.form-check-input {
+    margin-top: 0.35rem;
+    border-color: #cbd5e1;
+}
+.consent-text {
+    font-size: 0.8rem;
+    color: #2d3748;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+/* Submit Button */
+.btn-submit-accurate {
+    width: 100%;
+    background-color: #cddc39; /* The exact lime color */
+    color: #0f3e5d; /* Dark text */
+    font-weight: 700;
+    padding: 14px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-submit-accurate:hover {
+    background-color: #c0ca33;
+}
+
+/* Footer links */
+.form-footer-links {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #a0aec0; /* The pipe color */
+}
+
+.form-footer-links a {
+    color: #4299e1; /* Specific blue from screenshot */
+    text-decoration: none;
+    margin: 0 4px;
+}
+
+.form-footer-links a:hover {
+    text-decoration: underline;
+}
+
+
+/* ================= "WHO IS IT FOR" SECTION STYLES ================= */
+
+.target-audience-section {
+    background-color: #f3f5f7; /* Light gray background matching screenshot */
+    padding: 50px 0;
+}
+
+/* Section Heading */
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    font-size: 1rem;
+    color: #6c757d;
+    max-width: 700px;
+    margin: 0 auto 3.5rem auto; /* Centers text and adds space below */
+    line-height: 1.6;
+}
+
+/* Card Styling */
+.audience-card {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 12px; /* Smooth rounded corners */
+    padding: 32px;
+    height: 100%; /* Ensures all cards are same height */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02); /* Very subtle shadow */
+    transition: transform 0.2s;
+}
+
+.audience-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+}
+
+/* Icon Styling */
+.audience-icon {
+    font-size: 2.5rem;
+    color: #cddc39; /* FinReach Lime Green */
+    margin-bottom: 1.5rem;
+    display: inline-block;
+}
+
+/* Card Typography */
+.audience-card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.audience-card-text {
+    font-size: 0.95rem;
+    color: #6c757d; /* Muted gray text */
+    line-height: 1.6;
+}
+
+/* Bottom Text */
+.section-footer-text {
+    margin-top: 3rem;
+    color: #1a1a1a;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+
+
+
+
+
+
+/* ================= SERVICES SECTION STYLES ================= */
+
+.services-section {
+    background-color: #ffffff; /* White background */
+    padding: 80px 0;
+}
+
+/* Typography */
+.services-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.services-subtitle {
+    font-size: 1rem;
+    color: #64748b; /* Slate gray */
+    max-width: 750px;
+    margin: 0 auto 4rem auto;
+    line-height: 1.6;
+}
+
+/* Card Styling */
+.service-card {
+    background-color: #fff;
+    border: 1px solid #e2e8f0; /* Light gray border */
+    border-radius: 8px;
+    padding: 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align content to left */
+    transition: box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border-color: #cbd5e1;
+}
+
+/* Icons */
+.service-icon {
+    font-size: 2rem; /* Size matched to image */
+    color: #cddc39; /* FinReach Lime */
+    margin-bottom: 1.25rem;
+}
+
+/* Card Text */
+.service-card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1rem;
+}
+
+.service-card-text {
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Pushes the button to the bottom */
+}
+
+/* "Learn More" Button */
+.btn-learn-more {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.btn-learn-more i {
+    margin-left: 6px; /* Space for the arrow */
+    font-size: 1rem;
+}
+
+.btn-learn-more:hover {
+    background-color: #f8f9fa;
+    border-color: #cbd5e1;
+    color: #000;
+}
+
+/* Bottom Note Box */
+.delivery-note-box {
+    background-color: #f1f5f9; /* Light gray box background */
+    border-radius: 6px;
+    padding: 24px 40px;
+    margin-top: 60px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.85rem;
+    color: #64748b;
+    line-height: 1.5;
+    text-align: left; /* Text aligns left inside the centered box (based on visual check, though usually centered text looks better here, I'll match the subtle alignment of the image) */
+}
+
+/* Bold prefix in the note */
+.note-strong {
+    font-weight: 700;
+    color: #475569;
+}
+
+
+
+
+/* ================= "FAMILIAR" SECTION STYLES ================= */
+
+/* 1. The Image Banner part */
+.familiar-image-banner {
+    width: 100%;
+    height: 385px; /* Fixed height to match screenshot proportions */
+    position: relative;
+    
+        
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Rest of the CSS for this section remains the same... */
+.familiar-content-section {
+    background-color: #ffffff;
+    padding: 80px 0;
+}
+
+/* Typography */
+.familiar-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 3rem;
+}
+
+/* The container for each individual pain point (icon + text) */
+.pain-point-item {
+    display: flex;
+    align-items: flex-start; /* Aligns icon to the top of the text block */
+    margin-bottom: 2rem;
+    padding-right: 1rem; /* Small spacing on the right of each block */
+}
+
+/* Custom Styling for the Red 'X' Icon Circle */
+.pain-icon-circle {
+    flex-shrink: 0; /* Prevents circle from squishing if text is long */
+    width: 32px;
+    height: 32px;
+    background-color: #ffe5e7; /* Very light red/pink background */
+    color: #cc4b59; /* The darker red color for the 'X' */
+    border-radius: 50%; /* Makes it a perfect circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px; /* Space between icon and text */
+    font-size: 1.2rem; /* Size of the 'X' icon itself */
+}
+
+/* The text next to the icon */
+.pain-text {
+    margin: 0;
+    font-size: 1rem;
+    color: #4a5568; /* Dark gray */
+    line-height: 1.6;
+}
+
+/* The concluding sentence at the bottom */
+.familiar-footer-note {
+    margin-top: 2rem;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #1a1a1a;
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 768px) {
+    .familiar-image-banner {
+        height: 300px; /* Shorter banner on mobile */
+    }
+    .familiar-title {
+        font-size: 1.75rem;
+    }
+}
+
+
+
+
+/* ================= "WHY CHOOSE FINREACH" SECTION STYLES ================= */
+
+/* 1. The Image Banner with Gradient */
+.why-choose-banner {
+    width: 100%;
+    height: 385px; /* Same height as previous banner for consistency */
+    position: relative;
+    /* Stacked Background: Gradient Overlay + Image */
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* 2. Content Section */
+.why-choose-content {
+    background-color: #ffffff;
+    padding: 80px 0;
+}
+
+.why-choose-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 4rem; /* Lots of space before the grid starts */
+}
+
+/* Individual Benefit Item Styling */
+.benefit-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 3rem; /* Spacing between rows */
+    padding-right: 1.5rem;
+}
+
+.benefit-icon {
+    font-size: 1.4rem;
+    color: #cddc39; /* FinReach Lime */
+    margin-right: 1rem;
+    line-height: 1; /* Ensures icon aligns well with text top */
+    flex-shrink: 0;
+}
+
+.benefit-text {
+    font-size: 0.9rem;
+    color: #64748b; /* Slate gray text */
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+
+
+
+
+/* ================= "SIMPLE PROCESS" SECTION STYLES ================= */
+
+/* 1. The Image Banner */
+.process-banner {
+    width: 100%;
+    height: 385px; /* Consistent height with other banners */
+    position: relative;
+    /* Stacked Background: Gradient Overlay + Image */
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Fixes the position so the dental chair is visible like in the screenshot */
+    background-position-y: 50%; 
+}
+
+/* 2. Content Section */
+.process-section {
+    background-color: #f8f9fa; /* Light gray background matching screenshot */
+    padding: 80px 0;
+}
+
+.process-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 4rem;
+}
+
+/* Process Card Styling */
+.process-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 32px;
+    height: 100%; /* Ensures all cards are equal height */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03); /* Very subtle shadow */
+    transition: transform 0.3s ease;
+}
+
+.process-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+/* The numbered circle */
+.process-number {
+    width: 40px;
+    height: 40px;
+    background-color: #cddc39; /* FinReach Lime */
+    color: #0f3e5d; /* Dark teal text */
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 50%; /* Makes it a perfect circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Card Typography */
+.process-card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.process-card-text {
+    font-size: 0.9rem;
+    color: #64748b; /* Muted gray */
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+
+
+
+
+/* ================= CTA BANNERS STYLES ================= */
+
+/* 1. The Lime Green Banner */
+.cta-lime-banner {
+    background-color: #cddc39; /* FinReach Lime */
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.cta-lime-title {
+    font-size: 1.75rem;
+    font-weight: 600; /* Semi-bold to match screenshot */
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.cta-lime-text {
+    font-size: 1rem;
+    color: #1a1a1a;
+    max-width: 700px;
+    margin: 0 auto; /* Centers the text block */
+    line-height: 1.6;
+}
+
+/* 2. The Final White/Gray CTA Section */
+.final-cta-section {
+    background-color: #f4f6f8; /* Very light cool gray */
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.final-cta-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 2.5rem;
+}
+
+/* The Dark Teal Button */
+.btn-dark-consult {
+    background-color: #2c4a5f; /* Specific dark slate/teal from image */
+    color: #ffffff;
+    font-weight: 500;
+    padding: 14px 32px; /* Generous padding */
+    border-radius: 4px; /* Slight rounding */
+    border: none;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.btn-dark-consult:hover {
+    background-color: #1e3545; /* Darker shade on hover */
+    color: #ffffff;
+}
+
+
+
+
+
+/* ================= FOOTER SECTION STYLES ================= */
+
+.footer-section {
+    background-color: #254053; /* The specific dark slate/teal from the screenshot */
+    color: #ffffff;
+    padding-top: 80px;
+    padding-bottom: 30px;
+    font-size: 0.95rem;
+}
+
+/* --- Column 1: Brand & Button --- */
+.footer-brand-wrapper {
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.footer-brand-icon {
+    font-size: 1.8rem;
+    color: #cddc39; /* Lime green icon */
+    margin-right: 8px;
+}
+
+.footer-brand-fin {
+    color: #5d7a8c; /* Muted blue-gray for 'Fin' to separate from dark bg */
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.footer-brand-reach {
+    color: #cddc39; /* Lime green for 'Reach' */
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.footer-desc {
+    color: #cbd5e1; /* Light gray text */
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    max-width: 400px;
+}
+
+.btn-footer-cta {
+    background-color: #cddc39; /* Lime green */
+    color: #1a1a1a; /* Dark text */
+    font-weight: 600;
+    padding: 10px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.2s;
+}
+
+.btn-footer-cta:hover {
+    background-color: #b8c930;
+    color: #1a1a1a;
+}
+
+/* --- Column 2 & 3: Headers --- */
+.footer-heading {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+}
+
+/* --- Quick Links List --- */
+.footer-links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links-list li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-link {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-link:hover {
+    color: #cddc39; /* Turn lime on hover */
+}
+
+/* --- Contact List --- */
+.footer-contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    color: #cbd5e1;
+}
+
+.contact-icon {
+    color: #cddc39; /* Lime icons */
+    margin-right: 12px;
+    font-size: 1.1rem;
+    line-height: 1.2; /* Align with text */
+}
+
+/* --- Bottom Copyright Area --- */
+.footer-bottom {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle divider line */
+    text-align: center;
+    color: #94a3b8; /* Dimmer text for copyright */
+    font-size: 0.85rem;
+}
