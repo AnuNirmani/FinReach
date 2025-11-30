@@ -2268,3 +2268,287 @@
     line-height: 1.6;
     margin: 0;
 }
+
+
+
+
+
+/* ================= AUDITING PAGE STYLES ================= */
+
+/* --- Section 1: Required to Audit (Gray BG) --- */
+.audit-required-section {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+}
+
+.audit-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 20px 30px 30px;
+    height: 100%;
+    transition: transform 0.2s;
+}
+
+.audit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.audit-icon {
+    font-size: 2rem;
+    color: #cddc39; /* FinReach Lime */
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.audit-card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 0.75rem;
+}
+
+.audit-card-text {
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* --- Section 2: Cost of Getting Wrong (White BG) --- */
+.audit-cost-section {
+    background-color: #ffffff;
+    padding: 60px 0;
+}
+
+/* Gray Error Box */
+.audit-error-box {
+    background-color: #f1f5f9; /* Light slate gray background */
+    border-radius: 6px;
+    padding: 24px;
+    display: flex;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.audit-error-icon {
+    color: #ef4444; /* Red X */
+    font-size: 1.5rem;
+    margin-right: 16px;
+    margin-top: -2px; /* Visual alignment */
+    flex-shrink: 0;
+}
+
+.audit-error-text {
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* --- Section 3: How We Run Audit (Gray BG) --- */
+.audit-process-section {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+}
+
+/* Reusing 'approach-item' styles but refining for this section if needed */
+.audit-process-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.audit-check-icon {
+    color: #cddc39;
+    font-size: 1.5rem;
+    margin-right: 16px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.audit-process-text {
+    font-size: 0.95rem;
+    color: #4b5563;
+    line-height: 1.6;
+}
+
+/* --- Section 4: Benefits (White BG) --- */
+.audit-benefits-section {
+    background-color: #ffffff;
+    padding: 60px 0;
+}
+
+
+
+
+
+/* ================= CFO ROADBLOCKS SECTION STYLES ================= */
+
+.cfo-roadblocks-section {
+    background-color: #f8f9fa; /* Light Gray Background */
+    padding: 60px 0;
+}
+
+/* Roadblock Card */
+.roadblock-card {
+    background-color: #ffffff;
+    border-radius: 6px;
+    padding: 30px;
+    height: 100%;
+    display: flex;
+    align-items: center; /* Vertically center the content */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    border: 1px solid #e2e8f0; /* Subtle border */
+    transition: transform 0.2s ease;
+}
+
+.roadblock-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+/* Red Icon Styling */
+.roadblock-icon {
+    font-size: 1.5rem;
+    color: #ef4444; /* Red color matching screenshot */
+    margin-right: 20px;
+    flex-shrink: 0; /* Prevents icon from squishing */
+    line-height: 1;
+}
+
+/* Text Styling */
+.roadblock-text {
+    font-size: 0.95rem;
+    color: #4b5563; /* Dark gray text */
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Bottom centered text */
+.roadblock-footer-text {
+    text-align: center;
+    font-size: 1.05rem;
+    color: #1a1a1a;
+    margin-top: 3rem;
+    font-weight: 500;
+}
+
+
+
+/* ================= CFO SERVICE SECTION STYLES ================= */
+
+.cfo-service-section {
+    background-color: #ffffff; /* White Background */
+    padding: 60px 0;
+}
+
+/* CFO Service Card */
+.cfo-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0; /* Light gray border */
+    border-radius: 8px;
+    padding: 20px 30px;  /* Generous padding */
+    height: 100%;
+    transition: box-shadow 0.3s ease;
+}
+
+.cfo-card:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+/* Icons */
+.cfo-icon {
+    font-size: 3rem; /* Large icons */
+    color: #cddc39; /* FinReach Lime */
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+/* Card Typography */
+.cfo-card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.cfo-card-text {
+    font-size: 0.95rem;
+    color: #64748b; /* Slate gray */
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Bottom Notification Box (Reused style structure from Assurance page) */
+.cfo-notice-box {
+    background-color: #fcfdf5; /* Very pale lime/yellow tint */
+    border: 1px solid #cddc39; /* Lime border */
+    border-radius: 6px;
+    padding: 24px;
+    text-align: center;
+    font-weight: 700;
+    color: #4b5563;
+    font-size: 0.95rem;
+    max-width: 900px;
+    margin: 60px auto 0 auto;
+}
+
+
+
+/* ================= CFO SMART INVESTMENT SECTION ================= */
+
+.cfo-investment-section {
+    background-color: #f8f9fa; /* Light Gray Background */
+    padding: 60px 0;
+}
+
+.investment-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.investment-subtitle {
+    font-size: 1.1rem;
+    color: #64748b;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+/* Investment Item Styling */
+.investment-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.investment-icon {
+    font-size: 1.5rem;
+    color: #cddc39; /* FinReach Lime */
+    margin-right: 16px;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px; /* Visual alignment with text top */
+}
+
+.investment-text {
+    font-size: 1rem;
+    color: #4b5563; /* Dark Gray */
+    line-height: 1.5;
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
