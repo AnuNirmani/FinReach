@@ -7,7 +7,6 @@ import RecentArticles from './RecentArticles';
 import BlogCTA from './BlogCTA';
 import Subscribe from './Subscribe';
 import '../Dashboard/Dashboard.css';
-// import './Blog.css';
 
 const Blog = () => {
     return (

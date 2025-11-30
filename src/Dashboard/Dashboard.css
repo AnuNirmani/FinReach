@@ -939,6 +939,9 @@
     border: 1px solid #e2e8f0; /* Subtle border */
     box-shadow: 0 4px 6px rgba(0,0,0,0.02);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block; /* Ensure anchor spans full card */
+    color: inherit; /* Use existing text colors */
+    cursor: pointer;
 }
 
 .category-card:hover {
