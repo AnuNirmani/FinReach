@@ -97,13 +97,13 @@
 
 .hero-section {
     position: relative;
-    /* Using the specific image URL you provided */
-    background-image: url('https://finreach.ultimatemarketing.com.au/assets/hero-home-DxzjKHhr.jpg');
+    /* Using the specific image URL */
+    
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /* Large vertical padding to match the height in the screenshot */
-    padding: 110px 0 110px 0; 
+    /* Increased padding for better vertical spacing with the form */
+    padding: 100px 0; 
     color: #ffffff;
 }
 
@@ -208,14 +208,15 @@
 
 /* The white card holding the form */
 .form-card-accurate {
+    /* Existing styles remain... */
     background-color: #ffffff;
-    /* Crucial: Defines the width and centers the card */
-    max-width: 650px; 
+    max-width: 540px; 
     margin: 0 auto; 
-    /* Crucial: Padding inside the card that pushes the inputs inward */
     padding: 40px 40px; 
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* Made shadow slightly stronger for contrast on dark bg */
     border-radius: 4px;
+    /* New: Ensure space below it on mobile */
+    margin-bottom: 20px;
 }
 
 /* Form Controls Styling - Taller and Lighter */
@@ -497,9 +498,7 @@
     width: 100%;
     height: 385px; /* Fixed height to match screenshot proportions */
     position: relative;
-    background-image: 
-        linear-gradient(to top, rgba(15, 62, 93, 0.5) 0%, rgba(15, 62, 93, 0.5) 100%),
-        url('https://finreach.ultimatemarketing.com.au/assets/team-collaboration-Dfr1_auB.jpg');
+    
         
     background-size: cover;
     background-position: center;
@@ -580,9 +579,7 @@
     height: 385px; /* Same height as previous banner for consistency */
     position: relative;
     /* Stacked Background: Gradient Overlay + Image */
-    background-image: 
-        linear-gradient(to top, rgba(15, 62, 93, 0.2) 0%, rgba(15, 62, 93, 0.5) 100%),
-        url('https://finreach.ultimatemarketing.com.au/assets/financial-analysis-BQaM4ht9.jpg');
+
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -637,9 +634,7 @@
     height: 385px; /* Consistent height with other banners */
     position: relative;
     /* Stacked Background: Gradient Overlay + Image */
-    background-image: 
-        linear-gradient(to top, rgba(15, 62, 93, 0.4) 0%, rgba(15, 62, 93, 0.5) 100%),
-        url('https://finreach.ultimatemarketing.com.au/assets/healthcare-practice-3tfo55K3.jpg');
+    
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -714,7 +709,7 @@
 /* 1. The Lime Green Banner */
 .cta-lime-banner {
     background-color: #cddc39; /* FinReach Lime */
-    padding: 80px 20px;
+    padding: 70px 20px;
     text-align: center;
 }
 
@@ -886,6 +881,8 @@
     color: #94a3b8; /* Dimmer text for copyright */
     font-size: 0.85rem;
 }
+
+
 
 
 
@@ -1201,4 +1198,1072 @@
 .btn-subscribe:hover {
     background-color: #bfce35; /* Slightly darker on hover */
     color: #ffffff;
+}
+
+
+/* ================= BLOG INNER PAGE STYLES ================= */
+
+/* --- Post Header & Meta --- */
+.post-header-section {
+    padding: 80px 0 40px 0;
+    background-color: #ffffff;
+}
+
+.breadcrumb-nav {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 1.5rem;
+}
+
+.breadcrumb-link {
+    color: #64748b;
+    text-decoration: none;
+}
+
+.breadcrumb-link:hover {
+    color: #254053;
+}
+
+.post-category-badge {
+    display: inline-block;
+    background-color: #f7f9e8; /* Very pale lime */
+    color: #8c9b0e; /* Darker lime for text readability */
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.post-title {
+    font-size: 2.75rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.post-meta {
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+    color: #64748b;
+}
+
+.post-meta span {
+    margin-right: 20px;
+}
+
+.post-meta i {
+    color: #cddc39; /* Lime icon */
+    margin-right: 6px;
+}
+
+/* --- Featured Image --- */
+.post-featured-image-wrapper {
+    width: 100%;
+    height: 500px; /* Fixed height for consistency */
+    background-color: #f1f5f9;
+    margin-bottom: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.post-featured-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Main Content Typography --- */
+/* We limit width to 800px for optimal reading line-length */
+.post-content-container {
+    max-width: 800px; 
+    margin: 0 auto;
+}
+
+.post-body p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #334155;
+    margin-bottom: 2rem;
+}
+
+.post-body h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.post-body h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #254053;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Styled Blockquote */
+.post-body blockquote {
+    border-left: 4px solid #cddc39; /* Lime border */
+    padding-left: 25px;
+    margin: 3rem 0;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: #254053;
+    background-color: #fafbf3; /* Subtle tint */
+    padding: 30px;
+    border-radius: 0 8px 8px 0;
+}
+
+/* Styled Lists */
+.post-body ul {
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+}
+
+.post-body ul li {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #334155;
+    margin-bottom: 0.75rem;
+    list-style-type: disc; /* Or custom icon */
+}
+
+/* --- Author Box --- */
+.author-box {
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    margin-top: 60px;
+    border: 1px solid #e2e8f0;
+}
+
+.author-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+.author-info h4 {
+    margin: 0 0 5px 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.author-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+/* --- Related Posts Divider --- */
+.related-posts-section {
+    background-color: #f4f6f8;
+    padding: 80px 0;
+    margin-top: 80px;
+}
+
+
+
+/* ================= LITERARY BLOG STYLES ================= */
+
+
+
+/* Main Article Container */
+.lit-article-wrapper {
+    background-color: #fdfbf7; /* Warm "Paper" White */
+    color: #2c2c2c; /* Soft Charcoal (never pure black) */
+    padding: 100px 0;
+    font-family: 'Lora', serif; /* Body text font */
+}
+
+/* --- Header Area --- */
+.lit-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+    padding: 0 20px;
+}
+
+.lit-category {
+    font-family: 'Inter', sans-serif; /* Keep sans for tiny meta text */
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    border-bottom: 1px solid #cddc39; /* Subtle brand nod */
+    padding-bottom: 5px;
+}
+
+.lit-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: #1a1a1a;
+}
+
+.lit-subtitle {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: #555;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.lit-meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.lit-meta span {
+    margin: 0 10px;
+}
+
+/* --- Image Styling --- */
+.lit-hero-image {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: cover;
+    margin-bottom: 80px;
+    /* No border radius for a sharper, print-like look */
+}
+
+/* --- The Reading Column --- */
+.lit-body {
+    max-width: 680px; /* Optimal reading width */
+    margin: 0 auto;
+    font-size: 1.25rem; /* Larger base size */
+    line-height: 1.8; /* Generous line height */
+}
+
+/* Drop Cap (The large first letter) */
+.lit-drop-cap::first-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    line-height: 0.8;
+    font-weight: 700;
+    float: left;
+    margin-right: 12px;
+    margin-top: -4px;
+    color: #1a1a1a;
+}
+
+/* Paragraph spacing */
+.lit-body p {
+    margin-bottom: 2rem;
+}
+
+/* Elegant Headers inside text */
+.lit-body h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+/* Pull Quote (Center styled quote) */
+.lit-pull-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-style: italic;
+    text-align: center;
+    line-height: 1.4;
+    margin: 4rem 0;
+    padding: 0 20px;
+    color: #1a1a1a;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 40px 0;
+}
+
+/* Small divider */
+.lit-divider {
+    text-align: center;
+    margin: 3rem 0;
+    font-size: 1.5rem;
+    color: #ccc;
+    font-family: 'Playfair Display', serif;
+}
+
+/* --- Author Section --- */
+.lit-author {
+    margin-top: 80px;
+    border-top: 1px solid #1a1a1a; /* Hard black line */
+    padding-top: 40px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.lit-author img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 30px;
+    filter: grayscale(100%); /* B&W photo for style */
+}
+
+.lit-author-bio h5 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.lit-author-bio p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .lit-title { font-size: 2.5rem; }
+    .lit-body { padding: 0 20px; }
+}
+
+
+
+
+
+/* ================= CONTACT PAGE STYLES ================= */
+
+/* --- Top Section: Form with Yellow Border --- */
+.contact-form-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+.contact-border-wrapper {
+    border: 2px solid #cddc39; /* FinReach Lime Border */
+    background-color: #f9fafb; /* Light gray background inside border */
+    border-radius: 8px;
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-page-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.contact-page-subtitle {
+    font-size: 1rem;
+    color: #64748b;
+    max-width: 700px;
+    margin: 0 auto 3rem auto;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* The White Form Card */
+.contact-white-card {
+    background-color: #ffffff;
+    padding: 50px;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid #e2e8f0;
+}
+
+/* Form Inputs Specific to this page */
+.contact-label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+}
+
+.contact-input, .contact-select, .contact-textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    color: #334155;
+}
+
+.contact-input:focus, .contact-select:focus, .contact-textarea:focus {
+    border-color: #0f3e5d;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(15, 62, 93, 0.1);
+}
+
+.contact-textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-text-muted {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin-top: -1rem; /* Pulls it closer to the textarea */
+    margin-bottom: 1.5rem;
+}
+
+/* Submit Button */
+.btn-contact-submit {
+    background-color: #cddc39; /* Lime */
+    color: #1a1a1a; /* Dark text */
+    font-weight: 600;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 4px;
+    transition: all 0.3s;
+    display: block;
+    margin: 0 auto; /* Center the button */
+}
+
+.btn-contact-submit:hover {
+    background-color: #bfce35;
+    transform: translateY(-1px);
+}
+
+/* --- Bottom Section: Direct Contact Cards --- */
+.direct-contact-section {
+    background-color: #f8f9fa; /* Light gray full width background */
+    padding: 80px 0;
+    text-align: center;
+}
+
+.direct-contact-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 3rem;
+}
+
+.contact-info-card {
+    background-color: #ffffff;
+    padding: 40px 20px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    transition: transform 0.2s;
+}
+
+.contact-info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.contact-card-icon {
+    font-size: 2.5rem;
+    color: #cddc39; /* Lime icon */
+    margin-bottom: 1.5rem;
+}
+
+.contact-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+}
+
+/* Links inside the cards (Email/Phone) */
+.contact-card-link {
+    color: #cddc39; /* Lime text for links */
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.contact-card-link:hover {
+    text-decoration: underline;
+    color: #afb42b;
+}
+
+/* Address text (Gray) */
+.contact-card-text {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+
+/* ================= ABOUT PAGE STYLES ================= */
+
+/* Common Section Padding */
+.about-section-padding {
+    padding: 60px 0;
+}
+
+/* --- Section 1: Purpose (Gray Background) --- */
+.about-purpose-section {
+    background-color: #f8f9fa; /* Light Gray */
+    text-align: center;
+}
+
+.about-heading {
+    font-size: 2.25rem; /* Large clear heading */
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
+}
+
+.about-subtext {
+    font-size: 1.05rem;
+    color: #64748b; /* Slate gray */
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* --- Section 2: Structure (White Background) --- */
+.about-structure-section {
+    background-color: #ffffff;
+}
+
+/* Structure Cards */
+.structure-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0; /* Subtle border */
+    border-radius: 8px;
+    padding: 40px;
+    height: 100%;
+    transition: box-shadow 0.3s ease;
+}
+
+.structure-card:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.structure-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.structure-desc {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* --- Section 3: Who We Serve (Gray Background) --- */
+.about-serve-section {
+    background-color: #f8f9fa;
+}
+
+/* Serve Cards */
+.serve-card-about {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 40px 30px;
+    height: 100%;
+    text-align: center; /* Centered content */
+    transition: transform 0.2s;
+}
+
+.serve-card-about:hover {
+    transform: translateY(-5px);
+}
+
+.serve-icon {
+    font-size: 2.5rem;
+    color: #cddc39; /* FinReach Lime */
+    margin-bottom: 1.5rem;
+    display: inline-block;
+}
+
+.serve-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.serve-desc {
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+/* ================= ABOUT PAGE - VALUES & BOTTOM ================= */
+
+/* --- "What We Value" Section --- */
+.values-section {
+    background-color: #ffffff;
+    padding: 60px 0;
+}
+
+.values-container {
+    max-width: 800px; /* Limits width to keep list tidy like the screenshot */
+    margin: 0 auto;
+}
+
+.value-item {
+    display: flex;
+    align-items: flex-start; /* Aligns box with top of text */
+    margin-bottom: 2rem;
+}
+
+/* The Dark Teal Letter Box (R, E, A, C, H) */
+.value-letter-box {
+    background-color: #254053; /* Dark Slate */
+    color: #ffffff;
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-right: 24px;
+    flex-shrink: 0; /* Prevents box from shrinking */
+}
+
+.value-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+    margin-top: 5px; /* Visual alignment with the box */
+}
+
+.value-content p {
+    font-size: 1rem;
+    color: #64748b;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* --- "How We Work" Section --- */
+.how-we-work-section {
+    background-color: #f8f9fa; /* Light Gray */
+    padding: 80px 0;
+    text-align: center;
+}
+
+.work-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
+}
+
+.work-desc {
+    font-size: 1rem;
+    color: #64748b;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* --- Bottom Lime CTA Section --- */
+.bottom-cta-section {
+    background-color: #cddc39; /* FinReach Lime */
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.bottom-cta-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.bottom-cta-sub {
+    font-size: 1rem;
+    color: #4b5563; /* Muted text for contrast on lime */
+    margin-bottom: 2.5rem;
+}
+
+.btn-bottom-dark {
+    background-color: #254053; /* Dark Slate */
+    color: #ffffff;
+    font-weight: 600;
+    padding: 14px 32px;
+    border-radius: 4px;
+    text-decoration: none;
+    border: none;
+    display: inline-block;
+    transition: background-color 0.2s;
+}
+
+.btn-bottom-dark:hover {
+    background-color: #1a2e3b;
+    color: #ffffff;
+}
+
+
+/* ================= BOOKKEEPING PAGE STYLES ================= */
+
+/* --- Section 1: Challenges (Gray BG) --- */
+.challenges-section {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+}
+
+.section-heading-centered {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.challenge-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 30px;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.01);
+}
+
+/* The Red X Icon Circle */
+.challenge-icon-circle {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border: 1px solid #ef4444; /* Red border */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ef4444; /* Red text */
+    margin-right: 16px;
+    margin-top: 2px;
+    font-size: 0.9rem;
+}
+
+.challenge-text {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- Section 2: Solution (White BG) --- */
+.solution-section {
+    background-color: #ffffff;
+    padding: 60px 0;
+}
+
+.solution-subtext {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 3rem;
+}
+
+/* Checkmark List Items */
+.solution-list-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    font-size: 0.9rem;
+    color: #475569;
+}
+
+.solution-check-icon {
+    color: #cddc39; /* Lime */
+    font-size: 1.1rem;
+    margin-right: 12px;
+}
+
+/* The "How we deliver it" Box */
+.delivery-box {
+    border: 1px solid #cddc39; /* Lime border */
+    background-color: #fffff0; /* Very faint yellow tint */
+    border-radius: 8px;
+    padding: 40px;
+    margin-top: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.delivery-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.delivery-text {
+    font-size: 0.9rem;
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+}
+
+.delivery-text strong {
+    color: #1a1a1a;
+    font-weight: 700;
+}
+
+/* --- Section 3: Ideal For (Gray BG) --- */
+.ideal-section {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+}
+
+.ideal-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+    height: 100%;
+}
+
+.ideal-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.ideal-desc {
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* --- Section 4: What You Gain (White BG) --- */
+.gain-section {
+    background-color: #ffffff;
+    padding: 60px 0;
+}
+
+.gain-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+}
+
+.gain-icon {
+    font-size: 1.5rem;
+    color: #cddc39;
+    margin-right: 16px;
+    line-height: 1;
+}
+
+.gain-content h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+}
+
+.gain-content p {
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* --- Section 5: Bottom CTA (Big Lime) --- */
+.bk-cta-section {
+    background-color: #cddc39; /* FinReach Lime */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.bk-cta-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bk-cta-sub {
+    font-size: 1rem;
+    color: #4b5563;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+
+/* ================= ASSURANCE PAGE STYLES ================= */
+
+/* --- Section 1: Headaches (Gray BG) --- */
+.assurance-headaches-section {
+    background-color: #f3f5f7; /* Light Gray */
+    padding: 60px 0;
+}
+
+/* Red Icon Styling */
+.headache-icon-circle {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #ef4444; /* Red border */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ef4444; /* Red text */
+    margin-right: 16px;
+    margin-top: 2px;
+    font-size: 0.8rem;
+}
+
+/* Headache Card */
+.headache-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 6px;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.headache-text {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- Section 2: Solutions (White BG) --- */
+.assurance-solutions-section {
+    background-color: #ffffff;
+    padding: 60px 0;
+}
+
+.assurance-subtitle {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 3rem;
+    font-size: 1.05rem;
+}
+
+/* Solution Card */
+.assurance-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 32px;
+    height: 100%;
+    transition: box-shadow 0.3s ease;
+}
+
+.assurance-card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.assurance-icon {
+    font-size: 1.75rem;
+    color: #cddc39; /* FinReach Lime */
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.assurance-card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 0.75rem;
+}
+
+.assurance-card-text {
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- Bottom Notification Banner --- */
+.assurance-notice-box {
+    background-color: #fcfdf5; /* Very pale lime/yellow */
+    border: 1px solid #cddc39; /* Lime border */
+    border-radius: 6px;
+    padding: 24px;
+    text-align: center;
+    font-weight: 700;
+    color: #4b5563;
+    font-size: 0.95rem;
+    max-width: 900px;
+    margin: 60px auto 0 auto; /* Spacing from cards above */
+}
+
+
+
+
+/* ================= ASSURANCE APPROACH SECTION STYLES ================= */
+
+.assurance-approach-section {
+    background-color: #f8f9fa; /* Light Gray Background */
+    padding: 100px 0;
+}
+
+.approach-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 4rem; /* Generous spacing before the list starts */
+}
+
+/* The Grid Item Container */
+.approach-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2.5rem; /* Vertical spacing between rows */
+    padding-right: 1rem;
+}
+
+/* The Lime Check Icon */
+.approach-icon {
+    font-size: 1.6rem; /* Large visible icon */
+    color: #cddc39; /* FinReach Lime */
+    margin-right: 20px; /* Space between icon and text */
+    line-height: 1; /* Aligns icon with top of text */
+    flex-shrink: 0; /* Prevents icon from squishing */
+}
+
+/* The Description Text */
+.approach-text {
+    font-size: 1rem;
+    color: #4b5563; /* Muted dark gray */
+    line-height: 1.6;
+    margin: 0;
 }
