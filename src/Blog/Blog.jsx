@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import Header from '../Dashboard/Header';
 import Footer from '../Dashboard/Footer';
 import BlogHero from './BlogHero';
@@ -11,6 +12,11 @@ import '../Dashboard/Dashboard.css';
 const Blog = () => {
     return (
         <div className="blog-page">
+            <Helmet>
+                <title>Blog | FinReach</title>
+                <meta name="description" content="Read the latest articles, insights, and tips on finance, bookkeeping, audit readiness, and more from FinReach experts." />
+                <meta name="keywords" content="FinReach, Blog, Finance, Articles, Bookkeeping, Audit, Assurance, CFO" />
+            </Helmet>
             <Header />
             <BlogHero />
             <BlogCategories />

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import Header from './Header';
 import HeroWithForm from './HeroWithForm';
 import BookingFormSection from './BookingFormSection';
@@ -14,8 +15,12 @@ import './Dashboard.css';
 const Dashboard = () => {
     return (
         <div className="finreach-dashboard">
+            <Helmet>
+                <title>Dashboard | FinReach</title>
+                <meta name="description" content="Access your FinReach dashboard to manage your finances, book services, and explore tailored financial solutions." />
+                <meta name="keywords" content="FinReach, Dashboard, Finance, Services, Bookkeeping, CFO, Audit, Assurance" />
+            </Helmet>
             <Header />
-            
             <main>
                 <HeroWithForm />
                 <BookingFormSection />
@@ -26,9 +31,7 @@ const Dashboard = () => {
                 <ProcessSection />
                 <CTABanners />
             </main>
-
             <Footer />
-
             <a 
                 href="#" 
                 className="back-to-top"
