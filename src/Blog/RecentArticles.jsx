@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const RecentArticles = () => {
     const articles = [
@@ -7,7 +8,7 @@ const RecentArticles = () => {
             category: 'Bookkeeping & Cash Flow',
             title: 'Is Your Business Outgrowing Your Financial Systems?',
             excerpt: 'Learn the warning signs that your bookkeeping and accounting processes can\'t keep up with your growth - and what to do about it.',
-            link: '#'
+            link: '/blog/financial-resilience'
         },
         {
             icon: 'bi-shield-check',
@@ -61,9 +62,9 @@ const RecentArticles = () => {
                                 <p className="article-excerpt">
                                     {article.excerpt}
                                 </p>
-                                <a href={article.link} className="btn-read-more">
+                                <Link to={article.link} className="btn-read-more">
                                     Read more <i className="bi bi-arrow-right"></i>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     ))}
