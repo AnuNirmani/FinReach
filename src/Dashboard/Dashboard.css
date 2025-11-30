@@ -97,13 +97,13 @@
 
 .hero-section {
     position: relative;
-    /* Using the specific image URL */
-    
+    /* Using the specific image URL you provided */
+    background-image: url('https://finreach.ultimatemarketing.com.au/assets/hero-home-DxzjKHhr.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /* Increased padding for better vertical spacing with the form */
-    padding: 100px 0; 
+    /* Large vertical padding to match the height in the screenshot */
+    padding: 110px 0 110px 0; 
     color: #ffffff;
 }
 
@@ -208,15 +208,14 @@
 
 /* The white card holding the form */
 .form-card-accurate {
-    /* Existing styles remain... */
     background-color: #ffffff;
-    max-width: 540px; 
+    /* Crucial: Defines the width and centers the card */
+    max-width: 650px; 
     margin: 0 auto; 
+    /* Crucial: Padding inside the card that pushes the inputs inward */
     padding: 40px 40px; 
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* Made shadow slightly stronger for contrast on dark bg */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
     border-radius: 4px;
-    /* New: Ensure space below it on mobile */
-    margin-bottom: 20px;
 }
 
 /* Form Controls Styling - Taller and Lighter */
@@ -498,7 +497,9 @@
     width: 100%;
     height: 385px; /* Fixed height to match screenshot proportions */
     position: relative;
-    
+    background-image: 
+        linear-gradient(to top, rgba(15, 62, 93, 0.5) 0%, rgba(15, 62, 93, 0.5) 100%),
+        url('https://finreach.ultimatemarketing.com.au/assets/team-collaboration-Dfr1_auB.jpg');
         
     background-size: cover;
     background-position: center;
@@ -579,7 +580,9 @@
     height: 385px; /* Same height as previous banner for consistency */
     position: relative;
     /* Stacked Background: Gradient Overlay + Image */
-
+    background-image: 
+        linear-gradient(to top, rgba(15, 62, 93, 0.2) 0%, rgba(15, 62, 93, 0.5) 100%),
+        url('https://finreach.ultimatemarketing.com.au/assets/financial-analysis-BQaM4ht9.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -634,7 +637,9 @@
     height: 385px; /* Consistent height with other banners */
     position: relative;
     /* Stacked Background: Gradient Overlay + Image */
-    
+    background-image: 
+        linear-gradient(to top, rgba(15, 62, 93, 0.4) 0%, rgba(15, 62, 93, 0.5) 100%),
+        url('https://finreach.ultimatemarketing.com.au/assets/healthcare-practice-3tfo55K3.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -880,4 +885,317 @@
     text-align: center;
     color: #94a3b8; /* Dimmer text for copyright */
     font-size: 0.85rem;
+}
+
+
+
+
+
+
+
+/* ================= BLOG PAGE STYLES ================= */
+
+/* 1. Blog Hero Section (Dark Teal Banner) */
+.blog-hero-section {
+    background-color: #254053; /* Matches FinReach Dark Slate */
+    padding: 100px 0;
+    color: #ffffff;
+}
+
+.blog-hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.blog-hero-subtitle {
+    font-size: 1.1rem;
+    color: #e2e8f0; /* Light gray for readability on dark bg */
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+/* 2. "What we write about" Section */
+.blog-categories-section {
+    background-color: #f4f6f8; /* Light gray background */
+    padding: 80px 0;
+}
+
+.blog-cat-header {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 3.5rem; /* Space between title and cards */
+}
+
+/* Category Cards */
+.category-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 40px 25px;
+    text-align: center;
+    height: 100%; /* Ensures equal height in grid */
+    border: 1px solid #e2e8f0; /* Subtle border */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.08);
+}
+
+/* Icons in cards */
+.cat-icon {
+    font-size: 2rem;
+    color: #cddc39; /* FinReach Lime */
+    margin-bottom: 1.5rem;
+    display: inline-block;
+}
+
+/* Card Text */
+.cat-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.cat-desc {
+    font-size: 0.9rem;
+    color: #64748b; /* Slate gray */
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+
+
+
+/* ================= RECENT ARTICLES SECTION STYLES ================= */
+
+.recent-articles-section {
+    background-color: #ffffff; /* White background */
+    padding: 80px 0;
+}
+
+.recent-articles-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+/* Article Card Styling */
+.article-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0; /* Light border */
+    border-radius: 8px;
+    padding: 32px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: box-shadow 0.3s ease;
+}
+
+.article-card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border-color: #cbd5e1;
+}
+
+/* Icon at top left */
+.article-icon {
+    font-size: 1.5rem;
+    color: #cddc39; /* FinReach Lime */
+    margin-bottom: 1rem;
+}
+
+/* Category Label (e.g., Bookkeeping & Cash Flow) */
+.article-category {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #cddc39; /* Lime text */
+    margin-bottom: 0.5rem;
+    text-transform: capitalize;
+}
+
+/* Article Title */
+.article-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+/* Excerpt Text */
+.article-excerpt {
+    font-size: 0.95rem;
+    color: #64748b; /* Slate gray */
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Pushes button to bottom */
+}
+
+/* Read More Button */
+.btn-read-more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.2s;
+    min-width: 140px; /* Ensures consistent button width */
+}
+
+.btn-read-more i {
+    margin-left: 8px;
+}
+
+.btn-read-more:hover {
+    background-color: #f8f9fa;
+    border-color: #cbd5e1;
+    color: #000;
+}
+
+
+/* ================= BLOG CTA SECTION STYLES ================= */
+
+.blog-cta-section {
+    background-color: #cddc39; /* FinReach Lime */
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.blog-cta-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.blog-cta-text {
+    font-size: 1.1rem;
+    color: #4b5563; /* Slightly muted dark gray for readable contrast on lime */
+    max-width: 700px;
+    margin: 0 auto 2.5rem auto; /* Centers text and adds space below for button */
+    line-height: 1.6;
+}
+
+/* The Dark Slate Button */
+.btn-blog-cta {
+    background-color: #254053; /* Dark Slate / Teal */
+    color: #ffffff;
+    font-weight: 600;
+    padding: 14px 32px;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s;
+    border: none;
+}
+
+.btn-blog-cta:hover {
+    background-color: #1a2e3b; /* Darker shade on hover */
+    color: #ffffff;
+    transform: translateY(-2px); /* Subtle lift effect */
+}
+
+
+/* ================= SUBSCRIBE SECTION STYLES ================= */
+
+.subscribe-section {
+    background-color: #ffffff;
+    padding: 80px 0;
+}
+
+.subscribe-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.subscribe-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+}
+
+.subscribe-subtitle {
+    font-size: 1rem;
+    color: #64748b;
+    margin-bottom: 0;
+}
+
+/* The light gray outer wrapper */
+.subscribe-outer-wrapper {
+    background-color: #f4f6f8; /* Very light cool gray */
+    padding: 60px 20px;
+    border-radius: 8px;
+    max-width: 800px; /* Constrains width of the gray box */
+    margin: 0 auto; /* Centers the gray box */
+}
+
+/* The white form card */
+.subscribe-card {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    max-width: 500px;
+    margin: 0 auto;
+    border: 1px solid #e2e8f0;
+}
+
+/* Form Labels */
+.sub-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+}
+
+/* Form Inputs */
+.sub-input {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    color: #495057;
+    background-color: #fff;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+}
+
+.sub-input::placeholder {
+    color: #94a3b8;
+}
+
+/* Subscribe Button */
+.btn-subscribe {
+    width: 100%;
+    background-color: #cddc39; /* FinReach Lime */
+    color: #ffffff; /* White text as per screenshot */
+    font-weight: 600;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+    margin-top: 0.5rem;
+}
+
+.btn-subscribe:hover {
+    background-color: #bfce35; /* Slightly darker on hover */
+    color: #ffffff;
 }
