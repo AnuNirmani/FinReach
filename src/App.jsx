@@ -9,6 +9,7 @@ const BookkeepingCashFlow = lazy(() => import('./Categories/BookkeepingCashFlow.
 const AssuranceFunding = lazy(() => import('./Categories/AssuranceFunding.jsx'))
 const AuditReadiness = lazy(() => import('./Categories/AuditReadiness.jsx'))
 const FractionalCFOInsights = lazy(() => import('./Categories/FractionalCFOInsights.jsx'))
+const About = lazy(() => import('./others/About.jsx'))
 
 // Loading component
 const Loading = () => (
@@ -40,6 +41,7 @@ function App() {
           <Route path="/categories/assurance-funding" element={<AssuranceFunding />} />
           <Route path="/categories/audit-readiness" element={<AuditReadiness />} />
           <Route path="/categories/fractional-cfo-insights" element={<FractionalCFOInsights />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </Suspense>
     </BrowserRouter>
