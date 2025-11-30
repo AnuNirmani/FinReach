@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../Dashboard/Header.jsx';
 import Footer from '../Dashboard/Footer.jsx';
 
-const FractionalCFOInsights = () => {
+const FractionalCFOInsights = React.memo(() => {
   return (
     <>
       <Header />
@@ -13,6 +13,6 @@ const FractionalCFOInsights = () => {
       <Footer />
     </>
   );
-};
+});
 
 export default FractionalCFOInsights;

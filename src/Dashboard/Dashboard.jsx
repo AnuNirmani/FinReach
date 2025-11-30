@@ -12,7 +12,7 @@ import CTABanners from './CTABanners';
 import Footer from './Footer';
 import './Dashboard.css';
 
-const Dashboard = () => {
+const Dashboard = React.memo(() => {
     return (
         <div className="finreach-dashboard">
             <Helmet>
@@ -44,6 +44,6 @@ const Dashboard = () => {
             </a>
         </div>
     );
-};
+});
 
 export default Dashboard;

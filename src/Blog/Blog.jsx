@@ -9,7 +9,7 @@ import BlogCTA from './BlogCTA';
 import Subscribe from './Subscribe';
 import '../Dashboard/Dashboard.css';
 
-const Blog = () => {
+const Blog = React.memo(() => {
     return (
         <div className="blog-page">
             <Helmet>
@@ -26,6 +26,6 @@ const Blog = () => {
             <Footer />
         </div>
     );
-};
+});
 
 export default Blog;
