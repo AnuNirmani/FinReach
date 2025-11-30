@@ -1606,6 +1606,7 @@
     font-size: 0.95rem;
     margin-bottom: 1.5rem;
     color: #334155;
+    background-color: #ffffff;
 }
 
 .contact-input:focus, .contact-select:focus, .contact-textarea:focus {
