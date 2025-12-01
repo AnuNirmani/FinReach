@@ -13,6 +13,12 @@ const About = lazy(() => import('./others/About.jsx'))
 const Contact = lazy(() => import('./others/Contact.jsx'))
 const BlogArticle = lazy(() => import('./others/BlogArticle.jsx'))
 
+// Blog category pages
+const BlogBookkeepingCashFlow = lazy(() => import('./Blog/blog/BookkeepingCashFlow.jsx'))
+const BlogAssuranceFunding = lazy(() => import('./Blog/blog/AssuranceFunding.jsx'))
+const BlogAuditReadiness = lazy(() => import('./Blog/blog/AuditReadiness.jsx'))
+const BlogFractionalCFOInsights = lazy(() => import('./Blog/blog/FractionalCFOInsights.jsx'))
+
 // Loading component
 const Loading = () => (
   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
@@ -46,6 +52,12 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog/financial-resilience" element={<BlogArticle />} />
+          
+          {/* Blog category pages */}
+          <Route path="/blog/bookkeeping-cash-flow" element={<BlogBookkeepingCashFlow />} />
+          <Route path="/blog/assurance-funding" element={<BlogAssuranceFunding />} />
+          <Route path="/blog/audit-readiness" element={<BlogAuditReadiness />} />
+          <Route path="/blog/fractional-cfo-insights" element={<BlogFractionalCFOInsights />} />
         </Routes>
       </Suspense>
     </BrowserRouter>
