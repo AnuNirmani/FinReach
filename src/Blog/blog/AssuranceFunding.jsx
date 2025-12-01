@@ -1,18 +1,50 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../../Dashboard/Header';
 import Footer from '../../Dashboard/Footer';
 import { Link } from 'react-router-dom';
 import '../../Dashboard/Dashboard.css';
 
 const AssuranceFunding = () => {
-  const articles = [
-    {
-      id: 3,
-      category: 'Assurance & Funding',
-      title: 'Review vs Audit: What Do You Actually Need?',
-      description: 'Not every organisation needs a full audit. Discover how to choose the right level of assurance for your size, risk and stakeholder expectations.'
+  const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // Function to strip HTML and truncate text
+  const truncateText = (html, maxLength = 150) => {
+    // Remove HTML tags
+    const text = html.replace(/<[^>]*>/g, '');
+    // Truncate and add ellipsis
+    if (text.length > maxLength) {
+      return text.substring(0, maxLength).trim() + '...';
     }
-  ];
+    return text;
+  };
+
+  useEffect(() => {
+    const fetchAssurance = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch('http://localhost:8000/api/assurance');
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        console.log('Fetched articles:', data);
+        console.log('Number of articles:', data.length);
+        setArticles(data);
+        setError(null);
+      } catch (err) {
+        console.error('Error fetching assurance:', err);
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchAssurance();
+  }, []);
 
   return (
     <>
@@ -44,21 +76,45 @@ const AssuranceFunding = () => {
       {/* Articles Grid */}
       <section className="recent-articles-section">
         <div className="container">
-          <div className="row g-4">
-            {articles.map((article) => (
-              <div key={article.id} className="col-lg-4 col-md-6">
-                <div className="article-card">
-                  <i className="bi bi-shield-check article-icon"></i>
-                  <div className="article-category">{article.category}</div>
-                  <h3 className="article-title">{article.title}</h3>
-                  <p className="article-excerpt">{article.description}</p>
-                  <Link to={`/blog/article/${article.id}`} className="btn-read-more">
-                    Read more <i className="bi bi-arrow-right"></i>
-                  </Link>
-                </div>
+          {loading && (
+            <div className="text-center py-5">
+              <div className="spinner-border text-primary" role="status">
+                <span className="visually-hidden">Loading...</span>
               </div>
-            ))}
-          </div>
+            </div>
+          )}
+
+          {error && (
+            <div className="alert alert-danger" role="alert">
+              Error loading articles: {error}
+            </div>
+          )}
+
+          {!loading && !error && articles.length === 0 && (
+            <div className="text-center py-5">
+              <p className="text-muted">No articles found.</p>
+            </div>
+          )}
+
+          {!loading && !error && articles.length > 0 && (
+            <div className="row g-4">
+              {articles.map((article) => (
+                <div key={article.post_id} className="col-lg-4 col-md-6">
+                  <div className="article-card">
+                    <i className="bi bi-shield-check article-icon"></i>
+                    <div className="article-category">{article.category_name}</div>
+                    <h3 className="article-title">{article.title}</h3>
+                    <p className="article-excerpt">
+                      {truncateText(article.description, 150)}
+                    </p>
+                    <Link to={`/blog/article/${article.post_id}`} className="btn-read-more">
+                      Read more <i className="bi bi-arrow-right"></i>
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
