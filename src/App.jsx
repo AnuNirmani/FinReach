@@ -5,10 +5,10 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 // Lazy load all page components
 const Dashboard = lazy(() => import('./Dashboard/Dashboard'))
 const Blog = lazy(() => import('./Blog/Blog'))
-const BookkeepingCashFlow = lazy(() => import('./Blog/BookkeepingCashFlow.jsx'))
-const AssuranceFunding = lazy(() => import('./Blog/AssuranceFunding.jsx'))
-const AuditReadiness = lazy(() => import('./Blog/AuditReadiness.jsx'))
-const FractionalCFOInsights = lazy(() => import('./Blog/FractionalCFOInsights.jsx'))
+const BookkeepingCashFlow = lazy(() => import('./categories/Bookkeeping&Accounting.jsx'))
+const AssuranceFunding = lazy(() => import('./categories/Assurance.jsx'))
+const AuditReadiness = lazy(() => import('./categories/Auditing.jsx'))
+const FractionalCFOInsights = lazy(() => import('./categories/FractionalCFO.jsx'))
 const About = lazy(() => import('./others/About.jsx'))
 const Contact = lazy(() => import('./others/Contact.jsx'))
 const BlogArticle = lazy(() => import('./others/BlogArticle.jsx'))
@@ -39,10 +39,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/bookkeeping-cash-flow" element={<BookkeepingCashFlow />} />
-          <Route path="/blog/assurance-funding" element={<AssuranceFunding />} />
-          <Route path="/blog/audit-readiness" element={<AuditReadiness />} />
-          <Route path="/blog/fractional-cfo-insights" element={<FractionalCFOInsights />} />
+          <Route path="/bookkeeping-accounting" element={<BookkeepingCashFlow />} />
+          <Route path="/assurance" element={<AssuranceFunding />} />
+          <Route path="/auditing" element={<AuditReadiness />} />
+          <Route path="/fractional-cfo" element={<FractionalCFOInsights />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog/financial-resilience" element={<BlogArticle />} />
