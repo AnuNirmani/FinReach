@@ -7,25 +7,25 @@ const BlogCategories = () => {
             icon: 'bi-file-earmark-text',
             title: 'Bookkeeping &<br>cash flow',
             description: 'Practical tips to stop back-end tasks from slowing your growth',
-            path: '/categories/bookkeeping-cash-flow'
+            path: '/blog/bookkeeping-cash-flow'
         },
         {
             icon: 'bi-shield-check',
             title: 'Assurance &<br>funding',
             description: 'How to stay grant-ready and avoid overspending on audits',
-            path: '/categories/assurance-funding'
+            path: '/blog/assurance-funding'
         },
         {
             icon: 'bi-check-circle',
             title: 'Audit readiness',
             description: 'Steps to reduce stress and get more value from your audits',
-            path: '/categories/audit-readiness'
+            path: '/blog/audit-readiness'
         },
         {
             icon: 'bi-graph-up-arrow',
             title: 'Fractional CFO<br>insights',
             description: 'How to build robust financial foundations and scale with confidence',
-            path: '/categories/fractional-cfo-insights'
+            path: '/blog/fractional-cfo-insights'
         }
     ];
 

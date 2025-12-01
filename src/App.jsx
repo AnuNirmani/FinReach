@@ -5,10 +5,10 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 // Lazy load all page components
 const Dashboard = lazy(() => import('./Dashboard/Dashboard'))
 const Blog = lazy(() => import('./Blog/Blog'))
-const BookkeepingCashFlow = lazy(() => import('./Categories/BookkeepingCashFlow.jsx'))
-const AssuranceFunding = lazy(() => import('./Categories/AssuranceFunding.jsx'))
-const AuditReadiness = lazy(() => import('./Categories/AuditReadiness.jsx'))
-const FractionalCFOInsights = lazy(() => import('./Categories/FractionalCFOInsights.jsx'))
+const BookkeepingCashFlow = lazy(() => import('./Blog/BookkeepingCashFlow.jsx'))
+const AssuranceFunding = lazy(() => import('./Blog/AssuranceFunding.jsx'))
+const AuditReadiness = lazy(() => import('./Blog/AuditReadiness.jsx'))
+const FractionalCFOInsights = lazy(() => import('./Blog/FractionalCFOInsights.jsx'))
 const About = lazy(() => import('./others/About.jsx'))
 const Contact = lazy(() => import('./others/Contact.jsx'))
 const BlogArticle = lazy(() => import('./others/BlogArticle.jsx'))
@@ -39,10 +39,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/categories/bookkeeping-cash-flow" element={<BookkeepingCashFlow />} />
-          <Route path="/categories/assurance-funding" element={<AssuranceFunding />} />
-          <Route path="/categories/audit-readiness" element={<AuditReadiness />} />
-          <Route path="/categories/fractional-cfo-insights" element={<FractionalCFOInsights />} />
+          <Route path="/blog/bookkeeping-cash-flow" element={<BookkeepingCashFlow />} />
+          <Route path="/blog/assurance-funding" element={<AssuranceFunding />} />
+          <Route path="/blog/audit-readiness" element={<AuditReadiness />} />
+          <Route path="/blog/fractional-cfo-insights" element={<FractionalCFOInsights />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog/financial-resilience" element={<BlogArticle />} />

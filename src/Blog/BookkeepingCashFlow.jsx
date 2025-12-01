@@ -1,5 +1,5 @@
 import React from 'react';
-import SEO from '../utils/SEO';
+import SEO from '../utils/SEO.jsx';
 import Header from '../Dashboard/Header.jsx';
 import Footer from '../Dashboard/Footer.jsx';
 

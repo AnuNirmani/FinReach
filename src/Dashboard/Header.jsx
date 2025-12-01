@@ -47,10 +47,10 @@ const Header = () => {
                 Services
               </a>
               <ul className="dropdown-menu">
-                <li><Link className="dropdown-item" to="/categories/bookkeeping-cash-flow">Bookkeeping & Accounting</Link></li>
-                <li><Link className="dropdown-item" to="/categories/assurance-funding">Assurance</Link></li>
-                <li><Link className="dropdown-item" to="/categories/audit-readiness">Auditing</Link></li>
-                <li><Link className="dropdown-item" to="/categories/fractional-cfo-insights">Fractional CFO</Link></li>
+                <li><Link className="dropdown-item" to="/blog/bookkeeping-cash-flow">Bookkeeping & Accounting</Link></li>
+                <li><Link className="dropdown-item" to="/blog/assurance-funding">Assurance</Link></li>
+                <li><Link className="dropdown-item" to="/blog/audit-readiness">Auditing</Link></li>
+                <li><Link className="dropdown-item" to="/blog/fractional-cfo-insights">Fractional CFO</Link></li>
               </ul>
             </li>
             <li className="nav-item">

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Dashboard.css';
 import logo from '../assets/sitelogo.webp';
 
@@ -31,12 +32,12 @@ const Footer = () => {
           <div className="col-lg-3 col-md-6">
             <h4 className="footer-heading">Quick Links</h4>
             <ul className="footer-links-list">
-              <li><a href="#" className="footer-link">Bookkeeping & Accounting</a></li>
-              <li><a href="#" className="footer-link">Assurance</a></li>
-              <li><a href="#" className="footer-link">Auditing</a></li>
-              <li><a href="#" className="footer-link">Fractional CFO</a></li>
-              <li><a href="#" className="footer-link">About</a></li>
-              <li><a href="#" className="footer-link">Blog</a></li>
+              <li><Link to="/blog/bookkeeping-cash-flow" className="footer-link">Bookkeeping & Accounting</Link></li>
+              <li><Link to="/blog/assurance-funding" className="footer-link">Assurance</Link></li>
+              <li><Link to="/blog/audit-readiness" className="footer-link">Auditing</Link></li>
+              <li><Link to="/blog/fractional-cfo-insights" className="footer-link">Fractional CFO</Link></li>
+              <li><Link to="/about" className="footer-link">About</Link></li>
+              <li><Link to="/blog" className="footer-link">Blog</Link></li>
             </ul>
           </div>
 
