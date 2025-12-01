@@ -10,9 +10,7 @@ const AssuranceFunding = () => {
       id: 3,
       category: 'Assurance & Funding',
       title: 'Review vs Audit: What Do You Actually Need?',
-      description: 'Not every organisation needs a full audit. Discover how to choose the right level of assurance for your size, risk and stakeholder expectations.',
-      icon: '✓',
-      categoryColor: '#90C695'
+      description: 'Not every organisation needs a full audit. Discover how to choose the right level of assurance for your size, risk and stakeholder expectations.'
     }
   ];
 
@@ -26,7 +24,7 @@ const AssuranceFunding = () => {
           <div className="row justify-content-center text-center">
             <div className="col-lg-8">
               <span className="badge mb-3" style={{ 
-                backgroundColor: '#90C695', 
+                backgroundColor: '#cddc39', 
                 color: '#fff', 
                 fontSize: '14px',
                 padding: '8px 20px',
@@ -36,7 +34,7 @@ const AssuranceFunding = () => {
               </span>
               <h1 className="display-4 fw-bold mb-3">Assurance & Funding</h1>
               <p className="lead text-muted">
-                Navigate assurance requirements, funding compliance, and stakeholder expectations with confidence.
+                How to stay grant-ready and avoid overspending on audits
               </p>
             </div>
           </div>
@@ -44,34 +42,19 @@ const AssuranceFunding = () => {
       </section>
 
       {/* Articles Grid */}
-      <section className="articles-section" style={{ padding: '80px 0' }}>
+      <section className="recent-articles-section">
         <div className="container">
           <div className="row g-4">
             {articles.map((article) => (
               <div key={article.id} className="col-lg-4 col-md-6">
-                <div className="card h-100 shadow-sm border-0" style={{ transition: 'transform 0.3s ease' }}>
-                  <div className="card-body d-flex flex-column p-4">
-                    <div className="mb-3">
-                      <span style={{ fontSize: '40px' }}>{article.icon}</span>
-                    </div>
-                    <span className="badge mb-3 align-self-start" style={{ 
-                      backgroundColor: article.categoryColor, 
-                      color: '#fff',
-                      fontSize: '12px',
-                      padding: '6px 12px'
-                    }}>
-                      {article.category}
-                    </span>
-                    <h3 className="h5 fw-bold mb-3">{article.title}</h3>
-                    <p className="text-muted mb-4 flex-grow-1">{article.description}</p>
-                    <Link 
-                      to={`/blog/article/${article.id}`} 
-                      className="btn btn-outline-primary mt-auto"
-                      style={{ width: 'fit-content' }}
-                    >
-                      Read more →
-                    </Link>
-                  </div>
+                <div className="article-card">
+                  <i className="bi bi-shield-check article-icon"></i>
+                  <div className="article-category">{article.category}</div>
+                  <h3 className="article-title">{article.title}</h3>
+                  <p className="article-excerpt">{article.description}</p>
+                  <Link to={`/blog/article/${article.id}`} className="btn-read-more">
+                    Read more <i className="bi bi-arrow-right"></i>
+                  </Link>
                 </div>
               </div>
             ))}

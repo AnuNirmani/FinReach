@@ -10,17 +10,13 @@ const AuditReadiness = () => {
       id: 4,
       category: 'Audit Readiness',
       title: '5 Steps to Make Your NFP Audit-Ready Year-Round',
-      description: 'Stop scrambling when audit season arrives. Build audit-readiness into your regular routines with these practical steps.',
-      icon: '✓',
-      categoryColor: '#A8D5A3'
+      description: 'Stop scrambling when audit season arrives. Build audit-readiness into your regular routines with these practical steps.'
     },
     {
       id: 5,
       category: 'Audit Readiness',
       title: 'Understanding ACNC and ASIC Reporting Deadlines',
-      description: 'Missing statutory deadlines can lead to penalties and damaged reputation. Here\'s your complete guide to staying compliant.',
-      icon: '✓',
-      categoryColor: '#A8D5A3'
+      description: 'Missing statutory deadlines can lead to penalties and damaged reputation. Here\'s your complete guide to staying compliant.'
     }
   ];
 
@@ -34,7 +30,7 @@ const AuditReadiness = () => {
           <div className="row justify-content-center text-center">
             <div className="col-lg-8">
               <span className="badge mb-3" style={{ 
-                backgroundColor: '#A8D5A3', 
+                backgroundColor: '#cddc39', 
                 color: '#fff', 
                 fontSize: '14px',
                 padding: '8px 20px',
@@ -44,42 +40,27 @@ const AuditReadiness = () => {
               </span>
               <h1 className="display-4 fw-bold mb-3">Audit Readiness</h1>
               <p className="lead text-muted">
-                Stay audit-ready year-round with expert guidance on compliance, documentation, and regulatory requirements.
-              </p>
+                Steps to reduce stress and get more value from your audits
+                </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Articles Grid */}
-      <section className="articles-section" style={{ padding: '80px 0' }}>
+      <section className="recent-articles-section">
         <div className="container">
           <div className="row g-4">
             {articles.map((article) => (
               <div key={article.id} className="col-lg-4 col-md-6">
-                <div className="card h-100 shadow-sm border-0" style={{ transition: 'transform 0.3s ease' }}>
-                  <div className="card-body d-flex flex-column p-4">
-                    <div className="mb-3">
-                      <span style={{ fontSize: '40px' }}>{article.icon}</span>
-                    </div>
-                    <span className="badge mb-3 align-self-start" style={{ 
-                      backgroundColor: article.categoryColor, 
-                      color: '#fff',
-                      fontSize: '12px',
-                      padding: '6px 12px'
-                    }}>
-                      {article.category}
-                    </span>
-                    <h3 className="h5 fw-bold mb-3">{article.title}</h3>
-                    <p className="text-muted mb-4 flex-grow-1">{article.description}</p>
-                    <Link 
-                      to={`/blog/article/${article.id}`} 
-                      className="btn btn-outline-primary mt-auto"
-                      style={{ width: 'fit-content' }}
-                    >
-                      Read more →
-                    </Link>
-                  </div>
+                <div className="article-card">
+                  <i className="bi bi-check-circle article-icon"></i>
+                  <div className="article-category">{article.category}</div>
+                  <h3 className="article-title">{article.title}</h3>
+                  <p className="article-excerpt">{article.description}</p>
+                  <Link to={`/blog/article/${article.id}`} className="btn-read-more">
+                    Read more <i className="bi bi-arrow-right"></i>
+                  </Link>
                 </div>
               </div>
             ))}

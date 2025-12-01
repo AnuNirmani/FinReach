@@ -10,9 +10,7 @@ const FractionalCFOInsights = () => {
       id: 6,
       category: 'Fractional CFO Insights',
       title: 'When to Bring in a Fractional CFO (and What They Really Do)',
-      description: 'Fractional CFOs aren\'t just for large enterprises. Find out when it makes sense to bring in strategic financial leadership on a part-time basis.',
-      icon: '📈',
-      categoryColor: '#F4A460'
+      description: 'Fractional CFOs aren\'t just for large enterprises. Find out when it makes sense to bring in strategic financial leadership on a part-time basis.'
     }
   ];
 
@@ -26,7 +24,7 @@ const FractionalCFOInsights = () => {
           <div className="row justify-content-center text-center">
             <div className="col-lg-8">
               <span className="badge mb-3" style={{ 
-                backgroundColor: '#F4A460', 
+                backgroundColor: '#cddc39', 
                 color: '#fff', 
                 fontSize: '14px',
                 padding: '8px 20px',
@@ -36,7 +34,7 @@ const FractionalCFOInsights = () => {
               </span>
               <h1 className="display-4 fw-bold mb-3">Fractional CFO Insights</h1>
               <p className="lead text-muted">
-                Explore how fractional CFO services can transform your business with strategic financial guidance and leadership.
+                How to build robust financial foundations and scale with confidence
               </p>
             </div>
           </div>
@@ -44,34 +42,19 @@ const FractionalCFOInsights = () => {
       </section>
 
       {/* Articles Grid */}
-      <section className="articles-section" style={{ padding: '80px 0' }}>
+      <section className="recent-articles-section">
         <div className="container">
           <div className="row g-4">
             {articles.map((article) => (
               <div key={article.id} className="col-lg-4 col-md-6">
-                <div className="card h-100 shadow-sm border-0" style={{ transition: 'transform 0.3s ease' }}>
-                  <div className="card-body d-flex flex-column p-4">
-                    <div className="mb-3">
-                      <span style={{ fontSize: '40px' }}>{article.icon}</span>
-                    </div>
-                    <span className="badge mb-3 align-self-start" style={{ 
-                      backgroundColor: article.categoryColor, 
-                      color: '#fff',
-                      fontSize: '12px',
-                      padding: '6px 12px'
-                    }}>
-                      {article.category}
-                    </span>
-                    <h3 className="h5 fw-bold mb-3">{article.title}</h3>
-                    <p className="text-muted mb-4 flex-grow-1">{article.description}</p>
-                    <Link 
-                      to={`/blog/article/${article.id}`} 
-                      className="btn btn-outline-primary mt-auto"
-                      style={{ width: 'fit-content' }}
-                    >
-                      Read more →
-                    </Link>
-                  </div>
+                <div className="article-card">
+                  <i className="bi bi-graph-up-arrow article-icon"></i>
+                  <div className="article-category">{article.category}</div>
+                  <h3 className="article-title">{article.title}</h3>
+                  <p className="article-excerpt">{article.description}</p>
+                  <Link to={`/blog/article/${article.id}`} className="btn-read-more">
+                    Read more <i className="bi bi-arrow-right"></i>
+                  </Link>
                 </div>
               </div>
             ))}
