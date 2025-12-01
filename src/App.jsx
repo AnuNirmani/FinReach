@@ -52,6 +52,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog/financial-resilience" element={<BlogArticle />} />
+          <Route path="/blog/article/:id" element={<BlogArticle />} />
           
           {/* Blog category pages */}
           <Route path="/blog/bookkeeping-cash-flow" element={<BlogBookkeepingCashFlow />} />

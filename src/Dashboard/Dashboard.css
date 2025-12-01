@@ -1439,9 +1439,11 @@
 .lit-hero-image {
     width: 100%;
     height: auto;
-    max-height: 600px;
+    max-height: 520px; /* Reduced from 600px to minimize image size */
+    max-width: 1000px;  /* Keep image from spanning full width on large screens */
     object-fit: cover;
-    margin-bottom: 80px;
+    margin: 0 auto 40px; /* Center and tighten spacing */
+    display: block;
     /* No border radius for a sharper, print-like look */
 }
 

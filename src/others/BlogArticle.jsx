@@ -1,116 +1,113 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import SEO from '../utils/SEO';
 import Header from '../Dashboard/Header';
 import Footer from '../Dashboard/Footer';
 import '../Dashboard/Dashboard.css';
 
 const BlogArticle = () => {
+    const { id } = useParams();
+    const [post, setPost] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    // Map backend category names to the correct category page route
+    const getCategoryPath = (name) => {
+        const n = (name || '').toLowerCase();
+        if (n.includes('book')) return '/blog/bookkeeping-cash-flow';
+        if (n.includes('assurance')) return '/blog/assurance-funding';
+        if (n.includes('audit')) return '/blog/audit-readiness';
+        if (n.includes('fractional')) return '/blog/fractional-cfo-insights';
+        return '/blog';
+    };
+
+    useEffect(() => {
+        const fetchPost = async () => {
+            try {
+                setLoading(true);
+                const res = await fetch(`http://localhost:8000/api/post-details/${id}`);
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                const data = await res.json();
+                setPost(data);
+                setError(null);
+            } catch (err) {
+                console.error('Error fetching post details:', err);
+                setError(err.message);
+            } finally {
+                setLoading(false);
+            }
+        };
+        if (id) fetchPost();
+    }, [id]);
+
     return (
         <div className="blog-article-page">
-            <SEO 
-                title="Building Financial Resilience in Uncertain Times | FinReach Blog"
-                description="Learn how to build financial resilience for your business during uncertain times. Expert tips on cash flow management, financial planning, and strategic decision-making from FinReach financial experts."
-                keywords="Financial Resilience, Business Finance, Cash Flow Management, Financial Planning, Economic Uncertainty, Business Strategy, Financial Health, Australian Business"
-                canonical="/blog/financial-resilience"
-                ogType="article"
-                breadcrumb={[
-                    { name: 'Home', url: '/' },
-                    { name: 'Blog', url: '/blog' },
-                    { name: 'Financial Resilience', url: '/blog/financial-resilience' }
-                ]}
-                schema={{
-                    "@type": "Article",
-                    "headline": "Building Financial Resilience in Uncertain Times",
-                    "author": {
-                        "@type": "Organization",
-                        "@id": "https://finreach.com.au/#organization"
-                    },
-                    "publisher": {
-                        "@type": "Organization",
-                        "@id": "https://finreach.com.au/#organization"
-                    },
-                    "datePublished": "2025-12-01",
-                    "dateModified": "2025-12-01",
-                    "articleSection": "Finance",
-                    "keywords": "Financial Resilience, Business Finance, Cash Flow Management"
-                }}
-            />
+            {post && (
+                <SEO 
+                    title={post.title}
+                    description={post.sub_topic || ''}
+                    keywords={(post.category_name || '') + ', FinReach Blog'}
+                    canonical={`/blog/article/${post.post_id}`}
+                    ogType="article"
+                    breadcrumb={[
+                        { name: 'Home', url: '/' },
+                        { name: 'Blog', url: '/blog' },
+                        { name: post.title, url: `/blog/article/${post.post_id}` }
+                    ]}
+                    schema={{
+                        "@type": "Article",
+                        "headline": post.title,
+                        "datePublished": post.created_at,
+                        "dateModified": post.created_at,
+                        "articleSection": post.category_name,
+                        "keywords": post.category_name
+                    }}
+                />
+            )}
             <Header />
 
-            {/* Literary Blog Post */}
+            {/* Blog Post */}
             <div className="lit-article-wrapper">
-                {/* Elegant Header */}
-                <header className="lit-header">
-                    <span className="lit-category">Financial Strategy</span>
-                    <h1 className="lit-title">The Quiet Art of Financial Resilience</h1>
-                    <p className="lit-subtitle">Why the most successful organizations don't just chase growth—they architect stability.</p>
-                    
-                    <div className="lit-meta">
-                        <span>By Sarah Jenkins</span> &bull; <span>November 28, 2025</span>
-                    </div>
-                </header>
-
-                {/* Wide Hero Image */}
-                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop" alt="Abstract Architecture" className="lit-hero-image" />
-
-                {/* The Article Body */}
-                <article className="lit-body">
-                    {/* Paragraph with Drop Cap */}
-                    <p className="lit-drop-cap">
-                        There is a seductive quality to speed. In the early days of a business, velocity is often mistaken for vitality. We move fast, we break things, and we celebrate the chaos as a sign of progress. But there comes a moment—often quiet, often unnoticed—when the machinery of growth begins to grind against the gears of stability.
-                    </p>
-
-                    <p>
-                        I have sat in boardrooms where the revenue charts pointed sharply upward, yet the air was thick with anxiety. The numbers were good, but the foundation was cracking. It is in these moments that the true nature of financial leadership reveals itself. It is not about acceleration; it is about aerodynamics.
-                    </p>
-
-                    <div className="lit-divider">&mdash; * &mdash;</div>
-
-                    <h2>The Illusion of Complexity</h2>
-
-                    <p>
-                        We tend to equate sophistication with complexity. We build elaborate financial models, intricate corporate structures, and labyrinthine reporting lines. We convince ourselves that if it isn't difficult to understand, it isn't valuable.
-                    </p>
-
-                    <p>
-                        However, the most resilient organizations I have worked with share a startling characteristic: <strong>simplicity</strong>. Their ledgers are clean. Their cash flow forecasts are boringly accurate. They do not hide behind jargon.
-                    </p>
-
-                    {/* Pull Quote */}
-                    <div className="lit-pull-quote">
-                        "True financial health is quiet. It doesn't scream for attention; it simply supports the weight of the ambition placed upon it."
-                    </div>
-
-                    <p>
-                        When we strip away the noise, we are left with the raw truth of the business. This is where the work of assurance and auditing transforms from a compliance exercise into a strategic asset. It ceases to be a test you must pass and becomes a mirror you must look into.
-                    </p>
-
-                    <h2>Architecting for the Decade</h2>
-
-                    <p>
-                        To build for the long term requires a shift in mindset. It demands that we stop asking "Can we afford this?" and start asking "Does this strengthen our core?"
-                    </p>
-                    
-                    <p>
-                        This brings us to the concept of the Fractional CFO. It is a modern solution to an age-old problem: how to access high-level wisdom without the high-level overhead. It allows a growing entity to borrow the eyes of a veteran strategist, someone who can spot the storm clouds long before they reach the shore.
-                    </p>
-
-                    <p>
-                        In the end, financial confidence is not about having the most money in the bank. It is about the certainty that comes from knowing exactly where you stand, and exactly where you are going.
-                    </p>
-
-                    {/* Literary Author Box */}
-                    <div className="lit-author">
-                        <img src="https://ui-avatars.com/api/?name=Sarah+Jenkins&background=333&color=fff" alt="Sarah Jenkins" />
-                        <div className="lit-author-bio">
-                            <h5>About the Author</h5>
-                            <p>
-                                Sarah Jenkins is a partner at FinReach. She writes extensively on the intersection of organizational psychology and fiscal policy. She believes that good accounting is a form of storytelling.
-                            </p>
+                {loading && (
+                    <div className="text-center py-5">
+                        <div className="spinner-border text-primary" role="status">
+                            <span className="visually-hidden">Loading...</span>
                         </div>
                     </div>
-                </article>
+                )}
+
+                {error && (
+                    <div className="alert alert-danger" role="alert">
+                        Error loading post: {error}
+                    </div>
+                )}
+
+                {post && (
+                    <>
+                        <header className="lit-header">
+                            <span className="lit-category">{post.category_name}</span>
+                            <h1 className="lit-title">{post.title}</h1>
+                            {post.sub_topic && (
+                                <p className="lit-subtitle">{post.sub_topic}</p>
+                            )}
+                            <div className="lit-meta">
+                                <span>{new Date(post.created_at).toLocaleDateString()}</span>
+                            </div>
+                        </header>
+
+                        {post.image && (
+                            <img src={post.image} alt={post.title} className="lit-hero-image" />
+                        )}
+
+                        <article className="lit-body">
+                            <div dangerouslySetInnerHTML={{ __html: post.description }} />
+                        </article>
+
+                        <div className="mt-4"><center>
+                            <Link to={getCategoryPath(post.category_name)} className="btn btn-outline-secondary">Back to {post.category_name || 'Blog'}</Link>
+                        </center></div>
+                    </>
+                )}
             </div>
 
             <Footer />
