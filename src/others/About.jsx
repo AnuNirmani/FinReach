@@ -1,4 +1,5 @@
 import React from 'react'
+import SEO from '../utils/SEO'
 import '../Dashboard/Dashboard.css'
 import Header from '../Dashboard/Header'
 import Footer from '../Dashboard/Footer'
@@ -6,6 +7,24 @@ import Footer from '../Dashboard/Footer'
 const About = () => {
   return (
     <>
+      <SEO 
+        title="About FinReach | Trusted Australian Accounting & Assurance Firm"
+        description="Learn about FinReach - a trusted Australia-based firm providing professional bookkeeping, accounting, auditing, assurance, and CFO services to growing businesses, not-for-profits, and health organizations across Australia."
+        keywords="About FinReach, Australian Accounting Firm, Professional Bookkeeping, Audit Services, CFO Services, Not-for-profit Accounting, Healthcare Finance"
+        canonical="/about"
+        breadcrumb={[
+          { name: 'Home', url: '/' },
+          { name: 'About', url: '/about' }
+        ]}
+        schema={{
+          "@type": "AboutPage",
+          "mainEntity": {
+            "@type": "Organization",
+            "name": "FinReach",
+            "description": "Trusted Australian firm specializing in bookkeeping, accounting, auditing, and CFO services"
+          }
+        }}
+      />
       <Header />
 
       {/* Hero Section */}

@@ -1,10 +1,39 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../utils/SEO';
 import '../Dashboard/Dashboard.css';
 
 const BlogArticle = () => {
     return (
         <div className="blog-article-page">
+            <SEO 
+                title="Building Financial Resilience in Uncertain Times | FinReach Blog"
+                description="Learn how to build financial resilience for your business during uncertain times. Expert tips on cash flow management, financial planning, and strategic decision-making from FinReach financial experts."
+                keywords="Financial Resilience, Business Finance, Cash Flow Management, Financial Planning, Economic Uncertainty, Business Strategy, Financial Health, Australian Business"
+                canonical="/blog/financial-resilience"
+                ogType="article"
+                breadcrumb={[
+                    { name: 'Home', url: '/' },
+                    { name: 'Blog', url: '/blog' },
+                    { name: 'Financial Resilience', url: '/blog/financial-resilience' }
+                ]}
+                schema={{
+                    "@type": "Article",
+                    "headline": "Building Financial Resilience in Uncertain Times",
+                    "author": {
+                        "@type": "Organization",
+                        "@id": "https://finreach.com.au/#organization"
+                    },
+                    "publisher": {
+                        "@type": "Organization",
+                        "@id": "https://finreach.com.au/#organization"
+                    },
+                    "datePublished": "2025-12-01",
+                    "dateModified": "2025-12-01",
+                    "articleSection": "Finance",
+                    "keywords": "Financial Resilience, Business Finance, Cash Flow Management"
+                }}
+            />
             {/* Navigation */}
             <nav className="navbar navbar-expand-lg navbar-light fixed-top shadow-sm">
                 <div className="container">

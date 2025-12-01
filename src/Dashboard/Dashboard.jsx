@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../utils/SEO';
 import Header from './Header';
 import HeroWithForm from './HeroWithForm';
 import BookingFormSection from './BookingFormSection';
@@ -15,11 +15,23 @@ import './Dashboard.css';
 const Dashboard = React.memo(() => {
     return (
         <div className="finreach-dashboard">
-            <Helmet>
-                <title>Dashboard | FinReach</title>
-                <meta name="description" content="Access your FinReach dashboard to manage your finances, book services, and explore tailored financial solutions." />
-                <meta name="keywords" content="FinReach, Dashboard, Finance, Services, Bookkeeping, CFO, Audit, Assurance" />
-            </Helmet>
+            <SEO 
+                title="FinReach Australia | Assurance and Accounting Services"
+                description="Finreach Pty Limited is a trusted Australia-based firm specializing in professional bookkeeping, accounting, auditing, assurance, and outsourced CFO services. We help small to medium businesses streamline financial operations, ensure compliance, and make data-driven decisions with confidence."
+                keywords="FinReach, Bookkeeping, Accounting, Audit, Assurance, CFO, Australia, Financial Services, SME Accounting, Business Finance"
+                canonical="/"
+                ogImage="https://finreach.com.au/wp-content/uploads/2024/07/22-scaled.jpg"
+                breadcrumb={[
+                    { name: 'Home', url: '/' }
+                ]}
+                schema={{
+                    "@type": "ProfessionalService",
+                    "name": "FinReach",
+                    "description": "Professional bookkeeping, accounting, auditing, assurance, and outsourced CFO services",
+                    "priceRange": "$$",
+                    "areaServed": "Australia"
+                }}
+            />
             <Header />
             <main>
                 <HeroWithForm />

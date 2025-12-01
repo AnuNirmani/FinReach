@@ -1,10 +1,29 @@
 import React from 'react';
+import SEO from '../utils/SEO';
 import Header from '../Dashboard/Header.jsx';
 import Footer from '../Dashboard/Footer.jsx';
 
 const FractionalCFOInsights = React.memo(() => {
   return (
     <>
+      <SEO 
+        title="Fractional CFO Services | Expert Financial Leadership | FinReach"
+        description="Expert financial leadership without the full-time cost. FinReach's Fractional CFO service provides seasoned financial strategy, cash flow forecasting, KPI dashboards, and strategic planning for growing Australian businesses."
+        keywords="Fractional CFO, Part-time CFO, CFO Services, Financial Leadership, Strategic Planning, Cash Flow Forecasting, Financial Strategy, Business Growth Australia"
+        canonical="/categories/fractional-cfo-insights"
+        breadcrumb={[
+          { name: 'Home', url: '/' },
+          { name: 'Services', url: '/blog' },
+          { name: 'Fractional CFO', url: '/categories/fractional-cfo-insights' }
+        ]}
+        schema={{
+          "@type": "Service",
+          "serviceType": "Fractional CFO Services",
+          "provider": { "@id": "https://finreach.com.au/#organization" },
+          "areaServed": "Australia",
+          "description": "Expert financial leadership and strategic CFO services on a flexible, part-time basis"
+        }}
+      />
       <Header />
 
       {/* Hero Section */}

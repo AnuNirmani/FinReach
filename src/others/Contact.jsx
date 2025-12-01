@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../utils/SEO';
 import '../Dashboard/Dashboard.css';
 import Header from '../Dashboard/Header';
 import Footer from '../Dashboard/Footer';
@@ -6,6 +7,33 @@ import Footer from '../Dashboard/Footer';
 const Contact = () => {
   return (
     <>
+      <SEO 
+        title="Contact FinReach | Book Your Free Consultation Today"
+        description="Get in touch with FinReach for professional bookkeeping, accounting, audit, and CFO services. Book a 30-minute obligation-free consultation. Email: info@finreach.com.au | Phone: (02) 6105 9300 | Belconnen, ACT, Australia"
+        keywords="Contact FinReach, Book Consultation, Accounting Services Australia, Bookkeeping Contact, CFO Services, Audit Consultation, Belconnen Accountant"
+        canonical="/contact"
+        breadcrumb={[
+          { name: 'Home', url: '/' },
+          { name: 'Contact', url: '/contact' }
+        ]}
+        schema={{
+          "@type": "ContactPage",
+          "mainEntity": {
+            "@type": "Organization",
+            "name": "FinReach",
+            "email": "info@finreach.com.au",
+            "telephone": "+61-2-6105-9300",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Level 1, 11-17 Swanson Court",
+              "addressLocality": "Belconnen",
+              "addressRegion": "ACT",
+              "postalCode": "2617",
+              "addressCountry": "AU"
+            }
+          }
+        }}
+      />
       <Header />
       {/* Contact Form Section */}
       <section className="contact-form-section">

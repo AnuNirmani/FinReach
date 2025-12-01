@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../utils/SEO';
 import Header from '../Dashboard/Header.jsx';
 import Footer from '../Dashboard/Footer.jsx';
 import '../Dashboard/Dashboard.css';
@@ -6,6 +7,24 @@ import '../Dashboard/Dashboard.css';
 const AuditReadiness = React.memo(() => {
   return (
     <>
+      <SEO 
+        title="Audit Readiness & Compliance Services | FinReach Australia"
+        description="Stress-free audit services to keep you compliant with ACNC and ASIC deadlines. Expert financial statement audits, internal controls review, and continuous audit readiness support for Australian organizations."
+        keywords="Audit Services, Audit Readiness, ACNC Compliance, ASIC Compliance, Financial Statement Audit, Internal Controls, NFP Audit, Compliance Audit Australia"
+        canonical="/categories/audit-readiness"
+        breadcrumb={[
+          { name: 'Home', url: '/' },
+          { name: 'Services', url: '/blog' },
+          { name: 'Audit Readiness', url: '/categories/audit-readiness' }
+        ]}
+        schema={{
+          "@type": "Service",
+          "serviceType": "Audit Readiness & Compliance Services",
+          "provider": { "@id": "https://finreach.com.au/#organization" },
+          "areaServed": "Australia",
+          "description": "Professional audit services ensuring ACNC and ASIC compliance with continuous support"
+        }}
+      />
       <Header />
       <main>
         {/* Hero Section */}

@@ -1,10 +1,29 @@
 import React from 'react';
+import SEO from '../utils/SEO';
 import Header from '../Dashboard/Header.jsx';
 import Footer from '../Dashboard/Footer.jsx';
 
 const AssuranceFunding = React.memo(() => {
   return (
     <>
+      <SEO 
+        title="Assurance & Funding Services | FinReach Australia"
+        description="Professional assurance services that protect your funding and reputation. Expert reviews, audits, agreed-upon procedures, and internal control assessments to keep you funding-ready all year round."
+        keywords="Assurance Services, Funding Assurance, Financial Reviews, Agreed-Upon Procedures, Internal Controls, Grant Assurance, NFP Assurance, ACNC Compliance"
+        canonical="/categories/assurance-funding"
+        breadcrumb={[
+          { name: 'Home', url: '/' },
+          { name: 'Services', url: '/blog' },
+          { name: 'Assurance & Funding', url: '/categories/assurance-funding' }
+        ]}
+        schema={{
+          "@type": "Service",
+          "serviceType": "Assurance & Funding Services",
+          "provider": { "@id": "https://finreach.com.au/#organization" },
+          "areaServed": "Australia",
+          "description": "Professional assurance services including reviews, audits, and internal control assessments"
+        }}
+      />
       <Header />
       <main>
         {/* Hero Section */}

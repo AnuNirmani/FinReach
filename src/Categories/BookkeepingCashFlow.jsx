@@ -1,10 +1,29 @@
 import React from 'react';
+import SEO from '../utils/SEO';
 import Header from '../Dashboard/Header.jsx';
 import Footer from '../Dashboard/Footer.jsx';
 
 const BookkeepingCashFlow = React.memo(() => {
   return (
     <>
+      <SEO 
+        title="Bookkeeping & Cash Flow Management | FinReach Australia"
+        description="Professional bookkeeping and accounting services that give you back your time. From daily bookkeeping to management reporting, payroll, BAS preparation, and cash flow management for Australian businesses."
+        keywords="Bookkeeping Services, Cash Flow Management, Accounts Payable, Accounts Receivable, Payroll Processing, BAS Preparation, Management Reporting, Australian Bookkeeping"
+        canonical="/categories/bookkeeping-cash-flow"
+        breadcrumb={[
+          { name: 'Home', url: '/' },
+          { name: 'Services', url: '/blog' },
+          { name: 'Bookkeeping & Cash Flow', url: '/categories/bookkeeping-cash-flow' }
+        ]}
+        schema={{
+          "@type": "Service",
+          "serviceType": "Bookkeeping & Accounting Services",
+          "provider": { "@id": "https://finreach.com.au/#organization" },
+          "areaServed": "Australia",
+          "description": "Professional bookkeeping and cash flow management services for small to medium businesses"
+        }}
+      />
       <Header />
       <main>
         {/* Hero Section */}
