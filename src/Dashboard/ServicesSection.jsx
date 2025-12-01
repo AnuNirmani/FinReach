@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Dashboard.css';
 
 const ServicesSection = () => {
@@ -7,25 +8,25 @@ const ServicesSection = () => {
             icon: 'bi-file-earmark-check',
             title: 'Bookkeeping & Accounting',
             description: 'Professional-grade accounting at a price small business can sustain. Your work is completed by an off-shore team with 25 years of expertise, under Australian CPA oversight.',
-            link: '#'
+            link: '/categories/bookkeeping-cash-flow'
         },
         {
             icon: 'bi-shield-check',
             title: 'Assurance',
             description: 'Bespoke assurance engagements for not-for-profits and regulated organisations – so you\'re not overspending on a full audit when a targeted review will do.',
-            link: '#'
+            link: '/categories/assurance-funding'
         },
         {
             icon: 'bi-check-circle',
             title: 'Auditing',
             description: 'Risk-based audits by experienced professionals who understand NFP, government and for-profit environments. Compliant, on time, with real insight.',
-            link: '#'
+            link: '/categories/audit-readiness'
         },
         {
             icon: 'bi-graph-up-arrow',
             title: 'Fractional CFO',
             description: 'Executive-level finance leadership without the full-time salary. Strategic financial partnership for confident, data-driven growth.',
-            link: '#'
+            link: '/categories/fractional-cfo-insights'
         }
     ];
 
@@ -46,9 +47,9 @@ const ServicesSection = () => {
                                 <p className="service-card-text">
                                     {service.description}
                                 </p>
-                                <a href={service.link} className="btn-learn-more">
+                                <Link to={service.link} className="btn-learn-more">
                                     Learn more <i className="bi bi-arrow-right-short"></i>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     ))}

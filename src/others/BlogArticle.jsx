@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../utils/SEO';
+import Header from '../Dashboard/Header';
+import Footer from '../Dashboard/Footer';
 import '../Dashboard/Dashboard.css';
 
 const BlogArticle = () => {
@@ -34,50 +36,7 @@ const BlogArticle = () => {
                     "keywords": "Financial Resilience, Business Finance, Cash Flow Management"
                 }}
             />
-            {/* Navigation */}
-            <nav className="navbar navbar-expand-lg navbar-light fixed-top shadow-sm">
-                <div className="container">
-                    <Link className="navbar-brand" to="/">
-                        <img src="https://finreach.com.au/wp-content/uploads/2024/06/site-logo.png" width="145" alt="FinReach Logo" /> 
-                    </Link>
-
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-
-                    <div className="collapse navbar-collapse" id="navbarNavDropdown">
-                        <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/">Home</Link>
-                            </li>
-                            <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Services
-                                </a>
-                                <ul className="dropdown-menu">
-                                    <li><Link className="dropdown-item" to="/categories/bookkeeping-cash-flow">Bookkeeping & Cash Flow</Link></li>
-                                    <li><Link className="dropdown-item" to="/categories/assurance-funding">Assurance & Funding</Link></li>
-                                    <li><Link className="dropdown-item" to="/categories/audit-readiness">Audit Readiness</Link></li>
-                                    <li><Link className="dropdown-item" to="/categories/fractional-cfo-insights">Fractional CFO</Link></li>
-                                </ul>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/about">About</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link active" to="/blog">Blog</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/contact">Contact</Link>
-                            </li>
-                        </ul>
-
-                        <div className="d-flex">
-                            <Link to="/contact" className="btn btn-finreach-cta">Book a Consultation</Link>
-                        </div>
-                    </div>
-                </div>
-            </nav>
+            <Header />
 
             {/* Literary Blog Post */}
             <div className="lit-article-wrapper">
@@ -154,60 +113,7 @@ const BlogArticle = () => {
                 </article>
             </div>
 
-            {/* Footer */}
-            <footer className="footer-section">
-                <div className="container">
-                    <div className="row gy-5">
-                        <div className="col-lg-5 col-md-12">
-                            <div className="footer-brand-wrapper">
-                                <Link className="navbar-brand" to="/">
-                                    <img src="https://finreach.com.au/wp-content/uploads/2024/06/site-logo.png" width="145" alt="FinReach Logo" /> 
-                                </Link>
-                            </div>
-                            
-                            <p className="footer-desc">
-                                Financial confidence for businesses, not-for-profits and health organisations.
-                            </p>
-
-                            <Link to="/contact" className="btn-footer-cta">Book Your Consultation</Link>
-                        </div>
-
-                        <div className="col-lg-3 col-md-6">
-                            <h4 className="footer-heading">Quick Links</h4>
-                            <ul className="footer-links-list">
-                                <li><Link to="/categories/bookkeeping-cash-flow" className="footer-link">Bookkeeping & Accounting</Link></li>
-                                <li><Link to="/categories/assurance-funding" className="footer-link">Assurance</Link></li>
-                                <li><Link to="/categories/audit-readiness" className="footer-link">Auditing</Link></li>
-                                <li><Link to="/categories/fractional-cfo-insights" className="footer-link">Fractional CFO</Link></li>
-                                <li><Link to="/about" className="footer-link">About</Link></li>
-                                <li><Link to="/blog" className="footer-link">Blog</Link></li>
-                            </ul>
-                        </div>
-
-                        <div className="col-lg-4 col-md-6">
-                            <h4 className="footer-heading">Contact Us</h4>
-                            <ul className="footer-contact-list">
-                                <li className="footer-contact-item">
-                                    <i className="bi bi-envelope contact-icon"></i>
-                                    <span>info@finreach.com.au</span>
-                                </li>
-                                <li className="footer-contact-item">
-                                    <i className="bi bi-telephone contact-icon"></i>
-                                    <span>(02) 6105 9300</span>
-                                </li>
-                                <li className="footer-contact-item">
-                                    <i className="bi bi-geo-alt contact-icon"></i>
-                                    <span>Level 1, 11-17 Swanson Court,<br />Belconnen ACT 2617 Australia</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div className="footer-bottom">
-                        &copy; 2025 FinReach. All rights reserved.
-                    </div>
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 };

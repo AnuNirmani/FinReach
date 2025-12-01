@@ -15,35 +15,35 @@ const RecentArticles = () => {
             category: 'Assurance & Funding',
             title: 'Review vs Audit: What Do You Actually Need?',
             excerpt: 'Not every organisation needs a full audit. Discover how to choose the right level of assurance for your size, risk and stakeholder expectations.',
-            link: '#'
+            link: '/blog/financial-resilience'
         },
         {
             icon: 'bi-file-earmark-text',
             category: 'Bookkeeping & Cash Flow',
             title: 'How Clean Books Save You Money at Tax Time and Audit Time',
             excerpt: 'Poor bookkeeping doesn\'t just create stress - it creates real costs. Here\'s how tidy accounts throughout the year can save you thousands.',
-            link: '#'
+            link: '/blog/financial-resilience'
         },
         {
             icon: 'bi-graph-up-arrow',
             category: 'Fractional CFO Insights',
             title: 'When to Bring in a Fractional CFO (and What They Really Do)',
             excerpt: 'Fractional CFOs aren\'t just for large enterprises. Find out when it makes sense to bring in strategic financial leadership on a part-time basis.',
-            link: '#'
+            link: '/blog/financial-resilience'
         },
         {
             icon: 'bi-check-circle',
             category: 'Audit Readiness',
             title: '5 Steps to Make Your NFP Audit-Ready Year-Round',
             excerpt: 'Stop scrambling when audit season arrives. Build audit-readiness into your regular routines with these practical steps.',
-            link: '#'
+            link: '/blog/financial-resilience'
         },
         {
             icon: 'bi-check-circle',
             category: 'Audit Readiness',
             title: 'Understanding ACNC and ASIC Reporting Deadlines',
             excerpt: 'Missing statutory deadlines can lead to penalties and damaged reputation. Here\'s your complete guide to staying compliant.',
-            link: '#'
+            link: '/blog/financial-resilience'
         }
     ];
 
