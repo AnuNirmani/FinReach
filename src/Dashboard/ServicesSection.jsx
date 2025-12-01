@@ -8,25 +8,25 @@ const ServicesSection = () => {
             icon: 'bi-file-earmark-check',
             title: 'Bookkeeping & Accounting',
             description: 'Professional-grade accounting at a price small business can sustain. Your work is completed by an off-shore team with 25 years of expertise, under Australian CPA oversight.',
-            link: '/blog/bookkeeping-cash-flow'
+            link: '/bookkeeping-accounting'
         },
         {
             icon: 'bi-shield-check',
             title: 'Assurance',
             description: 'Bespoke assurance engagements for not-for-profits and regulated organisations – so you\'re not overspending on a full audit when a targeted review will do.',
-            link: '/blog/assurance-funding'
+            link: '/assurance'
         },
         {
             icon: 'bi-check-circle',
             title: 'Auditing',
             description: 'Risk-based audits by experienced professionals who understand NFP, government and for-profit environments. Compliant, on time, with real insight.',
-            link: '/blog/audit-readiness'
+            link: '/auditing'
         },
         {
             icon: 'bi-graph-up-arrow',
             title: 'Fractional CFO',
             description: 'Executive-level finance leadership without the full-time salary. Strategic financial partnership for confident, data-driven growth.',
-            link: '/blog/fractional-cfo-insights'
+            link: '/fractional-cfo'
         }
     ];
 
