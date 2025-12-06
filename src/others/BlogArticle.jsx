@@ -25,7 +25,7 @@ const BlogArticle = () => {
         const fetchPost = async () => {
             try {
                 setLoading(true);
-                const res = await fetch(`http://localhost:8000/api/post-details/${id}`);
+                const res = await fetch(`https://admin.finreach.com.au/api/post-details/${id}`);
                 if (!res.ok) throw new Error(`HTTP ${res.status}`);
                 const data = await res.json();
                 setPost(data);

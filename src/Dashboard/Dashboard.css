@@ -2544,6 +2544,53 @@
     margin: 0;
 }
 
+/* Full-screen dark overlay */
+.fr-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050;
+}
+
+/* Modal container */
+.fr-modal {
+  background: #ffffff;
+  border-radius: 16px;
+  max-width: 900px;
+  width: 90%;
+  max-height: 90vh;             /* never exceed viewport height */
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  position: relative;
+  padding: 16px 16px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Close button */
+.fr-modal-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  border: none;
+  background: transparent;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* Wrapper for iframe */
+.fr-modal-body {
+  margin-top: 24px;
+  width: 100%;
+  /* take remaining height and scroll if content is too tall */
+  height: calc(90vh - 80px);
+  overflow-y: auto;
+}
+
+
 
 
 

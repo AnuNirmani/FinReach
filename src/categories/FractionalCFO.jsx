@@ -2,6 +2,8 @@ import React from 'react';
 import SEO from '../utils/SEO.jsx';
 import Header from '../Dashboard/Header.jsx';
 import Footer from '../Dashboard/Footer.jsx';
+import cfoHero from '../assets/assets/cfo-hero-B0bliUzx.jpg';
+
 
 const FractionalCFOInsights = React.memo(() => {
   return (
@@ -27,8 +29,13 @@ const FractionalCFOInsights = React.memo(() => {
       <Header />
 
       {/* Hero Section */}
-      <section className="hero-section" style={{backgroundImage: "url('https://finreach.ultimatemarketing.com.au/assets/cfo-hero-B0bliUzx.jpg')"}}>
-        <div className="hero-overlay"></div>
+      <section
+  className="hero-section"
+  style={{
+    backgroundImage: `url(${cfoHero})`,
+  }}
+>
+ <div className="hero-overlay"></div>
         <div className="container hero-content">
           <div className="row align-items-center text-start">
             <div className="col-lg-6 col-md-12 mb-5 mb-lg-0">
@@ -220,9 +227,13 @@ const FractionalCFOInsights = React.memo(() => {
           <p className="cta-lime-text" style={{maxWidth: '600px', margin: '0 auto 2rem auto'}}>
             Book a 30-minute, obligation-free consultation and let's talk about a fractional CFO model that fits your organisation.
           </p>
-          <a href="#" className="btn-dark-consult">
-            Book Your Consultation
-          </a>
+          <button
+  type="button"
+  className="btn-dark-consult"
+  onClick={() => window.dispatchEvent(new Event('open-consultation-modal'))}
+>
+  Book Your Consultation
+</button>
         </div>
       </section>
 

@@ -10,9 +10,14 @@ const BlogCTA = () => {
                     Beyond reading our insights, you can work directly with the FinReach team to solve your specific challenges.
                 </p>
 
-                <a href="#" className="btn-blog-cta">
-                    Book Your Consultation
-                </a>
+                
+                <button
+  type="button"
+  className="btn-blog-cta"
+  onClick={() => window.dispatchEvent(new Event('open-consultation-modal'))}
+>
+  Book Your Consultation
+</button>
             </div>
         </section>
     );

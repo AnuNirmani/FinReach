@@ -2,6 +2,8 @@ import React from 'react';
 import SEO from '../utils/SEO.jsx';
 import Header from '../Dashboard/Header.jsx';
 import Footer from '../Dashboard/Footer.jsx';
+import bookkeepingHero from '../assets/assets/bookkeeping-hero-zWmJX4q8.jpg';
+
 
 const BookkeepingCashFlow = React.memo(() => {
   return (
@@ -28,12 +30,12 @@ const BookkeepingCashFlow = React.memo(() => {
       <main>
         {/* Hero Section */}
         <section
-          className="hero-section"
-          style={{
-            backgroundImage:
-              "url('https://finreach.ultimatemarketing.com.au/assets/bookkeeping-hero-zWmJX4q8.jpg')",
-          }}
-        >
+  className="hero-section"
+  style={{
+    backgroundImage: `url(${bookkeepingHero})`,
+  }}
+>
+
           <div className="hero-overlay" />
           <div className="container hero-content">
             <div className="row align-items-center text-start">
@@ -44,9 +46,7 @@ const BookkeepingCashFlow = React.memo(() => {
                 <p className="hero-subtitle text-white opacity-75">
                   Your back-end accounting shouldn't be choking your growth. We
                   take care of the financial heavy lifting – from daily
-                  bookkeeping to management reporting – so you can stop
-                  wrestling with spreadsheets and get back to running your
-                  organisation.
+                  bookkeeping to management reporting – so you can take your business to the next level with no worry on the finances
                 </p>
               </div>
             </div>
@@ -101,12 +101,12 @@ const BookkeepingCashFlow = React.memo(() => {
             <div className="row px-lg-5 justify-content-center">
               {[
                 'Day-to-day bookkeeping and general ledger',
-                'Accounts receivable and accounts payable',
+                'Accounts receivable and Accounts payable',
                 'Payroll and superannuation processing',
-                'Bank and account reconciliations',
+                'Bank and Account reconciliations',
                 'BAS and GST preparation support',
                 'Asset registers and basic fixed asset management',
-                'Monthly and quarterly management reports, ready for your tax accountant or auditors',
+                'Monthly and Auarterly management reports, ready for your tax accountant or auditors',
               ].map((item, idx) => (
                 <div className="col-lg-4 col-md-6" key={idx}>
                   <div className="solution-list-item">
@@ -125,11 +125,7 @@ const BookkeepingCashFlow = React.memo(() => {
                 functions.
               </p>
               <p className="delivery-text mb-0">
-                <strong>
-                  All work is directed, reviewed and approved by an Australian
-                  CPA
-                </strong>
-                , ensuring quality, compliance and confidence in your numbers.
+                 Ensuring quality, compliance and confidence in your numbers.
               </p>
             </div>
           </div>
@@ -152,7 +148,7 @@ const BookkeepingCashFlow = React.memo(() => {
                 {
                   title: 'Medium-sized organisations',
                   desc:
-                    'And NFPs wanting either full back-office accounting or targeted support such as AP/AR or periodic reviews',
+                    'And not-for-profit wanting either full back-office accounting or targeted support such as AP/AR or periodic reviews',
                 },
                 {
                   title: 'Health practices',
@@ -224,15 +220,20 @@ const BookkeepingCashFlow = React.memo(() => {
         <section className="bk-cta-section">
           <div className="container">
             <h2 className="bk-cta-title">
-              Tired of your back-end accounting eating into your growth?
+              Tired of your back-end accounting waiting into your growth?
             </h2>
             <p className="bk-cta-sub">
               Book a 30-minute, obligation-free consultation to see how our
               bookkeeping and accounting model can work for you.
             </p>
-            <a href="#" className="btn-bottom-dark">
-              Book Your Consultation
-            </a>
+            
+             <button
+  type="button"
+  className="btn-bottom-dark"
+  onClick={() => window.dispatchEvent(new Event('open-consultation-modal'))}
+>
+  Book Your Consultation
+</button>
           </div>
         </section>
       </main>

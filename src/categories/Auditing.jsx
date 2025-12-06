@@ -3,6 +3,8 @@ import SEO from '../utils/SEO.jsx';
 import Header from '../Dashboard/Header.jsx';
 import Footer from '../Dashboard/Footer.jsx';
 import '../Dashboard/Dashboard.css';
+import auditHero from '../assets/assets/audit-hero-Bk5pu4Jp.jpg';
+
 
 const AuditReadiness = React.memo(() => {
   return (
@@ -29,12 +31,12 @@ const AuditReadiness = React.memo(() => {
       <main>
         {/* Hero Section */}
         <section
-          className="hero-section"
-          style={{
-            backgroundImage:
-              "url('https://finreach.ultimatemarketing.com.au/assets/audit-hero-Bk5pu4Jp.jpg')",
-          }}
-        >
+  className="hero-section"
+  style={{
+    backgroundImage: `url(${auditHero})`,
+  }}
+>
+
           <div className="hero-overlay" />
           <div className="container hero-content">
             <div className="row align-items-center text-start">
@@ -98,7 +100,7 @@ const AuditReadiness = React.memo(() => {
               <div className="col-md-5">
                 <div className="audit-card">
                   <i className="bi bi-calendar-event audit-icon"></i>
-                  <h3 className="audit-card-title">ACNC and ASIC deadlines</h3>
+                  <h3 className="audit-card-title">ACNC & ASIC deadlines</h3>
                   <p className="audit-card-text">
                     Typically 6 months for ACNC and 4 months for ASIC
                     submissions.
@@ -162,7 +164,7 @@ const AuditReadiness = React.memo(() => {
 
                     <div className="col-md-6">
                       {[
-                        'Structured, phased approach aligned with your AGM and lodgement dates.',
+                        'Structured, phased approach aligned with your annual general meeting and lodgement dates.',
                         "Continuity of team – you're not starting from scratch with new auditors every year.",
                       ].map((text, idx) => (
                         <div className="audit-process-item" key={idx}>
@@ -235,7 +237,14 @@ const AuditReadiness = React.memo(() => {
               Book your free 30-minute consultation and we'll map out a clear,
               stress-free path to your next audit.
             </p>
-            <a href="#" className="btn-dark-consult">Book Your Consultation</a>
+            
+            <button
+  type="button"
+  className="btn-dark-consult"
+  onClick={() => window.dispatchEvent(new Event('open-consultation-modal'))}
+>
+  Book Your Consultation
+</button>
           </div>
         </section>
       </main>

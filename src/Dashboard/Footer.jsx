@@ -23,19 +23,25 @@ const Footer = () => {
               Financial confidence for businesses, not-for-profits and health organisations.
             </p>
 
-            <a href="#booking-form" className="btn-footer-cta">
-              Book Your Consultation
-            </a>
+            
+            <button
+  type="button"
+  className="btn-footer-cta"
+  onClick={() => window.dispatchEvent(new Event('open-consultation-modal'))}
+>
+  Book Your Consultation
+</button>
+
           </div>
 
           {/* QUICK LINKS */}
           <div className="col-lg-3 col-md-6">
             <h4 className="footer-heading">Quick Links</h4>
             <ul className="footer-links-list">
-              <li><Link to="/blog/bookkeeping-cash-flow" className="footer-link">Bookkeeping & Accounting</Link></li>
-              <li><Link to="/blog/assurance-funding" className="footer-link">Assurance</Link></li>
-              <li><Link to="/blog/audit-readiness" className="footer-link">Auditing</Link></li>
-              <li><Link to="/blog/fractional-cfo-insights" className="footer-link">Fractional CFO</Link></li>
+              <li><Link to="/bookkeeping-accounting" className="footer-link">Bookkeeping & Accounting</Link></li>
+              <li><Link to="/assurance" className="footer-link">Assurance</Link></li>
+              <li><Link to="/auditing" className="footer-link">Auditing</Link></li>
+              <li><Link to="/fractional-cfo" className="footer-link">Fractional CFO</Link></li>
               <li><Link to="/about" className="footer-link">About</Link></li>
               <li><Link to="/blog" className="footer-link">Blog</Link></li>
             </ul>

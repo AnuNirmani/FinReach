@@ -35,7 +35,7 @@ const Dashboard = React.memo(() => {
             <Header />
             <main>
                 <HeroWithForm />
-                <BookingFormSection />
+               {/* <BookingFormSection /> */}
                 <TargetAudience />
                 <ServicesSection />
                 <PainPointsSection />

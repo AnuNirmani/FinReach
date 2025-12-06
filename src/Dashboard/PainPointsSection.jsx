@@ -1,5 +1,7 @@
 import React from 'react';
 import './Dashboard.css';
+import teamImage from '../assets/assets/team-collaboration-Dfr1_auB.jpg';
+
 
 const PainPointsSection = () => {
     const painPoints = [
@@ -19,9 +21,15 @@ const PainPointsSection = () => {
 
     return (
         <>
-            <div className="familiar-image-banner" style={{
-                backgroundImage: "linear-gradient(to top, rgba(15, 62, 93, 0.5) 0%, rgba(15, 62, 93, 0.5) 100%), url('https://finreach.ultimatemarketing.com.au/assets/team-collaboration-Dfr1_auB.jpg')"
-            }}></div>
+            <div
+  className="familiar-image-banner"
+  style={{
+    backgroundImage: `
+      linear-gradient(to top, rgba(15, 62, 93, 0.5) 0%, rgba(15, 62, 93, 0.5) 100%),
+      url(${teamImage})
+    `
+  }}
+></div>
 
             <section className="familiar-content-section">
                 <div className="container">
@@ -60,7 +68,7 @@ const PainPointsSection = () => {
                     </div>
 
                     <p className="familiar-footer-note text-center">
-                        We step in to replace the stress with structure – and give you back time, confidence and control.
+                        We step in to Why Confidence? What are we trying to stay in here. 
                     </p>
                 </div>
             </section>

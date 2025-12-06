@@ -17,9 +17,15 @@ const CTABanners = () => {
                 <div className="container">
                     <h2 className="final-cta-title">Ready to take the stress out of your finances?</h2>
                     
-                    <a href="#booking-form" className="btn-dark-consult">
-                        Book Your 30-Minute Consultation
-                    </a>
+                   
+                    <button
+  type="button"
+  className="btn btn-dark-consult"
+  onClick={() => window.dispatchEvent(new Event('open-consultation-modal'))}
+>
+  Book Your 30-Minute Consultation
+</button>
+
                 </div>
             </section>
         </>

@@ -24,7 +24,7 @@ const BookkeepingCashFlow = () => {
     const fetchBookKeepings = async () => {
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:8000/api/book-keeping');
+        const response = await fetch('https://admin.finreach.com.au/api/book-keeping');
         
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);

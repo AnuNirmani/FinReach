@@ -21,30 +21,31 @@ const AssuranceFunding = () => {
   };
 
   useEffect(() => {
-    const fetchAssurance = async () => {
-      try {
-        setLoading(true);
-        const response = await fetch('http://localhost:8000/api/assurance');
-        
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        
-        const data = await response.json();
-        console.log('Fetched articles:', data);
-        console.log('Number of articles:', data.length);
-        setArticles(data);
-        setError(null);
-      } catch (err) {
-        console.error('Error fetching assurance:', err);
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
+  const fetchAssurance = async () => {
+    try {
+      setLoading(true);
+       const response = await fetch('https://admin.finreach.com.au/api/assurance');
 
-    fetchAssurance();
-  }, []);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log('Fetched articles:', data);
+      console.log('Number of articles:', data.length);
+      setArticles(data);
+      setError(null);
+    } catch (err) {
+      console.error('Error fetching assurance:', err);
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  fetchAssurance();
+}, []);
+
 
   return (
     <>

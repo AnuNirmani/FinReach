@@ -1,5 +1,6 @@
 import React from 'react';
 import './Dashboard.css';
+import healthcareImg from '../assets/assets/healthcare-practice-3tfo55K3.jpg';
 
 const ProcessSection = () => {
     const steps = [
@@ -27,9 +28,20 @@ const ProcessSection = () => {
 
     return (
         <>
-            <div className="process-banner" style={{
-                backgroundImage: "linear-gradient(to top, rgba(15, 62, 93, 0.4) 0%, rgba(15, 62, 93, 0.5) 100%), url('https://finreach.ultimatemarketing.com.au/assets/healthcare-practice-3tfo55K3.jpg')"
-            }}></div>
+            <div
+  className="process-banner"
+  style={{
+    backgroundImage: `
+      linear-gradient(
+        to top,
+        rgba(15, 62, 93, 0.4) 0%,
+        rgba(15, 62, 93, 0.5) 100%
+      ),
+      url(${healthcareImg})
+    `
+  }} 
+></div>
+
 
             <section className="process-section">
                 <div className="container">

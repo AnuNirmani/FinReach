@@ -3,6 +3,8 @@ import SEO from '../utils/SEO'
 import '../Dashboard/Dashboard.css'
 import Header from '../Dashboard/Header'
 import Footer from '../Dashboard/Footer'
+import aboutHero from '../assets/assets/about-hero-BEnMor4y.jpg';
+
 
 const About = () => {
   return (
@@ -29,9 +31,12 @@ const About = () => {
 
       {/* Hero Section */}
       <section
-        className="hero-section"
-        style={{ backgroundImage: "url('https://finreach.ultimatemarketing.com.au/assets/about-hero-BEnMor4y.jpg')" }}
-      >
+  className="hero-section"
+  style={{
+    backgroundImage: `url(${aboutHero})`,
+  }}
+>
+
         <div className="hero-overlay"></div>
         <div className="container hero-content">
           <div className="row align-items-center text-start">
@@ -147,7 +152,13 @@ const About = () => {
         <div className="container">
           <h2 className="bottom-cta-heading">If you're ready for clearer numbers and less stress</h2>
           <p className="bottom-cta-sub">Book a 30-minute, obligation-free consultation with the FinReach team.</p>
-          <a href="#booking-form" className="btn-bottom-dark">Book Your Consultation</a>
+          <button
+  type="button"
+  className="btn-dark-consult"
+  onClick={() => window.dispatchEvent(new Event('open-consultation-modal'))}
+>
+  Book Your Consultation
+</button>
         </div>
       </section>
 

@@ -2,6 +2,8 @@ import React from 'react';
 import SEO from '../utils/SEO.jsx';
 import Header from '../Dashboard/Header.jsx';
 import Footer from '../Dashboard/Footer.jsx';
+import assuranceHero from '../assets/assets/assurance-hero-Crxtpee-.jpg';
+
 
 const AssuranceFunding = React.memo(() => {
   return (
@@ -28,12 +30,12 @@ const AssuranceFunding = React.memo(() => {
       <main>
         {/* Hero Section */}
         <section
-          className="hero-section"
-          style={{
-            backgroundImage:
-              "url('https://finreach.ultimatemarketing.com.au/assets/assurance-hero-Crxtpee-.jpg')",
-          }}
-        >
+  className="hero-section"
+  style={{
+    backgroundImage: `url(${assuranceHero})`,
+  }}
+>
+
           <div className="hero-overlay"></div>
           <div className="container hero-content">
             <div className="row align-items-center text-start">
@@ -174,7 +176,7 @@ const AssuranceFunding = React.memo(() => {
                 <div className="approach-item">
                   <i className="bi bi-check-circle approach-icon"></i>
                   <p className="approach-text">
-                    25 years of assurance experience across SMEs, NFPs, government and regulated industries.
+                    25 years of assurance experience across small businesses, NFPs, government and regulated industries.
                   </p>
                 </div>
                 <div className="approach-item">
@@ -214,9 +216,14 @@ const AssuranceFunding = React.memo(() => {
             >
               Book your 30-minute, no-obligation consultation to find the right assurance approach for your organisation.
             </p>
-            <a href="#" className="btn-dark-consult">
-              Book Your Consultation
-            </a>
+            
+             <button
+  type="button"
+  className="btn-dark-consult"
+  onClick={() => window.dispatchEvent(new Event('open-consultation-modal'))}
+>
+  Book Your Consultation
+</button>
           </div>
         </section>
       </main>

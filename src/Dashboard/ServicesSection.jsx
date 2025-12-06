@@ -55,9 +55,7 @@ const ServicesSection = () => {
                     ))}
                 </div>
 
-                <div className="delivery-note-box text-center">
-                    <span className="note-strong">Note on delivery:</span> Bookkeeping & Accounting is delivered off-shore, under the direction, review and approval of a CPA in Australia. Assurance, Auditing & Fractional CFO are delivered in Australia by experienced, locally based professionals.
-                </div>
+              
             </div>
         </section>
     );
