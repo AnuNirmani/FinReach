@@ -25,7 +25,7 @@ const BlogArticle = () => {
         const fetchPost = async () => {
             try {
                 setLoading(true);
-                const res = await fetch(`https://admin.finreach.com.au/api/post-details/${id}`);
+                const res = await fetch(`http://localhost:8000/api/post-details/${id}`);
                 if (!res.ok) throw new Error(`HTTP ${res.status}`);
                 const data = await res.json();
                 setPost(data);
@@ -44,23 +44,25 @@ const BlogArticle = () => {
         <div className="blog-article-page">
             {post && (
                 <SEO 
-                    title={post.title}
-                    description={post.sub_topic || ''}
-                    keywords={(post.category_name || '') + ', FinReach Blog'}
+                    title={post.meta_title || post.title}
+                    description={post.meta_description || post.sub_topic || ''}
+                    keywords={post.sub_topic || ''}
                     canonical={`/blog/article/${post.post_id}`}
                     ogType="article"
+                    ogImage={post.image}
                     breadcrumb={[
                         { name: 'Home', url: '/' },
                         { name: 'Blog', url: '/blog' },
                         { name: post.title, url: `/blog/article/${post.post_id}` }
                     ]}
                     schema={{
-                        "@type": "Article",
-                        "headline": post.title,
-                        "datePublished": post.created_at,
-                        "dateModified": post.created_at,
-                        "articleSection": post.category_name,
-                        "keywords": post.category_name
+                        '@type': 'Article',
+                        '@id': `https://finreach.com.au/blog/article/${post.post_id}`,
+                        headline: post.title,
+                        datePublished: post.created_at,
+                        dateModified: post.created_at,
+                        articleSection: post.category_name,
+                        keywords: post.category_name
                     }}
                 />
             )}
@@ -103,9 +105,16 @@ const BlogArticle = () => {
                             <div dangerouslySetInnerHTML={{ __html: post.description }} />
                         </article>
 
-                        <div className="mt-4"><center>
-                            <Link to={getCategoryPath(post.category_name)} className="btn btn-outline-secondary">Back to {post.category_name || 'Blog'}</Link>
-                        </center></div>
+                        <div className="mt-4">
+                        <center>
+                            <Link
+                            to={getCategoryPath(post.category_name)}
+                            className="btn btn-outline-secondary"
+                            >
+                            Back to {post.category_name || 'Blog'}
+                            </Link>
+                        </center>
+                        </div>
                     </>
                 )}
             </div>

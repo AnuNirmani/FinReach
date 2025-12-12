@@ -161,10 +161,10 @@
 
 /* The small disclaimer text below the button */
 .hero-small-text {
-    font-size: 0.75rem; /* Very small */
+    font-size: 0.95rem; /* Very small */
     margin-top: 1rem;
     opacity: 0.9;
-    max-width: 400px;
+    max-width: 425px;
 }
 
 /* Responsiveness: Adjust font size on mobile */
@@ -319,7 +319,7 @@
 
 .section-subtitle {
     font-size: 1rem;
-    color: #6c757d;
+    color: #546379;
     max-width: 700px;
     margin: 0 auto 3.5rem auto; /* Centers text and adds space below */
     line-height: 1.6;
@@ -358,9 +358,10 @@
 }
 
 .audience-card-text {
-    font-size: 0.95rem;
-    color: #6c757d; /* Muted gray text */
+    font-size: 1rem;
+    color: #546379;
     line-height: 1.6;
+    margin: 0;
 }
 
 /* Bottom Text */
@@ -394,7 +395,7 @@
 
 .services-subtitle {
     font-size: 1rem;
-    color: #64748b; /* Slate gray */
+    color: #546379; /* Slate gray */
     max-width: 750px;
     margin: 0 auto 4rem auto;
     line-height: 1.6;
@@ -434,10 +435,10 @@
 }
 
 .service-card-text {
-    font-size: 0.9rem;
-    color: #64748b;
+    font-size: 1rem;
+    color: #546379;
     line-height: 1.6;
-    margin-bottom: 1.5rem;
+    margin: 0;
     flex-grow: 1; /* Pushes the button to the bottom */
 }
 
@@ -446,7 +447,7 @@
     display: inline-flex;
     align-items: center;
     font-size: 0.85rem;
-    font-weight: 500;
+    font-weight: 700;
     color: #1a1a1a;
     background-color: #ffffff;
     border: 1px solid #e2e8f0;
@@ -544,10 +545,10 @@
 
 /* The text next to the icon */
 .pain-text {
-    margin: 0;
-    font-size: 1rem;
-    color: #4a5568; /* Dark gray */
-    line-height: 1.6;
+font-size: 1rem;
+  color: #546379;
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* The concluding sentence at the bottom */
@@ -615,8 +616,8 @@
 }
 
 .benefit-text {
-    font-size: 0.9rem;
-    color: #64748b; /* Slate gray text */
+    font-size: 1rem;
+    color: #546379;
     line-height: 1.6;
     margin: 0;
 }
@@ -694,10 +695,10 @@
 }
 
 .process-card-text {
-    font-size: 0.9rem;
-    color: #64748b; /* Muted gray */
+    font-size: 1rem;
+    color: #546379;
     line-height: 1.6;
-    margin-bottom: 0;
+    margin: 0;
 }
 
 
@@ -964,10 +965,10 @@
 }
 
 .cat-desc {
-    font-size: 0.9rem;
-    color: #64748b; /* Slate gray */
-    line-height: 1.5;
-    margin-bottom: 0;
+font-size: 1rem;
+  color: #546379;
+  line-height: 1.6;
+  margin: 0;
 }
 
 
@@ -1574,7 +1575,7 @@
 
 .contact-page-subtitle {
     font-size: 1rem;
-    color: #64748b;
+    color: #546379;
     max-width: 700px;
     margin: 0 auto 3rem auto;
     text-align: center;
@@ -1708,10 +1709,10 @@
 
 /* Address text (Gray) */
 .contact-card-text {
-    color: #64748b;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin: 0;
+font-size: 1rem;
+  color: #546379;
+  line-height: 1.6;
+  margin: 0;
 }
 
 
@@ -1737,7 +1738,7 @@
 
 .about-subtext {
     font-size: 1.05rem;
-    color: #64748b; /* Slate gray */
+    color: #546379;; /* Slate gray */
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.6;
@@ -1770,10 +1771,10 @@
 }
 
 .structure-desc {
-    font-size: 0.95rem;
-    color: #64748b;
+    font-size: 1rem;
+    color: #546379;
     line-height: 1.6;
-    margin-bottom: 0;
+    margin: 0;
 }
 
 /* --- Section 3: Who We Serve (Gray Background) --- */
@@ -1811,9 +1812,10 @@
 }
 
 .serve-desc {
-    font-size: 0.9rem;
-    color: #64748b;
-    line-height: 1.5;
+    font-size: 1rem;
+    color: #546379;
+    line-height: 1.6;
+    margin: 0;
 }
 
 /* ================= ABOUT PAGE - VALUES & BOTTOM ================= */
@@ -1861,8 +1863,8 @@
 
 .value-content p {
     font-size: 1rem;
-    color: #64748b;
-    line-height: 1.5;
+    color: #546379;
+    line-height: 1.6;
     margin: 0;
 }
 
@@ -1969,8 +1971,8 @@
 }
 
 .challenge-text {
-    font-size: 0.95rem;
-    color: #64748b;
+    font-size: 1rem;
+    color: #546379;
     line-height: 1.6;
     margin: 0;
 }
@@ -1992,8 +1994,8 @@
     display: flex;
     align-items: center;
     margin-bottom: 1.25rem;
-    font-size: 0.9rem;
-    color: #475569;
+font-size: 1rem;
+  color: #546379;
 }
 
 .solution-check-icon {
@@ -2055,10 +2057,10 @@
 }
 
 .ideal-desc {
-    font-size: 0.9rem;
-    color: #64748b;
-    line-height: 1.5;
-    margin: 0;
+font-size: 1rem;
+  color: #546379;
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* --- Section 4: What You Gain (White BG) --- */
@@ -2088,10 +2090,10 @@
 }
 
 .gain-content p {
-    font-size: 0.9rem;
-    color: #64748b;
-    line-height: 1.5;
-    margin: 0;
+font-size: 1rem;
+  color: #546379;
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* --- Section 5: Bottom CTA (Big Lime) --- */
@@ -2160,8 +2162,8 @@
 }
 
 .headache-text {
-    font-size: 0.95rem;
-    color: #64748b;
+    font-size: 1rem;
+    color: #546379;
     line-height: 1.6;
     margin: 0;
 }
@@ -2208,10 +2210,10 @@
 }
 
 .assurance-card-text {
-    font-size: 0.9rem;
-    color: #64748b;
-    line-height: 1.6;
-    margin: 0;
+font-size: 1rem;
+  color: #546379;
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* --- Bottom Notification Banner --- */
@@ -2265,10 +2267,10 @@
 
 /* The Description Text */
 .approach-text {
-    font-size: 1rem;
-    color: #4b5563; /* Muted dark gray */
-    line-height: 1.6;
-    margin: 0;
+font-size: 1rem;
+  color: #546379;
+  line-height: 1.6;
+  margin: 0;
 }
 
 
@@ -2312,9 +2314,9 @@
 }
 
 .audit-card-text {
-    font-size: 0.9rem;
-    color: #64748b;
-    line-height: 1.5;
+    font-size: 1rem;
+    color: #546379;
+    line-height: 1.6;
     margin: 0;
 }
 
@@ -2343,10 +2345,10 @@
 }
 
 .audit-error-text {
-    font-size: 0.95rem;
-    color: #475569;
-    line-height: 1.5;
-    margin: 0;
+font-size: 1rem;
+  color: #546379;
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* --- Section 3: How We Run Audit (Gray BG) --- */
@@ -2371,8 +2373,8 @@
 }
 
 .audit-process-text {
-    font-size: 0.95rem;
-    color: #4b5563;
+font-size: 1rem;
+  color: #546379;
     line-height: 1.6;
 }
 
@@ -2422,8 +2424,8 @@
 
 /* Text Styling */
 .roadblock-text {
-    font-size: 0.95rem;
-    color: #4b5563; /* Dark gray text */
+    font-size: 1rem;
+    color: #546379;
     line-height: 1.6;
     margin: 0;
 }
@@ -2477,10 +2479,10 @@
 }
 
 .cfo-card-text {
-    font-size: 0.95rem;
-    color: #64748b; /* Slate gray */
-    line-height: 1.6;
-    margin: 0;
+font-size: 1rem;
+  color: #546379;
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* Bottom Notification Box (Reused style structure from Assurance page) */

@@ -197,7 +197,7 @@ const BookkeepingCashFlow = React.memo(() => {
                       icon: 'bi bi-check-circle',
                       title: 'Better Decisions',
                       desc:
-                        'Cleaner year-end, lower tax and audit fees, and better decision-making.',
+                        'Streamlined year-end, lower tax and audit fees, and better decision-making.',
                     },
                   ].map((gain, idx) => (
                     <div className="col-md-6" key={idx}>

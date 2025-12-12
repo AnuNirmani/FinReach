@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Dashboard.css';
-import logo from '../assets/sitelogo.webp';
+import logo from '../assets/assets/finreash-footer.png';
 
 const Footer = () => {
   return (

@@ -24,7 +24,7 @@ const FractionalCFOInsights = () => {
     const fetchFractional = async () => {
       try {
         setLoading(true);
-        const response = await fetch('https://admin.finreach.com.au/api/fractional');
+        const response = await fetch('http://localhost:8000/api/posts/category/59');
         
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);

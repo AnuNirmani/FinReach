@@ -11,9 +11,15 @@ const SEO = ({
   schema = null,
   breadcrumb = null
 }) => {
-  // Base URL
   const baseUrl = 'https://finreach.com.au';
   const fullCanonical = canonical.startsWith('http') ? canonical : `${baseUrl}${canonical}`;
+
+  // ✅ Make sure og:image is an absolute URL and not empty
+  const resolvedOgImage = ogImage && ogImage.startsWith('http')
+    ? ogImage
+    : ogImage
+      ? `${baseUrl}${ogImage}`
+      : null;
 
   // Default schema for organization
   const organizationSchema = {
@@ -42,7 +48,6 @@ const SEO = ({
     ]
   };
 
-  // Default website schema
   const websiteSchema = {
     "@type": "WebSite",
     "@id": `${baseUrl}/#website`,
@@ -53,7 +58,6 @@ const SEO = ({
     "inLanguage": "en-US"
   };
 
-  // Build breadcrumb schema
   const breadcrumbSchema = breadcrumb ? {
     "@type": "BreadcrumbList",
     "@id": `${fullCanonical}#breadcrumb`,
@@ -71,7 +75,6 @@ const SEO = ({
     ]
   };
 
-  // Build page schema
   const pageSchema = {
     "@type": "WebPage",
     "@id": fullCanonical,
@@ -88,22 +91,13 @@ const SEO = ({
     }]
   };
 
-  // Combine all schemas
   const schemaGraph = [
     pageSchema,
     breadcrumbSchema,
     websiteSchema,
-    organizationSchema
+    organizationSchema,
+    ...(schema ? (Array.isArray(schema) ? schema : [schema]) : [])
   ];
-
-  // Add custom schema if provided
-  if (schema) {
-    if (Array.isArray(schema)) {
-      schemaGraph.push(...schema);
-    } else {
-      schemaGraph.push(schema);
-    }
-  }
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -125,17 +119,26 @@ const SEO = ({
       <meta property="og:description" content={description} />
       <meta property="og:url" content={fullCanonical} />
       <meta property="og:site_name" content="FinReach" />
-      <meta property="og:image" content={ogImage} />
-      <meta property="og:image:width" content="2560" />
-      <meta property="og:image:height" content="1707" />
-      <meta property="og:image:type" content="image/jpeg" />
+
+      {resolvedOgImage && (
+        <>
+          <meta property="og:image" content={resolvedOgImage} />
+          <meta property="og:image:secure_url" content={resolvedOgImage} />
+          <meta property="og:image:width" content="200" />
+          <meta property="og:image:height" content="200" />
+          <meta property="og:image:type" content="image/jpeg" />
+        </>
+      )}
+
       <meta property="article:modified_time" content={new Date().toISOString()} />
 
       {/* Twitter Card Meta Tags */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={ogImage} />
+      {resolvedOgImage && (
+        <meta name="twitter:image" content={resolvedOgImage} />
+      )}
 
       {/* Additional SEO Meta Tags */}
       <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />

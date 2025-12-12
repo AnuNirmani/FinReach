@@ -25,10 +25,10 @@ const RecentArticles = () => {
 
     useEffect(() => {
         const endpoints = [
-            'https://admin.finreach.com.au/api/book-keeping',
-            'https://admin.finreach.com.au/api/assurance',
-            'https://admin.finreach.com.au/api/audit',
-            'https://admin.finreach.com.au/api/fractional'
+            'http://localhost:8000/api/posts/category/56',
+            'http://localhost:8000/api/posts/category/57',
+            'http://localhost:8000/api/posts/category/58',
+            'http://localhost:8000/api/posts/category/59'
         ];
 
         const fetchAll = async () => {

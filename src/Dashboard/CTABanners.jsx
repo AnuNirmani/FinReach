@@ -15,7 +15,7 @@ const CTABanners = () => {
 
             <section className="final-cta-section">
                 <div className="container">
-                    <h2 className="final-cta-title">Ready to take the stress out of your finances?</h2>
+                    <h2 className="final-cta-title">Committed to accuracy and simplicity for less worry</h2>
                     
                    
                     <button

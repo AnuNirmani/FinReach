@@ -102,8 +102,7 @@ const AuditReadiness = React.memo(() => {
                   <i className="bi bi-calendar-event audit-icon"></i>
                   <h3 className="audit-card-title">ACNC & ASIC deadlines</h3>
                   <p className="audit-card-text">
-                    Typically 6 months for ACNC and 4 months for ASIC
-                    submissions.
+                    ACNC and ORIC allow 6 months for submission, while ASIC requires 4 months.
                   </p>
                 </div>
               </div>
