@@ -1,71 +1,57 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 
 const Subscribe = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: ''
-    });
+  useEffect(() => {
+    const scriptSrc = 'https://link.finreach.com.au/js/form_embed.js';
+    const existing = document.querySelector(`script[src="${scriptSrc}"]`);
 
-    const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
-    };
+    if (!existing) {
+      const s = document.createElement('script');
+      s.src = scriptSrc;
+      s.async = true;
+      document.body.appendChild(s);
+    }
+  }, []);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Handle subscription logic here
-        console.log('Subscribe:', formData);
-        alert('Thank you for subscribing!');
-        setFormData({ name: '', email: '' });
-    };
+  return (
+    <section className="subscribe-section">
+      <div className="container">
+        <div className="subscribe-header">
+          <h2 className="subscribe-title">Subscribe to FinReach Insights</h2>
+          <p className="subscribe-subtitle">
+            Get the latest financial tips and insights delivered to your inbox.
+          </p>
+        </div>
 
-    return (
-        <section className="subscribe-section">
-            <div className="container">
-                <div className="subscribe-header">
-                    <h2 className="subscribe-title">Subscribe to FinReach Insights</h2>
-                    <p className="subscribe-subtitle">Get the latest financial tips and insights delivered to your inbox.</p>
-                </div>
+        <div className="subscribe-card">
+  <iframe
+    src="https://link.finreach.com.au/widget/form/mCNhp0ZNw378GMsQ7msD"
+    style={{
+      width: '100%',
+      height: '492px',
+      border: 'none',
+      borderRadius: '3px',
+      display: 'block',
+    }}
+    id="inline-mCNhp0ZNw378GMsQ7msD"
+    data-layout="{'id':'INLINE'}"
+    data-trigger-type="alwaysShow"
+    data-trigger-value=""
+    data-activation-type="alwaysActivated"
+    data-activation-value=""
+    data-deactivation-type="neverDeactivate"
+    data-deactivation-value=""
+    data-form-name="Subscribe Blog"
+    data-height="492"
+    data-layout-iframe-id="inline-mCNhp0ZNw378GMsQ7msD"
+    data-form-id="mCNhp0ZNw378GMsQ7msD"
+    title="Subscribe Blog"
+  />
+</div>
 
-                <div className="subscribe-outer-wrapper">
-                    <div className="subscribe-card">
-                        <form onSubmit={handleSubmit}>
-                            <div className="mb-1">
-                                <label htmlFor="subName" className="sub-label">Full Name</label>
-                                <input 
-                                    type="text" 
-                                    className="sub-input" 
-                                    id="subName"
-                                    name="name"
-                                    value={formData.name}
-                                    onChange={handleChange}
-                                    placeholder="Full Name"
-                                />
-                            </div>
-
-                            <div className="mb-1">
-                                <label htmlFor="subEmail" className="sub-label">Email *</label>
-                                <input 
-                                    type="email" 
-                                    className="sub-input" 
-                                    id="subEmail"
-                                    name="email"
-                                    value={formData.email}
-                                    onChange={handleChange}
-                                    placeholder="Email"
-                                    required
-                                />
-                            </div>
-
-                            <button type="submit" className="btn-subscribe">Subscribe now</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
+      </div>
+    </section>
+  );
 };
 
 export default Subscribe;

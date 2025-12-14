@@ -20,7 +20,7 @@ const Footer = () => {
             </div>
             
             <p className="footer-desc">
-              Financial confidence for businesses, not-for-profits and health organisations.
+              Financial confidence for Small & Medium Enterprises, not-for-profits and health organisations.
             </p>
 
             

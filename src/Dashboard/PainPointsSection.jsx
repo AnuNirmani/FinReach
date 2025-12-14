@@ -68,7 +68,7 @@ const PainPointsSection = () => {
                     </div>
 
                     <p className="familiar-footer-note text-center">
-                        We step in to Why Confidence? What are we trying to stay in here. 
+                       We step in to restore financial confidence, giving you clarity, control and a stronger foundation for growth.
                     </p>
                 </div>
             </section>

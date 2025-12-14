@@ -59,6 +59,11 @@ const Header = () => {
                   Home
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/about">
+                  About
+                </Link>
+              </li>
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
@@ -95,11 +100,7 @@ const Header = () => {
                   </li>
                 </ul>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/about">
-                  About
-                </Link>
-              </li>
+              
               <li className="nav-item">
                 <Link className="nav-link" to="/blog">
                   Blog

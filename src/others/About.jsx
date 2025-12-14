@@ -43,7 +43,7 @@ const About = () => {
             <div className="col-lg-6 col-md-12 mb-5 mb-lg-0">
               <h1 className="hero-title">About FinReach</h1>
               <p className="hero-subtitle text-white opacity-75">
-                FinReach exists to give growing businesses, not-for-profits and health organisations the financial clarity and confidence they need to thrive – without drowning in complexity, compliance and spreadsheets.
+                FinReach exists to give growing Small & Medium Enterprises  , not-for-profits and health organisations the financial clarity and confidence they need to thrive – without drowning in complexity, compliance and spreadsheets.
               </p>
             </div>
           </div>
@@ -55,7 +55,7 @@ const About = () => {
         <div className="container">
           <h2 className="about-heading">Our purpose</h2>
           <p className="about-subtext">
-            To simplify finance and strengthen organisations, by combining practical bookkeeping, tailored assurance, robust audits and strategic CFO-level guidance.
+            To simplify finance and strengthen organisations by combining practical bookkeeping & accounting, tailored assurance, robust audits and strategic CFO-level guidance.
           </p>
         </div>
       </section>
@@ -69,7 +69,7 @@ const About = () => {
               <div className="structure-card">
                 <h3 className="structure-title">Bookkeeping & Accounting</h3>
                 <p className="structure-desc">
-                  Delivered by our experienced off-shore team, under the direction, review and approval of a CPA based in Australia – giving you quality, affordability and consistency.
+                  Delivered by our experienced offshore team, giving you quality, affordability and consistency.
                 </p>
               </div>
             </div>

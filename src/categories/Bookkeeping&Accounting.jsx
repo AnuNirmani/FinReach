@@ -44,9 +44,9 @@ const BookkeepingCashFlow = React.memo(() => {
                   Bookkeeping & accounting that gives you back your time
                 </h1>
                 <p className="hero-subtitle text-white opacity-75">
-                  Your back-end accounting shouldn't be choking your growth. We
+                  Your back-end accounting shouldn't be holding back your growth. We
                   take care of the financial heavy lifting – from daily
-                  bookkeeping to management reporting – so you can take your business to the next level with no worry on the finances
+                  bookkeeping to management reporting – so you can take your business to the next level without worrying about your finances. 
                 </p>
               </div>
             </div>
@@ -82,7 +82,7 @@ const BookkeepingCashFlow = React.memo(() => {
               className="text-center mt-5 text-muted"
               style={{ maxWidth: 800, margin: '0 auto' }}
             >
-              Over time, messy books lead to stressful tax time, higher audit
+              Over time, messy books lead to a stressful tax time, higher audit
               fees, penalties and poor decisions based on unreliable numbers.
             </p>
           </div>
@@ -101,12 +101,12 @@ const BookkeepingCashFlow = React.memo(() => {
             <div className="row px-lg-5 justify-content-center">
               {[
                 'Day-to-day bookkeeping and general ledger',
-                'Accounts receivable and Accounts payable',
+                'Accounts Receivable and Accounts Payable',
                 'Payroll and superannuation processing',
                 'Bank and Account reconciliations',
                 'BAS and GST preparation support',
                 'Asset registers and basic fixed asset management',
-                'Monthly and Auarterly management reports, ready for your tax accountant or auditors',
+                'Monthly and Quarterly management reports, ready for your tax accountant or auditors',
               ].map((item, idx) => (
                 <div className="col-lg-4 col-md-6" key={idx}>
                   <div className="solution-list-item">
@@ -125,7 +125,7 @@ const BookkeepingCashFlow = React.memo(() => {
                 functions.
               </p>
               <p className="delivery-text mb-0">
-                 Ensuring quality, compliance and confidence in your numbers.
+                This ensures quality, compliance and complete confidence in your numbers.
               </p>
             </div>
           </div>
@@ -148,12 +148,12 @@ const BookkeepingCashFlow = React.memo(() => {
                 {
                   title: 'Medium-sized organisations',
                   desc:
-                    'And not-for-profit wanting either full back-office accounting or targeted support such as AP/AR or periodic reviews',
+                    'Including not-for-profits wanting either full back-office accounting or targeted support such as AP/AR or periodic reviews',
                 },
                 {
                   title: 'Health practices',
                   desc:
-                    'And clinics that want clean, timely numbers without hiring internal accounting staff',
+                    'Clinics that want clean, timely numbers without hiring internal accounting staff',
                 },
               ].map((card, idx) => (
                 <div className="col-md-4" key={idx}>
@@ -220,7 +220,7 @@ const BookkeepingCashFlow = React.memo(() => {
         <section className="bk-cta-section">
           <div className="container">
             <h2 className="bk-cta-title">
-              Tired of your back-end accounting waiting into your growth?
+              Tired of your back-end accounting getting in the way of your growth? 
             </h2>
             <p className="bk-cta-sub">
               Book a 30-minute, obligation-free consultation to see how our

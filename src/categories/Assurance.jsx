@@ -73,7 +73,7 @@ const AssuranceFunding = React.memo(() => {
                     <i className="bi bi-x-lg"></i>
                   </div>
                   <p className="headache-text">
-                    Confusion over whether you truly need a full audit or if a review or agreed-upon procedures would be enough.
+                    Confusion over whether you truly need a full audit or if a review or agreed-upon procedures would be sufficient.
                   </p>
                 </div>
               </div>
@@ -147,7 +147,7 @@ const AssuranceFunding = React.memo(() => {
                   <i className="bi bi-award assurance-icon"></i>
                   <h3 className="assurance-card-title">Compliance assurance</h3>
                   <p className="assurance-card-text">
-                    Focused assessments over particular regulations or contracts in regulated sectors.
+                    Focused assessments of particular regulations or contracts in regulated sectors.
                   </p>
                 </div>
               </div>
@@ -162,7 +162,7 @@ const AssuranceFunding = React.memo(() => {
               </div>
             </div>
             <div className="assurance-notice-box">
-              All assurance work is delivered from within Australia by experienced professionals.
+             All assurance work is delivered within Australia by experienced professionals.
             </div>
           </div>
         </section>
@@ -176,7 +176,7 @@ const AssuranceFunding = React.memo(() => {
                 <div className="approach-item">
                   <i className="bi bi-check-circle approach-icon"></i>
                   <p className="approach-text">
-                    25 years of assurance experience across small businesses, NFPs, government and regulated industries.
+                    25 years of assurance experience across small and medium enterprises, NFPs, government and regulated industries.
                   </p>
                 </div>
                 <div className="approach-item">

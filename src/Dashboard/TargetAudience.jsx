@@ -25,7 +25,7 @@ const TargetAudience = () => {
             <div className="container text-center">
                 <h2 className="section-title">Who FinReach is for</h2>
                 <p className="section-subtitle">
-                    FinReach is a Canberra-based financial services firm supporting organisations where the stakes are high and time is limited. We work best with:
+                    FinReach is a Canberra-based professional accounting services firm supporting organisations where the stakes are high and time is limited. We work best with:
                 </p>
 
                 <div className="row g-4">
@@ -43,7 +43,7 @@ const TargetAudience = () => {
                 </div>
 
                 <p className="section-footer-text">
-                    If that sounds like you, you don't have to wrestle with spreadsheets, deadlines and financial risk on your own.
+                    If that sounds like you, you don't have to Struggle with spreadsheets, deadlines and financial risk on your own.
                 </p>
             </div>
         </section>

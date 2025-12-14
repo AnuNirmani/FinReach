@@ -46,8 +46,8 @@ const AuditReadiness = React.memo(() => {
                 </h1>
                 <p className="hero-subtitle text-white opacity-75">
                   Audits are often stressful – but they don't have to be. We
-                  simplify the process, keep you compliant with ACNC and ASIC
-                  deadlines, and provide insights that actually help your
+                  simplify the process, keep you compliant with ACNC, ASIC and ORIC deadlines,
+                  and provide insights that actually help your
                   organisation improve, not just 'pass the test'.
                 </p>
               </div>
@@ -100,9 +100,9 @@ const AuditReadiness = React.memo(() => {
               <div className="col-md-5">
                 <div className="audit-card">
                   <i className="bi bi-calendar-event audit-icon"></i>
-                  <h3 className="audit-card-title">ACNC & ASIC deadlines</h3>
+                  <h3 className="audit-card-title">ACNC, ASIC & ORIC deadlines</h3>
                   <p className="audit-card-text">
-                    ACNC and ORIC allow 6 months for submission, while ASIC requires 4 months.
+                    ACNC, ASIC & ORIC allow 6 months for submission, while ASIC requires 4 months.
                   </p>
                 </div>
               </div>

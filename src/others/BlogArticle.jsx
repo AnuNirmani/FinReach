@@ -43,85 +43,86 @@ const BlogArticle = () => {
     return (
         <div className="blog-article-page">
             {post && (
-                <SEO 
-                    title={post.meta_title || post.title}
-                    description={post.meta_description || post.sub_topic || ''}
-                    keywords={post.sub_topic || ''}
-                    canonical={`/blog/article/${post.post_id}`}
-                    ogType="article"
-                    ogImage={post.image}
-                    breadcrumb={[
-                        { name: 'Home', url: '/' },
-                        { name: 'Blog', url: '/blog' },
-                        { name: post.title, url: `/blog/article/${post.post_id}` }
-                    ]}
-                    schema={{
-                        '@type': 'Article',
-                        '@id': `https://finreach.com.au/blog/article/${post.post_id}`,
-                        headline: post.title,
-                        datePublished: post.created_at,
-                        dateModified: post.created_at,
-                        articleSection: post.category_name,
-                        keywords: post.category_name
-                    }}
-                />
-            )}
-            <Header />
+        <SEO
+          title={post.meta_title || post.title}
+          description={post.meta_description || post.sub_topic || ''}
+          keywords={post.sub_topic || ''}
+          canonical={`/blog/article/${post.post_id}`}
+          ogType="article"
+          ogImage={post.image}
+          breadcrumb={[
+            { name: 'Home', url: '/' },
+            { name: 'Blog', url: '/blog' },
+            { name: post.title, url: `/blog/article/${post.post_id}` }
+          ]}
+          schema={{
+            '@type': 'Article',
+            '@id': `https://finreach.com.au/blog/article/${post.post_id}`,
+            headline: post.title,
+            datePublished: post.created_at,
+            dateModified: post.created_at,
+            articleSection: post.category_name,
+            keywords: post.category_name
+          }}
+        />
+      )}
 
-            {/* Blog Post */}
-            <div className="lit-article-wrapper">
-                {loading && (
-                    <div className="text-center py-5">
-                        <div className="spinner-border text-primary" role="status">
-                            <span className="visually-hidden">Loading...</span>
-                        </div>
-                    </div>
-                )}
+      <Header />
 
-                {error && (
-                    <div className="alert alert-danger" role="alert">
-                        Error loading post: {error}
-                    </div>
-                )}
-
-                {post && (
-                    <>
-                        <header className="lit-header">
-                            <span className="lit-category">{post.category_name}</span>
-                            <h1 className="lit-title">{post.title}</h1>
-                            {post.sub_topic && (
-                                <p className="lit-subtitle">{post.sub_topic}</p>
-                            )}
-                            <div className="lit-meta">
-                                <span>{new Date(post.created_at).toLocaleDateString()}</span>
-                            </div>
-                        </header>
-
-                        {post.image && (
-                            <img src={post.image} alt={post.title} className="lit-hero-image" />
-                        )}
-
-                        <article className="lit-body">
-                            <div dangerouslySetInnerHTML={{ __html: post.description }} />
-                        </article>
-
-                        <div className="mt-4">
-                        <center>
-                            <Link
-                            to={getCategoryPath(post.category_name)}
-                            className="btn btn-outline-secondary"
-                            >
-                            Back to {post.category_name || 'Blog'}
-                            </Link>
-                        </center>
-                        </div>
-                    </>
-                )}
+      {/* Blog Post */}
+      <div className="lit-article-wrapper">
+        {loading && (
+          <div className="text-center py-5">
+            <div className="spinner-border text-primary" role="status">
+              <span className="visually-hidden">Loading...</span>
             </div>
+          </div>
+        )}
 
-            <Footer />
-        </div>
-    );
+        {error && (
+          <div className="alert alert-danger" role="alert">
+            Error loading post: {error}
+          </div>
+        )}
+
+        {post && (
+          <>
+            <header className="lit-header">
+              <span className="lit-category">{post.category_name}</span>
+              <h1 className="lit-title">{post.title}</h1>
+              {post.sub_topic && (
+                <p className="lit-subtitle">{post.sub_topic}</p>
+              )}
+              <div className="lit-meta">
+                <span>{new Date(post.created_at).toLocaleDateString()}</span>
+              </div>
+            </header>
+
+            {post.image && (
+              <img src={post.image} alt={post.title} className="lit-hero-image" />
+            )}
+
+            <article className="lit-body">
+              <div dangerouslySetInnerHTML={{ __html: post.description }} />
+            </article>
+
+            <div className="mt-4">
+              <center>
+                <Link
+                  to={getCategoryPath(post.category_name)}
+                  className="btn btn-outline-secondary"
+                >
+                  Back to {post.category_name || 'Blog'}
+                </Link>
+              </center>
+            </div>
+          </>
+        )}
+      </div>
+
+      <Footer />
+    </div>
+  );
 };
 
 export default BlogArticle;

@@ -1,6 +1,10 @@
 import './App.css'
 import { lazy, Suspense, useEffect } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import TermsAndConditions from './pages/TermsAndConditions';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+
+
 
 // Lazy load all page components
 const Dashboard = lazy(() => import('./Dashboard/Dashboard'))
@@ -59,6 +63,8 @@ function App() {
           <Route path="/blog/assurance-funding" element={<BlogAssuranceFunding />} />
           <Route path="/blog/audit-readiness" element={<BlogAuditReadiness />} />
           <Route path="/blog/fractional-cfo-insights" element={<BlogFractionalCFOInsights />} />
+          <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

@@ -7,25 +7,29 @@ const ServicesSection = () => {
         {
             icon: 'bi-file-earmark-check',
             title: 'Bookkeeping & Accounting',
-            description: 'Professional-grade accounting at a price small business can sustain. Your work is completed by an off-shore team with 25 years of expertise, under Australian CPA oversight.',
+            description:
+                'Professional-grade accounting at a price small business can sustain. Your work is completed by an offshore team with 25 years of expertise.',
             link: '/bookkeeping-accounting'
         },
         {
             icon: 'bi-shield-check',
             title: 'Assurance',
-            description: 'Bespoke assurance engagements for not-for-profits and regulated organisations – so you\'re not overspending on a full audit when a targeted review will do.',
+            description:
+                'Bespoke assurance engagements for not-for-profits and regulated organisations – so you\'re not overspending on a full audit when a targeted review will do.',
             link: '/assurance'
         },
         {
             icon: 'bi-check-circle',
             title: 'Auditing',
-            description: 'Risk-based audits by experienced professionals who understand NFP, government and for-profit environments. Compliant, on time, with real insight.',
+            description:
+                'Risk-based audits by experienced professionals who understand NFP, government and for-profit environments. Compliant, on time, with real insight.',
             link: '/auditing'
         },
         {
             icon: 'bi-graph-up-arrow',
             title: 'Fractional CFO',
-            description: 'Executive-level finance leadership without the full-time salary. Strategic financial partnership for confident, data-driven growth.',
+            description:
+                'Executive-level finance leadership without the full-time salary. Strategic financial partnership for confident, data-driven growth.',
             link: '/fractional-cfo'
         }
     ];
@@ -33,9 +37,12 @@ const ServicesSection = () => {
     return (
         <section className="services-section">
             <div className="container text-center">
-                <h2 className="services-title">End-to-end financial support, tailored to your stage of growth</h2>
+                <h2 className="services-title">
+                    End-to-end financial support, tailored to your stage of growth
+                </h2>
+
                 <p className="services-subtitle">
-                    We combine practical bookkeeping, smart use of off-shore delivery, and 25+ years of Australian assurance and audit experience to give you a complete financial backbone.
+                    We combine practical bookkeeping and accounting, smart use of offshore delivery, and 25+ years of Australian assurance and audit experience to give you a complete financial backbone.
                 </p>
 
                 <div className="row g-4 text-start">
@@ -43,10 +50,15 @@ const ServicesSection = () => {
                         <div key={index} className="col-lg-3 col-md-6">
                             <div className="service-card">
                                 <i className={`bi ${service.icon} service-icon`}></i>
-                                <h3 className="service-card-title">{service.title}</h3>
+
+                                <h3 className="service-card-title">
+                                    {service.title}
+                                </h3>
+
                                 <p className="service-card-text">
                                     {service.description}
                                 </p>
+
                                 <Link to={service.link} className="btn-learn-more">
                                     Learn more <i className="bi bi-arrow-right-short"></i>
                                 </Link>
@@ -54,8 +66,6 @@ const ServicesSection = () => {
                         </div>
                     ))}
                 </div>
-
-              
             </div>
         </section>
     );

@@ -10,7 +10,7 @@ const WhyChooseSection = () => {
             text: "Right-sized assurance and audits – we help you choose the most cost-effective level of assurance that still meets your stakeholders' expectations."
         },
         {
-            text: 'Budget-friendly bookkeeping & accounting through our off-shore delivery model.'
+            text: 'Budget-friendly bookkeeping & accounting through our offshore delivery model.'
         },
         {
             text: 'Strategic fractional CFO support that gives you a financial compass, robust internal controls and forward-looking cash and scenario planning.'

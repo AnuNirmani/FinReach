@@ -8,7 +8,7 @@ const BlogHero = () => {
                     <div className="col-lg-8">
                         <h1 className="blog-hero-title">FinReach Insights</h1>
                         <p className="blog-hero-subtitle">
-                            Our blog turns complex financial, assurance and audit topics into straightforward guidance for business owners, boards and managers.
+                            Our blog turns complex accounting, assurance and audit topics into straightforward guidance for business owners, boards and managers.
                         </p>
                     </div>
                 </div>
