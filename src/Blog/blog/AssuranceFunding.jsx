@@ -24,7 +24,7 @@ const AssuranceFunding = () => {
   const fetchAssurance = async () => {
     try {
       setLoading(true);
-       const response = await fetch('http://localhost:8000/api/posts/category/57');
+       const response = await fetch('http://localhost:8001/api/posts/category/57');
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);

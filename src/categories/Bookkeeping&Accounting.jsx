@@ -1,31 +1,36 @@
 import React from 'react';
-import SEO from '../utils/SEO.jsx';
+import { Helmet } from 'react-helmet-async';
+import { useMeta } from '../utils/useMeta.js';
 import Header from '../Dashboard/Header.jsx';
 import Footer from '../Dashboard/Footer.jsx';
 import bookkeepingHero from '../assets/assets/bookkeeping-hero-zWmJX4q8.jpg';
 
 
 const BookkeepingCashFlow = React.memo(() => {
+  const { meta } = useMeta(5);
+
   return (
     <>
-      <SEO 
-        title="Bookkeeping & Cash Flow Management | FinReach Australia"
-        description="Professional bookkeeping and accounting services that give you back your time. From daily bookkeeping to management reporting, payroll, BAS preparation, and cash flow management for Australian businesses."
-        keywords="Bookkeeping Services, Cash Flow Management, Accounts Payable, Accounts Receivable, Payroll Processing, BAS Preparation, Management Reporting, Australian Bookkeeping"
-        canonical="/categories/bookkeeping-cash-flow"
-        breadcrumb={[
-          { name: 'Home', url: '/' },
-          { name: 'Services', url: '/blog' },
-          { name: 'Bookkeeping & Cash Flow', url: '/categories/bookkeeping-cash-flow' }
-        ]}
-        schema={{
-          "@type": "Service",
-          "serviceType": "Bookkeeping & Accounting Services",
-          "provider": { "@id": "https://finreach.com.au/#organization" },
-          "areaServed": "Australia",
-          "description": "Professional bookkeeping and cash flow management services for small to medium businesses"
-        }}
-      />
+      {meta && (
+        <Helmet>
+          {meta.meta_title && <title>{meta.meta_title}</title>}
+          {meta.meta_description && (
+            <meta name="description" content={meta.meta_description} />
+          )}
+          {meta.meta_keywords && (
+            <meta name="keywords" content={meta.meta_keywords} />
+          )}
+
+          {/* Open Graph */}
+          {meta.og_title && <meta property="og:title" content={meta.og_title} />}
+          {meta.og_description && (
+            <meta property="og:description" content={meta.og_description} />
+          )}
+          {meta.og_image && <meta property="og:image" content={meta.og_image} />}
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content={window.location.href} />
+        </Helmet>
+      )}
       <Header />
       <main>
         {/* Hero Section */}

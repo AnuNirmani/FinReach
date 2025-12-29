@@ -1,5 +1,6 @@
 import React from 'react';
-import SEO from '../utils/SEO.jsx';
+import { Helmet } from 'react-helmet-async';
+import { useMeta } from '../utils/useMeta.js';
 import Header from '../Dashboard/Header.jsx';
 import Footer from '../Dashboard/Footer.jsx';
 import '../Dashboard/Dashboard.css';
@@ -7,26 +8,30 @@ import auditHero from '../assets/assets/audit-hero-Bk5pu4Jp.jpg';
 
 
 const AuditReadiness = React.memo(() => {
+  const { meta } = useMeta(6);
+
   return (
     <>
-      <SEO 
-        title="Audit Readiness & Compliance Services | FinReach Australia"
-        description="Stress-free audit services to keep you compliant with ACNC and ASIC deadlines. Expert financial statement audits, internal controls review, and continuous audit readiness support for Australian organizations."
-        keywords="Audit Services, Audit Readiness, ACNC Compliance, ASIC Compliance, Financial Statement Audit, Internal Controls, NFP Audit, Compliance Audit Australia"
-        canonical="/categories/audit-readiness"
-        breadcrumb={[
-          { name: 'Home', url: '/' },
-          { name: 'Services', url: '/blog' },
-          { name: 'Audit Readiness', url: '/categories/audit-readiness' }
-        ]}
-        schema={{
-          "@type": "Service",
-          "serviceType": "Audit Readiness & Compliance Services",
-          "provider": { "@id": "https://finreach.com.au/#organization" },
-          "areaServed": "Australia",
-          "description": "Professional audit services ensuring ACNC and ASIC compliance with continuous support"
-        }}
-      />
+      {meta && (
+        <Helmet>
+          {meta.meta_title && <title>{meta.meta_title}</title>}
+          {meta.meta_description && (
+            <meta name="description" content={meta.meta_description} />
+          )}
+          {meta.meta_keywords && (
+            <meta name="keywords" content={meta.meta_keywords} />
+          )}
+
+          {/* Open Graph */}
+          {meta.og_title && <meta property="og:title" content={meta.og_title} />}
+          {meta.og_description && (
+            <meta property="og:description" content={meta.og_description} />
+          )}
+          {meta.og_image && <meta property="og:image" content={meta.og_image} />}
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content={window.location.href} />
+        </Helmet>
+      )}
       <Header />
       <main>
         {/* Hero Section */}

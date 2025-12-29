@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react';
-import SEO from '../utils/SEO';
+import { Helmet } from 'react-helmet-async';
+import { useMeta } from '../utils/useMeta';
 import '../Dashboard/Dashboard.css';
 import Header from '../Dashboard/Header';
 import Footer from '../Dashboard/Footer';
 
 const Contact = () => {
+  const { meta } = useMeta(4);
+
   useEffect(() => {
     const scriptSrc = 'https://link.finreach.com.au/js/form_embed.js';
     const existingScript = document.querySelector(`script[src="${scriptSrc}"]`);
@@ -19,33 +22,26 @@ const Contact = () => {
 
   return (
     <>
-      <SEO
-        title="Contact FinReach | Book Your Free Consultation Today"
-        description="Get in touch with FinReach for professional bookkeeping, accounting, audit, and CFO services. Book a 30-minute obligation-free consultation. Email: info@finreach.com.au | Phone: (02) 6105 9300 | Belconnen, ACT, Australia"
-        keywords="Contact FinReach, Book Consultation, Accounting Services Australia, Bookkeeping Contact, CFO Services, Audit Consultation, Belconnen Accountant"
-        canonical="/contact"
-        breadcrumb={[
-          { name: 'Home', url: '/' },
-          { name: 'Contact', url: '/contact' },
-        ]}
-        schema={{
-          '@type': 'ContactPage',
-          mainEntity: {
-            '@type': 'Organization',
-            name: 'FinReach',
-            email: 'info@finreach.com.au',
-            telephone: '+61-2-6105-9300',
-            address: {
-              '@type': 'PostalAddress',
-              streetAddress: 'Level 1, 11-17 Swanson Court',
-              addressLocality: 'Belconnen',
-              addressRegion: 'ACT',
-              postalCode: '2617',
-              addressCountry: 'AU',
-            },
-          },
-        }}
-      />
+      {meta && (
+        <Helmet>
+          {meta.meta_title && <title>{meta.meta_title}</title>}
+          {meta.meta_description && (
+            <meta name="description" content={meta.meta_description} />
+          )}
+          {meta.meta_keywords && (
+            <meta name="keywords" content={meta.meta_keywords} />
+          )}
+
+          {/* Open Graph */}
+          {meta.og_title && <meta property="og:title" content={meta.og_title} />}
+          {meta.og_description && (
+            <meta property="og:description" content={meta.og_description} />
+          )}
+          {meta.og_image && <meta property="og:image" content={meta.og_image} />}
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content={window.location.href} />
+        </Helmet>
+      )}
 
       <Header />
 

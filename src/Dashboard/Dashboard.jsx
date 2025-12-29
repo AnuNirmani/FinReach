@@ -1,5 +1,6 @@
 import React from 'react';
-import SEO from '../utils/SEO';
+import { Helmet } from 'react-helmet-async';
+import { useMeta } from '../utils/useMeta';
 import Header from './Header';
 import HeroWithForm from './HeroWithForm';
 import BookingFormSection from './BookingFormSection';
@@ -13,25 +14,30 @@ import Footer from './Footer';
 import './Dashboard.css';
 
 const Dashboard = React.memo(() => {
+    const { meta } = useMeta(1);
+
     return (
         <div className="finreach-dashboard">
-            <SEO 
-                title="FinReach Australia | Assurance and Accounting Services"
-                description="Finreach Pty Limited is a trusted Australia-based firm specializing in professional bookkeeping, accounting, auditing, assurance, and outsourced CFO services. We help small to medium businesses streamline financial operations, ensure compliance, and make data-driven decisions with confidence."
-                keywords="FinReach, Bookkeeping, Accounting, Audit, Assurance, CFO, Australia, Financial Services, SME Accounting, Business Finance"
-                canonical="/"
-                ogImage="https://finreach.com.au/wp-content/uploads/2024/07/22-scaled.jpg"
-                breadcrumb={[
-                    { name: 'Home', url: '/' }
-                ]}
-                schema={{
-                    "@type": "ProfessionalService",
-                    "name": "FinReach",
-                    "description": "Professional bookkeeping, accounting, auditing, assurance, and outsourced CFO services",
-                    "priceRange": "$$",
-                    "areaServed": "Australia"
-                }}
-            />
+            {meta && (
+                <Helmet>
+                    {meta.meta_title && <title>{meta.meta_title}</title>}
+                    {meta.meta_description && (
+                        <meta name="description" content={meta.meta_description} />
+                    )}
+                    {meta.meta_keywords && (
+                        <meta name="keywords" content={meta.meta_keywords} />
+                    )}
+
+                    {/* Open Graph */}
+                    {meta.og_title && <meta property="og:title" content={meta.og_title} />}
+                    {meta.og_description && (
+                        <meta property="og:description" content={meta.og_description} />
+                    )}
+                    {meta.og_image && <meta property="og:image" content={meta.og_image} />}
+                    <meta property="og:type" content="website" />
+                    <meta property="og:url" content={window.location.href} />
+                </Helmet>
+            )}
             <Header />
             <main>
                 <HeroWithForm />

@@ -24,7 +24,7 @@ const AuditReadiness = () => {
     const fetchAudit = async () => {
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:8000/api/posts/category/58');
+        const response = await fetch('http://localhost:8001/api/posts/category/58');
         
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);

@@ -1,31 +1,36 @@
 import React from 'react';
-import SEO from '../utils/SEO.jsx';
+import { Helmet } from 'react-helmet-async';
+import { useMeta } from '../utils/useMeta.js';
 import Header from '../Dashboard/Header.jsx';
 import Footer from '../Dashboard/Footer.jsx';
 import assuranceHero from '../assets/assets/assurance-hero-Crxtpee-.jpg';
 
 
 const AssuranceFunding = React.memo(() => {
+  const { meta } = useMeta(7);
+
   return (
     <>
-      <SEO 
-        title="Assurance & Funding Services | FinReach Australia"
-        description="Professional assurance services that protect your funding and reputation. Expert reviews, audits, agreed-upon procedures, and internal control assessments to keep you funding-ready all year round."
-        keywords="Assurance Services, Funding Assurance, Financial Reviews, Agreed-Upon Procedures, Internal Controls, Grant Assurance, NFP Assurance, ACNC Compliance"
-        canonical="/categories/assurance-funding"
-        breadcrumb={[
-          { name: 'Home', url: '/' },
-          { name: 'Services', url: '/blog' },
-          { name: 'Assurance & Funding', url: '/categories/assurance-funding' }
-        ]}
-        schema={{
-          "@type": "Service",
-          "serviceType": "Assurance & Funding Services",
-          "provider": { "@id": "https://finreach.com.au/#organization" },
-          "areaServed": "Australia",
-          "description": "Professional assurance services including reviews, audits, and internal control assessments"
-        }}
-      />
+      {meta && (
+        <Helmet>
+          {meta.meta_title && <title>{meta.meta_title}</title>}
+          {meta.meta_description && (
+            <meta name="description" content={meta.meta_description} />
+          )}
+          {meta.meta_keywords && (
+            <meta name="keywords" content={meta.meta_keywords} />
+          )}
+
+          {/* Open Graph */}
+          {meta.og_title && <meta property="og:title" content={meta.og_title} />}
+          {meta.og_description && (
+            <meta property="og:description" content={meta.og_description} />
+          )}
+          {meta.og_image && <meta property="og:image" content={meta.og_image} />}
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content={window.location.href} />
+        </Helmet>
+      )}
       <Header />
       <main>
         {/* Hero Section */}

@@ -1,5 +1,6 @@
 import React from 'react';
-import SEO from '../utils/SEO';
+import { Helmet } from 'react-helmet-async';
+import { useMeta } from '../utils/useMeta';
 import Header from '../Dashboard/Header';
 import Footer from '../Dashboard/Footer';
 import BlogHero from './BlogHero';
@@ -10,24 +11,30 @@ import Subscribe from './Subscribe';
 import '../Dashboard/Dashboard.css';
 
 const Blog = React.memo(() => {
+    const { meta } = useMeta(3);
+
     return (
         <div className="blog-page">
-            <SEO 
-                title="Blog | FinReach Australia - Financial Insights & Expert Tips"
-                description="Read the latest articles, insights, and tips on finance, bookkeeping, audit readiness, CFO strategies, and more from FinReach experts. Stay informed with practical financial advice for Australian businesses."
-                keywords="FinReach Blog, Finance Articles, Bookkeeping Tips, Audit Readiness, Assurance Insights, CFO Strategies, Financial Management, Business Finance Australia"
-                canonical="/blog"
-                ogType="blog"
-                breadcrumb={[
-                    { name: 'Home', url: '/' },
-                    { name: 'Blog', url: '/blog' }
-                ]}
-                schema={{
-                    "@type": "Blog",
-                    "name": "FinReach Blog",
-                    "description": "Financial insights and expert tips for Australian businesses"
-                }}
-            />
+            {meta && (
+                <Helmet>
+                    {meta.meta_title && <title>{meta.meta_title}</title>}
+                    {meta.meta_description && (
+                        <meta name="description" content={meta.meta_description} />
+                    )}
+                    {meta.meta_keywords && (
+                        <meta name="keywords" content={meta.meta_keywords} />
+                    )}
+
+                    {/* Open Graph */}
+                    {meta.og_title && <meta property="og:title" content={meta.og_title} />}
+                    {meta.og_description && (
+                        <meta property="og:description" content={meta.og_description} />
+                    )}
+                    {meta.og_image && <meta property="og:image" content={meta.og_image} />}
+                    <meta property="og:type" content="website" />
+                    <meta property="og:url" content={window.location.href} />
+                </Helmet>
+            )}
             <Header />
             <BlogHero />
             <BlogCategories />

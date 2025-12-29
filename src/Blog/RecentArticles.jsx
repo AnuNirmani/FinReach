@@ -25,10 +25,10 @@ const RecentArticles = () => {
 
     useEffect(() => {
         const endpoints = [
-            'http://localhost:8000/api/posts/category/56',
-            'http://localhost:8000/api/posts/category/57',
-            'http://localhost:8000/api/posts/category/58',
-            'http://localhost:8000/api/posts/category/59'
+            'http://localhost:8001/api/posts/category/56',
+            'http://localhost:8001/api/posts/category/57',
+            'http://localhost:8001/api/posts/category/58',
+            'http://localhost:8001/api/posts/category/59'
         ];
 
         const fetchAll = async () => {

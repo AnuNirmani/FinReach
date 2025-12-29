@@ -1,5 +1,6 @@
 import React from 'react'
-import SEO from '../utils/SEO'
+import { Helmet } from 'react-helmet-async';
+import { useMeta } from '../utils/useMeta';
 import '../Dashboard/Dashboard.css'
 import Header from '../Dashboard/Header'
 import Footer from '../Dashboard/Footer'
@@ -7,26 +8,30 @@ import aboutHero from '../assets/assets/about-hero-BEnMor4y.jpg';
 
 
 const About = () => {
+  const { meta } = useMeta(2);
+
   return (
     <>
-      <SEO 
-        title="About FinReach | Trusted Australian Accounting & Assurance Firm"
-        description="Learn about FinReach - a trusted Australia-based firm providing professional bookkeeping, accounting, auditing, assurance, and CFO services to growing businesses, not-for-profits, and health organizations across Australia."
-        keywords="About FinReach, Australian Accounting Firm, Professional Bookkeeping, Audit Services, CFO Services, Not-for-profit Accounting, Healthcare Finance"
-        canonical="/about"
-        breadcrumb={[
-          { name: 'Home', url: '/' },
-          { name: 'About', url: '/about' }
-        ]}
-        schema={{
-          "@type": "AboutPage",
-          "mainEntity": {
-            "@type": "Organization",
-            "name": "FinReach",
-            "description": "Trusted Australian firm specializing in bookkeeping, accounting, auditing, and CFO services"
-          }
-        }}
-      />
+      {meta && (
+        <Helmet>
+          {meta.meta_title && <title>{meta.meta_title}</title>}
+          {meta.meta_description && (
+            <meta name="description" content={meta.meta_description} />
+          )}
+          {meta.meta_keywords && (
+            <meta name="keywords" content={meta.meta_keywords} />
+          )}
+
+          {/* Open Graph */}
+          {meta.og_title && <meta property="og:title" content={meta.og_title} />}
+          {meta.og_description && (
+            <meta property="og:description" content={meta.og_description} />
+          )}
+          {meta.og_image && <meta property="og:image" content={meta.og_image} />}
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content={window.location.href} />
+        </Helmet>
+      )}
       <Header />
 
       {/* Hero Section */}
