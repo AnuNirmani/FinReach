@@ -16,16 +16,6 @@ A modern, responsive financial services website built with React and Vite. FinRe
   - Audit Readiness
   - Fractional CFO Insights
 
-## 🛠️ Tech Stack
-
-- **Frontend Framework**: React 19.2.0
-- **Build Tool**: Vite with Rolldown
-- **Routing**: React Router DOM 7.9.6
-- **SEO**: React Helmet Async 2.0.5
-- **Styling**: Bootstrap (CSS)
-- **Linting**: ESLint 9.39.1
-- **Node Version**: 18+
-
 ## 📦 Installation
 
 1. **Clone the repository**
@@ -87,22 +77,6 @@ npm run lint
 - **index.html**: HTML entry point
 - **package.json**: Project dependencies and scripts
 
-## 🔌 API Integration
-
-The application connects to a backend API (currently configured for `http://localhost:8000`) for:
-
-- **Articles API**: `/api/assurance`, `/api/auditing`, etc.
-- Dynamic content loading for blog posts and articles
-
-### Example API Usage
-
-```javascript
-const response = await fetch('http://localhost:8000/api/assurance');
-const data = await response.json();
-```
-
-**Note**: Update the API endpoints in component files for production deployment.
-
 ## 📱 Key Components
 
 ### Dashboard
@@ -125,20 +99,6 @@ const data = await response.json();
 ### Utilities
 - **SEO.jsx**: Meta tag management for better search engine visibility
 
-## 🌐 Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
-## 📚 Learning Resources
-
-- [React Documentation](https://react.dev)
-- [Vite Guide](https://vitejs.dev)
-- [React Router Documentation](https://reactrouter.com)
-- [React Compiler Guide](https://react.dev/learn/react-compiler)
-
 ## 🔧 Development Tips
 
 1. **Hot Module Replacement**: Changes are instantly reflected without page reload
@@ -146,13 +106,14 @@ const data = await response.json();
 3. **Lazy Loading**: Pages are code-split for better initial load performance
 4. **SEO**: Use the SEO utility component for meta tag management on each page
 
+
 ## 📄 License
 
-This project is proprietary and confidential.
+This project is licensed under the [MIT License](LICENSE).
 
 ## 👥 Contributors
 
 - FinReach Development Team
 
 **Last Updated**: December 2025
-**Version**: 0.0.1
+**Version**: 1.0.0
