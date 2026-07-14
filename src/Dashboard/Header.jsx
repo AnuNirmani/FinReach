@@ -30,13 +30,13 @@ const Header = () => {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light fixed-top shadow-sm">
-        <div className="container">
-          <Link className="navbar-brand" to="/">
+      <nav className="navbar navbar-expand-xl navbar-light fixed-top shadow-sm finreach-navbar">
+        <div className="container finreach-navbar-inner">
+          <Link className="navbar-brand" to="/" aria-label="FinReach Home">
             <img
               src={logo}
               alt="FinReach Logo"
-              style={{ height: '50px', width: 'auto' }}
+              className="finreach-navbar-logo"
             />
           </Link>
 
@@ -53,17 +53,7 @@ const Header = () => {
           </button>
 
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/">
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/about">
-                  About
-                </Link>
-              </li>
+            <ul className="navbar-nav mx-auto mb-2 mb-xl-0 finreach-nav-list">
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
@@ -72,9 +62,19 @@ const Header = () => {
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Services
+                  Our Services
                 </a>
                 <ul className="dropdown-menu">
+                  <li>
+                    <Link className="dropdown-item" to="/auditing">
+                      Auditing
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="/assurance">
+                      Assurance
+                    </Link>
+                  </li>
                   <li>
                     <Link
                       className="dropdown-item"
@@ -84,36 +84,74 @@ const Header = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="/assurance">
-                      Assurance
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" to="/auditing">
-                      Auditing
-                    </Link>
-                  </li>
-                  <li>
                     <Link className="dropdown-item" to="/fractional-cfo">
                       Fractional CFO
                     </Link>
                   </li>
                 </ul>
               </li>
-              
-              <li className="nav-item">
-                <Link className="nav-link" to="/blog">
-                  Blog
-                </Link>
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Who We Work With
+                </a>
+                <ul className="dropdown-menu">
+                  <li>
+                    <Link className="dropdown-item" to="/about">
+                      Not-for-Profit
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="/about">
+                      Growth-Stage SME
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="/about">
+                      Partner With Us
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  About Us
+                </a>
+                <ul className="dropdown-menu">
+                  <li>
+                    <Link className="dropdown-item" to="/about">
+                      Our Team
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="/contact">
+                      How We Work
+                    </Link>
+                  </li>
+                </ul>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/contact">
-                  Contact
+                <Link className="nav-link" to="/blog">
+                  Insights
                 </Link>
               </li>
             </ul>
 
-            <div className="d-flex">
+            <div className="d-flex align-items-center gap-3 finreach-navbar-actions">
+              <Link to="/contact" className="btn btn-finreach-outline">
+                Contact Us
+              </Link>
               <button
                 type="button"
                 className="btn btn-finreach-cta"
