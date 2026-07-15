@@ -1,67 +1,68 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './Dashboard.css';
 
 const ServicesSection = () => {
-    const services = [
+    const transparencyCards = [
         {
-            icon: 'bi-file-earmark-check',
-            title: 'Bookkeeping & Accounting',
+            title: 'Canberra',
+            subheading: 'Australian oversight. Right here.',
             description:
-                'Professional-grade accounting at a price small business can sustain. Your work is completed by an offshore team with 25 years of expertise.',
-            link: '/bookkeeping-accounting'
+                'Don Siriwardana and the FinReach Directorship is based in Canberra. He\'s the face and first point of contact for FinReach. Don holds Australian professional registrations. When something needs a decision, a senior eye, or a conversation - it\'s handled locally.'
         },
         {
-            icon: 'bi-shield-check',
-            title: 'Assurance',
+            title: 'Sri Lanka',
+            subheading: 'Internationally credentialled. Exceptionally qualified.',
             description:
-                'Bespoke assurance engagements for not-for-profits and regulated organisations – so you\'re not overspending on a full audit when a targeted review will do.',
-            link: '/assurance'
+                'Our delivery team is based in Sri Lanka - home to the largest pool of ACCA and CIMA-certified accountants outside the United Kingdom. Directly aligned with ATO, ASIC, and ACNC compliance requirements. They\'re not generalists. They\'re finance and accounting specialists.'
+        }
+    ];
+
+    const statCards = [
+        {
+            heading: '25+ Years',
+            text: 'Australian audit experience'
         },
         {
-            icon: 'bi-check-circle',
-            title: 'Auditing',
-            description:
-                'Risk-based audits by experienced professionals who understand NFP, government and for-profit environments. Compliant, on time, with real insight.',
-            link: '/auditing'
+            heading: 'Big 4',
+            text: 'Trained offshore team'
         },
         {
-            icon: 'bi-graph-up-arrow',
-            title: 'Fractional CFO',
-            description:
-                'Executive-level finance leadership without the full-time salary. Strategic financial partnership for confident, data-driven growth.',
-            link: '/fractional-cfo'
+            heading: 'ACT | NSW | VIC',
+            text: 'Geographic reach'
         }
     ];
 
     return (
         <section className="services-section">
-            <div className="container text-center">
-                <h2 className="services-title">
-                    End-to-end financial support, tailored to your stage of growth
+            <div className="container text-center services-work-shell">
+                <span className="services-work-badge">How We Work</span>
+
+                <h2 className="services-title services-work-title">
+                    Two cities. One team. Complete transparency.
                 </h2>
 
-                <p className="services-subtitle">
-                    We combine practical bookkeeping and accounting, smart use of offshore delivery, and 25+ years of Australian assurance and audit experience to give you a complete financial backbone.
+                <p className="services-subtitle services-work-subtitle">
+                    FinReach runs on a deliberate model, local Canberra leadership and client relationships, backed by a highly qualified team in Sri Lanka with Big Four experience.
                 </p>
 
-                <div className="row g-4 text-start">
-                    {services.map((service, index) => (
-                        <div key={index} className="col-lg-3 col-md-6">
-                            <div className="service-card">
-                                <i className={`bi ${service.icon} service-icon`}></i>
+                <div className="row g-4 services-work-cards-row">
+                    {transparencyCards.map((card) => (
+                        <div key={card.title} className="col-lg-6">
+                            <div className="services-work-card h-100">
+                                <h3 className="services-work-card-title">{card.title}</h3>
+                                <h4 className="services-work-card-subheading">{card.subheading}</h4>
+                                <p className="services-work-card-text">{card.description}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
 
-                                <h3 className="service-card-title">
-                                    {service.title}
-                                </h3>
-
-                                <p className="service-card-text">
-                                    {service.description}
-                                </p>
-
-                                <Link to={service.link} className="btn-learn-more">
-                                    Learn more <i className="bi bi-arrow-right-short"></i>
-                                </Link>
+                <div className="row g-4 services-work-stats-row">
+                    {statCards.map((stat) => (
+                        <div key={stat.heading} className="col-lg-4 col-md-6">
+                            <div className="services-work-stat-card h-100">
+                                <h3 className="services-work-stat-heading">{stat.heading}</h3>
+                                <p className="services-work-stat-text">{stat.text}</p>
                             </div>
                         </div>
                     ))}

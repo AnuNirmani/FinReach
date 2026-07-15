@@ -1,78 +1,55 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Dashboard.css';
-import teamImage from '../assets/assets/team-collaboration-Dfr1_auB.jpg';
 
 
 const PainPointsSection = () => {
-    const painPoints = [
+    const steps = [
         {
-            text: "You're spending up to 30% of your time juggling bills, payroll and reconciliations instead of growing your organisation."
+            title: 'Free 30-Minute Consultation',
+            text: "We discuss your organisation, challenges, deadlines and goals - and clarify which services you actually need (and which you don't)."
         },
         {
-            text: "Audits and reviews leave your team drained, scrambling for documents and worried about deadlines and findings."
+            title: 'Assessment & Recommendations',
+            text: 'We review your current financial setup - bookkeeping, systems, controls and obligations - and give clear, practical recommendations.'
         },
         {
-            text: "Cash flow feels like guesswork – you're not sure what's coming in, what's going out, or if there'll be enough to cover everything."
+            title: 'Tailored Engagement',
+            text: "We design a scope that fits your size, budget and risk profile - whether that's full back-office bookkeeping & accounting, assurance, audit or fractional CFO support."
         },
         {
-            text: "You know you need serious financial insight, but a full-time CFO simply isn't in the budget right now."
+            title: 'Ongoing Support And Reporting',
+            text: 'You get regular reporting, proactive communication and a partner who helps you stay ready for audits, lenders, boards and growth opportunities.'
         }
     ];
 
     return (
-        <>
-            <div
-  className="familiar-image-banner"
-  style={{
-    backgroundImage: `
-      linear-gradient(to top, rgba(15, 62, 93, 0.5) 0%, rgba(15, 62, 93, 0.5) 100%),
-      url(${teamImage})
-    `
-  }}
-></div>
+        <section className="painpoints-process-section">
+            <div className="container painpoints-process-shell text-center">
+                <span className="painpoints-process-badge">How To Get Started</span>
 
-            <section className="familiar-content-section">
-                <div className="container">
-                    <h2 className="familiar-title text-center">Does any of this sound familiar?</h2>
-
-                    <div className="row justify-content-center">
-                        <div className="col-lg-10">
-                            <div className="row">
-                                <div className="col-md-6">
-                                    {painPoints.slice(0, 2).map((point, index) => (
-                                        <div key={index} className="pain-point-item">
-                                            <div className="pain-icon-circle">
-                                                <i className="bi bi-x"></i>
-                                            </div>
-                                            <p className="pain-text">
-                                                {point.text}
-                                            </p>
-                                        </div>
-                                    ))}
-                                </div>
-
-                                <div className="col-md-6">
-                                    {painPoints.slice(2, 4).map((point, index) => (
-                                        <div key={index} className="pain-point-item">
-                                            <div className="pain-icon-circle">
-                                                <i className="bi bi-x"></i>
-                                            </div>
-                                            <p className="pain-text">
-                                                {point.text}
-                                            </p>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
+                <div className="row g-4 painpoints-process-grid align-items-stretch mt-1">
+                    {steps.map((step, index) => (
+                        <div key={step.title} className="col-xl-3 col-lg-6 d-flex">
+                            <article className="painpoints-process-card text-start w-100">
+                                <div className="painpoints-step-number">{index + 1}</div>
+                                <h3 className="painpoints-step-title">{step.title}</h3>
+                                <p className="painpoints-step-text">{step.text}</p>
+                            </article>
                         </div>
-                    </div>
-
-                    <p className="familiar-footer-note text-center">
-                       We step in to restore financial confidence, giving you clarity, control and a stronger foundation for growth.
-                    </p>
+                    ))}
                 </div>
-            </section>
-        </>
+
+                <div className="painpoints-process-actions d-flex justify-content-center gap-3 flex-wrap mt-5">
+                    <Link to="/contact" className="btn painpoints-btn-dark">
+                        Enquire Now
+                    </Link>
+                    <Link to="/contact" className="btn painpoints-btn-lime">
+                        Book a Consultation
+                    </Link>
+                </div>
+            </div>
+        </section>
     );
 };
 

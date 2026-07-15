@@ -10,6 +10,10 @@
             padding-top: 98px; 
         }
 
+.finreach-dashboard {
+    background-color: #f4f6f8;
+}
+
         /* --- Custom Color Variables based on screenshot --- */
         :root {
             --finreach-teal: #0f3e5d; /* Dark blue/teal for 'Fin' */
@@ -215,13 +219,25 @@
 .hero-section {
     position: relative;
     /* Using the specific image URL */
-    
+    overflow: hidden;
+    background-color: #0f3e5d;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     /* Increased padding for better vertical spacing with the form */
-    padding: 100px 0; 
+    padding: 110px 0; 
+    min-height: 78vh;
     color: #ffffff;
+}
+
+.hero-video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
 }
 
 /* The dark blue overlay to match the FinReach brand color */
@@ -232,7 +248,7 @@
     width: 100%;
     height: 100%;
     /* A deep teal/blue transparency to match the screenshot */
-    background-color: rgba(15, 62, 93, 0.85); 
+    background-color: rgba(15, 40, 68, 0.46); 
     z-index: 1;
 }
 
@@ -242,20 +258,32 @@
     z-index: 2;
 }
 
+.hero-layout-row {
+    min-height: 62vh;
+}
+
+.hero-copy-wrap {
+    max-width: 680px;
+}
+
 /* Headline Typography */
 .hero-title {
-    font-size: 3rem; /* Large bold text */
+    font-size: clamp(2.35rem, 3.5vw, 4rem);
     font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
+    line-height: 1.08;
+    margin-bottom: 1.2rem;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    max-width: 640px;
 }
 
 .hero-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 400;
     line-height: 1.6;
-    margin-bottom: 2rem;
-    color: #e0e0e0; /* Slightly off-white for better readability */
+    margin-bottom: 1.65rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 610px;
 }
 
 /* Hero Button Styling (Lime Green) */
@@ -263,11 +291,12 @@
     background-color: #cddc39; /* The specific FinReach lime */
     color: #0f3e5d; /* Dark text for contrast */
     font-weight: 600;
-    padding: 12px 24px;
-    border-radius: 6px; /* Slightly rounded, not full pill */
+    padding: 10px 28px;
+    border-radius: 10px;
     border: none;
-    font-size: 1rem;
+    font-size: 1.05rem;
     transition: all 0.3s ease;
+    min-width: 175px;
 }
 
 .btn-hero-primary:hover {
@@ -276,12 +305,48 @@
     transform: translateY(-2px);
 }
 
-/* The small disclaimer text below the button */
-.hero-small-text {
-    font-size: 0.95rem; /* Very small */
-    margin-top: 1rem;
-    opacity: 0.9;
-    max-width: 425px;
+.hero-cta-group {
+    display: flex;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.2rem;
+}
+
+.btn-hero-secondary {
+    background-color: #ffffff;
+    color: #1d3f56;
+    font-weight: 600;
+    padding: 10px 26px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.05rem;
+    min-width: 145px;
+}
+
+.btn-hero-secondary:hover {
+    background-color: #f2f5f7;
+    color: #173346;
+}
+
+.hero-highlights {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hero-highlights li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.05rem;
+    margin-bottom: 0.35rem;
+    font-weight: 500;
+}
+
+.hero-highlights i {
+    color: #cddc39;
+    font-size: 1rem;
 }
 
 /* Responsiveness: Adjust font size on mobile */
@@ -289,8 +354,28 @@
     .hero-title {
         font-size: 2.2rem;
     }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .btn-hero-primary,
+    .btn-hero-secondary {
+        font-size: 0.98rem;
+        width: 100%;
+    }
+
+    .hero-highlights li {
+        font-size: 0.98rem;
+    }
+
     .hero-section {
-        padding: 100px 0;
+        padding: 90px 0;
+        min-height: auto;
+    }
+
+    .hero-layout-row {
+        min-height: auto;
     }
 }
 
@@ -422,71 +507,260 @@
 /* ================= "WHO IS IT FOR" SECTION STYLES ================= */
 
 .target-audience-section {
-    background-color: #f3f5f7; /* Light gray background matching screenshot */
-    padding: 50px 0;
+    background-color: #dfe5ea;
+    padding: 72px 0 84px;
+    border-radius: 44px;
+    margin-top: -44px;
+    position: relative;
+    z-index: 3;
 }
 
-/* Section Heading */
-.section-title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin-bottom: 1rem;
+.target-services-shell {
+    max-width: 1680px;
 }
 
-.section-subtitle {
-    font-size: 1rem;
-    color: #546379;
-    max-width: 700px;
-    margin: 0 auto 3.5rem auto; /* Centers text and adds space below */
-    line-height: 1.6;
-}
-
-/* Card Styling */
-.audience-card {
-    background-color: #ffffff;
-    border: none;
-    border-radius: 12px; /* Smooth rounded corners */
-    padding: 32px;
-    height: 100%; /* Ensures all cards are same height */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.02); /* Very subtle shadow */
-    transition: transform 0.2s;
-}
-
-.audience-card:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
-    box-shadow: 0 10px 15px rgba(0,0,0,0.05);
-}
-
-/* Icon Styling */
-.audience-icon {
-    font-size: 2.5rem;
-    color: #cddc39; /* FinReach Lime Green */
-    margin-bottom: 1.5rem;
+.target-services-badge {
     display: inline-block;
+    background-color: #cddc39;
+    color: #2b4a5f;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.38rem 1.35rem;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    margin-bottom: 1.05rem;
 }
 
-/* Card Typography */
-.audience-card-title {
-    font-size: 1.1rem;
+.target-services-title {
+    font-size: clamp(2rem, 3.3vw, 3rem);
     font-weight: 700;
-    color: #1a1a1a;
+    color: #29495f;
+    margin-bottom: 2.9rem;
+}
+
+.target-services-grid {
+    --bs-gutter-x: 2.2rem;
+    --bs-gutter-y: 2rem;
+}
+
+.target-service-card {
+    background-color: #f4f6f8;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(17, 35, 52, 0.12);
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.target-service-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+
+.target-service-body {
+    background-color: #f4f6f8;
+    padding: 1.2rem 1.7rem 1.35rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    transition: background-color 0.22s ease;
+}
+
+.target-service-title {
+    font-size: 2.05rem;
+    line-height: 1.2;
+    font-weight: 700;
+    color: #2d4a5f;
+    margin-bottom: 0.9rem;
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.22s ease;
+}
+
+.target-service-text {
+    font-size: 1.08rem;
+    color: #4f6980;
+    line-height: 1.55;
+    margin-bottom: 1.1rem;
+    flex-grow: 1;
+    transition: color 0.22s ease;
+}
+
+.target-service-link {
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: #4f7493;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    display: inline-block;
+    width: fit-content;
+    margin: 0 auto;
+    transition: color 0.22s ease, border-color 0.22s ease;
+}
+
+.target-service-link:hover {
+    color: #365c7e;
+    text-decoration: underline;
+}
+
+.target-service-card:hover,
+.target-service-card:focus-within {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 28px rgba(17, 35, 52, 0.16);
+}
+
+.target-service-card:hover .target-service-body,
+.target-service-card:focus-within .target-service-body {
+    background-color: #cddc39;
+}
+
+.target-service-card:hover .target-service-title,
+.target-service-card:hover .target-service-text,
+.target-service-card:focus-within .target-service-title,
+.target-service-card:focus-within .target-service-text {
+    color: #29495f;
+}
+
+.target-service-card:hover .target-service-link,
+.target-service-card:focus-within .target-service-link {
+    color: #3f688b;
+    border-bottom-color: #8ca6bc;
+}
+
+.target-who-section {
+    margin-top: 5.2rem;
+}
+
+.target-who-title {
+    margin-top: 1rem;
+    margin-bottom: 0.9rem;
+}
+
+.target-who-subtitle {
+    max-width: 900px;
+    margin: 0 auto 2.8rem;
+    font-size: 1.05rem;
+    color: #2f3f4b;
+    line-height: 1.55;
+}
+
+.target-who-grid {
+    --bs-gutter-x: 3rem;
+}
+
+.target-who-card {
+    height: 100%;
+}
+
+.target-who-image {
+    width: 100%;
+    height: 390px;
+    object-fit: cover;
+    display: block;
     margin-bottom: 1rem;
 }
 
-.audience-card-text {
-    font-size: 1rem;
-    color: #546379;
-    line-height: 1.6;
-    margin: 0;
+.target-who-card-title {
+    font-size: 2.05rem;
+    font-weight: 700;
+    color: #2d4a5f;
+    margin-bottom: 0.85rem;
 }
 
-/* Bottom Text */
-.section-footer-text {
-    margin-top: 3rem;
-    color: #1a1a1a;
-    font-size: 1rem;
-    font-weight: 400;
+.target-who-card-text {
+    max-width: 680px;
+    margin: 0 auto 1.1rem;
+    font-size: 1.08rem;
+    line-height: 1.55;
+    color: #2f3f4b;
+}
+
+.target-who-link {
+    display: inline-block;
+    color: #4f7493;
+    font-size: 1.02rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 0.08rem;
+    transition: color 0.2s ease, border-bottom-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.target-who-link:hover {
+    color: #365c7e;
+    border-bottom-color: #365c7e;
+    box-shadow: 0 2px 8px rgba(79, 116, 147, 0.35);
+}
+
+.target-who-link:focus-visible {
+    color: #365c7e;
+    border-bottom-color: #365c7e;
+    box-shadow: 0 2px 8px rgba(79, 116, 147, 0.35);
+}
+
+@media (max-width: 1199px) {
+    .target-audience-section {
+        border-radius: 26px;
+    }
+
+    .target-service-image {
+        height: 235px;
+    }
+
+    .target-who-image {
+        height: 320px;
+    }
+}
+
+@media (max-width: 767px) {
+    .target-audience-section {
+        padding: 56px 0 64px;
+        border-radius: 20px;
+    }
+
+    .target-services-title {
+        margin-bottom: 2.1rem;
+    }
+
+    .target-service-title {
+        min-height: auto;
+        font-size: 1.45rem;
+    }
+
+    .target-service-text {
+        font-size: 1rem;
+    }
+
+    .target-service-link {
+        font-size: 1rem;
+    }
+
+    .target-who-section {
+        margin-top: 3.4rem;
+    }
+
+    .target-who-image {
+        height: 245px;
+    }
+
+    .target-who-card-title {
+        font-size: 1.6rem;
+    }
+
+    .target-who-card-text {
+        font-size: 1rem;
+    }
+
+    .target-who-link {
+        font-size: 0.98rem;
+    }
 }
 
 
@@ -498,114 +772,280 @@
 /* ================= SERVICES SECTION STYLES ================= */
 
 .services-section {
-    background-color: #ffffff; /* White background */
-    padding: 80px 0;
+    background-color: #f4f6f8;
+    padding: 86px 0 92px;
 }
 
-/* Typography */
-.services-title {
-    font-size: 2rem;
+.services-work-shell {
+    max-width: 1080px;
+}
+
+.services-work-badge {
+    display: inline-block;
+    background-color: #cddc39;
+    color: #2d4a5f;
+    font-size: 0.82rem;
     font-weight: 700;
-    color: #1a1a1a;
-    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    padding: 0.43rem 1.5rem;
+    border-radius: 999px;
+    margin-bottom: 1.5rem;
+}
+
+.services-title {
+    font-size: clamp(1.8rem, 2.4vw, 2.7rem);
+    font-weight: 700;
+    color: #2b4a5f;
+    margin-bottom: 1.15rem;
+    line-height: 1.2;
 }
 
 .services-subtitle {
-    font-size: 1rem;
-    color: #546379; /* Slate gray */
-    max-width: 750px;
-    margin: 0 auto 4rem auto;
-    line-height: 1.6;
+    font-size: 0.98rem;
+    color: #2f3f4b;
+    max-width: 950px;
+    margin: 0 auto;
+    line-height: 1.55;
 }
 
-/* Card Styling */
-.service-card {
-    background-color: #fff;
-    border: 1px solid #e2e8f0; /* Light gray border */
-    border-radius: 8px;
-    padding: 30px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Align content to left */
-    transition: box-shadow 0.3s ease;
+.services-work-cards-row {
+    margin-top: 3.15rem;
 }
 
-.service-card:hover {
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    border-color: #cbd5e1;
+.services-work-card {
+    background-color: #dfe5ea;
+    border-radius: 22px;
+    padding: 2.2rem 2.35rem;
+    text-align: center;
 }
 
-/* Icons */
-.service-icon {
-    font-size: 2rem; /* Size matched to image */
-    color: #cddc39; /* FinReach Lime */
-    margin-bottom: 1.25rem;
-}
-
-/* Card Text */
-.service-card-title {
-    font-size: 1.1rem;
+.services-work-card-title {
+    font-size: clamp(1.65rem, 2vw, 2.35rem);
     font-weight: 700;
-    color: #0f172a;
+    color: #2d4a5f;
     margin-bottom: 1rem;
 }
 
-.service-card-text {
+.services-work-card-subheading {
+    font-size: 1.6rem;
+    font-size: clamp(1.1rem, 1.45vw, 1.55rem);
+    font-weight: 700;
+    color: #222f3a;
+    line-height: 1.4;
+    margin-bottom: 1.2rem;
+}
+
+.services-work-card-text {
     font-size: 1rem;
-    color: #546379;
-    line-height: 1.6;
+    color: #2f3f4b;
+    line-height: 1.55;
     margin: 0;
-    flex-grow: 1; /* Pushes the button to the bottom */
 }
 
-/* "Learn More" Button */
-.btn-learn-more {
-    display: inline-flex;
+.services-work-stats-row {
+    margin-top: 2.25rem;
+}
+
+.services-work-stat-card {
+    background-color: #2d4d63;
+    border-radius: 16px;
+    padding: 1.55rem 1.25rem 1.3rem;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(19, 41, 56, 0.2);
+}
+
+.services-work-stat-heading {
+    font-size: clamp(1.55rem, 1.75vw, 2rem);
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.4rem;
+    line-height: 1.25;
+}
+
+.services-work-stat-text {
+    margin: 0;
+    font-size: 1.08rem;
+    color: #d7e3eb;
+    line-height: 1.45;
+}
+
+@media (max-width: 991px) {
+    .services-section {
+        padding: 72px 0 78px;
+    }
+
+    .services-work-card {
+        padding: 2rem 1.7rem;
+    }
+
+    .services-work-card-text {
+        font-size: 1.02rem;
+    }
+
+    .services-work-stat-text {
+        font-size: 1.08rem;
+    }
+}
+
+@media (max-width: 575px) {
+    .services-work-badge {
+        letter-spacing: 0.12em;
+    }
+
+    .services-work-cards-row {
+        margin-top: 2.4rem;
+    }
+
+    .services-work-card {
+        border-radius: 16px;
+    }
+
+    .services-work-stat-card {
+        border-radius: 14px;
+    }
+}
+
+
+
+
+/* ================= PAIN POINTS (PROCESS STYLE) SECTION ================= */
+
+.painpoints-process-section {
+    background-color: #dfe5ea;
+    padding: 74px 0 86px;
+    border-radius: 44px;
+    margin: 22px 0;
+}
+
+.painpoints-process-shell {
+    max-width: 1720px;
+}
+
+.painpoints-process-badge {
+    display: inline-block;
+    background-color: #cddc39;
+    color: #2b4a5f;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.38rem 1.35rem;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    margin-bottom: 1.1rem;
+}
+
+.painpoints-process-grid {
+    --bs-gutter-x: 2.2rem;
+    --bs-gutter-y: 2rem;
+}
+
+.painpoints-process-card {
+    background-color: #f4f6f8;
+    border-radius: 16px;
+    padding: 2.2rem 1.3rem 1.8rem;
+    box-shadow: 0 8px 18px rgba(17, 35, 52, 0.12);
+    height: 100%;
+}
+
+.painpoints-step-number {
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background-color: #2d556f;
+    color: #ffffff;
+    font-size: 2rem;
+    line-height: 1;
+    font-weight: 700;
+    display: flex;
     align-items: center;
-    font-size: 0.85rem;
+    justify-content: center;
+    margin-bottom: 1.45rem;
+}
+
+.painpoints-step-title {
+    color: #2b4a5f;
+    font-size: 2rem;
+    line-height: 1.2;
     font-weight: 700;
-    color: #1a1a1a;
-    background-color: #ffffff;
-    border: 1px solid #e2e8f0;
-    padding: 8px 16px;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: all 0.2s;
+    margin-bottom: 1.1rem;
 }
 
-.btn-learn-more i {
-    margin-left: 6px; /* Space for the arrow */
-    font-size: 1rem;
+.painpoints-step-text {
+    color: #2f4c62;
+    font-size: 1.1rem;
+    line-height: 1.65;
+    margin: 0;
 }
 
-.btn-learn-more:hover {
-    background-color: #f8f9fa;
-    border-color: #cbd5e1;
-    color: #000;
+.painpoints-process-actions .btn {
+    border-radius: 10px;
+    padding: 0.78rem 1.65rem;
+    min-width: 196px;
+    font-size: 1.07rem;
+    font-weight: 600;
+    border: none;
 }
 
-/* Bottom Note Box */
-.delivery-note-box {
-    background-color: #f1f5f9; /* Light gray box background */
-    border-radius: 6px;
-    padding: 24px 40px;
-    margin-top: 60px;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 0.85rem;
-    color: #64748b;
-    line-height: 1.5;
-    text-align: left; /* Text aligns left inside the centered box (based on visual check, though usually centered text looks better here, I'll match the subtle alignment of the image) */
+.painpoints-btn-dark {
+    background-color: #2b4a5f;
+    color: #ffffff;
 }
 
-/* Bold prefix in the note */
-.note-strong {
-    font-weight: 700;
-    color: #475569;
+.painpoints-btn-dark:hover {
+    background-color: #213e52;
+    color: #ffffff;
 }
 
+.painpoints-btn-lime {
+    background-color: #cddc39;
+    color: #234557;
+}
+
+.painpoints-btn-lime:hover {
+    background-color: #bfce35;
+    color: #1f3d4d;
+}
+
+@media (max-width: 1199px) {
+    .painpoints-process-section {
+        border-radius: 28px;
+    }
+
+    .painpoints-step-title {
+        font-size: 1.65rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .painpoints-process-section {
+        padding: 56px 0 62px;
+        border-radius: 20px;
+        margin: 18px 0;
+    }
+
+    .painpoints-process-card {
+        padding: 1.5rem 1.1rem 1.35rem;
+    }
+
+    .painpoints-step-number {
+        width: 52px;
+        height: 52px;
+        font-size: 1.7rem;
+    }
+
+    .painpoints-step-title {
+        font-size: 1.35rem;
+    }
+
+    .painpoints-step-text {
+        font-size: 1rem;
+    }
+
+    .painpoints-process-actions .btn {
+        width: 100%;
+    }
+}
 
 
 
@@ -691,52 +1131,102 @@ font-size: 1rem;
 
 /* ================= "WHY CHOOSE FINREACH" SECTION STYLES ================= */
 
-/* 1. The Image Banner with Gradient */
-.why-choose-banner {
+.director-message-section {
+
+    padding: 26px 0;
+}
+
+.director-message-shell {
+    max-width: 1200px;
+}
+
+.director-message-image {
     width: 100%;
-    height: 385px; /* Same height as previous banner for consistency */
-    position: relative;
-    /* Stacked Background: Gradient Overlay + Image */
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    height: 100%;
+    min-height: 740px;
+    object-fit: cover;
+    display: block;
 }
 
-/* 2. Content Section */
-.why-choose-content {
-    background-color: #ffffff;
-    padding: 80px 0;
+.director-message-content {
+    padding: 68px 54px 56px;
 }
 
-.why-choose-title {
-    font-size: 2rem;
+.director-message-badge {
+    display: inline-block;
+    background-color: #cddc39;
+    color: #2b4a5f;
     font-weight: 700;
-    color: #1a1a1a;
-    margin-bottom: 4rem; /* Lots of space before the grid starts */
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.38rem 1.35rem;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    margin-bottom: 1.2rem;
 }
 
-/* Individual Benefit Item Styling */
-.benefit-item {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 3rem; /* Spacing between rows */
-    padding-right: 1.5rem;
+.director-message-title {
+    color: #2b4a5f;
+    font-size: clamp(2rem, 3.2vw, 3.25rem);
+    font-weight: 700;
+    line-height: 1.18;
+    margin-bottom: 1.35rem;
+    max-width: 720px;
 }
 
-.benefit-icon {
-    font-size: 1.4rem;
-    color: #cddc39; /* FinReach Lime */
-    margin-right: 1rem;
-    line-height: 1; /* Ensures icon aligns well with text top */
-    flex-shrink: 0;
+.director-message-text {
+    color: #2f2f2f;
+    font-size: 1.12rem;
+    line-height: 1.58;
+    margin-bottom: 1.35rem;
+    max-width: 760px;
 }
 
-.benefit-text {
-    font-size: 1rem;
-    color: #546379;
-    line-height: 1.6;
-    margin: 0;
+@media (max-width: 1199px) {
+    .director-message-image {
+        min-height: 620px;
+    }
+
+    .director-message-content {
+        padding: 52px 38px 44px;
+    }
+}
+
+@media (max-width: 991px) {
+    .director-message-image {
+        min-height: 540px;
+    }
+
+    .director-message-title {
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
+    }
+
+    .director-message-text {
+        font-size: 1.03rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .director-message-section {
+        padding: 18px 0;
+    }
+
+    .director-message-image {
+        min-height: 420px;
+    }
+
+    .director-message-content {
+        padding: 34px 20px 26px;
+    }
+
+    .director-message-badge {
+        letter-spacing: 0.12em;
+        font-size: 0.75rem;
+    }
+
+    .director-message-text {
+        margin-bottom: 1.1rem;
+    }
 }
 
 
@@ -745,6 +1235,165 @@ font-size: 1rem;
 
 
 /* ================= "SIMPLE PROCESS" SECTION STYLES ================= */
+
+/* ================= TEAM PEOPLE SECTION STYLES ================= */
+
+.team-people-section {
+    background-color: #dfe5ea;
+    padding: 72px 0 80px;
+    border-radius: 44px;
+    margin: 22px 0;
+}
+
+.team-people-shell {
+    max-width: 1220px;
+}
+
+.team-people-badge {
+    display: inline-block;
+    background-color: #cddc39;
+    color: #2b4a5f;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.38rem 1.3rem;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    margin-bottom: 1.2rem;
+}
+
+.team-people-title {
+    font-size: clamp(2rem, 3.1vw, 3.15rem);
+    font-weight: 700;
+    color: #2b4a5f;
+    margin-bottom: 3.2rem;
+}
+
+.team-people-grid {
+    --bs-gutter-x: 1.2rem;
+    --bs-gutter-y: 2rem;
+}
+
+.team-member-card {
+    background: transparent;
+    border: none;
+}
+
+.team-member-image {
+    width: 100%;
+    height: 286px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 0.95rem;
+    background-color: #2d4f66;
+}
+
+.team-member-body {
+    padding: 0 0.55rem;
+}
+
+.team-member-name {
+    font-size: 1.05rem;
+    line-height: 1.15;
+    font-weight: 700;
+    color: #2b4a5f;
+    margin-bottom: 0.15rem;
+}
+
+.team-member-role {
+    font-size: 0.92rem;
+    line-height: 1.2;
+    color: #2f3f4b;
+    margin-bottom: 0.1rem;
+}
+
+.team-member-location {
+    font-size: 0.9rem;
+    line-height: 1.2;
+    font-weight: 700;
+    color: #bccb33;
+    margin-bottom: 0.7rem;
+}
+
+.team-member-socials {
+    display: flex;
+    align-items: center;
+    gap: 1.45rem;
+}
+
+.team-social-link {
+    color: #4d5b6f;
+    font-size: 1rem;
+    text-decoration: none;
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+
+.team-social-link:hover {
+    color: #2b4a5f;
+}
+
+@media (max-width: 1199px) {
+    .team-people-section {
+        border-radius: 28px;
+    }
+
+    .team-member-image {
+        height: 250px;
+    }
+
+    .team-member-name {
+        font-size: 1.02rem;
+    }
+
+    .team-member-role {
+        font-size: 0.9rem;
+    }
+
+    .team-member-location {
+        font-size: 0.88rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .team-people-section {
+        padding: 56px 0 64px;
+        border-radius: 20px;
+        margin: 18px 0;
+    }
+
+    .team-people-title {
+        margin-bottom: 2.4rem;
+    }
+
+    .team-member-image {
+        height: 290px;
+    }
+
+    .team-member-body {
+        padding: 0 0.2rem;
+    }
+
+    .team-member-name {
+        font-size: 1rem;
+    }
+
+    .team-member-role {
+        font-size: 0.9rem;
+    }
+
+    .team-member-location {
+        font-size: 0.88rem;
+    }
+
+    .team-member-socials {
+        gap: 1.2rem;
+    }
+
+    .team-social-link {
+        font-size: 0.98rem;
+    }
+}
 
 /* 1. The Image Banner */
 .process-banner {
@@ -884,70 +1533,42 @@ font-size: 1rem;
 /* ================= FOOTER SECTION STYLES ================= */
 
 .footer-section {
-    background-color: #254053; /* The specific dark slate/teal from the screenshot */
+    background-color: #2d556f;
     color: #ffffff;
-    padding-top: 80px;
-    padding-bottom: 30px;
+    padding-top: 26px;
+    padding-bottom: 22px;
     font-size: 0.95rem;
 }
 
-/* --- Column 1: Brand & Button --- */
-.footer-brand-wrapper {
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
+.footer-shell {
+    max-width: 1720px;
 }
 
-.footer-brand-icon {
-    font-size: 1.8rem;
-    color: #cddc39; /* Lime green icon */
-    margin-right: 8px;
+.footer-logo-row {
+    margin-bottom: 2.5rem;
 }
 
-.footer-brand-fin {
-    color: #5d7a8c; /* Muted blue-gray for 'Fin' to separate from dark bg */
-    font-weight: 700;
-    font-size: 1.5rem;
+.footer-main-logo {
+    height: 78px;
+    width: auto;
+    object-fit: contain;
+    display: block;
 }
 
-.footer-brand-reach {
-    color: #cddc39; /* Lime green for 'Reach' */
-    font-weight: 700;
-    font-size: 1.5rem;
+.footer-columns-row {
+    --bs-gutter-x: 3.2rem;
+    --bs-gutter-y: 1.6rem;
 }
 
-.footer-desc {
-    color: #cbd5e1; /* Light gray text */
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    max-width: 400px;
-}
-
-.btn-footer-cta {
-    background-color: #cddc39; /* Lime green */
-    color: #1a1a1a; /* Dark text */
-    font-weight: 600;
-    padding: 10px 24px;
-    border-radius: 4px;
-    text-decoration: none;
-    display: inline-block;
-    transition: background-color 0.2s;
-}
-
-.btn-footer-cta:hover {
-    background-color: #b8c930;
-    color: #1a1a1a;
-}
-
-/* --- Column 2 & 3: Headers --- */
 .footer-heading {
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 1.28rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
     color: #ffffff;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.9rem;
 }
 
-/* --- Quick Links List --- */
 .footer-links-list {
     list-style: none;
     padding: 0;
@@ -955,48 +1576,117 @@ font-size: 1rem;
 }
 
 .footer-links-list li {
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.42rem;
 }
 
 .footer-link {
-    color: #cbd5e1;
+    color: #e9eef2;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.35;
     text-decoration: none;
     transition: color 0.2s;
 }
 
 .footer-link:hover {
-    color: #cddc39; /* Turn lime on hover */
+    color: #cddc39;
 }
 
-/* --- Contact List --- */
-.footer-contact-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-contact-item {
+.footer-socials {
+    margin-top: 1.35rem;
     display: flex;
-    align-items: flex-start;
-    margin-bottom: 1rem;
-    color: #cbd5e1;
+    align-items: center;
+    gap: 1.55rem;
 }
 
-.contact-icon {
-    color: #cddc39; /* Lime icons */
-    margin-right: 12px;
-    font-size: 1.1rem;
-    line-height: 1.2; /* Align with text */
+.footer-social-link {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: #2a4d63;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.35rem;
+    line-height: 1;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-/* --- Bottom Copyright Area --- */
+.footer-social-link:hover {
+    transform: translateY(-1px);
+    background-color: #f2f5f7;
+}
+
 .footer-bottom {
-    margin-top: 60px;
-    padding-top: 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle divider line */
+    margin-top: 2.3rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.7);
     text-align: center;
-    color: #94a3b8; /* Dimmer text for copyright */
-    font-size: 0.85rem;
+    color: #f0f4f7;
+    font-size: 0.92rem;
+    font-weight: 400;
+}
+
+@media (max-width: 1199px) {
+    .footer-main-logo {
+        height: 66px;
+    }
+
+    .footer-heading {
+        font-size: 1.1rem;
+    }
+
+    .footer-link {
+        font-size: 0.94rem;
+    }
+
+    .footer-bottom {
+        font-size: 0.86rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer-section {
+        padding-top: 34px;
+    }
+
+    .footer-logo-row {
+        margin-bottom: 1.8rem;
+    }
+
+    .footer-main-logo {
+        height: 52px;
+    }
+
+    .footer-columns-row {
+        --bs-gutter-y: 1.45rem;
+    }
+
+    .footer-heading {
+        font-size: 1rem;
+        margin-bottom: 0.55rem;
+    }
+
+    .footer-link {
+        font-size: 0.9rem;
+    }
+
+    .footer-socials {
+        gap: 1rem;
+    }
+
+    .footer-social-link {
+        width: 34px;
+        height: 34px;
+        font-size: 1.15rem;
+    }
+
+    .footer-bottom {
+        margin-top: 1.7rem;
+        font-size: 0.82rem;
+    }
 }
 
 

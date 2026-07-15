@@ -6,74 +6,64 @@ import logo from '../assets/assets/finreash-footer.png';
 const Footer = () => {
   return (
     <footer className="footer-section">
-      <div className="container">
-        <div className="row gy-5">
-          
-          {/* LEFT SECTION */}
-          <div className="col-lg-5 col-md-12">
-            <div className="footer-brand-wrapper mb-3">
-              <img 
-                src={logo} 
-                alt="FinReach Footer Logo"
-                style={{ height: "55px", width: "auto" }}
-              />
-            </div>
-            
-            <p className="footer-desc">
-              Financial confidence for Small & Medium Enterprises, not-for-profits and health organisations.
-            </p>
-
-            
-            <button
-  type="button"
-  className="btn-footer-cta"
-  onClick={() => window.dispatchEvent(new Event('open-consultation-modal'))}
->
-  Book Your Consultation
-</button>
-
-          </div>
-
-          {/* QUICK LINKS */}
-          <div className="col-lg-3 col-md-6">
-            <h4 className="footer-heading">Quick Links</h4>
-            <ul className="footer-links-list">
-              <li><Link to="/bookkeeping-accounting" className="footer-link">Bookkeeping & Accounting</Link></li>
-              <li><Link to="/assurance" className="footer-link">Assurance</Link></li>
-              <li><Link to="/auditing" className="footer-link">Auditing</Link></li>
-              <li><Link to="/fractional-cfo" className="footer-link">Fractional CFO</Link></li>
-              <li><Link to="/about" className="footer-link">About</Link></li>
-              <li><Link to="/blog" className="footer-link">Blog</Link></li>
-            </ul>
-          </div>
-
-          {/* CONTACT */}
-          <div className="col-lg-4 col-md-6">
-            <h4 className="footer-heading">Contact Us</h4>
-            <ul className="footer-contact-list">
-              <li className="footer-contact-item">
-                <i className="bi bi-envelope contact-icon"></i>
-                <span>info@finreach.com.au</span>
-              </li>
-              <li className="footer-contact-item">
-                <i className="bi bi-telephone contact-icon"></i>
-                <span>(02) 6105 9300</span>
-              </li>
-              <li className="footer-contact-item">
-                <i className="bi bi-geo-alt contact-icon"></i>
-                <span>
-                  Level 1, 11-17 Swanson Court,<br />
-                  Belconnen ACT 2617 Australia
-                </span>
-              </li>
-            </ul>
-          </div>
-
+      <div className="container footer-shell">
+        <div className="footer-logo-row">
+          <img src={logo} alt="FinReach" className="footer-main-logo" />
         </div>
 
-        {/* FOOTER BOTTOM */}
+        <div className="row gy-4 footer-columns-row">
+          <div className="col-lg-3 col-md-6">
+            <h4 className="footer-heading">Contact</h4>
+            <ul className="footer-links-list">
+              <li><a href="mailto:info@finreach.com.au" className="footer-link">info@finreach.com.au</a></li>
+              <li><a href="tel:+61261059300" className="footer-link">(02) 6105 9300</a></li>
+            </ul>
+
+            <div className="footer-socials" aria-label="Social media links">
+              <a href="#" className="footer-social-link" aria-label="Facebook">
+                <i className="bi bi-facebook"></i>
+              </a>
+              <a href="#" className="footer-social-link" aria-label="Instagram">
+                <i className="bi bi-instagram"></i>
+              </a>
+              <a href="#" className="footer-social-link" aria-label="LinkedIn">
+                <i className="bi bi-linkedin"></i>
+              </a>
+            </div>
+          </div>
+
+          <div className="col-lg-3 col-md-6">
+            <h4 className="footer-heading">Services</h4>
+            <ul className="footer-links-list">
+              <li><Link to="/auditing" className="footer-link">Auditing</Link></li>
+              <li><Link to="/assurance" className="footer-link">Assurance</Link></li>
+              <li><Link to="/bookkeeping-accounting" className="footer-link">Bookkeeping & Accounting</Link></li>
+              <li><Link to="/fractional-cfo" className="footer-link">Fractional CFO</Link></li>
+            </ul>
+          </div>
+
+          <div className="col-lg-3 col-md-6">
+            <h4 className="footer-heading">Who We Work With</h4>
+            <ul className="footer-links-list">
+              <li><Link to="/assurance" className="footer-link">Not-for-profits</Link></li>
+              <li><Link to="/fractional-cfo" className="footer-link">Growth-stage SMEs</Link></li>
+              <li><Link to="/contact" className="footer-link">Partner With Us</Link></li>
+            </ul>
+          </div>
+
+          <div className="col-lg-3 col-md-6">
+            <h4 className="footer-heading">Resources</h4>
+            <ul className="footer-links-list">
+              <li><a href="#" className="footer-link">NFP Finance Health Check</a></li>
+              <li><a href="#" className="footer-link">ACNC Audit Checklist</a></li>
+              <li><a href="#" className="footer-link">Fractional CFO Guide</a></li>
+              <li><Link to="/blog" className="footer-link">Insights</Link></li>
+            </ul>
+          </div>
+        </div>
+
         <div className="footer-bottom">
-          &copy; 2025 FinReach. All rights reserved.
+          Copyright© 2026 Company Name. All Rights Reserved
         </div>
       </div>
     </footer>

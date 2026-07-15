@@ -1,71 +1,72 @@
 import React from 'react';
 import './Dashboard.css';
-import healthcareImg from '../assets/assets/healthcare-practice-3tfo55K3.jpg';
+import auditOne from '../assets/assets/audit1.jpg';
+import directorImage from '../assets/assets/director.jpg';
+import assuranceImage from '../assets/assets/assurance1.jpg';
+import cfoImage from '../assets/assets/cfo1.jpg';
 
 const ProcessSection = () => {
-  const steps = [
+  const teamMembers = [
     {
-      number: '1',
-      title: 'Free 30-minute consultation',
-      description:
-        "We discuss your organisation, challenges, deadlines and goals – and clarify which services you actually need (and which you don't).",
+      image: auditOne,
+      name: 'Don Siriwardana',
+      role: 'Director',
+      location: 'Canberra, ACT',
     },
     {
-      number: '2',
-      title: 'Assessment & recommendations',
-      description:
-        'We review your current financial setup – bookkeeping, systems, controls and obligations – and give clear, practical recommendations.',
+      image: directorImage,
+      name: 'Sam Herath',
+      role: 'Senior Accountant',
+      location: 'Canberra, ACT',
     },
     {
-      number: '3',
-      title: 'Tailored engagement',
-      description:
-        "We design a scope that fits your size, budget and risk profile – whether that's full back-office bookkeeping & accounting, assurance, audit or fractional CFO support.",
+      image: assuranceImage,
+      name: 'Lahiru Perera',
+      role: 'Accountant',
+      location: 'Canberra, ACT',
     },
     {
-      number: '4',
-      title: 'Ongoing support and reporting',
-      description:
-        'You get regular reporting, proactive communication and a partner who helps you stay ready for audits, lenders, boards and growth opportunities.',
+      image: cfoImage,
+      name: 'Dileep Subramaniam',
+      role: 'Senior Accountant',
+      location: 'Canberra, ACT',
     },
   ];
 
   return (
-    <>
-      <div
-        className="process-banner"
-        style={{
-          backgroundImage: `
-            linear-gradient(
-              to top,
-              rgba(15, 62, 93, 0.4) 0%,
-              rgba(15, 62, 93, 0.5) 100%
-            ),
-            url(${healthcareImg})
-          `,
-        }}
-      ></div>
+    <section className="team-people-section">
+      <div className="container team-people-shell text-center">
+        <span className="team-people-badge">The Team</span>
+        <h2 className="team-people-title">The people behind the work</h2>
 
-      <section className="process-section">
-        <div className="container">
-          <h2 className="process-title text-center">
-            A simple process to remove complexity
-          </h2>
+        <div className="row g-4 team-people-grid justify-content-center">
+          {teamMembers.map((member) => (
+            <div key={member.name} className="col-xl-3 col-lg-3 col-md-6 d-flex">
+              <article className="team-member-card text-start w-100">
+                <img src={member.image} alt={member.name} className="team-member-image" />
+                <div className="team-member-body">
+                  <h3 className="team-member-name">{member.name}</h3>
+                  <p className="team-member-role">{member.role}</p>
+                  <p className="team-member-location">{member.location}</p>
 
-          <div className="row g-4 align-items-stretch">
-            {steps.map((step, index) => (
-              <div key={index} className="col-lg-3 col-md-6 d-flex">
-                <div className="process-card text-start w-100">
-                  <div className="process-number">{step.number}</div>
-                  <h3 className="process-card-title">{step.title}</h3>
-                  <p className="process-card-text">{step.description}</p>
+                  <div className="team-member-socials">
+                    <a href="#" aria-label={`${member.name} on Facebook`} className="team-social-link">
+                      <i className="bi bi-facebook"></i>
+                    </a>
+                    <a href="#" aria-label={`${member.name} on Instagram`} className="team-social-link">
+                      <i className="bi bi-instagram"></i>
+                    </a>
+                    <a href="#" aria-label={`${member.name} on LinkedIn`} className="team-social-link">
+                      <i className="bi bi-linkedin"></i>
+                    </a>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              </article>
+            </div>
+          ))}
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 
