@@ -46,9 +46,7 @@ const HeroWithForm = () => {
               <button
                 type="button"
                 className="btn btn-hero-primary"
-                onClick={() =>
-                  window.dispatchEvent(new Event('open-consultation-modal'))
-                }
+                onClick={() => window.location.assign('/book-consultation')}
               >
                 Book a Consultation
               </button>

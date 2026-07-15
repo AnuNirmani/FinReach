@@ -946,6 +946,13 @@
     padding: 2.2rem 1.3rem 1.8rem;
     box-shadow: 0 8px 18px rgba(17, 35, 52, 0.12);
     height: 100%;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.painpoints-process-card:hover {
+    background-color: #cddc39;
+    box-shadow: 0 12px 24px rgba(17, 35, 52, 0.18);
 }
 
 .painpoints-step-number {
@@ -965,7 +972,7 @@
 
 .painpoints-step-title {
     color: #2b4a5f;
-    font-size: 2rem;
+    font-size: 1.3rem;
     line-height: 1.2;
     font-weight: 700;
     margin-bottom: 1.1rem;
@@ -2425,169 +2432,472 @@ font-size: 1rem;
 
 /* ================= CONTACT PAGE STYLES ================= */
 
-/* --- Top Section: Form with Yellow Border --- */
-.contact-form-section {
-    padding: 80px 0;
-    background-color: #ffffff;
+/* Hero banner */
+.contact-hero-section {
+    position: relative;
+    min-height: 520px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-bottom-left-radius: 42px;
+    border-bottom-right-radius: 42px;
+    overflow: hidden;
 }
 
-.contact-border-wrapper {
-    border: 2px solid #cddc39; /* FinReach Lime Border */
-    background-color: #f9fafb; /* Light gray background inside border */
-    border-radius: 8px;
-    padding: 60px 20px;
-    max-width: 1000px;
-    margin: 0 auto;
+.contact-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(12, 34, 56, 0.38);
 }
 
-.contact-page-title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #1a1a1a;
+.contact-hero-content {
+    position: relative;
+    z-index: 2;
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.contact-hero-card {
+    width: min(640px, 100%);
+    background: rgba(36, 66, 94, 0.72);
+    border-radius: 30px;
+    backdrop-filter: blur(2px);
+    padding: 42px 36px;
+    color: #ffffff;
+}
+
+.contact-hero-title {
+    font-size: clamp(1.7rem, 2.35vw, 3rem);
+    line-height: 1.08;
     margin-bottom: 1rem;
-    text-align: center;
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: -0.02em;
 }
 
-.contact-page-subtitle {
-    font-size: 1rem;
-    color: #546379;
-    max-width: 700px;
-    margin: 0 auto 3rem auto;
-    text-align: center;
-    line-height: 1.6;
+.contact-hero-subtitle {
+    font-size: 0.96rem;
+    color: rgba(255, 255, 255, 0.92);
+    margin-bottom: 1.75rem;
+    line-height: 1.55;
 }
 
-/* The White Form Card */
-.contact-white-card {
+.contact-hero-btn {
     background-color: #ffffff;
-    padding: 50px;
-    border-radius: 4px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-    max-width: 800px;
-    margin: 0 auto;
-    border: 1px solid #e2e8f0;
-}
-
-/* Form Inputs Specific to this page */
-.contact-label {
-    font-weight: 600;
-    font-size: 0.9rem;
-    color: #1a1a1a;
-    margin-bottom: 0.5rem;
-}
-
-.contact-input, .contact-select, .contact-textarea {
-    width: 100%;
-    padding: 0.75rem 1rem;
-    border: 1px solid #cbd5e1;
-    border-radius: 4px;
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
-    color: #334155;
-    background-color: #ffffff;
-}
-
-.contact-input:focus, .contact-select:focus, .contact-textarea:focus {
-    border-color: #0f3e5d;
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(15, 62, 93, 0.1);
-}
-
-.contact-textarea {
-    min-height: 120px;
-    resize: vertical;
-}
-
-.form-text-muted {
-    font-size: 0.8rem;
-    color: #94a3b8;
-    margin-top: -1rem; /* Pulls it closer to the textarea */
-    margin-bottom: 1.5rem;
-}
-
-/* Submit Button */
-.btn-contact-submit {
-    background-color: #cddc39; /* Lime */
-    color: #1a1a1a; /* Dark text */
-    font-weight: 600;
-    padding: 12px 40px;
+    color: #3e698a;
+    font-weight: 700;
+    border-radius: 12px;
     border: none;
-    border-radius: 4px;
-    transition: all 0.3s;
-    display: block;
-    margin: 0 auto; /* Center the button */
+    padding: 0.85rem 1.6rem;
+    font-size: 0.95rem;
+    min-width: 300px;
 }
 
-.btn-contact-submit:hover {
-    background-color: #bfce35;
-    transform: translateY(-1px);
+.contact-hero-btn:hover {
+    background-color: #f3f6f9;
+    color: #2e5777;
 }
 
-/* --- Bottom Section: Direct Contact Cards --- */
-.direct-contact-section {
-    background-color: #f8f9fa; /* Light gray full width background */
-    padding: 80px 0;
-    text-align: center;
-}
-
-.direct-contact-title {
-    font-size: 1.75rem;
-    font-weight: 600;
-    color: #1a1a1a;
-    margin-bottom: 3rem;
-}
-
-.contact-info-card {
+/* Contact info + form two-column section */
+.contact-info-form-section {
     background-color: #ffffff;
+    padding: 60px 0;
+}
+
+.contact-info-form-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.contact-info-col {
+    flex: 0 0 38%;
+    max-width: 38%;
+}
+
+.contact-form-col {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.contact-info-heading {
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: #1a2f4a;
+    line-height: 1.25;
+    margin-bottom: 18px;
+}
+
+.contact-info-body {
+    font-size: 0.97rem;
+    color: #546379;
+    line-height: 1.65;
+    margin-bottom: 22px;
+}
+
+.contact-info-direct-label {
+    font-size: 0.97rem;
+    font-weight: 600;
+    color: #2a8a7a;
+    margin-bottom: 10px;
+}
+
+.contact-info-detail {
+    font-size: 0.93rem;
+    color: #2c3a4a;
+    margin-bottom: 4px;
+    line-height: 1.5;
+}
+
+.contact-map-wrapper {
+    margin-top: 22px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.contact-map-wrapper iframe {
+    display: block;
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+    .contact-info-form-container {
+        flex-direction: column;
+        gap: 36px;
+    }
+
+    .contact-info-col,
+    .contact-form-col {
+        flex: none;
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+/* ---- Native Contact Form (cf) ---- */
+.cf {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.cf-row {
+    display: flex;
+    gap: 16px;
+}
+
+.cf-row > .cf-field {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.cf-field-full {
+    width: 100%;
+}
+
+.cf-label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: #1a2f4a;
+    margin-bottom: 5px;
+}
+
+.cf-req {
+    color: #c0392b;
+}
+
+.cf-input {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #1a2f4a;
+    background: #fff;
+    outline: none;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+.cf-input:focus {
+    border-color: #2a8a7a;
+}
+
+.cf-input::placeholder {
+    color: #9ca3af;
+}
+
+.cf-input-icon-wrap {
+    position: relative;
+}
+
+.cf-email-icon {
+    position: absolute;
+    left: 11px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 13px;
+    pointer-events: none;
+}
+
+.cf-input-with-icon {
+    padding-left: 34px;
+}
+
+.cf-textarea {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #1a2f4a;
+    background: #fff;
+    outline: none;
+    resize: vertical;
+    font-family: inherit;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+.cf-textarea:focus {
+    border-color: #2a8a7a;
+}
+
+.cf-textarea::placeholder {
+    color: #9ca3af;
+}
+
+.cf-select-wrap {
+    position: relative;
+}
+
+.cf-select {
+    width: 100%;
+    padding: 9px 36px 9px 12px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #2a8a7a;
+    background: #fff;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.cf-select:focus {
+    border-color: #2a8a7a;
+}
+
+.cf-select-arrow {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 8px;
+    pointer-events: none;
+}
+
+.cf-checkbox-row {
+    align-items: flex-start;
+}
+
+.cf-check-col {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cf-check-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.88rem;
+    color: #2c3a4a;
+    cursor: pointer;
+    line-height: 1.4;
+}
+
+.cf-check-label input[type="checkbox"] {
+    margin-top: 2px;
+    flex-shrink: 0;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    accent-color: #2a8a7a;
+}
+
+.cf-consent-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: #2c3a4a;
+    cursor: pointer;
+    line-height: 1.45;
+}
+
+.cf-consent-label input[type="checkbox"] {
+    margin-top: 2px;
+    flex-shrink: 0;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    accent-color: #2a8a7a;
+}
+
+.cf-submit-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 6px;
+}
+
+.cf-submit-btn {
+    background-color: #c9cc28;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 48px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+/* .cf-submit-btn:hover {
+    background-color: #7a8900;
+} */
+
+.cf-submit-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.cf-success {
+    text-align: center;
     padding: 40px 20px;
-    border-radius: 8px;
-    border: 1px solid #e2e8f0;
-    height: 100%;
+    font-size: 1.1rem;
+    color: #2a8a7a;
+    font-weight: 600;
+}
+
+@media (max-width: 600px) {
+    .cf-row {
+        flex-direction: column;
+    }
+
+    .cf-checkbox-row {
+        flex-direction: column;
+    }
+}
+
+/* Contact CTA Banner */
+.contact-cta-banner {
+    background-color: #3d6e8a;
+    padding: 48px 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-    transition: transform 0.2s;
+    gap: 24px;
+    text-align: center;
 }
 
-.contact-info-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-}
-
-.contact-card-icon {
-    font-size: 2.5rem;
-    color: #cddc39; /* Lime icon */
-    margin-bottom: 1.5rem;
-}
-
-.contact-card-title {
+.contact-cta-text {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #1a1a1a;
-    margin-bottom: 0.5rem;
+    color: #ffffff;
+    margin: 0;
 }
 
-/* Links inside the cards (Email/Phone) */
-.contact-card-link {
-    color: #cddc39; /* Lime text for links */
+.contact-cta-btn {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #3d6e8a;
+    font-size: 0.95rem;
     font-weight: 500;
+    padding: 12px 32px;
+    border-radius: 8px;
     text-decoration: none;
-    font-size: 1rem;
+    transition: background-color 0.2s, color 0.2s;
 }
 
-.contact-card-link:hover {
-    text-decoration: underline;
-    color: #afb42b;
+.contact-cta-btn:hover {
+    background-color: #f0f4f7;
+    color: #2d5a72;
 }
 
-/* Address text (Gray) */
-.contact-card-text {
-font-size: 1rem;
-  color: #546379;
-  line-height: 1.6;
-  margin: 0;
+/* Embedded form area */
+.contact-form-section {
+    background-color: #f3f5f7;
+    padding: 14px 0 0;
+    border-top: 1px solid #d7dbe1;
+}
+
+.contact-embed-wrapper {
+    background-color: #f3f5f7;
+    border-radius: 0;
+    overflow: hidden;
+    max-width: 1220px;
+    margin: 0 auto;
+}
+
+.contact-embed-wrapper iframe {
+    width: 100%;
+    border: 0;
+    display: block;
+}
+
+@media (max-width: 991px) {
+    .contact-hero-section,
+    .contact-hero-content {
+        min-height: 450px;
+    }
+
+    .contact-hero-card {
+        border-radius: 22px;
+        padding: 28px 22px;
+    }
+
+    .contact-hero-btn {
+        min-width: auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .contact-hero-section {
+        border-bottom-left-radius: 22px;
+        border-bottom-right-radius: 22px;
+    }
+
+    .contact-hero-content {
+        justify-content: center;
+        padding: 22px 0;
+    }
+
+    .contact-hero-card {
+        border-radius: 18px;
+        padding: 22px 18px;
+    }
+
+    .contact-hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .contact-form-section {
+        padding-top: 10px;
+    }
 }
 
 
@@ -3269,6 +3579,856 @@ font-size: 1rem;
 .audit-benefits-section {
     background-color: #ffffff;
     padding: 60px 0;
+}
+
+
+
+
+/* ================= NEW AUDITING PAGE STYLES ================= */
+
+.new-auditing-page {
+    background-color: #dfe5ea;
+}
+
+.new-auditing-hero {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    min-height: 380px;
+    background-color: #2b4f68;
+}
+
+.new-auditing-hero-media {
+    min-height: 100%;
+}
+
+.new-auditing-hero-image {
+    width: 100%;
+    height: 100%;
+    min-height: 380px;
+    object-fit: cover;
+    display: block;
+}
+
+.new-auditing-hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3.25rem 3.2rem;
+    color: #ffffff;
+}
+
+.new-auditing-hero-title {
+    font-size: clamp(2rem, 2.7vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 0.95rem;
+    color: #ffffff;
+    max-width: 670px;
+}
+
+.new-auditing-hero-subtitle {
+    font-size: 1.01rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.6rem;
+    max-width: 650px;
+}
+
+.new-auditing-hero-btn {
+    width: fit-content;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    color: #2d4f66;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.58rem 1rem;
+    letter-spacing: 0.02em;
+}
+
+.new-auditing-hero-btn:hover {
+    background-color: #f2f6f9;
+}
+
+.new-auditing-content-wrap {
+    margin-top: -34px;
+    border-top-left-radius: 34px;
+    border-top-right-radius: 34px;
+    background-color: #dfe5ea;
+    position: relative;
+    z-index: 2;
+    padding: 2.7rem 0 3.4rem;
+}
+
+.new-auditing-shell {
+    max-width: 1600px;
+}
+
+.new-auditing-required {
+    padding: 1rem 0 1.35rem;
+}
+
+.new-auditing-heading {
+    text-align: center;
+    font-size: clamp(1.9rem, 2.2vw, 2.7rem);
+    color: #29495f;
+    font-weight: 700;
+    margin-bottom: 0.65rem;
+}
+
+.new-auditing-subheading {
+    text-align: center;
+    color: #2f3f4b;
+    font-size: 1.03rem;
+    margin-bottom: 2.1rem;
+}
+
+.new-auditing-required-card {
+    background-color: #f6f8fa;
+    border-radius: 12px;
+    border: 1px solid #d3dce4;
+    box-shadow: 0 6px 16px rgba(18, 33, 48, 0.12);
+    padding: 2rem 1.5rem 1.65rem;
+    text-align: center;
+    min-height: 235px;
+}
+
+.new-auditing-required-icon {
+    font-size: 2.25rem;
+    color: #c7d300;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.new-auditing-required-card h3 {
+    color: #2d4a5f;
+    font-size: 1.55rem;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+}
+
+.new-auditing-required-card p {
+    color: #4f6980;
+    font-size: 1.03rem;
+    line-height: 1.55;
+    margin: 0;
+}
+
+.new-auditing-outcomes {
+    padding: 2.35rem 0 1.9rem;
+}
+
+.new-auditing-column-title {
+    color: #29495f;
+    font-size: clamp(1.85rem, 2.1vw, 2.65rem);
+    font-weight: 700;
+    margin-bottom: 1.3rem;
+}
+
+.new-auditing-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.new-auditing-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.55rem;
+    margin-bottom: 1rem;
+    color: #4f6980;
+    font-size: 1.14rem;
+    line-height: 1.58;
+}
+
+.new-auditing-list-cost i {
+    color: #ef4444;
+    font-size: 1.08rem;
+    margin-top: 0.16rem;
+    font-weight: 700;
+}
+
+.new-auditing-list-how i {
+    color: #c7d300;
+    font-size: 1.08rem;
+    margin-top: 0.16rem;
+    font-weight: 700;
+}
+
+.new-auditing-process {
+    padding: 0.7rem 0 1.4rem;
+    text-align: center;
+}
+
+.new-auditing-pill {
+    display: inline-block;
+    background-color: #c7d300;
+    color: #2d4a5f;
+    font-weight: 700;
+    font-size: 0.84rem;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+    padding: 0.38rem 1.3rem;
+    border-radius: 999px;
+    margin-bottom: 1.8rem;
+}
+
+.new-auditing-step-card {
+    background-color: #447192;
+    border-radius: 12px;
+    box-shadow: 0 8px 18px rgba(17, 35, 52, 0.18);
+    min-height: 222px;
+    text-align: left;
+    padding: 1.4rem 1.1rem 1.2rem;
+    transition: background-color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.new-auditing-step-number {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #f4f6f8;
+    color: #2d4a5f;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.95rem;
+}
+
+.new-auditing-step-card h3 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+}
+
+.new-auditing-step-card p {
+    margin: 0;
+    color: #e8eef3;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.new-auditing-step-card:hover,
+.new-auditing-step-card:focus-within {
+    background-color: #c7d300;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 22px rgba(17, 35, 52, 0.2);
+}
+
+.new-auditing-step-card:hover h3,
+.new-auditing-step-card:focus-within h3,
+.new-auditing-step-card:hover p,
+.new-auditing-step-card:focus-within p {
+    color: #ffffff;
+}
+
+.new-auditing-included {
+    text-align: center;
+    padding-top: 1.65rem;
+}
+
+.new-auditing-included-list {
+    max-width: 1160px;
+    margin: 0 auto;
+    display: grid;
+    gap: 0.78rem;
+}
+
+.new-auditing-included-item {
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #d8e0e7;
+    padding: 0.72rem 1.05rem;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    color: #2f3f4b;
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.45;
+}
+
+.new-auditing-included-item i {
+    color: #447192;
+    font-size: 0.95rem;
+}
+
+.new-auditing-benefits {
+    padding: 2.3rem 0 2rem;
+    text-align: center;
+}
+
+.new-auditing-benefit-card {
+    background-color: #f6f8fa;
+    border-radius: 12px;
+    border: 1px solid #d3dce4;
+    box-shadow: 0 6px 16px rgba(18, 33, 48, 0.12);
+    padding: 1.8rem 1.2rem 1.45rem;
+    min-height: 210px;
+}
+
+.new-auditing-benefit-icon {
+    font-size: 2rem;
+    color: #6f98bb;
+    margin-bottom: 0.9rem;
+    display: inline-block;
+}
+
+.new-auditing-benefit-card h3 {
+    color: #2d4a5f;
+    font-size: 1.55rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.7rem;
+}
+
+.new-auditing-benefit-card p {
+    margin: 0;
+    color: #4f6980;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.new-auditing-who {
+    position: relative;
+    background-color: transparent;
+    border-radius: 0;
+    padding: 2.4rem 2rem 2.1rem;
+    margin-top: 1.6rem;
+    text-align: center;
+    z-index: 0;
+}
+
+.new-auditing-who::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    z-index: -1;
+}
+
+.new-auditing-who-card img {
+    width: 100%;
+    border-radius: 0;
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 0.9rem;
+}
+
+.new-auditing-who-card h3 {
+    color: #2d4a5f;
+    font-size: 2.1rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+}
+
+.new-auditing-who-card p {
+    color: #2f3f4b;
+    font-size: 1rem;
+    line-height: 1.55;
+    margin-bottom: 0.55rem;
+}
+
+.new-auditing-who-card a {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #4f7493;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid rgba(79, 116, 147, 0.65);
+    padding-bottom: 0.08rem;
+}
+
+.new-auditing-who-card a:hover {
+    color: #365c7e;
+    border-bottom-color: #365c7e;
+}
+
+.new-auditing-why-row {
+    margin-top: 3.6rem;
+    text-align: left;
+}
+
+.new-auditing-why-image-wrap {
+    width: 100%;
+    max-width: 560px;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+}
+
+.new-auditing-why-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.new-auditing-why-copy h3 {
+    color: #2d4a5f;
+    font-size: clamp(2rem, 2.3vw, 3.1rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+}
+
+.new-auditing-why-copy p {
+    color: #2f3f4b;
+    font-size: 1.03rem;
+    line-height: 1.65;
+    margin-bottom: 0;
+}
+
+.new-auditing-pill-left {
+    margin-bottom: 1rem;
+}
+
+.new-auditing-testimonials-wrap {
+    background-color: #dfe5ea;
+    padding: 2.2rem 0 2.8rem;
+}
+
+.new-auditing-testimonials {
+    max-width: 1220px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0;
+}
+
+.new-auditing-testimonial-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 220px;
+}
+
+.new-auditing-testimonial-track {
+    width: 100%;
+    margin-right: auto;
+}
+
+.new-auditing-testimonial-track .row {
+    align-items: stretch;
+}
+
+.new-auditing-testimonial-track .row > [class*="col-"] {
+    display: flex;
+}
+
+.new-auditing-testimonial-side-arrow {
+    position: static;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    color: #2d4a5f;
+    font-size: 2.2rem;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    padding: 0.2rem;
+}
+
+.new-auditing-testimonial-side-arrow-left {
+    margin-right: 0.35rem;
+}
+
+.new-auditing-testimonial-side-arrow-right {
+    margin-left: auto;
+}
+
+.new-auditing-testimonial-side-arrow:hover {
+    color: #1f3d54;
+}
+
+.new-auditing-testimonial-card {
+    background-color: #f7f9fb;
+    border-radius: 8px;
+    border: 1px solid #d3dce4;
+    box-shadow: 0 4px 10px rgba(18, 33, 48, 0.1);
+    padding: 1.25rem 0.95rem 0.95rem;
+    min-height: 220px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.new-auditing-testimonial-preview-text {
+    color: #2f3f4b;
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin-bottom: 0.7rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.new-auditing-testimonial-readmore {
+    color: #2d4a5f;
+    font-size: 0.92rem;
+    font-weight: 700;
+    text-decoration: none;
+    margin-bottom: 0.9rem;
+    display: inline-block;
+    background: transparent;
+    border: none;
+    padding: 0;
+    text-align: left;
+    width: fit-content;
+}
+
+.new-auditing-testimonial-readmore:hover {
+    text-decoration: underline;
+}
+
+.new-auditing-testimonial-readmore:focus-visible {
+    outline: 2px solid #2d4a5f;
+    outline-offset: 2px;
+}
+
+.new-auditing-testimonial-meta {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+}
+
+.new-auditing-testimonial-card span {
+    display: block;
+    color: #1f2a37;
+    font-size: 0.94rem;
+    font-weight: 600;
+}
+
+.new-auditing-testimonial-logo {
+    height: 28px;
+    width: auto;
+    object-fit: contain;
+    max-width: 120px;
+}
+
+.new-auditing-testimonial-dots {
+    display: flex;
+    gap: 0.45rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.new-auditing-testimonial-dots span {
+    width: 13px;
+    height: 4px;
+    border-radius: 999px;
+    background-color: #98a9b7;
+}
+
+.new-auditing-testimonial-dots span.active {
+    background-color: #2d4a5f;
+}
+
+.new-auditing-testimonial-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.34);
+    z-index: 1400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.new-auditing-testimonial-modal {
+    width: min(760px, 100%);
+    background: #f7f9fb;
+    border: 1px solid #d3dce4;
+    border-radius: 10px;
+    box-shadow: 0 16px 34px rgba(17, 35, 52, 0.2);
+    padding: 1.25rem 1.1rem 1rem;
+    position: relative;
+}
+
+.new-auditing-testimonial-full-text {
+    color: #2f3f4b;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.new-auditing-final-cta {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    padding: 5.1rem 0;
+    color: #ffffff;
+}
+
+.new-auditing-final-cta-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(37, 67, 87, 0.7);
+}
+
+.new-auditing-final-cta .container {
+    position: relative;
+    z-index: 2;
+}
+
+.new-auditing-final-cta-content {
+    text-align: center;
+}
+
+.new-auditing-final-cta-content h2 {
+    color: #ffffff;
+    font-size: clamp(2rem, 2.5vw, 3.2rem);
+    font-weight: 700;
+    margin-bottom: 0.85rem;
+}
+
+.new-auditing-final-cta-content p {
+    color: rgba(255, 255, 255, 0.92);
+    margin-bottom: 1.65rem;
+    font-size: 1.04rem;
+}
+
+.new-auditing-final-cta-btn {
+    background-color: #ffffff;
+    color: #2d4a5f;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.68rem 1.55rem;
+}
+
+.new-auditing-final-cta-btn:hover {
+    background-color: #f2f5f8;
+}
+
+@media (max-width: 1199px) {
+    .new-auditing-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .new-auditing-hero-content {
+        padding: 2.4rem 1.4rem;
+    }
+
+    .new-auditing-hero-image {
+        min-height: 280px;
+    }
+
+    .new-auditing-content-wrap {
+        border-top-left-radius: 22px;
+        border-top-right-radius: 22px;
+        margin-top: -22px;
+    }
+
+    .new-auditing-required-card {
+        min-height: auto;
+    }
+
+    .new-auditing-step-card {
+        min-height: auto;
+    }
+
+    .new-auditing-benefit-card {
+        min-height: auto;
+    }
+
+    .new-auditing-who {
+        padding: 2rem 1.25rem 1.85rem;
+    }
+
+    .new-auditing-who-card h3 {
+        font-size: 1.8rem;
+    }
+
+    .new-auditing-who-card img {
+        height: 240px;
+    }
+
+    .new-auditing-why-image-wrap {
+        max-width: 440px;
+    }
+
+    .new-auditing-why-row {
+        text-align: center;
+    }
+
+    .new-auditing-pill-left {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .new-auditing-why-copy {
+        text-align: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .new-auditing-hero {
+        min-height: auto;
+    }
+
+    .new-auditing-hero-title {
+        font-size: 1.95rem;
+    }
+
+    .new-auditing-hero-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .new-auditing-content-wrap {
+        padding-top: 2.15rem;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+    }
+
+    .new-auditing-required {
+        padding-top: 0;
+    }
+
+    .new-auditing-column-title {
+        text-align: center;
+    }
+
+    .new-auditing-pill {
+        letter-spacing: 0.13em;
+    }
+
+    .new-auditing-step-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .new-auditing-required-card h3 {
+        font-size: 1.35rem;
+    }
+
+    .new-auditing-benefits {
+        padding-top: 1.7rem;
+    }
+
+    .new-auditing-benefit-card {
+        min-height: auto;
+        padding: 1.45rem 1rem 1.2rem;
+    }
+
+    .new-auditing-benefit-card h3 {
+        font-size: 1.35rem;
+    }
+
+    .new-auditing-who {
+        margin-top: 1.2rem;
+        border-radius: 0;
+        padding: 1.6rem 0.9rem 1.4rem;
+    }
+
+    .new-auditing-who-card img {
+        height: 210px;
+    }
+
+    .new-auditing-who-card h3 {
+        font-size: 1.45rem;
+    }
+
+    .new-auditing-who-card p,
+    .new-auditing-why-copy p {
+        font-size: 0.96rem;
+    }
+
+    .new-auditing-why-row {
+        margin-top: 2.4rem;
+        row-gap: 1.2rem;
+    }
+
+    .new-auditing-why-image-wrap {
+        max-width: 320px;
+    }
+
+    .new-auditing-why-copy h3 {
+        font-size: 1.7rem;
+    }
+
+    .new-auditing-testimonials-wrap {
+        padding-top: 1.7rem;
+        padding-bottom: 2.1rem;
+    }
+
+    .new-auditing-testimonial-card {
+        min-height: auto;
+    }
+
+    .new-auditing-testimonial-carousel {
+        min-height: 0;
+        gap: 0.6rem;
+    }
+
+    .new-auditing-testimonial-track {
+        width: 100%;
+    }
+
+    .new-auditing-testimonial-side-arrow {
+        font-size: 1.9rem;
+    }
+
+    .new-auditing-testimonial-side-arrow-left {
+        margin-right: 0.15rem;
+    }
+
+    .new-auditing-testimonial-side-arrow-right {
+        margin-left: auto;
+    }
+
+    .new-auditing-testimonial-modal-backdrop {
+        padding: 0.75rem;
+        gap: 0;
+    }
+
+    .new-auditing-testimonial-modal {
+        padding: 1rem 0.85rem 0.85rem;
+    }
+
+    .new-auditing-testimonial-full-text {
+        font-size: 0.96rem;
+    }
+
+    .new-auditing-final-cta {
+        padding: 3.4rem 0;
+    }
+
+    .new-auditing-final-cta-content h2 {
+        font-size: 1.75rem;
+    }
+
+    .new-auditing-final-cta-content p {
+        font-size: 0.95rem;
+    }
+
+    .new-auditing-final-cta-btn {
+        width: 100%;
+        max-width: 240px;
+    }
 }
 
 

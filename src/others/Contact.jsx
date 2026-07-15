@@ -1,12 +1,55 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import { useMeta } from '../utils/useMeta';
 import '../Dashboard/Dashboard.css';
 import Header from '../Dashboard/Header';
 import Footer from '../Dashboard/Footer';
+import cfo1Image from '../assets/assets/cfo1.jpg';
 
 const Contact = () => {
   const { meta } = useMeta(4);
+
+  const [form, setForm] = useState({
+    firstName: '', lastName: '', phone: '', email: '', organisation: '',
+    orgTypes: [], helpWith: [], message: '', hearAbout: '',
+    consentSMS: false, consentMarketing: false,
+  });
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    if (type === 'checkbox') {
+      const key = e.target.dataset.group;
+      if (key) {
+        setForm(prev => ({
+          ...prev,
+          [key]: checked
+            ? [...prev[key], value]
+            : prev[key].filter(v => v !== value),
+        }));
+      } else {
+        setForm(prev => ({ ...prev, [name]: checked }));
+      }
+    } else {
+      setForm(prev => ({ ...prev, [name]: value }));
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSubmitting(true);
+    try {
+      await fetch('https://link.finreach.com.au/api/form-submit/PvN5tiD5wIDmJRPeox5Q', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+    } catch (_) {}
+    setSubmitting(false);
+    setSubmitted(true);
+  };
 
   useEffect(() => {
     const scriptSrc = 'https://link.finreach.com.au/js/form_embed.js';
@@ -45,98 +88,167 @@ const Contact = () => {
 
       <Header />
 
-      {/* Contact Form Section */}
-      <section className="contact-form-section">
-        <div className="container">
-          <div className="contact-border-wrapper">
-            <h1 className="contact-page-title">
-              Book your 30-minute, obligation-free consultation
+      <section
+        className="contact-hero-section"
+        style={{ backgroundImage: `url(${cfo1Image})` }}
+      >
+        <div className="contact-hero-overlay"></div>
+
+        <div className="container contact-hero-content">
+          <div className="contact-hero-card">
+            <h1 className="contact-hero-title">
+              Let's Talk About What Your Organisation Actually Needs.
             </h1>
 
-            <p className="contact-page-subtitle">
-              Tell us a little about your organisation and what you're looking for.
-              We'll be in touch to confirm a time and let you know what to have for the call.
+            <p className="contact-hero-subtitle">
+              No forms into a void, no call centre. You'll hear from Don directly.
             </p>
 
-            <div className="contact-white-card">
-              <iframe
-                src="https://link.finreach.com.au/widget/form/1j6lMFNrccoaSNpTKVEU"
-                style={{
-                  width: '100%',
-                  height: '749px',
-                  border: 'none',
-                  borderRadius: '3px',
-                  display: 'block',
-                }}
-                id="inline-1j6lMFNrccoaSNpTKVEU"
-                data-layout="{'id':'INLINE'}"
-                data-trigger-type="alwaysShow"
-                data-trigger-value=""
-                data-activation-type="alwaysActivated"
-                data-activation-value=""
-                data-deactivation-type="neverDeactivate"
-                data-deactivation-value=""
-                data-form-name="Contact Us Form"
-                data-height="749"
-                data-layout-iframe-id="inline-1j6lMFNrccoaSNpTKVEU"
-                data-form-id="1j6lMFNrccoaSNpTKVEU"
-                title="Contact Us Form"
-              />
-            </div>
+            <Link className="btn contact-hero-btn" to="/book-consultation">
+              Book A No-Obligation Consultation
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Direct Contact Section */}
-      <section className="direct-contact-section">
-        <div className="container">
-          <h2 className="direct-contact-title">Prefer to reach out directly?</h2>
+      <section id="contact-embed-section" className="contact-info-form-section">
+        <div className="contact-info-form-container">
+          {/* Left column */}
+          <div className="contact-info-col">
+            <h2 className="contact-info-heading">What happens when you get in touch</h2>
+            <p className="contact-info-body">
+              Fill in the form below and Don will personally call you, usually within a couple of hours, always within one business day. No account managers, no hand-offs. You'll be speaking with the person who actually leads your engagement from day one.
+            </p>
 
-          <div className="row g-4 justify-content-center">
-            {/* Email */}
-            <div className="col-lg-4 col-md-6">
-              <div className="contact-info-card">
-                <i className="bi bi-envelope contact-card-icon"></i>
-                <h3 className="contact-card-title">Email</h3>
+            <p className="contact-info-direct-label">Prefer to call or email directly? That's fine too.</p>
 
-                <a
-                  href="mailto:info@finreach.com.au"
-                  className="contact-card-link contact-link-black"
-                >
-                  info@finreach.com.au
-                </a>
-              </div>
-            </div>
+            <p className="contact-info-detail">PH: (02) 6105 9300</p>
+            <p className="contact-info-detail">E: info@finreach.com.au</p>
+            <p className="contact-info-detail">A: Level 1, 11-17 Swanson Court, Belconnen ACT 2617 Australia</p>
 
-            {/* Phone */}
-            <div className="col-lg-4 col-md-6">
-              <div className="contact-info-card">
-                <i className="bi bi-telephone contact-card-icon"></i>
-                <h3 className="contact-card-title">Phone</h3>
-
-                <a
-                  href="tel:+61261059300"
-                  className="contact-card-link contact-link-black"
-                >
-                  (02) 6105 9300
-                </a>
-              </div>
-            </div>
-
-            {/* Address */}
-            <div className="col-lg-4 col-md-6">
-              <div className="contact-info-card">
-                <i className="bi bi-geo-alt contact-card-icon"></i>
-                <h3 className="contact-card-title">Address</h3>
-                <p className="contact-card-text">
-                  Level 1, 11-17 Swanson Court,
-                  <br />
-                  Belconnen ACT 2617 Australia
-                </p>
-              </div>
+            <div className="contact-map-wrapper">
+              <iframe
+                src="https://maps.google.com/maps?q=Level+1,+11-17+Swanson+Court,+Belconnen+ACT+2617+Australia&output=embed"
+                width="100%"
+                height="220"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Finreach Location"
+              ></iframe>
             </div>
           </div>
+
+          {/* Right column – Contact form */}
+          <div className="contact-form-col">
+            {submitted ? (
+              <div className="cf-success">
+                <p>Thank you! We'll be in touch shortly.</p>
+              </div>
+            ) : (
+              <form className="cf" onSubmit={handleSubmit} noValidate>
+                {/* Row 1 */}
+                <div className="cf-row">
+                  <div className="cf-field">
+                    <label className="cf-label">First Name <span className="cf-req">*</span></label>
+                    <input className="cf-input" type="text" name="firstName" placeholder="Enter your first name" value={form.firstName} onChange={handleChange} required />
+                  </div>
+                  <div className="cf-field">
+                    <label className="cf-label">Last Name <span className="cf-req">*</span></label>
+                    <input className="cf-input" type="text" name="lastName" placeholder="Enter your last name" value={form.lastName} onChange={handleChange} required />
+                  </div>
+                </div>
+
+                {/* Row 2 */}
+                <div className="cf-row">
+                  <div className="cf-field">
+                    <label className="cf-label">Phone <span className="cf-req">*</span></label>
+                    <input className="cf-input" type="tel" name="phone" placeholder="+61" value={form.phone} onChange={handleChange} required />
+                  </div>
+                  <div className="cf-field">
+                    <label className="cf-label">Email <span className="cf-req">*</span></label>
+                    <div className="cf-input-icon-wrap">
+                      <svg className="cf-email-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 16" fill="none"><rect x="0.5" y="0.5" width="19" height="15" rx="1.5" stroke="#9CA3AF"/><path d="M1 1l9 7 9-7" stroke="#9CA3AF" strokeWidth="1.2"/></svg>
+                      <input className="cf-input cf-input-with-icon" type="email" name="email" placeholder="your@email.com" value={form.email} onChange={handleChange} required />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Organisation */}
+                <div className="cf-field cf-field-full">
+                  <label className="cf-label">Organisation <span className="cf-req">*</span></label>
+                  <input className="cf-input" type="text" name="organisation" placeholder="Enter your organisation" value={form.organisation} onChange={handleChange} required />
+                </div>
+
+                {/* Checkboxes row */}
+                <div className="cf-row cf-checkbox-row">
+                  <div className="cf-check-col">
+                    <label className="cf-label">Select which type of organisation you are? <span className="cf-req">*</span></label>
+                    {['Not-for-profits / charities', 'Growth-stage SMEs', 'Both', 'Other'].map(opt => (
+                      <label key={opt} className="cf-check-label">
+                        <input type="checkbox" data-group="orgTypes" value={opt} checked={form.orgTypes.includes(opt)} onChange={handleChange} />
+                        <span>{opt}</span>
+                      </label>
+                    ))}
+                  </div>
+                  <div className="cf-check-col">
+                    <label className="cf-label">What would you like help with? <span className="cf-req">*</span></label>
+                    {['Bookkeeping & accounting', 'Auditing & assurance', 'Grant acquittals or compliance reporting', 'Fractional CFO / financial oversight', 'Other'].map(opt => (
+                      <label key={opt} className="cf-check-label">
+                        <input type="checkbox" data-group="helpWith" value={opt} checked={form.helpWith.includes(opt)} onChange={handleChange} />
+                        <span>{opt}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Message */}
+                <div className="cf-field cf-field-full">
+                  <label className="cf-label">Tell us a bit about what's going on</label>
+                  <textarea className="cf-textarea" name="message" placeholder="We've outgrown our current accountant, we've got an audit coming up, we need s..." value={form.message} onChange={handleChange} rows={3} />
+                </div>
+
+                {/* Hear about */}
+                <div className="cf-field cf-field-full">
+                  <label className="cf-label">How did you hear about us?</label>
+                  <div className="cf-select-wrap">
+                    <select className="cf-select" name="hearAbout" value={form.hearAbout} onChange={handleChange}>
+                      <option value="">Select an option</option>
+                      <option>Google Search</option>
+                      <option>Social Media</option>
+                      <option>Referral</option>
+                      <option>LinkedIn</option>
+                      <option>Other</option>
+                    </select>
+                    <svg className="cf-select-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="#6B7280" strokeWidth="1.5" strokeLinecap="round"/></svg>
+                  </div>
+                </div>
+
+                {/* Consent */}
+                <label className="cf-consent-label">
+                  <input type="checkbox" name="consentSMS" checked={form.consentSMS} onChange={handleChange} />
+                  <span>By checking this box, I consent to receive non-marketing text messages from Finreach</span>
+                </label>
+                <label className="cf-consent-label">
+                  <input type="checkbox" name="consentMarketing" checked={form.consentMarketing} onChange={handleChange} />
+                  <span>By checking this box, I consent to receive marketing and promotional from FinReach at the phone number provided.</span>
+                </label>
+
+                <div className="cf-submit-row">
+                  <button className="cf-submit-btn" type="submit" disabled={submitting}>
+                    {submitting ? 'Submitting...' : 'Submit'}
+                  </button>
+                </div>
+              </form>
+            )}
+          </div>
         </div>
+      </section>
+
+      <section className="contact-cta-banner">
+        <p className="contact-cta-text">The sooner we talk, the sooner you'll have peace of mind.</p>
+        <Link className="contact-cta-btn" to="/book-consultation">Book A Consultation</Link>
       </section>
 
       <Footer />

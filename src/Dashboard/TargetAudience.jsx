@@ -14,7 +14,7 @@ const TargetAudience = () => {
             image: auditHero,
             title: 'Auditing',
             description: 'Risk-based audits for NFPs and regulated organisations. Compliant and delivered on time.',
-            to: '/auditing'
+            to: '/newauditing'
         },
         {
             image: assuranceHero,

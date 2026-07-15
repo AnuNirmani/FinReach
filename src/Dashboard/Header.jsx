@@ -1,33 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import './Dashboard.css'
 import logo from '../assets/sitelogo.webp'
 
 const Header = () => {
-  const [isConsultOpen, setIsConsultOpen] = useState(false)
-
-  // Load external embed script once (optional but safe)
- useEffect(() => {
-  // load external script once
-  if (!document.querySelector('script[data-finreach-form]')) {
-    const script = document.createElement('script')
-    script.src = 'https://link.finreach.com.au/js/form_embed.js'
-    script.async = true
-    script.setAttribute('data-finreach-form', 'true')
-    document.body.appendChild(script)
-  }
-
-  // listen for global "open consult" event
-  const handleOpen = () => setIsConsultOpen(true)
-  window.addEventListener('open-consultation-modal', handleOpen)
-
-  // cleanup
-  return () => {
-    window.removeEventListener('open-consultation-modal', handleOpen)
-  }
-}, [])
-
-
   return (
     <>
       <nav className="navbar navbar-expand-xl navbar-light fixed-top shadow-sm finreach-navbar">
@@ -152,63 +128,13 @@ const Header = () => {
               <Link to="/contact" className="btn btn-finreach-outline">
                 Contact Us
               </Link>
-              <button
-                type="button"
-                className="btn btn-finreach-cta"
-                onClick={() => setIsConsultOpen(true)}
-              >
+              <Link to="/book-consultation" className="btn btn-finreach-cta">
                 Book a Consultation
-              </button>
+              </Link>
             </div>
           </div>
         </div>
       </nav>
-
-           {/* Popup Modal */}
-      {isConsultOpen && (
-        <div
-          className="fr-modal-backdrop"
-          onClick={() => setIsConsultOpen(false)} // click outside to close
-        >
-          <div
-            className="fr-modal"
-            onClick={(e) => e.stopPropagation()} // don't close when clicking inside
-          >
-            <button
-              type="button"
-              className="fr-modal-close"
-              onClick={() => setIsConsultOpen(false)}
-            >
-              ×
-            </button>
-
-            <div className="fr-modal-body">
-              <iframe
-                src="https://link.finreach.com.au/widget/form/PvN5tiD5wIDmJRPeox5Q"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  border: 'none',
-                  borderRadius: '3px',
-                }}
-                id="inline-PvN5tiD5wIDmJRPeox5Q"
-                data-layout="{'id':'INLINE'}"
-                data-trigger-type="alwaysShow"
-                data-trigger-value=""
-                data-activation-type="alwaysActivated"
-                data-activation-value=""
-                data-deactivation-type="neverDeactivate"
-                data-deactivation-value=""
-                data-form-name="Website Final  NOV 25"
-                data-height="undefined"
-                data-layout-iframe-id="inline-PvN5tiD5wIDmJRPeox5Q"
-                data-form-id="PvN5tiD5wIDmJRPeox5Q"
-                title="Website Final  NOV 25"
-              />
-            </div>
-          </div>
-        </div>
-      )}
 
     </>
   )

@@ -44,7 +44,7 @@ const PainPointsSection = () => {
                     <Link to="/contact" className="btn painpoints-btn-dark">
                         Enquire Now
                     </Link>
-                    <Link to="/contact" className="btn painpoints-btn-lime">
+                    <Link to="/book-consultation" className="btn painpoints-btn-lime">
                         Book a Consultation
                     </Link>
                 </div>

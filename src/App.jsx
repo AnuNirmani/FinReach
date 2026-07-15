@@ -12,10 +12,12 @@ const Blog = lazy(() => import('./Blog/Blog'))
 const BookkeepingCashFlow = lazy(() => import('./categories/Bookkeeping&Accounting.jsx'))
 const AssuranceFunding = lazy(() => import('./categories/Assurance.jsx'))
 const AuditReadiness = lazy(() => import('./categories/Auditing.jsx'))
+const NewAuditing = lazy(() => import('./categories/NewAuditing.jsx'))
 const FractionalCFOInsights = lazy(() => import('./categories/FractionalCFO.jsx'))
 const About = lazy(() => import('./others/About.jsx'))
 const Contact = lazy(() => import('./others/Contact.jsx'))
 const BlogArticle = lazy(() => import('./others/BlogArticle.jsx'))
+const BookConsultation = lazy(() => import('./pages/BookConsultation.jsx'))
 
 // Blog category pages
 const BlogBookkeepingCashFlow = lazy(() => import('./Blog/blog/BookkeepingCashFlow.jsx'))
@@ -52,9 +54,12 @@ function App() {
           <Route path="/bookkeeping-accounting" element={<BookkeepingCashFlow />} />
           <Route path="/assurance" element={<AssuranceFunding />} />
           <Route path="/auditing" element={<AuditReadiness />} />
+          <Route path="/newauditing" element={<NewAuditing />} />
+          <Route path="/new-auditing" element={<NewAuditing />} />
           <Route path="/fractional-cfo" element={<FractionalCFOInsights />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/book-consultation" element={<BookConsultation />} />
           <Route path="/blog/financial-resilience" element={<BlogArticle />} />
           <Route path="/blog/article/:id" element={<BlogArticle />} />
           
