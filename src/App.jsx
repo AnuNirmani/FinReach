@@ -11,7 +11,6 @@ const Dashboard = lazy(() => import('./Dashboard/Dashboard'))
 const Blog = lazy(() => import('./Blog/Blog'))
 const BookkeepingCashFlow = lazy(() => import('./categories/Bookkeeping&Accounting.jsx'))
 const AssuranceFunding = lazy(() => import('./categories/Assurance.jsx'))
-const AuditReadiness = lazy(() => import('./categories/Auditing.jsx'))
 const NewAuditing = lazy(() => import('./categories/NewAuditing.jsx'))
 const FractionalCFOInsights = lazy(() => import('./categories/FractionalCFO.jsx'))
 const About = lazy(() => import('./others/About.jsx'))
@@ -53,7 +52,7 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/bookkeeping-accounting" element={<BookkeepingCashFlow />} />
           <Route path="/assurance" element={<AssuranceFunding />} />
-          <Route path="/auditing" element={<AuditReadiness />} />
+          <Route path="/auditing" element={<NewAuditing />} />
           <Route path="/newauditing" element={<NewAuditing />} />
           <Route path="/new-auditing" element={<NewAuditing />} />
           <Route path="/fractional-cfo" element={<FractionalCFOInsights />} />
