@@ -1,0 +1,507 @@
+.cfo-page {
+  background: #ffffff;
+}
+
+.cfo-hero {
+  margin-top: 0;
+  display: grid;
+  grid-template-columns: 44% 56%;
+  min-height: 520px;
+}
+
+.cfo-hero-image-wrap {
+  min-height: 520px;
+}
+
+.cfo-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cfo-hero-content {
+  background: #335d79;
+  color: #ffffff;
+  padding: clamp(2rem, 5vw, 5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cfo-hero-content h1 {
+  font-size: clamp(1.8rem, 2.7vw, 3.1rem);
+  line-height: 1.08;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  max-width: 740px;
+}
+
+.cfo-hero-content p {
+  font-size: 1.1rem;
+  max-width: 840px;
+  line-height: 1.45;
+  margin: 0 0 1.8rem;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.cfo-hero-btn {
+  border: none;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #2b4f69;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 1.45rem;
+  width: fit-content;
+}
+
+.cfo-hero-btn:hover {
+  background: #f2f5f7;
+}
+
+.cfo-content-wrap {
+  background: #dfe5ea;
+  border-radius: 0 0 60px 60px;
+  margin-top: -28px;
+  padding: 76px 0 90px;
+  box-shadow: 0 10px 20px rgba(17, 35, 52, 0.14);
+  overflow: hidden;
+}
+
+.cfo-shell {
+  max-width: 1420px;
+}
+
+.cfo-painpoints-section h2,
+.cfo-services-section h2 {
+  font-size: clamp(1.85rem, 2.2vw, 2.6rem);
+  color: #2b4a5f;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.cfo-painpoints-subtitle {
+  color: #222f3a;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 2.5rem;
+}
+
+.cfo-painpoints-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1250px;
+  text-align: left;
+}
+
+.cfo-painpoints-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-bottom: 1.1rem;
+}
+
+.cfo-painpoints-list i {
+  color: #e33939;
+  font-size: 1rem;
+  margin-top: 0.3rem;
+}
+
+.cfo-painpoints-list span {
+  color: #4a6780;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.cfo-services-section {
+  margin-top: 4.5rem;
+}
+
+.cfo-service-card {
+  height: 100%;
+  background: #f8f9fa;
+  border-radius: 18px;
+  box-shadow: 0 6px 16px rgba(28, 48, 64, 0.18);
+  padding: 2.4rem 2rem 2rem;
+}
+
+.cfo-service-icon {
+  color: #c4c636;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.cfo-service-card h3 {
+  color: #2c4a5f;
+  font-size: 1.55rem;
+  line-height: 1.25;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.cfo-service-card p {
+  color: #426783;
+  font-size: 1.02rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.cfo-process-section {
+  margin-top: 3.6rem;
+}
+
+.cfo-process-lead {
+  color: #1f1f1f;
+  font-size: 1.06rem;
+  font-weight: 700;
+  margin: 0 auto 2rem;
+  max-width: 1080px;
+}
+
+.cfo-pill {
+  display: inline-block;
+  background: #cddc39;
+  color: #2b4a5f;
+  padding: 0.4rem 1.4rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 2.3rem;
+}
+
+.cfo-process-card {
+  background: #467495;
+  color: #ffffff;
+  border-radius: 14px;
+  padding: 1.6rem 1.4rem 1.45rem;
+  height: 100%;
+  text-align: left;
+}
+
+.cfo-step-number {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  color: #2b4a5f;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.cfo-process-card h3 {
+  font-size: 1.5rem;
+  line-height: 1.3;
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+}
+
+.cfo-process-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.55;
+  font-size: 1rem;
+}
+
+.cfo-included-section {
+  margin-top: 3.8rem;
+}
+
+.cfo-included-list {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+}
+
+.cfo-included-item {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 0.85rem 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-align: left;
+}
+
+.cfo-included-item i {
+  color: #3b6f92;
+  font-size: 0.95rem;
+}
+
+.cfo-included-item span {
+  color: #111827;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.cfo-investment-section {
+  margin-top: 5.2rem;
+  background: transparent;
+}
+
+.cfo-investment-grid {
+  max-width: 1600px;
+  margin: 0 auto;
+  background: transparent;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1.6rem;
+}
+
+.cfo-content-wrap .container,
+.cfo-content-wrap .cfo-shell {
+  background: transparent;
+}
+
+.cfo-lower-wrap {
+  background: #f3f5f7;
+  padding: 2.6rem 0 0;
+}
+
+.cfo-investment-card {
+  background: #f8f9fa;
+  border-radius: 16px;
+  box-shadow: 0 5px 14px rgba(19, 41, 56, 0.16);
+  padding: 2.35rem 1.2rem 1.7rem;
+  min-height: 220px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cfo-investment-icon {
+  color: #4f7fa1;
+  font-size: 3rem;
+  margin-bottom: 1.2rem;
+}
+
+.cfo-investment-card p {
+  margin: 0;
+  color: #4f7493;
+  font-size: 1rem;
+  line-height: 1.4;
+  max-width: 245px;
+}
+
+.cfo-who-section {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.cfo-who-grid {
+  margin-top: 0.5rem;
+  --bs-gutter-y: 0;
+  --bs-gutter-x: 2.5rem;
+}
+
+.cfo-who-section > .cfo-pill {
+  margin-bottom: 0.8rem;
+}
+
+.cfo-who-card {
+  height: 100%;
+}
+
+.cfo-who-image {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.cfo-who-card h3 {
+  color: #2b4a5f;
+  font-size: 2.05rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.cfo-who-card p {
+  color: #222f3a;
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 570px;
+  margin: 0 auto 1rem;
+}
+
+.cfo-who-link {
+  color: #4f7493;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 2px solid #7da2bf;
+  display: inline-block;
+  padding-bottom: 0.05rem;
+}
+
+.cfo-who-link:hover {
+  color: #355c7d;
+  border-bottom-color: #355c7d;
+}
+
+.cfo-why-section {
+  margin-top: 8rem;
+}
+
+.cfo-why-image-wrap {
+  width: 100%;
+}
+
+.cfo-why-image {
+  width: 100%;
+  height: 740px;
+  object-fit: cover;
+  display: block;
+}
+
+.cfo-why-copy {
+  max-width: 620px;
+}
+
+.cfo-pill-left {
+  margin-bottom: 1.45rem;
+}
+
+.cfo-why-copy h2 {
+  color: #2b4a5f;
+  font-size: clamp(2rem, 3.2vw, 3.25rem);
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 1.4rem;
+}
+
+.cfo-why-copy p {
+  color: #2a2f35;
+  font-size: 1.08rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.cfo-page .assurance-testimonials-wrap {
+  margin-top: 8.5rem;
+  border-top-left-radius: 44px;
+  border-top-right-radius: 44px;
+  overflow: hidden;
+}
+
+.cfo-page .new-auditing-testimonials-wrap {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+@media (max-width: 1199px) {
+  .cfo-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .cfo-hero-image-wrap {
+    min-height: 360px;
+  }
+
+  .cfo-content-wrap {
+    border-radius: 0 0 48px 48px;
+    margin-top: 0;
+  }
+
+  .cfo-painpoints-list span,
+  .cfo-service-card p,
+  .cfo-process-card p,
+  .cfo-hero-content p {
+    font-size: 1.05rem;
+  }
+
+  .cfo-service-card h3,
+  .cfo-process-card h3 {
+    font-size: 1.45rem;
+  }
+
+  .cfo-process-lead {
+    font-size: 1.05rem;
+  }
+
+  .cfo-pill {
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .cfo-hero {
+    margin-top: 0;
+  }
+
+  .cfo-hero-content {
+    padding: 1.6rem 1.2rem 2rem;
+  }
+
+  .cfo-content-wrap {
+    padding: 54px 0 62px;
+    border-radius: 0 0 34px 34px;
+  }
+
+  .cfo-included-item {
+    padding: 0.8rem 0.9rem;
+  }
+
+  .cfo-who-image {
+    height: 250px;
+  }
+
+  .cfo-who-card h3 {
+    font-size: 1.55rem;
+  }
+
+  .cfo-why-section {
+    margin-top: 4.5rem;
+  }
+
+  .cfo-lower-wrap {
+    padding-top: 2.1rem;
+  }
+
+  .cfo-page .assurance-testimonials-wrap {
+    margin-top: 4.75rem;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+  }
+
+  .cfo-why-image {
+    height: 420px;
+  }
+}
+
+@media (max-width: 1399px) {
+  .cfo-investment-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 991px) {
+  .cfo-investment-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cfo-investment-card {
+    min-height: 200px;
+  }
+}
+
+@media (max-width: 575px) {
+  .cfo-investment-grid {
+    grid-template-columns: 1fr;
+  }
+}

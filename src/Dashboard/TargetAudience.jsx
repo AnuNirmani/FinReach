@@ -26,7 +26,7 @@ const TargetAudience = () => {
             image: bookkeepingHero,
             title: 'Bookkeeping & Accounting',
             description: 'Professional-grade financials without the overhead of an in-house function.',
-            to: '/bookkeeping-accounting'
+            to: '/bookkeeping-accounting' 
         },
         {
             image: cfoHero,

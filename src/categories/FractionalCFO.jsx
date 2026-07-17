@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useMeta } from '../utils/useMeta.js';
-import Header from '../../Dashboard/Header';
-import Footer from '../../Dashboard/Footer';
+import Header from '../Dashboard/Header';
+import Footer from '../Dashboard/Footer';
 import { Link } from 'react-router-dom';
-import '../../Dashboard/Dashboard.css';
+import '../Dashboard/Dashboard.css';
 
 const FractionalCFOInsights = () => {
   const { meta } = useMeta(8);
