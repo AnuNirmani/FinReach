@@ -3587,7 +3587,7 @@ font-size: 1rem;
 /* ================= NEW AUDITING PAGE STYLES ================= */
 
 .new-auditing-page {
-    background-color: #dfe5ea;
+    background-color: #ffffff;
 }
 
 .new-auditing-hero {
@@ -3654,10 +3654,14 @@ font-size: 1rem;
     margin-top: -34px;
     border-top-left-radius: 34px;
     border-top-right-radius: 34px;
+    border-bottom-left-radius: 36px;
+    border-bottom-right-radius: 36px;
     background-color: #dfe5ea;
     position: relative;
     z-index: 2;
     padding: 2.7rem 0 3.4rem;
+    overflow: hidden;
+    box-shadow: 0 8px 18px rgba(17, 35, 52, 0.12);
 }
 
 .new-auditing-shell {
@@ -4154,6 +4158,11 @@ font-size: 1rem;
     line-height: 1.5;
 }
 
+.new-auditing-lower-section {
+    background-color: #ffffff;
+    padding: 1.4rem 0 2.8rem;
+}
+
 .new-auditing-who {
     position: relative;
     background-color: transparent;
@@ -4165,15 +4174,7 @@ font-size: 1rem;
 }
 
 .new-auditing-who::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 100vw;
-    transform: translateX(-50%);
-    background-color: #ffffff;
-    z-index: -1;
+    content: none;
 }
 
 .new-auditing-who-card img {
@@ -4255,6 +4256,12 @@ font-size: 1rem;
 .new-auditing-testimonials-wrap {
     background-color: #dfe5ea;
     padding: 2.2rem 0 2.8rem;
+}
+
+.new-auditing-testimonials-wrap-rounded {
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    overflow: hidden;
 }
 
 .new-auditing-testimonials {
@@ -4499,6 +4506,8 @@ font-size: 1rem;
     .new-auditing-content-wrap {
         border-top-left-radius: 22px;
         border-top-right-radius: 22px;
+        border-bottom-left-radius: 28px;
+        border-bottom-right-radius: 28px;
         margin-top: -22px;
     }
 
@@ -4562,6 +4571,8 @@ font-size: 1rem;
         padding-top: 2.15rem;
         border-top-left-radius: 16px;
         border-top-right-radius: 16px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
     }
 
     .new-auditing-required {
@@ -4603,6 +4614,10 @@ font-size: 1rem;
         padding: 1.6rem 0.9rem 1.4rem;
     }
 
+    .new-auditing-lower-section {
+        padding: 1rem 0 2rem;
+    }
+
     .new-auditing-who-card img {
         height: 210px;
     }
@@ -4632,6 +4647,11 @@ font-size: 1rem;
     .new-auditing-testimonials-wrap {
         padding-top: 1.7rem;
         padding-bottom: 2.1rem;
+    }
+
+    .new-auditing-testimonials-wrap-rounded {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
     }
 
     .new-auditing-testimonial-card {

@@ -8,6 +8,7 @@ import cfoHeroImage from '../assets/assets/cfo1.jpg';
 import nfpAudience from '../assets/assets/notforprofits.jpg';
 import growthStageAudience from '../assets/assets/growthstage.jpg';
 import directorImage from '../assets/assets/director.jpg';
+import cfoCtaBg from '../assets/assets/audit-hero-Bk5pu4Jp.jpg';
 import logoIpsum265 from '../assets/logo/logoipsum-265.png';
 import logoIpsum287 from '../assets/logo/logoipsum-287.png';
 import logoIpsum331 from '../assets/logo/logoipsum-331.png';
@@ -417,6 +418,23 @@ const CFO = () => {
 											<span key={idx} className={testimonialPageIdx === idx ? 'active' : ''}></span>
 										))}
 									</div>
+								</div>
+							</div>
+						</section>
+
+						<section className="new-auditing-final-cta" style={{ backgroundImage: `url(${cfoCtaBg})` }}>
+							<div className="new-auditing-final-cta-overlay"></div>
+							<div className="container">
+								<div className="new-auditing-final-cta-content">
+									<h2>Ready for a financial strategist in your corner?</h2>
+									<p>Let's talk about where your organisation is heading and what it needs to get there.</p>
+									<button
+										type="button"
+										className="new-auditing-final-cta-btn"
+										onClick={() => window.dispatchEvent(new Event('open-consultation-modal'))}
+									>
+										Enquire Now
+									</button>
 								</div>
 							</div>
 						</section>
