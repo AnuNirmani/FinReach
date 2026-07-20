@@ -3687,21 +3687,37 @@ font-size: 1rem;
     margin-bottom: 2.1rem;
 }
 
+.new-auditing-required-grid > [class*="col-"] {
+    display: flex;
+}
+
+.new-auditing-required-grid {
+    --bs-gutter-x: 2rem;
+    --bs-gutter-y: 5rem;
+}
+
 .new-auditing-required-card {
     background-color: #f6f8fa;
     border-radius: 12px;
     border: 1px solid #d3dce4;
     box-shadow: 0 6px 16px rgba(18, 33, 48, 0.12);
-    padding: 2rem 1.5rem 1.65rem;
+    padding: 2.05rem 1.55rem 1.2rem;
     text-align: center;
-    min-height: 235px;
+    min-height: 240px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .new-auditing-required-icon {
-    font-size: 2.25rem;
-    color: #c7d300;
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
     margin-bottom: 1rem;
-    display: inline-block;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .new-auditing-required-card h3 {
@@ -4133,14 +4149,17 @@ font-size: 1rem;
     border: 1px solid #d3dce4;
     box-shadow: 0 6px 16px rgba(18, 33, 48, 0.12);
     padding: 1.8rem 1.2rem 1.45rem;
-    min-height: 210px;
+    min-height: 225px;
 }
 
 .new-auditing-benefit-icon {
-    font-size: 2rem;
-    color: #6f98bb;
+    width: 62px;
+    height: 62px;
+    object-fit: contain;
     margin-bottom: 0.9rem;
-    display: inline-block;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .new-auditing-benefit-card h3 {
@@ -4178,9 +4197,9 @@ font-size: 1rem;
 }
 
 .new-auditing-who-card img {
-    width: 100%;
+    width: 70%;
     border-radius: 0;
-    height: 300px;
+    height: 425px;
     object-fit: cover;
     margin-bottom: 0.9rem;
 }
@@ -4532,7 +4551,7 @@ font-size: 1rem;
     }
 
     .new-auditing-who-card img {
-        height: 240px;
+        height: 260px;
     }
 
     .new-auditing-why-image-wrap {
@@ -4619,7 +4638,7 @@ font-size: 1rem;
     }
 
     .new-auditing-who-card img {
-        height: 210px;
+        height: 225px;
     }
 
     .new-auditing-who-card h3 {

@@ -14,6 +14,15 @@ import logoIpsum265 from '../assets/logo/logoipsum-265.png';
 import logoIpsum287 from '../assets/logo/logoipsum-287.png';
 import logoIpsum331 from '../assets/logo/logoipsum-331.png';
 import logoIpsum214 from '../assets/logo/logoipsum-214.png';
+import nfpRequiredIcon from '../assets/icon/Not-for-profits.png';
+import forProfitRequiredIcon from '../assets/icon/For-profits.png';
+import constitutionalRequiredIcon from '../assets/icon/Constitutional requirements.png';
+import deadlinesRequiredIcon from '../assets/icon/ACNC, ASIC & ORIC deadlines_.png';
+import guaranteedComplianceIcon from '../assets/icon/Guaranteed compliance.png';
+import strongerControlsIcon from '../assets/icon/Stronger controls.png';
+import reliableStatementsIcon from '../assets/icon/Reliable statements.png';
+import timeSavedIcon from '../assets/icon/Time saved.png';
+import strategicInsightsIcon from '../assets/icon/Strategic insights.png';
 
 const NewAuditing = React.memo(() => {
 	const navigate = useNavigate();
@@ -23,22 +32,22 @@ const NewAuditing = React.memo(() => {
 
 	const requiredCards = [
 		{
-			icon: 'bi bi-file-earmark-text',
+			image: nfpRequiredIcon,
 			title: 'Not-For-Profits',
 			text: 'Revenue over $500K generally requires a review; revenue of $3M+ requires a full audit.',
 		},
 		{
-			icon: 'bi bi-file-earmark-bar-graph',
+			image: forProfitRequiredIcon,
 			title: 'For-Profits',
 			text: 'Meeting 2 of 3 thresholds (revenue, assets, employees) triggers audit requirements.',
 		},
 		{
-			icon: 'bi bi-bank',
+			image: constitutionalRequiredIcon,
 			title: 'Constitutional Requirements',
 			text: 'Situations where your Constitution or funding agreements require an audit regardless of size.',
 		},
 		{
-			icon: 'bi bi-stopwatch',
+			image: deadlinesRequiredIcon,
 			title: 'ACNC, ASIC & ORIC Deadlines',
 			text: 'ACNC, ASIC & ORIC allow 6 months for submission, while ASIC requires 4 months.',
 		},
@@ -92,27 +101,27 @@ const NewAuditing = React.memo(() => {
 
 	const benefitItems = [
 		{
-			icon: 'bi bi-shield-check',
+			image: guaranteedComplianceIcon,
 			title: 'Guaranteed Compliance',
 			text: 'Guaranteed statutory compliance and on-time lodgements',
 		},
 		{
-			icon: 'bi bi-diagram-3',
+			image: strongerControlsIcon,
 			title: 'Stronger Controls',
 			text: 'Stronger internal controls and better risk management',
 		},
 		{
-			icon: 'bi bi-file-earmark-text',
+			image: reliableStatementsIcon,
 			title: 'Reliable Statements',
 			text: 'Clearer, more reliable financial statements',
 		},
 		{
-			icon: 'bi bi-stopwatch',
+			image: timeSavedIcon,
 			title: 'Time Saved',
 			text: 'Time back to focus on strategy, not paperwork',
 		},
 		{
-			icon: 'bi bi-bullseye',
+			image: strategicInsightsIcon,
 			title: 'Strategic Insights',
 			text: 'Strategic insights that help your organisation thrive, not just comply',
 		},
@@ -254,7 +263,12 @@ const NewAuditing = React.memo(() => {
 								{requiredCards.map((item) => (
 									<div className="col-md-6 col-xl-3" key={item.title}>
 										<article className="new-auditing-required-card">
-											<i className={`${item.icon} new-auditing-required-icon`} aria-hidden="true"></i>
+											<img
+												src={item.image}
+												alt=""
+												className="new-auditing-required-icon"
+												aria-hidden="true"
+											/>
 											<h3>{item.title}</h3>
 											<p>{item.text}</p>
 										</article>
@@ -323,11 +337,16 @@ const NewAuditing = React.memo(() => {
 						<section className="new-auditing-benefits">
 							<p className="new-auditing-pill">The benefits</p>
 
-							<div className="row g-4">
-								{benefitItems.map((item, idx) => (
-									<div className={`col-md-6 ${idx < 3 ? 'col-xl-4' : 'col-xl-6'}`} key={item.title}>
+							<div className="row g-4 justify-content-center">
+								{benefitItems.map((item) => (
+									<div className="col-md-6 col-xl-4" key={item.title}>
 										<article className="new-auditing-benefit-card">
-											<i className={`${item.icon} new-auditing-benefit-icon`} aria-hidden="true"></i>
+											<img
+												src={item.image}
+												alt=""
+												className="new-auditing-benefit-icon"
+												aria-hidden="true"
+											/>
 											<h3>{item.title}</h3>
 											<p>{item.text}</p>
 										</article>
