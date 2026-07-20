@@ -17,6 +17,7 @@ const About = lazy(() => import('./others/About.jsx'))
 const Contact = lazy(() => import('./others/Contact.jsx'))
 const BlogArticle = lazy(() => import('./others/BlogArticle.jsx'))
 const BookConsultation = lazy(() => import('./pages/BookConsultation.jsx'))
+const NotProfit = lazy(() => import('./WhoWeWorkWith/NotProfit.jsx'))
 
 // Blog category pages
 const BlogBookkeepingCashFlow = lazy(() => import('./Blog/blog/BookkeepingCashFlow.jsx'))
@@ -59,6 +60,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/book-consultation" element={<BookConsultation />} />
+          <Route path="/not-profit" element={<NotProfit />} />
           <Route path="/blog/financial-resilience" element={<BlogArticle />} />
           <Route path="/blog/article/:id" element={<BlogArticle />} />
           

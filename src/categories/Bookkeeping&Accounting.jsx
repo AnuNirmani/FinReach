@@ -321,7 +321,7 @@ const BookkeepingCashFlow = React.memo(() => {
                       accountability.
                     </p>
                     <p>You need a firm that already speaks your language.</p>
-                    <a href="/assurance">Learn More NFP Services</a>
+                    <a href="/not-profit">Learn More NFP Services</a>
                   </article>
                 </div>
 

@@ -43,7 +43,7 @@ const TargetAudience = () => {
             description:
                 'Community service organisations, disability providers, housing associations $3M to $30M. You carry audit obligations, ACNC requirements, restricted funds and board accountability. You need a firm that already speaks your language.',
             linkLabel: 'Learn More NFP Services',
-            to: '/assurance'
+            to: '/not-profit'
         },
         {
             image: smeAudience,

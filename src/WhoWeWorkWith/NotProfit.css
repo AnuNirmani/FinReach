@@ -1,0 +1,96 @@
+.assurance-headaches-block {
+  padding-top: 1rem;
+  padding-bottom: 4.5rem;
+}
+
+.nfp-help-cards-row {
+  --bs-gutter-x: 1.6rem;
+  --bs-gutter-y: 1.6rem;
+}
+
+.nfp-help-card-col {
+  display: flex;
+}
+
+.nfp-help-card {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  background-color: #f4f6f8;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 18px rgba(17, 35, 52, 0.14);
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.nfp-help-card-image {
+  width: 100%;
+  height: 166px;
+  object-fit: cover;
+  display: block;
+}
+
+.nfp-help-card-title {
+  color: #2d4a5f;
+  font-size: 2.1rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 1rem 1rem 0.6rem;
+  text-align: center;
+}
+
+.nfp-help-card-text {
+  color: #2f4c62;
+  font-size: 1.03rem;
+  line-height: 1.55;
+  margin: 0 1.1rem;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.nfp-help-card a {
+  display: inline-block;
+  margin: 1rem auto 1.25rem;
+  color: #4f7493;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(79, 116, 147, 0.65);
+  padding-bottom: 0.08rem;
+}
+
+.nfp-help-card a:hover {
+  color: #365c7e;
+  border-bottom-color: #365c7e;
+}
+
+@media (max-width: 1199px) {
+  .nfp-help-card-title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .assurance-headaches-block {
+    padding-top: 0.75rem;
+    padding-bottom: 3.4rem;
+  }
+
+  .nfp-help-card {
+    max-width: 360px;
+  }
+
+  .nfp-help-card-image {
+    height: 210px;
+  }
+
+  .nfp-help-card-title {
+    font-size: 1.5rem;
+  }
+
+  .nfp-help-card-text {
+    font-size: 0.96rem;
+  }
+}

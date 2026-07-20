@@ -652,7 +652,7 @@
 }
 
 .target-who-grid {
-    --bs-gutter-x: 3rem;
+    --bs-gutter-x: 0;
 }
 
 .target-who-card {
@@ -660,11 +660,11 @@
 }
 
 .target-who-image {
-    width: 100%;
-    height: 390px;
+    width: 80%;
+    height: 500px;
     object-fit: cover;
     display: block;
-    margin-bottom: 1rem;
+    margin: 0 auto 1rem;
 }
 
 .target-who-card-title {

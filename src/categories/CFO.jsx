@@ -110,7 +110,7 @@ const whoItems = [
 		title: 'Not-For-Profits',
 		text: 'Community service organisations, disability providers, housing associations $3M to $30M. You carry audit obligations, ACNC requirements, restricted funds and board accountability. You need a firm that already speaks your language.',
 		linkLabel: 'Learn More NFP Services',
-		to: '/assurance',
+		to: '/not-profit',
 	},
 	{
 		image: growthStageAudience,
@@ -362,83 +362,83 @@ const CFO = () => {
 								</div>
 							</div>
 						</section>
+					</div>
 
-						<section className="new-auditing-testimonials-wrap assurance-testimonials-wrap">
-							<div className="container new-auditing-shell">
-								<div className="new-auditing-testimonials">
-									<div className="new-auditing-testimonial-carousel">
-										<button
-											type="button"
-											className="new-auditing-testimonial-side-arrow new-auditing-testimonial-side-arrow-left"
-											onClick={shiftTestimonialsPrevious}
-											aria-label="Previous testimonials"
-										>
-											‹
-										</button>
-
-										<div className="new-auditing-testimonial-track">
-											<div className="row g-4 justify-content-start">
-												{visibleTestimonials.map((item, idx) => (
-													<div className="col-lg-4 col-md-6" key={`${testimonialPageIdx}-${idx}`}>
-														<article className="new-auditing-testimonial-card">
-															<p className="new-auditing-testimonial-preview-text">{item.text}</p>
-															<button
-																type="button"
-																className="new-auditing-testimonial-readmore"
-																onClick={() => openTestimonial(testimonialStart + idx)}
-															>
-																Read more
-															</button>
-															<div className="new-auditing-testimonial-meta">
-																<span>{item.author}</span>
-																<img
-																	src={item.logo}
-																	alt={item.logoAlt}
-																	className="new-auditing-testimonial-logo"
-																/>
-															</div>
-														</article>
-													</div>
-												))}
-											</div>
-										</div>
-
-										<button
-											type="button"
-											className="new-auditing-testimonial-side-arrow new-auditing-testimonial-side-arrow-right"
-											onClick={shiftTestimonialsNext}
-											aria-label="Next testimonials"
-										>
-											›
-										</button>
-									</div>
-
-									<div className="new-auditing-testimonial-dots" aria-hidden="true">
-										{Array.from({ length: totalTestimonialPages }).map((_, idx) => (
-											<span key={idx} className={testimonialPageIdx === idx ? 'active' : ''}></span>
-										))}
-									</div>
-								</div>
-							</div>
-						</section>
-
-						<section className="new-auditing-final-cta" style={{ backgroundImage: `url(${cfoCtaBg})` }}>
-							<div className="new-auditing-final-cta-overlay"></div>
-							<div className="container">
-								<div className="new-auditing-final-cta-content">
-									<h2>Ready for a financial strategist in your corner?</h2>
-									<p>Let's talk about where your organisation is heading and what it needs to get there.</p>
+					<section className="new-auditing-testimonials-wrap assurance-testimonials-wrap">
+						<div className="container new-auditing-shell">
+							<div className="new-auditing-testimonials">
+								<div className="new-auditing-testimonial-carousel">
 									<button
 										type="button"
-										className="new-auditing-final-cta-btn"
-										onClick={() => window.dispatchEvent(new Event('open-consultation-modal'))}
+										className="new-auditing-testimonial-side-arrow new-auditing-testimonial-side-arrow-left"
+										onClick={shiftTestimonialsPrevious}
+										aria-label="Previous testimonials"
 									>
-										Enquire Now
+										‹
+									</button>
+
+									<div className="new-auditing-testimonial-track">
+										<div className="row g-4 justify-content-start">
+											{visibleTestimonials.map((item, idx) => (
+												<div className="col-lg-4 col-md-6" key={`${testimonialPageIdx}-${idx}`}>
+													<article className="new-auditing-testimonial-card">
+														<p className="new-auditing-testimonial-preview-text">{item.text}</p>
+														<button
+															type="button"
+															className="new-auditing-testimonial-readmore"
+															onClick={() => openTestimonial(testimonialStart + idx)}
+														>
+															Read more
+														</button>
+														<div className="new-auditing-testimonial-meta">
+															<span>{item.author}</span>
+															<img
+																src={item.logo}
+																alt={item.logoAlt}
+																className="new-auditing-testimonial-logo"
+															/>
+														</div>
+													</article>
+												</div>
+											))}
+										</div>
+									</div>
+
+									<button
+										type="button"
+										className="new-auditing-testimonial-side-arrow new-auditing-testimonial-side-arrow-right"
+										onClick={shiftTestimonialsNext}
+										aria-label="Next testimonials"
+									>
+										›
 									</button>
 								</div>
+
+								<div className="new-auditing-testimonial-dots" aria-hidden="true">
+									{Array.from({ length: totalTestimonialPages }).map((_, idx) => (
+										<span key={idx} className={testimonialPageIdx === idx ? 'active' : ''}></span>
+									))}
+								</div>
 							</div>
-						</section>
-					</div>
+						</div>
+					</section>
+
+					<section className="new-auditing-final-cta" style={{ backgroundImage: `url(${cfoCtaBg})` }}>
+						<div className="new-auditing-final-cta-overlay"></div>
+						<div className="container">
+							<div className="new-auditing-final-cta-content">
+								<h2>Ready for a financial strategist in your corner?</h2>
+								<p>Let's talk about where your organisation is heading and what it needs to get there.</p>
+								<button
+									type="button"
+									className="new-auditing-final-cta-btn"
+									onClick={() => window.dispatchEvent(new Event('open-consultation-modal'))}
+								>
+									Enquire Now
+								</button>
+							</div>
+						</div>
+					</section>
 				</section>
 
 				{activeTestimonial && (

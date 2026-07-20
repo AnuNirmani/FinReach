@@ -2,7 +2,9 @@ import React from 'react';
 import './Dashboard.css';
 import auditOne from '../assets/assets/audit1.jpg';
 import directorImage from '../assets/assets/director.jpg';
-import assuranceImage from '../assets/assets/assurance1.jpg';
+import senioraccountantImage from '../assets/assets/senioraccountant.jpg';
+import senioraccountant2Image from '../assets/assets/senioraccountant2.webp';
+import accountantImage from '../assets/assets/accountant.jpg';
 import cfoImage from '../assets/assets/cfo1.jpg';
 
 const ProcessSection = () => {
@@ -14,19 +16,19 @@ const ProcessSection = () => {
       location: 'Canberra, ACT',
     },
     {
-      image: directorImage,
+      image: senioraccountantImage,
       name: 'Sam Herath',
       role: 'Senior Accountant',
       location: 'Canberra, ACT',
     },
     {
-      image: assuranceImage,
+      image: accountantImage,
       name: 'Lahiru Perera',
       role: 'Accountant',
       location: 'Canberra, ACT',
     },
     {
-      image: cfoImage,
+      image: senioraccountant2Image,
       name: 'Dileep Subramaniam',
       role: 'Senior Accountant',
       location: 'Canberra, ACT',

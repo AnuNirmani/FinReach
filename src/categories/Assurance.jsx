@@ -107,7 +107,7 @@ const AssuranceFunding = React.memo(() => {
         'You need a firm that already speaks your language.',
       ],
       linkLabel: 'Learn More NFP Services',
-      linkHref: '/assurance',
+      linkHref: '/not-profit',
     },
     {
       image: growthStageImage,
