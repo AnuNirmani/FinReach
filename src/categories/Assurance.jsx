@@ -13,6 +13,15 @@ import logoIpsum265 from '../assets/logo/logoipsum-265.png';
 import logoIpsum287 from '../assets/logo/logoipsum-287.png';
 import logoIpsum331 from '../assets/logo/logoipsum-331.png';
 import logoIpsum214 from '../assets/logo/logoipsum-214.png';
+import grantAcquittalIcon from '../assets/icon/Reliable statements.png';
+import reviewEngagementsIcon from '../assets/icon/Review engagements.png';
+import aupIcon from '../assets/icon/AUP.png';
+import complianceAssuranceIcon from '../assets/icon/Guaranteed compliance.png';
+import internalControlAssuranceIcon from '../assets/icon/Stronger controls.png';
+import assuranceApproachExperienceIcon from '../assets/icon/资源 31.png';
+import assuranceApproachSupportIcon from '../assets/icon/资源 32.png';
+import assuranceApproachPlanningIcon from '../assets/icon/资源 33.png';
+import assuranceApproachRecommendationsIcon from '../assets/icon/资源 34.png';
 
 
 const AssuranceFunding = React.memo(() => {
@@ -22,27 +31,32 @@ const AssuranceFunding = React.memo(() => {
 
   const solutionCards = [
     {
-      icon: 'bi bi-file-earmark-check',
+      image: grantAcquittalIcon,
+      imageAlt: 'Grant acquittal audit support icon',
       title: 'Grant Acquittal Audit Support',
       text: "From setting up grant tracking properly to preparing documentation that's ready for review.",
     },
     {
-      icon: 'bi bi-easel2',
+      image: reviewEngagementsIcon,
+      imageAlt: 'Review engagements icon',
       title: 'Review Engagements',
       text: 'Ideal for NFPs under $3M revenue that need stakeholder reassurance without paying for a full audit.',
     },
     {
-      icon: 'bi bi-safe2',
+      image: aupIcon,
+      imageAlt: 'Agreed-upon procedures icon',
       title: 'Agreed-Upon Procedures (AUP)',
       text: 'Targeted work over high-risk areas like specific transactions, compliance questions or inventory counts.',
     },
     {
-      icon: 'bi bi-shield-check',
+      image: complianceAssuranceIcon,
+      imageAlt: 'Compliance assurance icon',
       title: 'Compliance Assurance',
       text: 'Focused assessments of particular regulations or contracts in regulated sectors.',
     },
     {
-      icon: 'bi bi-window-desktop',
+      image: internalControlAssuranceIcon,
+      imageAlt: 'Internal control assurance icon',
       title: 'Internal Control Assurance',
       text: 'Independent assessment of the strength of your controls to protect against fraud and misstatements.',
     },
@@ -80,19 +94,23 @@ const AssuranceFunding = React.memo(() => {
 
   const approachItems = [
     {
-      icon: 'bi bi-umbrella',
+      image: assuranceApproachExperienceIcon,
+      imageAlt: 'Assurance experience icon',
       text: '25 years of assurance experience across small and medium enterprises, NFPs, government and regulated industries.',
     },
     {
-      icon: 'bi bi-search',
+      image: assuranceApproachSupportIcon,
+      imageAlt: 'Year-round audit readiness support icon',
       text: 'Year-round support – we help you build audit-readiness as an ongoing habit, not a last-minute scramble.',
     },
     {
-      icon: 'bi bi-cash-coin',
+      image: assuranceApproachPlanningIcon,
+      imageAlt: 'Clear planning and timelines icon',
       text: 'Clear planning and timelines – detailed request lists, reverse-engineered deadlines and no surprises.',
     },
     {
-      icon: 'bi bi-lightbulb',
+      image: assuranceApproachRecommendationsIcon,
+      imageAlt: 'Actionable recommendations icon',
       text: "Actionable recommendations – we don't just report issues; we help you strengthen governance, controls and risk management.",
     },
   ];
@@ -280,7 +298,7 @@ const AssuranceFunding = React.memo(() => {
                 {solutionCards.map((item, idx) => (
                   <div className={`col-md-6 ${idx < 3 ? 'col-xl-4' : 'col-xl-5'}`} key={item.title}>
                     <article className="assurance-solution-card">
-                      <i className={`${item.icon} assurance-solution-icon`} aria-hidden="true"></i>
+                      <img src={item.image} alt={item.imageAlt} className="assurance-solution-icon" />
                       <h3>{item.title}</h3>
                       <p>{item.text}</p>
                     </article>
@@ -325,7 +343,7 @@ const AssuranceFunding = React.memo(() => {
                 {approachItems.map((item) => (
                   <div className="col-md-6 col-xl-3" key={item.text}>
                     <article className="assurance-approach-card">
-                      <i className={`${item.icon} assurance-approach-icon`} aria-hidden="true"></i>
+                      <img src={item.image} alt={item.imageAlt} className="assurance-approach-icon" />
                       <p>{item.text}</p>
                     </article>
                   </div>

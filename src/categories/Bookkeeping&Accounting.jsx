@@ -12,6 +12,10 @@ import logoIpsum265 from '../assets/logo/logoipsum-265.png';
 import logoIpsum287 from '../assets/logo/logoipsum-287.png';
 import logoIpsum331 from '../assets/logo/logoipsum-331.png';
 import logoIpsum214 from '../assets/logo/logoipsum-214.png';
+import guaranteedComplianceIcon from '../assets/icon/Guaranteed compliance.png';
+import strategicInsightsIcon from '../assets/icon/Strategic insights.png';
+import strongerControlsIcon from '../assets/icon/Stronger controls.png';
+import timeSavedIcon from '../assets/icon/Time saved.png';
 
 
 const BookkeepingCashFlow = React.memo(() => {
@@ -69,22 +73,26 @@ const BookkeepingCashFlow = React.memo(() => {
 
   const gainItems = [
     {
-      icon: 'bi bi-shield-check',
+      icon: guaranteedComplianceIcon,
+      iconAlt: 'Shield with dollar badge',
       title: 'Time Back',
       text: 'Up to 30% of your time back to reinvest into sales, strategy and service.',
     },
     {
-      icon: 'bi bi-safe2',
+      icon: strategicInsightsIcon,
+      iconAlt: 'Global financial network',
       title: 'Clear Visibility',
       text: "Crystal-clear cash flow visibility - you know what's due, when, and whether you can cover it.",
     },
     {
-      icon: 'bi bi-stopwatch',
+      icon: strongerControlsIcon,
+      iconAlt: 'Secure financial vault',
       title: 'Scalable Foundation',
       text: 'A scalable financial foundation that grows with you.',
     },
     {
-      icon: 'bi bi-bullseye',
+      icon: timeSavedIcon,
+      iconAlt: 'Stopwatch showing time saved',
       title: 'Better Decisions',
       text: 'Streamlined year-end, lower tax and audit fees, and better decision-making.',
     },
@@ -224,13 +232,13 @@ const BookkeepingCashFlow = React.memo(() => {
             <section className="new-auditing-outcomes">
               <div className="row g-5">
                 <div className="col-lg-6">
-                  <h2 className="new-auditing-column-title">The challenges we see every day</h2>
-                  <p className="new-auditing-subheading text-start mb-4">
+                  <h2 className="new-auditing-column-title" style={{ fontSize: '2rem' }}>The challenges we see every day</h2>
+                  <strong className="new-auditing-subheading text-start mb-4" style={{ display: 'block', textAlign: 'center', margin: '2rem auto' }}>
                     Over time, messy books lead to a stressful tax time, higher
                     audit fees, penalties and poor decisions based on unreliable
                     numbers.
-                  </p>
-                  <ul className="new-auditing-list new-auditing-list-cost">
+                  </strong>
+                  <ul className="new-auditing-list new-auditing-list-cost" style={{ marginTop: '1.5rem' }}>
                     {challengeItems.map((item) => (
                       <li key={item}>
                         <i className="bi bi-x" aria-hidden="true"></i>
@@ -241,11 +249,11 @@ const BookkeepingCashFlow = React.memo(() => {
                 </div>
 
                 <div className="col-lg-6">
-                  <h2 className="new-auditing-column-title">Our bookkeeping & accounting solution</h2>
-                  <p className="new-auditing-subheading text-start mb-4">
+                  <h2 className="new-auditing-column-title" style={{ fontSize: '2rem' }}>Our bookkeeping & accounting solution</h2>
+                  <strong className="new-auditing-subheading text-start mb-4" style={{ display: 'block', textAlign: 'center', margin: '2rem auto' }}>
                     We act as your outsourced accounting back-office, handling:
-                  </p>
-                  <ul className="new-auditing-list new-auditing-list-how">
+                  </strong>
+                  <ul className="new-auditing-list new-auditing-list-how" style={{ marginTop: '1.5rem' }}>
                     {solutionItems.map((item) => (
                       <li key={item}>
                         <i className="bi bi-check" aria-hidden="true"></i>
@@ -291,9 +299,9 @@ const BookkeepingCashFlow = React.memo(() => {
 
               <div className="row g-4 justify-content-center bookkeeping-gains-grid">
                 {gainItems.map((item) => (
-                  <div className="col-md-6 col-lg-5" key={item.title}>
-                    <article className="bookkeeping-gain-card">
-                      <i className={`${item.icon} bookkeeping-gain-icon`} aria-hidden="true"></i>
+                  <div className="col-md-6 col-lg-5 d-flex" key={item.title}>
+                    <article className="bookkeeping-gain-card w-100">
+                      <img src={item.icon} alt={item.iconAlt} className="bookkeeping-gain-icon" />
                       <h3>{item.title}</h3>
                       <p>{item.text}</p>
                     </article>

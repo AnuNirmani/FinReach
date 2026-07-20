@@ -23,6 +23,7 @@
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  transition: background-color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
 }
 
 .nfp-help-card-image {
@@ -66,6 +67,72 @@
   border-bottom-color: #365c7e;
 }
 
+.nfp-help-card:hover,
+.nfp-help-card:focus-within {
+  background-color: #d9dd19;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 22px rgba(17, 35, 52, 0.2);
+}
+
+.nfp-help-card:hover .nfp-help-card-title,
+.nfp-help-card:focus-within .nfp-help-card-title,
+.nfp-help-card:hover .nfp-help-card-text,
+.nfp-help-card:focus-within .nfp-help-card-text,
+.nfp-help-card:hover a,
+.nfp-help-card:focus-within a {
+  color: #2d4a5f;
+}
+
+.nfp-help-card:hover a,
+.nfp-help-card:focus-within a {
+  border-bottom-color: rgba(45, 74, 95, 0.7);
+}
+
+.nfp-process-section {
+  background-color: #f3f5f7;
+  padding: 2.2rem 0 1.4rem;
+}
+
+.nfp-process-block {
+  padding: 0;
+}
+
+.nfp-process-section .assurance-process-card {
+  background-color: #dfe5ea;
+  border: 1px solid #cbd6df;
+  box-shadow: 0 4px 14px rgba(17, 35, 52, 0.12);
+}
+
+.nfp-process-section .assurance-process-number {
+  background-color: #ffffff;
+  color: #204a6a;
+}
+
+.nfp-process-section .assurance-process-card h3 {
+  color: #2d4a5f;
+}
+
+.nfp-process-section .assurance-process-card p {
+  color: #2f4c62;
+}
+
+.nfp-process-section .assurance-process-card:hover,
+.nfp-process-section .assurance-process-card:focus-within {
+  background-color: #d9dd19;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 22px rgba(17, 35, 52, 0.2);
+}
+
+.nfp-process-section .assurance-process-card:hover h3,
+.nfp-process-section .assurance-process-card:focus-within h3 {
+  color: #2d4a5f;
+}
+
+.nfp-process-section .assurance-process-card:hover p,
+.nfp-process-section .assurance-process-card:focus-within p {
+  color: #2f4c62;
+}
+
 @media (max-width: 1199px) {
   .nfp-help-card-title {
     font-size: 1.75rem;
@@ -76,6 +143,10 @@
   .assurance-headaches-block {
     padding-top: 0.75rem;
     padding-bottom: 3.4rem;
+  }
+
+  .nfp-process-section {
+    padding: 1.6rem 0 0.8rem;
   }
 
   .nfp-help-card {

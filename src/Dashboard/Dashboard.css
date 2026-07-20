@@ -3913,7 +3913,8 @@ font-size: 1rem;
     border: 1px solid #d3dce4;
     border-radius: 16px;
     box-shadow: 0 6px 16px rgba(18, 33, 48, 0.12);
-    min-height: 214px;
+    min-height: 250px;
+    height: 100%;
     padding: 1.7rem 1.45rem 1.45rem;
     display: flex;
     flex-direction: column;
@@ -3923,10 +3924,11 @@ font-size: 1rem;
 }
 
 .bookkeeping-gain-icon {
-    font-size: 2.25rem;
-    color: #447192;
+    width: 82px;
+    height: 82px;
+    object-fit: contain;
+    display: block;
     margin-bottom: 1rem;
-    line-height: 1;
 }
 
 .bookkeeping-gain-card h3 {
@@ -4075,9 +4077,14 @@ font-size: 1rem;
     }
 
     .bookkeeping-gain-card {
-        min-height: 198px;
+        min-height: 228px;
         border-radius: 14px;
         padding: 1.45rem 1.1rem 1.2rem;
+    }
+
+    .bookkeeping-gain-icon {
+        width: 74px;
+        height: 74px;
     }
 
     .bookkeeping-gain-card h3 {
@@ -4916,7 +4923,7 @@ font-size: 1rem;
     border-top-right-radius: 34px;
     border-bottom-left-radius: 36px;
     border-bottom-right-radius: 36px;
-    background-color: #d4dae0;
+    background-color: #dfe5ea;
     position: relative;
     z-index: 2;
     padding: 2.9rem 0 4.2rem;
@@ -4992,34 +4999,36 @@ font-size: 1rem;
 }
 
 .assurance-solution-card {
-    background-color: #f6f8fa;
+    background-color: #ffffff;
     border: 1px solid #d3dce4;
     border-radius: 16px;
-    box-shadow: 0 8px 16px rgba(17, 35, 52, 0.12);
-    min-height: 260px;
-    padding: 2rem 1.5rem 1.6rem;
+    box-shadow: 0 8px 16px rgba(17, 35, 52, 0.14);
+    min-height: 262px;
+    padding: 2rem 1.55rem 1.65rem;
 }
 
 .assurance-solution-icon {
-    font-size: 2.2rem;
-    color: #6d97ba;
-    display: inline-block;
-    margin-bottom: 0.95rem;
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 0.95rem;
 }
 
 .assurance-solution-card h3 {
     color: #2d4a5f;
-    font-size: 2rem;
+    font-size: 1.3rem;
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 0.8rem;
 }
 
 .assurance-solution-card p {
-    margin: 0;
+    margin: 0 auto;
     color: #4f6980;
     font-size: 1.03rem;
     line-height: 1.55;
+    max-width: 95%;
 }
 
 .assurance-pill {
@@ -5140,10 +5149,11 @@ font-size: 1rem;
 }
 
 .assurance-approach-icon {
-    font-size: 2.2rem;
-    color: #c0c532;
-    margin-bottom: 0.85rem;
-    display: inline-block;
+    width: 62px;
+    height: 62px;
+    object-fit: contain;
+    margin: 0 auto 0.85rem;
+    display: block;
 }
 
 .assurance-approach-card p {

@@ -235,8 +235,12 @@ const NotProfit = React.memo(() => {
                 ))}
               </div>
             </section>
+          </div>
+        </section>
 
-            <section className="assurance-process-block">
+        <section className="nfp-process-section">
+          <div className="container assurance-shell">
+            <section className="assurance-process-block nfp-process-block">
               <p className="assurance-pill">How we work</p>
 
               <div className="row g-4">

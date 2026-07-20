@@ -118,6 +118,29 @@
 
 .cfo-services-section {
   margin-top: 4.5rem;
+  margin-left: -40px;
+  margin-right: -40px;
+}
+
+.cfo-service-grid {
+  max-width: 1520px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 2.4rem 2.2rem;
+  align-items: stretch;
+}
+
+.cfo-service-grid > .cfo-service-card {
+  grid-column: span 2;
+}
+
+.cfo-service-grid > .cfo-service-card:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.cfo-service-grid > .cfo-service-card:nth-child(5) {
+  grid-column: 4 / span 2;
 }
 
 .cfo-service-card {
@@ -125,13 +148,30 @@
   background: #f8f9fa;
   border-radius: 18px;
   box-shadow: 0 6px 16px rgba(28, 48, 64, 0.18);
-  padding: 2.4rem 2rem 2rem;
+  padding: 2.7rem 2rem 2.1rem;
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
 }
 
-.cfo-service-icon {
-  color: #c4c636;
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
+.cfo-service-image-wrap {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.7rem;
+}
+
+.cfo-service-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 .cfo-service-card h3 {
@@ -139,7 +179,8 @@
   font-size: 1.55rem;
   line-height: 1.25;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 1.15rem;
+  width: 100%;
 }
 
 .cfo-service-card p {
@@ -147,6 +188,7 @@
   font-size: 1.02rem;
   line-height: 1.55;
   margin: 0;
+  width: 100%;
 }
 
 .cfo-process-section {
@@ -246,15 +288,17 @@
 .cfo-investment-section {
   margin-top: 5.2rem;
   background: transparent;
+  margin-left: -28px;
+  margin-right: -28px;
 }
 
 .cfo-investment-grid {
-  max-width: 1600px;
+  max-width: 1680px;
   margin: 0 auto;
   background: transparent;
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 1.6rem;
+  gap: 1.35rem;
 }
 
 .cfo-content-wrap .container,
@@ -271,8 +315,8 @@
   background: #f8f9fa;
   border-radius: 16px;
   box-shadow: 0 5px 14px rgba(19, 41, 56, 0.16);
-  padding: 2.35rem 1.2rem 1.7rem;
-  min-height: 220px;
+  padding: 2.7rem 1.45rem 1.95rem;
+  min-height: 245px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -280,18 +324,29 @@
   justify-content: center;
 }
 
-.cfo-investment-icon {
-  color: #4f7fa1;
-  font-size: 3rem;
-  margin-bottom: 1.2rem;
+.cfo-investment-image-wrap {
+  width: 104px;
+  height: 104px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.35rem;
+}
+
+.cfo-investment-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 .cfo-investment-card p {
   margin: 0;
   color: #4f7493;
-  font-size: 1rem;
+  font-size: 1.03rem;
   line-height: 1.4;
-  max-width: 245px;
+  max-width: 280px;
 }
 
 .cfo-who-section {
@@ -393,6 +448,27 @@
 }
 
 @media (max-width: 1199px) {
+  .cfo-investment-section {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .cfo-services-section {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .cfo-service-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.8rem;
+  }
+
+  .cfo-service-grid > .cfo-service-card,
+  .cfo-service-grid > .cfo-service-card:nth-child(4),
+  .cfo-service-grid > .cfo-service-card:nth-child(5) {
+    grid-column: span 1;
+  }
+
   .cfo-hero {
     grid-template-columns: 1fr;
   }
@@ -428,6 +504,11 @@
 }
 
 @media (max-width: 767px) {
+  .cfo-service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.4rem;
+  }
+
   .cfo-hero {
     margin-top: 0;
   }
@@ -443,6 +524,17 @@
 
   .cfo-included-item {
     padding: 0.8rem 0.9rem;
+  }
+
+  .cfo-service-card {
+    min-height: 330px;
+    padding: 2rem 1.25rem 1.6rem;
+  }
+
+  .cfo-service-image-wrap {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1.2rem;
   }
 
   .cfo-who-image {
@@ -482,11 +574,20 @@
   }
 
   .cfo-investment-card {
-    min-height: 200px;
+    min-height: 220px;
+  }
+
+  .cfo-investment-image-wrap {
+    width: 92px;
+    height: 92px;
   }
 }
 
 @media (max-width: 575px) {
+  .cfo-service-grid {
+    grid-template-columns: 1fr;
+  }
+
   .cfo-investment-grid {
     grid-template-columns: 1fr;
   }

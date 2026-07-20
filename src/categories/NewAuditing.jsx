@@ -6,8 +6,8 @@ import Header from '../Dashboard/Header.jsx';
 import Footer from '../Dashboard/Footer.jsx';
 import '../Dashboard/Dashboard.css';
 import auditHero from '../assets/assets/audit1.jpg';
-import nfpImage from '../assets/assets/audit2.jpg';
-import smeImage from '../assets/assets/audit3.jpg';
+import notForProfitsImage from '../assets/assets/audit2.jpg';
+import growthStageImage from '../assets/assets/audit3.jpg';
 import whyImage from '../assets/assets/audit4.jpg';
 import ctaBg from '../assets/assets/audit-hero-Bk5pu4Jp.jpg';
 import logoIpsum265 from '../assets/logo/logoipsum-265.png';
@@ -124,6 +124,31 @@ const NewAuditing = React.memo(() => {
 			image: strategicInsightsIcon,
 			title: 'Strategic Insights',
 			text: 'Strategic insights that help your organisation thrive, not just comply',
+		},
+	];
+
+	const whoItems = [
+		{
+			image: notForProfitsImage,
+			imageAlt: 'Not-for-profits assurance consultation',
+			title: 'Not-For-Profits',
+			paragraphs: [
+				'Community service organisations, disability providers, housing associations $3M to $30M. You carry audit obligations, ACNC requirements, restricted funds and board accountability.',
+				'You need a firm that already speaks your language.',
+			],
+			linkLabel: 'Learn More NFP Services',
+			linkHref: '/not-profit',
+		},
+		{
+			image: growthStageImage,
+			imageAlt: 'Growth-stage SMEs assurance meeting',
+			title: 'Growth-Stage SMEs',
+			paragraphs: [
+				"Private businesses turning over $1M - $30M who've outgrown DIY bookkeeping.",
+				"You're growing fast but your financial infrastructure hasn't kept pace. You need CFO-level thinking without the full-time salary.",
+			],
+			linkLabel: 'Learn More SME Services',
+			linkHref: '/bookkeeping-accounting',
 		},
 	];
 
@@ -256,8 +281,8 @@ const NewAuditing = React.memo(() => {
 						<section className="new-auditing-required">
 							<h2 className="new-auditing-heading">Are you required to audit?</h2>
 							<p className="new-auditing-subheading">
-								We help you navigate who needs audits and when, including:
-							</p>
+							<strong>We help you navigate who needs audits and when, including:</strong>
+						</p>
 
 							<div className="row g-4 new-auditing-required-grid">
 								{requiredCards.map((item) => (
@@ -357,41 +382,24 @@ const NewAuditing = React.memo(() => {
 					</div>
 				</section>
 
-				<section className="new-auditing-lower-section">
-					<div className="container new-auditing-shell">
-						<section className="new-auditing-who">
-							<p className="new-auditing-pill">Who this is for</p>
+				<section className="assurance-who-section">
+					<div className="container assurance-shell">
+						<section>
+							<p className="assurance-pill">Who this is for</p>
 
-							<div className="row g-4">
-								<div className="col-lg-6">
-									<article className="new-auditing-who-card">
-										<img src={nfpImage} alt="Not-for-profits audit consultation" />
-										<h3>Not-For-Profits</h3>
-										<p>
-											Community service organisations, disability providers, housing associations,
-											but not limited to, $3M to $30M. You carry audit obligations, ACNC
-											requirements, restricted funds and board accountability.
-										</p>
-										<p>You need a firm that already speaks your language.</p>
-										<a href="/not-profit">Learn More NFP Services</a>
-									</article>
-								</div>
-
-								<div className="col-lg-6">
-									<article className="new-auditing-who-card">
-										<img src={smeImage} alt="Growth-stage SME audit meeting" />
-										<h3>Growth-Stage SMEs</h3>
-										<p>
-											Private businesses turning over $1M - $30M who&apos;ve outgrown DIY
-											bookkeeping.
-										</p>
-										<p>
-											Meeting 2 of 3 thresholds (revenue, assets, employees) triggers audit
-											requirements.
-										</p>
-										<a href="/bookkeeping-accounting">Learn More SME Services</a>
-									</article>
-								</div>
+							<div className="row g-5 justify-content-center assurance-who-grid">
+								{whoItems.map((item) => (
+									<div className="col-lg-6" key={item.title}>
+										<article className="assurance-who-card">
+											<img src={item.image} alt={item.imageAlt} className="assurance-who-image" />
+											<h3>{item.title}</h3>
+											{item.paragraphs.map((paragraph) => (
+												<p key={paragraph}>{paragraph}</p>
+											))}
+											<a href={item.linkHref}>{item.linkLabel}</a>
+										</article>
+									</div>
+								))}
 							</div>
 
 							<div className="row g-4 align-items-center new-auditing-why-row">

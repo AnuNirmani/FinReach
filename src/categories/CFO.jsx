@@ -7,8 +7,20 @@ import Footer from '../Dashboard/Footer.jsx';
 import cfoHeroImage from '../assets/assets/cfo1.jpg';
 import nfpAudience from '../assets/assets/notforprofits.jpg';
 import growthStageAudience from '../assets/assets/growthstage.jpg';
-import directorImage from '../assets/assets/director.jpg';
+import directorImage from '../assets/assets/cfo2.jpg';
 import cfoCtaBg from '../assets/assets/audit-hero-Bk5pu4Jp.jpg';
+import financialAssessmentImage from '../assets/icon/资源 32.png';
+import cashManagementImage from '../assets/icon/资源 33.png';
+import strategicReportingImage from '../assets/icon/资源 34.png';
+import auditReadinessImage from '../assets/icon/资源 35.png';
+import internalControlsImage from '../assets/icon/资源 36.png';
+import investmentConfidenceImage from '../assets/icon/资源 37.png';
+import investmentCashFlowImage from '../assets/icon/资源 38.png';
+import investmentVisibilityImage from '../assets/icon/资源 39.png';
+import investmentTimeSavedImage from '../assets/icon/资源 40.png';
+import investmentControlsImage from '../assets/icon/Stronger controls.png';
+import notForProfitsImage from '../assets/icon/Not-for-profits.png';
+import guaranteed from '../assets/icon/Guaranteed compliance.png';
 import logoIpsum265 from '../assets/logo/logoipsum-265.png';
 import logoIpsum287 from '../assets/logo/logoipsum-287.png';
 import logoIpsum331 from '../assets/logo/logoipsum-331.png';
@@ -17,27 +29,32 @@ import './CFO.css';
 
 const serviceItems = [
 	{
-		icon: 'bi bi-journal-text',
+		image: auditReadinessImage,
+		imageAlt: 'Financial assessment and planning icon',
 		title: 'Financial Assessment & Planning',
 		text: 'We dive into your profitability, liquidity and efficiency, and give you clear, data-driven recommendations so you know exactly where you stand and where to go next.',
 	},
 	{
-		icon: 'bi bi-safe2',
+		image: internalControlsImage,
+		imageAlt: 'Internal controls and fraud prevention icon',
 		title: 'Internal Controls & Fraud Prevention',
 		text: 'We strengthen your approval processes, segregation of duties and oversight so issues are caught early – or prevented entirely.',
 	},
 	{
-		icon: 'bi bi-graph-up-arrow',
+		image: financialAssessmentImage,
+		imageAlt: 'Cash management and forecasting icon',
 		title: 'Cash Management & Forecasting',
 		text: 'We help you manage day-to-day cash, then build forward-looking forecasts and scenarios for investments, expansion and growth.',
 	},
 	{
-		icon: 'bi bi-file-earmark-bar-graph',
+		image: notForProfitsImage,
+		imageAlt: 'Strategic reporting and analysis icon',
 		title: 'Strategic Reporting & Analysis',
 		text: 'You receive regular reports and analysis that highlight trends, risks and opportunities – in language you and your board can actually use.',
 	},
 	{
-		icon: 'bi bi-cash-coin',
+		image: cashManagementImage,
+		imageAlt: 'Audit readiness and compliance icon',
 		title: 'Audit Readiness & Compliance',
 		text: "We ensure you're always audit-ready with solid documentation, making investor and regulator conversations much less stressful.",
 	},
@@ -83,23 +100,28 @@ const includedItems = [
 
 const investmentItems = [
 	{
-		icon: 'bi bi-stack',
+		image: investmentConfidenceImage,
+		imageAlt: 'Confidence in financial decisions icon',
 		text: 'Unshakeable confidence in your financial decisions',
 	},
 	{
-		icon: 'bi bi-wallet2',
+		image: investmentCashFlowImage,
+		imageAlt: 'Cash flow ready for growth icon',
 		text: 'Optimised cash flow, ready for growth',
 	},
 	{
-		icon: 'bi bi-shield-check',
+		image: investmentControlsImage,
+		imageAlt: 'Stronger internal controls and reduced risk icon',
 		text: 'Stronger internal controls and reduced risk',
 	},
 	{
-		icon: 'bi bi-graph-up-arrow',
+		image: investmentVisibilityImage,
+		imageAlt: 'Better visibility and efficiency icon',
 		text: 'A healthier bottom line through better visibility and efficiency',
 	},
 	{
-		icon: 'bi bi-clock-history',
+		image: investmentTimeSavedImage,
+		imageAlt: 'Time saved icon',
 		text: 'Time back to focus on the work only you can do',
 	},
 ];
@@ -108,14 +130,20 @@ const whoItems = [
 	{
 		image: nfpAudience,
 		title: 'Not-For-Profits',
-		text: 'Community service organisations, disability providers, housing associations $3M to $30M. You carry audit obligations, ACNC requirements, restricted funds and board accountability. You need a firm that already speaks your language.',
+		paragraphs: [
+			'Community service organisations, disability providers, housing associations $3M to $30M. You carry audit obligations, ACNC requirements, restricted funds and board accountability.',
+			'You need a firm that already speaks your language.',
+		],
 		linkLabel: 'Learn More NFP Services',
 		to: '/not-profit',
 	},
 	{
 		image: growthStageAudience,
 		title: 'Growth-Stage SMEs',
-		text: "Private businesses turning over $1M - $30M who've outgrown DIY bookkeeping. You're growing fast but your financial infrastructure hasn't kept pace. You need CFO-level thinking without the full-time salary.",
+		paragraphs: [
+			"Private businesses turning over $1M - $30M who've outgrown DIY bookkeeping.",
+			"You're growing fast but your financial infrastructure hasn't kept pace. You need CFO-level thinking without the full-time salary.",
+		],
 		linkLabel: 'Learn More SME Services',
 		to: '/bookkeeping-accounting',
 	},
@@ -267,15 +295,19 @@ const CFO = () => {
 
 						<section className="cfo-services-section text-center">
 							<h2>What our Fractional CFO service covers</h2>
-							<div className="row g-4 justify-content-center">
-								{serviceItems.map((item, idx) => (
-									<div className={`col-md-6 ${idx < 3 ? 'col-xl-4' : 'col-xl-5'}`} key={item.title}>
-										<article className="cfo-service-card">
-											<i className={`${item.icon} cfo-service-icon`} aria-hidden="true"></i>
-											<h3>{item.title}</h3>
-											<p>{item.text}</p>
-										</article>
-									</div>
+							<div className="cfo-service-grid">
+								{serviceItems.map((item) => (
+									<article className="cfo-service-card" key={item.title}>
+										<div className="cfo-service-image-wrap">
+											<img
+												src={item.image}
+												alt={item.imageAlt}
+												className="cfo-service-image"
+											/>
+										</div>
+										<h3>{item.title}</h3>
+										<p>{item.text}</p>
+									</article>
 								))}
 							</div>
 						</section>
@@ -316,7 +348,13 @@ const CFO = () => {
 							<div className="cfo-investment-grid">
 								{investmentItems.map((item) => (
 									<article className="cfo-investment-card" key={item.text}>
-										<i className={`${item.icon} cfo-investment-icon`} aria-hidden="true"></i>
+										<div className="cfo-investment-image-wrap">
+											<img
+												src={item.image}
+												alt={item.imageAlt}
+												className="cfo-investment-image"
+											/>
+										</div>
 										<p>{item.text}</p>
 									</article>
 								))}
@@ -325,18 +363,20 @@ const CFO = () => {
 					</div>
 				</section>
 
-				<section className="cfo-lower-wrap">
+					<section className="cfo-lower-wrap">
 					<div className="container cfo-shell">
-						<section className="cfo-who-section text-center">
-							<p className="cfo-pill">Who this is for</p>
-							<div className="row g-5 justify-content-center cfo-who-grid">
+						<section className="assurance-who-section">
+							<p className="assurance-pill">Who this is for</p>
+							<div className="row g-5 justify-content-center assurance-who-grid">
 								{whoItems.map((item) => (
 									<div className="col-lg-6" key={item.title}>
-										<article className="cfo-who-card">
-											<img src={item.image} alt={item.title} className="cfo-who-image" />
+										<article className="assurance-who-card">
+											<img src={item.image} alt={item.title} className="assurance-who-image" />
 											<h3>{item.title}</h3>
-											<p>{item.text}</p>
-											<Link to={item.to} className="cfo-who-link">{item.linkLabel}</Link>
+											{item.paragraphs.map((paragraph) => (
+												<p key={paragraph}>{paragraph}</p>
+											))}
+											<Link to={item.to}>{item.linkLabel}</Link>
 										</article>
 									</div>
 								))}
