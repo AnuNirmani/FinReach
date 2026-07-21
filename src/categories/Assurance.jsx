@@ -136,7 +136,7 @@ const AssuranceFunding = React.memo(() => {
         "You're growing fast but your financial infrastructure hasn't kept pace. You need CFO-level thinking without the full-time salary.",
       ],
       linkLabel: 'Learn More SME Services',
-      linkHref: '/bookkeeping-accounting',
+      linkHref: '/growth-stage',
     },
   ];
 

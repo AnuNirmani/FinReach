@@ -51,7 +51,7 @@ const TargetAudience = () => {
             description:
                 "Private businesses turning over $1M - $10M who've outgrown DIY bookkeeping. You're growing fast but your financial infrastructure hasn't kept pace. You need CFO-level thinking without the full-time salary.",
             linkLabel: 'Learn More SME Services',
-            to: '/fractional-cfo'
+            to: '/growth-stage'
         }
     ];
 

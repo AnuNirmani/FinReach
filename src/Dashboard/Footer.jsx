@@ -45,8 +45,8 @@ const Footer = () => {
           <div className="col-lg-3 col-md-6">
             <h4 className="footer-heading">Who We Work With</h4>
             <ul className="footer-links-list">
-              <li><Link to="/assurance" className="footer-link">Not-for-profits</Link></li>
-              <li><Link to="/fractional-cfo" className="footer-link">Growth-stage SMEs</Link></li>
+              <li><Link to="/not-profit" className="footer-link">Not-for-profits</Link></li>
+              <li><Link to="/growth-stage" className="footer-link">Growth-stage SMEs</Link></li>
               <li><Link to="/contact" className="footer-link">Partner With Us</Link></li>
             </ul>
           </div>

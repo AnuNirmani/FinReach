@@ -145,7 +145,7 @@ const whoItems = [
 			"You're growing fast but your financial infrastructure hasn't kept pace. You need CFO-level thinking without the full-time salary.",
 		],
 		linkLabel: 'Learn More SME Services',
-		to: '/bookkeeping-accounting',
+		to: '/growth-stage',
 	},
 ];
 

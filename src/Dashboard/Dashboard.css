@@ -3,7 +3,7 @@
 
  /* --- Global Styles --- */
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: var(--contentfont);
 			background-color: #ffffff;
             /*background-color: #f8f9fa;*/
             /* Adding padding-top so content doesn't get stuck under the fixed navbar */
@@ -124,6 +124,14 @@
             border-radius: 8px;
             padding: 0.55rem 0.75rem;
             font-size: 0.95rem;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .finreach-nav-list .dropdown-menu .dropdown-item:hover,
+        .finreach-nav-list .dropdown-menu .dropdown-item:focus,
+        .finreach-nav-list .dropdown-menu .dropdown-item:active {
+            background-color: var(--finreach-lime);
+            color: #ffffff;
         }
 
         @media (min-width: 1200px) {
@@ -226,7 +234,8 @@
     background-repeat: no-repeat;
     /* Increased padding for better vertical spacing with the form */
     padding: 110px 0; 
-    min-height: 78vh;
+    min-height: calc(100vh - 98px);
+    min-height: calc(100svh - 98px);
     color: #ffffff;
 }
 
@@ -247,8 +256,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    /* A deep teal/blue transparency to match the screenshot */
-    background-color: rgba(15, 40, 68, 0.46); 
+    /* Keep layer for stacking, but remove dark tint so video stays clear */
+    background-color: transparent;
     z-index: 1;
 }
 
@@ -259,7 +268,8 @@
 }
 
 .hero-layout-row {
-    min-height: 62vh;
+    min-height: calc(100vh - 318px);
+    min-height: calc(100svh - 318px);
 }
 
 .hero-copy-wrap {
@@ -268,7 +278,7 @@
 
 /* Headline Typography */
 .hero-title {
-    font-size: clamp(2.35rem, 3.5vw, 4rem);
+    font-size: clamp(2.2rem, 3.3vw, 3.7rem);
     font-weight: 700;
     line-height: 1.08;
     margin-bottom: 1.2rem;
@@ -352,7 +362,7 @@
 /* Responsiveness: Adjust font size on mobile */
 @media (max-width: 768px) {
     .hero-title {
-        font-size: 2.2rem;
+        font-size: 2.1rem;
     }
 
     .hero-subtitle {
@@ -371,7 +381,7 @@
 
     .hero-section {
         padding: 90px 0;
-        min-height: auto;
+        min-height: calc(100svh - 98px);
     }
 
     .hero-layout-row {
@@ -533,7 +543,7 @@
 }
 
 .target-services-title {
-    font-size: clamp(2rem, 3.3vw, 3rem);
+    font-size: clamp(1.85rem, 3vw, 2.75rem);
     font-weight: 700;
     color: #29495f;
     margin-bottom: 2.9rem;
@@ -794,7 +804,7 @@
 }
 
 .services-title {
-    font-size: clamp(1.8rem, 2.4vw, 2.7rem);
+    font-size: clamp(1.65rem, 2.2vw, 2.45rem);
     font-weight: 700;
     color: #2b4a5f;
     margin-bottom: 1.15rem;
@@ -1174,7 +1184,7 @@ font-size: 1rem;
 
 .director-message-title {
     color: #2b4a5f;
-    font-size: clamp(2rem, 3.2vw, 3.25rem);
+    font-size: clamp(1.85rem, 2.9vw, 2.95rem);
     font-weight: 700;
     line-height: 1.18;
     margin-bottom: 1.35rem;
@@ -1205,7 +1215,7 @@ font-size: 1rem;
     }
 
     .director-message-title {
-        font-size: clamp(1.8rem, 5vw, 2.5rem);
+        font-size: clamp(1.7rem, 4.6vw, 2.3rem);
     }
 
     .director-message-text {
@@ -2267,7 +2277,7 @@ font-size: 1rem;
     background-color: #fdfbf7; /* Warm "Paper" White */
     color: #2c2c2c; /* Soft Charcoal (never pure black) */
     padding: 100px 0;
-    font-family: 'Lora', serif; /* Body text font */
+    font-family: var(--contentfont); /* Body text font */
 }
 
 /* --- Header Area --- */
@@ -2279,7 +2289,7 @@ font-size: 1rem;
 }
 
 .lit-category {
-    font-family: 'Inter', sans-serif; /* Keep sans for tiny meta text */
+    font-family: var(--contentfont); /* Keep sans for tiny meta text */
     font-size: 0.75rem;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -2291,7 +2301,7 @@ font-size: 1rem;
 }
 
 .lit-title {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--headlinefont);
     font-size: 3.5rem;
     font-weight: 700;
     line-height: 1.1;
@@ -2300,7 +2310,7 @@ font-size: 1rem;
 }
 
 .lit-subtitle {
-    font-family: 'Lora', serif;
+    font-family: var(--contentfont);
     font-style: italic;
     font-size: 1.3rem;
     color: #555;
@@ -2309,7 +2319,7 @@ font-size: 1rem;
 }
 
 .lit-meta {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--contentfont);
     font-size: 0.85rem;
     color: #888;
 }
@@ -2340,7 +2350,7 @@ font-size: 1rem;
 
 /* Drop Cap (The large first letter) */
 .lit-drop-cap::first-letter {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--headlinefont);
     font-size: 4.5rem;
     line-height: 0.8;
     font-weight: 700;
@@ -2357,7 +2367,7 @@ font-size: 1rem;
 
 /* Elegant Headers inside text */
 .lit-body h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--headlinefont);
     font-size: 2rem;
     margin-top: 4rem;
     margin-bottom: 1.5rem;
@@ -2366,7 +2376,7 @@ font-size: 1rem;
 
 /* Pull Quote (Center styled quote) */
 .lit-pull-quote {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--headlinefont);
     font-size: 2rem;
     font-style: italic;
     text-align: center;
@@ -2385,7 +2395,7 @@ font-size: 1rem;
     margin: 3rem 0;
     font-size: 1.5rem;
     color: #ccc;
-    font-family: 'Playfair Display', serif;
+    font-family: var(--headlinefont);
 }
 
 /* --- Author Section --- */
@@ -2406,7 +2416,7 @@ font-size: 1rem;
 }
 
 .lit-author-bio h5 {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--contentfont);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;

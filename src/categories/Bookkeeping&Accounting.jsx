@@ -346,7 +346,7 @@ const BookkeepingCashFlow = React.memo(() => {
                       hasn&apos;t kept pace. You need CFO-level thinking without
                       the full-time salary.
                     </p>
-                    <a href="/fractional-cfo">Learn More SME Services</a>
+                    <a href="/growth-stage">Learn More SME Services</a>
                   </article>
                 </div>
               </div>

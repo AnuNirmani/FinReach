@@ -78,17 +78,17 @@ const Header = () => {
                 </a>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link className="dropdown-item" to="/about">
+                    <Link className="dropdown-item" to="/not-profit">
                       Not-for-Profit
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="/about">
+                    <Link className="dropdown-item" to="/growth-stage">
                       Growth-Stage SME
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="/about">
+                    <Link className="dropdown-item" to="/partner">
                       Partner With Us
                     </Link>
                   </li>
