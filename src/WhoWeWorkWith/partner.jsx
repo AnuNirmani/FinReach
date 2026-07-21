@@ -3,9 +3,9 @@ import { Helmet } from 'react-helmet-async';
 import Header from '../Dashboard/Header.jsx';
 import Footer from '../Dashboard/Footer.jsx';
 import './partner.css';
-import heroImage from '../assets/assets/about-hero-BEnMor4y.jpg';
-import introImage from '../assets/assets/growthstage.jpg';
-import partnerImage from '../assets/assets/team-collaboration-Dfr1_auB.jpg';
+import heroImage from '../assets/assets/DSC03803.jpg';
+import introImage from '../assets/assets/tmpt9og_3fn.jpg';
+import partnerImage from '../assets/assets/tmph6w507ot.jpg';
 import ctaImage from '../assets/assets/157858.jpg';
 
 const Partner = React.memo(() => {

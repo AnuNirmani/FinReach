@@ -1,0 +1,153 @@
+import React from 'react'
+import { Link } from 'react-router-dom'
+import '../Dashboard/Dashboard.css'
+import './team.css'
+import Header from '../Dashboard/Header'
+import Footer from '../Dashboard/Footer'
+import teamHero from '../assets/assets/3e.png'
+import donPhoto from '../assets/assets/DSC03893.jpg'
+import directorPhoto from '../assets/assets/DSC03893.jpg'
+import seniorPhoto from '../assets/assets/DSC03899.jpg'
+import accountantPhoto from '../assets/assets/DSC03913.png'
+import seniorAcctPhoto from '../assets/assets/DSC03897.jpg'
+
+const teamMembers = [
+  {
+    id: 1,
+    name: 'Don Siriwardana',
+    role: 'PRINCIPAL',
+    photo: donPhoto,
+    bio: [
+      "Don leads FinReach and sits across every client relationship personally. He's a Chartered Accountant in Australian and New Zealand and an ASIC Registered Company Auditor, with years of senior experience delivering accounting, audit and assurance work for organisations who couldn't afford to get it wrong.",
+      "He started FinReach because he believed NFPs and growing SMEs deserved access to that same calibre of work, without the price tag or the impersonal feel of a big firm. If you work with FinReach, you work with Don.",
+    ],
+    quote: '"I wanted to build a firm where a community organisation gets exactly the same care and rigour as any client of a much larger practice - because the work they do matters just as much."',
+    quoteAttribution: 'Don',
+  },
+  {
+    id: 2,
+    name: 'Sam Herath',
+    role: 'SENIOR ACCOUNTANT',
+    photo: seniorPhoto,
+    bio: [
+      'Sam is based here in Canberra and works directly with clients day to day - across bookkeeping, accounting and the ongoing relationship that keeps your numbers accurate and your reporting on time.',
+    ],
+    quote: null,
+    quoteAttribution: null,
+  },
+  {
+    id: 3,
+    name: 'Sri Lanka',
+    role: 'Our Delivery Team',
+    photo: accountantPhoto,
+    bio: [
+      'Behind every FinReach client is a technically trained delivery team based in Sri Lanka, coordinated by Thilak and Lahiru. They bring deep technical training and genuine rigour to the bookkeeping, reconciliation and reporting work that underpins everything we deliver, working in close step with the Canberra team, most of the day, every day.',
+      "This is the part of FinReach that makes the model work: it's how we deliver senior-level quality without a senior-level price tag. It's not a back office - it's half of who we are.",
+    ],
+    quote: null,
+    quoteAttribution: null,
+  },
+  {
+    id: 4,
+    name: 'Dileep Subramanium',
+    role: null,
+    photo: seniorAcctPhoto,
+    bio: [
+      'A finance and supply chain leader with over 16 years of cross-industry experience spanning consumer goods, food & beverages, packaging, information technology, and manufacturing sectors. Proven expertise in driving financial stewardship, operational excellence, and enterprise-wide transformation initiatives.',
+    ],
+    quote: null,
+    quoteAttribution: null,
+  },
+]
+
+const Team = () => {
+  return (
+    <>
+      <Header />
+
+      {/* Hero Section */}
+      <section
+        className="hero-section team-hero-section"
+        style={{ backgroundImage: `url(${teamHero})` }}
+      >
+        <div className="hero-overlay team-hero-overlay"></div>
+        <div className="container hero-content h-100">
+          <div className="row align-items-center justify-content-end">
+            <div className="col-lg-6 col-md-10">
+              <div className="team-hero-card">
+                <h1 className="hero-title">
+                  The People Behind Your Financial Confidence.
+                </h1>
+                <p className="hero-subtitle">
+                  Canberra-based relationships. Technically trained delivery. One team, two locations.
+                </p>
+                <Link to="/book-consultation" className="btn btn-hero-secondary">
+                  Book A No-Obligation Consultation
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Team Members */}
+      <section className="team-members-section">
+        <div className="container">
+          {teamMembers.map((member, index) => (
+            <div
+              key={member.id}
+              className={`row align-items-center team-member-row team-member-${member.id}`}
+            >
+              {/* Photo */}
+              <div className="col-md-5 col-lg-5 mb-4 mb-md-0">
+                <div className="team-member-photo-wrap">
+                  <img
+                    src={member.photo}
+                    alt={member.name}
+                    className="team-member-photo"
+                  />
+                </div>
+              </div>
+
+              {/* Info */}
+              <div className="col-md-7 col-lg-6 offset-lg-1 ps-md-5">
+                <h2 className="team-member-name">{member.name}</h2>
+                {member.role && <span className="team-member-badge">{member.role}</span>}
+                <div className="team-member-bio mt-4">
+                  {member.bio.map((para, i) => (
+                    <p key={i}>{para}</p>
+                  ))}
+                  {member.quote && (
+                    <p className="team-member-quote">
+                      {member.quote}
+                      {member.quoteAttribution && (
+                        <span className="team-member-quote-attribution"> - {member.quoteAttribution}</span>
+                      )}
+                    </p>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="team-cta-section">
+        <div className="container text-center">
+          <h2 className="team-cta-heading">Work directly with our team</h2>
+          <p className="team-cta-sub">
+            Every engagement at FinReach is led by a qualified professional who understands your goals. Book a no-obligation consultation today.
+          </p>
+          <Link to="/book-consultation" className="btn btn-finreach-cta px-5 py-3">
+            Book a Consultation
+          </Link>
+        </div>
+      </section>
+
+      <Footer />
+    </>
+  )
+}
+
+export default Team

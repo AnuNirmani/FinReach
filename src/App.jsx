@@ -21,6 +21,8 @@ const NotProfit = lazy(() => import('./WhoWeWorkWith/NotProfit.jsx'))
 const GrowthStage = lazy(() => import('./WhoWeWorkWith/growthstage.jsx'))
 const Partner = lazy(() => import('./WhoWeWorkWith/partner.jsx'))
 
+const Team = lazy(() => import('./pages/team.jsx'))
+
 // Blog category pages
 const BlogBookkeepingCashFlow = lazy(() => import('./Blog/blog/BookkeepingCashFlow.jsx'))
 const BlogAssuranceFunding = lazy(() => import('./Blog/blog/AssuranceFunding.jsx'))
@@ -73,6 +75,7 @@ function App() {
           <Route path="/blog/assurance-funding" element={<BlogAssuranceFunding />} />
           <Route path="/blog/audit-readiness" element={<BlogAuditReadiness />} />
           <Route path="/blog/fractional-cfo-insights" element={<BlogFractionalCFOInsights />} />
+          <Route path="/team" element={<Team />} />
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>

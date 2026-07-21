@@ -1,0 +1,187 @@
+/* ================= TEAM PAGE STYLES ================= */
+
+/* Hero — reduced height */
+.team-hero-section {
+  min-height: 480px !important;
+  padding: 80px 0 !important;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  overflow: hidden;
+}
+
+/* Hero overlay — semi-transparent dark tint */
+.team-hero-overlay {
+  background-color: transparent !important;
+}
+
+/* Hero card (text box on right) */
+.team-hero-card {
+  background: rgba(10, 30, 45, 0.72);
+  backdrop-filter: blur(4px);
+  border-radius: 24px;
+  padding: 4rem 3.5rem;
+  color: #ffffff;
+}
+
+.team-hero-card .hero-title {
+  font-size: clamp(1.8rem, 2.6vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+.team-hero-card .hero-subtitle {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* Team members section */
+.team-members-section {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+.team-member-row {
+  padding: 60px 0;
+  border-bottom: 1px solid #e8edf2;
+}
+
+.team-member-row:last-child {
+  border-bottom: none;
+}
+
+/* Photo */
+.team-member-photo-wrap {
+  overflow: hidden;
+}
+
+.team-member-photo {
+  width: 100%;
+  height: 720px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+/* Varied photo heights for each team member */
+.team-member-1 .team-member-photo {
+  height: 720px;
+}
+
+.team-member-2 .team-member-photo {
+  height: 600px;
+}
+
+.team-member-3 .team-member-photo {
+  height: 620px;
+}
+
+.team-member-4 .team-member-photo {
+  height: 600px;
+}
+
+/* Info */
+.team-member-name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f3e5d;
+  margin-bottom: 0.75rem;
+}
+
+.team-member-badge {
+  display: inline-block;
+  background-color: #cddc39;
+  color: #0f3e5d;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 0.35rem 1rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+}
+
+.team-member-bio p {
+  font-size: 1.2rem;
+  line-height: 1.75;
+  color: #000000;
+  margin-bottom: 1rem;
+}
+
+.team-member-quote {
+  font-style: italic;
+  color: #000000;
+  font-size: 0.97rem;
+  line-height: 1.7;
+  margin-top: 1.5rem;
+  padding: 0;
+  border: none;
+}
+
+.team-member-quote-attribution {
+  font-style: normal;
+  color: #000000;
+  font-weight: 600;
+}
+
+/* CTA section */
+.team-cta-section {
+  background-color: #0f3e5d;
+  padding: 90px 20px;
+}
+
+.team-cta-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.team-cta-sub {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 560px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .team-hero-section {
+    min-height: 320px !important;
+    padding: 60px 0 !important;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+  }
+
+  .team-hero-card {
+    padding: 3rem 2.5rem;
+  }
+
+  .team-member-photo {
+    height: 360px;
+  }
+
+  .team-member-1 .team-member-photo {
+    height: 360px;
+  }
+
+  .team-member-2 .team-member-photo {
+    height: 340px;
+  }
+
+  .team-member-3 .team-member-photo {
+    height: 370px;
+  }
+
+  .team-member-4 .team-member-photo {
+    height: 350px;
+  }
+
+  .team-member-name {
+    font-size: 1.6rem;
+    margin-top: 1.2rem;
+  }
+
+  .team-cta-heading {
+    font-size: 1.6rem;
+  }
+}
