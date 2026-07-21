@@ -76,7 +76,7 @@ const ClientOutcomesSection = () => {
 
                 .fr-outcomes-title {
                     color: #2b4a5f;
-                    font-size: clamp(1.9rem, 3vw, 3.15rem);
+                    font-size: clamp(1.5rem, 2.2vw, 2.25rem);
                     font-weight: 700;
                     margin-bottom: 3.2rem;
                 }

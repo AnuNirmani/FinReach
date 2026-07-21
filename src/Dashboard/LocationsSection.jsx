@@ -83,7 +83,7 @@ const LocationsSection = () => {
 
                 .fr-locations-title {
                     color: #2b4a5f;
-                    font-size: clamp(2rem, 3vw, 3.3rem);
+                    font-size: clamp(1.6rem, 2.3vw, 2.45rem);
                     font-weight: 700;
                     line-height: 1.15;
                     margin-bottom: 1.55rem;

@@ -8,7 +8,7 @@ import assuranceHero from '../assets/assets/assurance1.jpg';
 import notForProfitsImage from '../assets/assets/notforprofits.jpg';
 import growthStageImage from '../assets/assets/growthstage.jpg';
 import assuranceTeamImage from '../assets/assets/assurance2.jpg';
-import assuranceCtaBg from '../assets/assets/audit-hero-Bk5pu4Jp.jpg';
+import assuranceCtaBg from '../assets/assets/157858.jpg';
 import logoIpsum265 from '../assets/logo/logoipsum-265.png';
 import logoIpsum287 from '../assets/logo/logoipsum-287.png';
 import logoIpsum331 from '../assets/logo/logoipsum-331.png';

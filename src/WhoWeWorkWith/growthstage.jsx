@@ -11,7 +11,7 @@ import notprofitImg3 from '../assets/assets/audit1.jpg';
 import notprofitImg4 from '../assets/assets/assurance1.jpg';
 import notprofitImg5 from '../assets/assets/cfo1.jpg';
 import directorImage from '../assets/assets/3.jpg';
-import ctaBg from '../assets/assets/audit-hero-Bk5pu4Jp.jpg';
+import ctaBg from '../assets/assets/157858.jpg';
 import logoIpsum265 from '../assets/logo/logoipsum-265.png';
 import logoIpsum287 from '../assets/logo/logoipsum-287.png';
 import logoIpsum331 from '../assets/logo/logoipsum-331.png';

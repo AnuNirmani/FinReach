@@ -53,7 +53,7 @@ const FinanceHealthCheckSection = () => {
 
                 .fr-finance-check-title {
                     color: #ffffff;
-                    font-size: clamp(2rem, 3.1vw, 3.15rem);
+                    font-size: clamp(1.6rem, 2.3vw, 2.35rem);
                     font-weight: 700;
                     line-height: 1.2;
                     margin-bottom: 1.05rem;
@@ -123,7 +123,7 @@ const FinanceHealthCheckSection = () => {
                     }
 
                     .fr-finance-check-title {
-                        font-size: 1.5rem;
+                        font-size: 1.28rem;
                         margin-bottom: 0.8rem;
                     }
 
