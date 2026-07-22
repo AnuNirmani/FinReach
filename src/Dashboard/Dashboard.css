@@ -49,7 +49,7 @@
         }
 
         .finreach-navbar-logo {
-            height: 54px;
+            height: 50px;
             width: auto;
             object-fit: contain;
         }
@@ -168,7 +168,7 @@
             background-color: var(--finreach-lime);
             color: var(--finreach-teal); /* Dark text provides better contrast on lime */
             font-weight: 600;
-            padding: 0.72rem 1.7rem;
+            padding: 0.54rem 1.7rem;
             border-radius: 11px; /* Rounded corners */
             border: none;
             transition: all 0.3s ease;
@@ -187,7 +187,7 @@
             color: #2b4a5f;
             background: #ffffff;
             font-weight: 600;
-            padding: 0.68rem 1.6rem;
+            padding: 0.5rem 1.6rem;
             border-radius: 11px;
             text-decoration: none;
             white-space: nowrap;
@@ -211,7 +211,7 @@
                     }
 
             .finreach-navbar-logo {
-                height: 48px;
+                height: 36px;
             }
 
             .finreach-navbar-actions {
@@ -1576,13 +1576,15 @@ font-size: 1rem;
 .footer-section {
     background-color: #2d556f;
     color: #ffffff;
-    padding-top: 26px;
-    padding-bottom: 22px;
+    padding-top: 100px;
+    padding-bottom: 20px;
     font-size: 0.95rem;
 }
 
 .footer-shell {
     max-width: 1720px;
+    padding-left: 8rem;
+    padding-right: 5rem;
 }
 
 .footer-logo-row {
@@ -1590,10 +1592,11 @@ font-size: 1rem;
 }
 
 .footer-main-logo {
-    height: 78px;
+    height: 60px;
     width: auto;
     object-fit: contain;
     display: block;
+    transform: translateY(-50px);
 }
 
 .footer-columns-row {
@@ -1602,7 +1605,7 @@ font-size: 1rem;
 }
 
 .footer-heading {
-    font-size: 1.28rem;
+    font-size: 1rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.01em;
@@ -1661,7 +1664,7 @@ font-size: 1rem;
 }
 
 .footer-bottom {
-    margin-top: 2.3rem;
+    margin-top: 2.6rem;
     padding-top: 1rem;
     border-top: 1px solid rgba(255, 255, 255, 0.7);
     text-align: center;
@@ -1672,7 +1675,7 @@ font-size: 1rem;
 
 @media (max-width: 1199px) {
     .footer-main-logo {
-        height: 66px;
+        height: 55px;
     }
 
     .footer-heading {
@@ -1690,7 +1693,12 @@ font-size: 1rem;
 
 @media (max-width: 767px) {
     .footer-section {
-        padding-top: 34px;
+        padding-top: 38px;
+    }
+
+    .footer-shell {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
     }
 
     .footer-logo-row {
@@ -1698,7 +1706,8 @@ font-size: 1rem;
     }
 
     .footer-main-logo {
-        height: 52px;
+        height: 46px;
+        transform: translateY(-6px);
     }
 
     .footer-columns-row {
