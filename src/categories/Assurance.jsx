@@ -241,7 +241,7 @@ const AssuranceFunding = React.memo(() => {
         </Helmet>
       )}
       <Header />
-      <main className="assurance-page">
+      <main className="assurance-page--assurance">
         <section className="assurance-hero">
           <div className="assurance-hero-media">
             <img src={assuranceHero} alt="Assurance consultation" className="assurance-hero-image" />
@@ -296,7 +296,7 @@ const AssuranceFunding = React.memo(() => {
 
               <div className="row g-4 justify-content-center">
                 {solutionCards.map((item, idx) => (
-                  <div className={`col-md-6 ${idx < 3 ? 'col-xl-4' : 'col-xl-5'}`} key={item.title}>
+                  <div className="col-md-6 col-xl-4" key={item.title}>
                     <article className="assurance-solution-card">
                       <img src={item.image} alt={item.imageAlt} className="assurance-solution-icon" />
                       <h3>{item.title}</h3>

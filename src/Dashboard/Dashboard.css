@@ -205,6 +205,11 @@
                 padding-bottom: 0.9rem;
             }
 
+                    .finreach-navbar .container {
+                        padding-left: 1rem;
+                        padding-right: 1rem;
+                    }
+
             .finreach-navbar-logo {
                 height: 48px;
             }
@@ -1722,6 +1727,81 @@ font-size: 1rem;
     .footer-bottom {
         margin-top: 1.7rem;
         font-size: 0.82rem;
+    }
+}
+
+@media (max-width: 1199px) {
+    .target-services-shell,
+    .target-who-section,
+    .painpoints-process-shell {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .target-service-card,
+    .painpoints-process-card {
+        height: auto;
+        min-height: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .target-services-shell,
+    .target-who-section,
+    .painpoints-process-shell {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .target-who-image {
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .target-who-card-title,
+    .target-who-card-text {
+        max-width: 100%;
+    }
+
+    .post-meta {
+        flex-wrap: wrap;
+        row-gap: 0.35rem;
+    }
+
+    .post-meta span {
+        margin-right: 0.85rem;
+    }
+
+    .post-featured-image-wrapper {
+        height: 300px;
+    }
+
+    .author-box {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .author-avatar {
+        margin-right: 0;
+    }
+
+    .lit-title {
+        font-size: clamp(2rem, 7vw, 2.5rem);
+    }
+
+    .lit-pull-quote {
+        font-size: 1.4rem;
+        padding: 24px 0;
+    }
+
+    .lit-author {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .lit-author img {
+        margin-right: 0;
     }
 }
 
@@ -3360,6 +3440,14 @@ font-size: 1rem;
     padding: 60px 0;
 }
 
+.assurance-page--assurance .assurance-hero {
+    min-height: calc(90vh - 88px);
+}
+
+.assurance-page--assurance .assurance-hero-media {
+    min-height: calc(90vh - 88px);
+}
+
 /* Red Icon Styling */
 .headache-icon-circle {
     flex-shrink: 0;
@@ -3679,6 +3767,14 @@ font-size: 1rem;
     background-color: #f2f6f9;
 }
 
+.new-auditing-page--audit .new-auditing-hero {
+    min-height: calc(100vh - 92px);
+}
+
+.new-auditing-page--audit .new-auditing-hero-image {
+    min-height: calc(100vh - 92px);
+}
+
 .new-auditing-content-wrap {
     margin-top: -34px;
     border-top-left-radius: 34px;
@@ -3695,6 +3791,8 @@ font-size: 1rem;
 
 .new-auditing-shell {
     max-width: 1600px;
+    padding-left: 12rem;
+    padding-right: 12rem;
 }
 
 .new-auditing-required {
@@ -3703,7 +3801,7 @@ font-size: 1rem;
 
 .new-auditing-heading {
     text-align: center;
-    font-size: clamp(1.9rem, 2.2vw, 2.7rem);
+    font-size: 2rem;
     color: #29495f;
     font-weight: 700;
     margin-bottom: 0.65rem;
@@ -3712,7 +3810,7 @@ font-size: 1rem;
 .new-auditing-subheading {
     text-align: center;
     color: #2f3f4b;
-    font-size: 1.03rem;
+    font-size: 1.2rem;
     margin-bottom: 2.1rem;
 }
 
@@ -3732,8 +3830,9 @@ font-size: 1rem;
     box-shadow: 0 6px 16px rgba(18, 33, 48, 0.12);
     padding: 2.05rem 1.55rem 1.2rem;
     text-align: center;
-    min-height: 240px;
-    height: 100%;
+
+    min-height: 340px;
+
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -3743,7 +3842,7 @@ font-size: 1rem;
     width: 60px;
     height: 60px;
     object-fit: contain;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -3751,10 +3850,10 @@ font-size: 1rem;
 
 .new-auditing-required-card h3 {
     color: #2d4a5f;
-    font-size: 1.55rem;
+    font-size: 1.2rem;
     line-height: 1.2;
     font-weight: 700;
-    margin-bottom: 0.8rem;
+    margin-bottom: 1.5rem;
 }
 
 .new-auditing-required-card p {
@@ -3770,6 +3869,7 @@ font-size: 1rem;
 
 .new-auditing-column-title {
     color: #29495f;
+    text-align: center;
     font-size: clamp(1.85rem, 2.1vw, 2.65rem);
     font-weight: 700;
     margin-bottom: 1.3rem;
@@ -3785,7 +3885,7 @@ font-size: 1rem;
     display: flex;
     align-items: flex-start;
     gap: 0.55rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     color: #4f6980;
     font-size: 1.14rem;
     line-height: 1.58;
@@ -3810,6 +3910,10 @@ font-size: 1rem;
     text-align: center;
 }
 
+.new-auditing-process .row > [class*="col-"] {
+    display: flex;
+}
+
 .new-auditing-pill {
     display: inline-block;
     background-color: #c7d300;
@@ -3827,7 +3931,9 @@ font-size: 1rem;
     background-color: #447192;
     border-radius: 12px;
     box-shadow: 0 8px 18px rgba(17, 35, 52, 0.18);
-    min-height: 222px;
+    min-height: 280px;
+    height: 100%;
+    width: 100%;
     text-align: left;
     padding: 1.4rem 1.1rem 1.2rem;
     transition: background-color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
@@ -3850,7 +3956,7 @@ font-size: 1rem;
 
 .new-auditing-step-card h3 {
     color: #ffffff;
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     font-weight: 700;
     line-height: 1.15;
     margin-bottom: 0.75rem;
@@ -3883,10 +3989,12 @@ font-size: 1rem;
 }
 
 .new-auditing-included-list {
-    max-width: 1160px;
+    width: min(100%, 980px);
     margin: 0 auto;
     display: grid;
     gap: 0.78rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
 }
 
 .new-auditing-included-item {
@@ -3898,8 +4006,9 @@ font-size: 1rem;
     align-items: center;
     gap: 0.65rem;
     color: #2f3f4b;
+    font-weight: 500;
     text-align: left;
-    font-size: 1rem;
+    font-size: 1.2rem;
     line-height: 1.45;
 }
 
@@ -3919,6 +4028,14 @@ font-size: 1rem;
 
 .bookkeeping-page {
     background-color: #f4f6f8;
+}
+
+.bookkeeping-page .new-auditing-hero {
+    min-height: calc(100vh - 92px);
+}
+
+.bookkeeping-page .new-auditing-hero-image {
+    min-height: calc(100vh - 92px);
 }
 
 .bookkeeping-lower-section {
@@ -4185,7 +4302,10 @@ font-size: 1rem;
     border: 1px solid #d3dce4;
     box-shadow: 0 6px 16px rgba(18, 33, 48, 0.12);
     padding: 1.8rem 1.2rem 1.45rem;
-    min-height: 225px;
+    min-height: 255px;
+    max-width: 430px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .new-auditing-benefit-icon {
@@ -4273,12 +4393,14 @@ font-size: 1rem;
 .new-auditing-why-row {
     margin-top: 3.6rem;
     text-align: left;
+    padding-left: 12rem;
+    padding-right: 12rem;
 }
 
 .new-auditing-why-image-wrap {
     width: 100%;
-    max-width: 560px;
-    aspect-ratio: 1 / 1;
+    max-width: 500px;
+    aspect-ratio: 4 / 3;
     margin: 0 auto;
 }
 
@@ -4550,12 +4672,24 @@ font-size: 1rem;
         grid-template-columns: 1fr;
     }
 
+    .bookkeeping-page .new-auditing-hero {
+        min-height: auto;
+    }
+
+    .bookkeeping-page .new-auditing-hero-image {
+        min-height: 420px;
+    }
+
     .new-auditing-hero-content {
         padding: 2.4rem 1.4rem;
     }
 
     .new-auditing-hero-image {
         min-height: 280px;
+    }
+
+    .new-auditing-page--audit .new-auditing-hero-image {
+        min-height: 420px;
     }
 
     .new-auditing-content-wrap {
@@ -4571,7 +4705,7 @@ font-size: 1rem;
     }
 
     .new-auditing-step-card {
-        min-height: auto;
+        min-height: 300px;
     }
 
     .new-auditing-benefit-card {
@@ -4613,6 +4747,14 @@ font-size: 1rem;
         min-height: auto;
     }
 
+    .bookkeeping-page .new-auditing-hero-image {
+        min-height: 300px;
+    }
+
+    .new-auditing-page--audit .new-auditing-hero-image {
+        min-height: 300px;
+    }
+
     .new-auditing-hero-title {
         font-size: 1.95rem;
     }
@@ -4646,6 +4788,10 @@ font-size: 1rem;
         font-size: 1.5rem;
     }
 
+    .new-auditing-step-card {
+        min-height: 260px;
+    }
+
     .new-auditing-required-card h3 {
         font-size: 1.35rem;
     }
@@ -4655,7 +4801,7 @@ font-size: 1rem;
     }
 
     .new-auditing-benefit-card {
-        min-height: auto;
+        min-height: 230px;
         padding: 1.45rem 1rem 1.2rem;
     }
 
@@ -4977,7 +5123,7 @@ font-size: 1rem;
 
 .assurance-heading {
     color: #2b4a5f;
-    font-size: clamp(2rem, 2.8vw, 3.15rem);
+    font-size: 2rem;
     font-weight: 700;
     margin-bottom: 1.8rem;
 }
@@ -5018,6 +5164,14 @@ font-size: 1rem;
 
 .assurance-solutions-block {
     padding-bottom: 3.7rem;
+    margin-top: 1rem;
+}
+
+.assurance-solutions-block > .row {
+    max-width: 1440px;
+    margin-left: 6rem;
+    margin-right: 6rem;
+    padding-inline: clamp(0.75rem, 1.6vw, 1.5rem);
 }
 
 .assurance-subheading {
@@ -5033,7 +5187,10 @@ font-size: 1rem;
     border-radius: 16px;
     box-shadow: 0 8px 16px rgba(17, 35, 52, 0.14);
     min-height: 262px;
+    height: 100%;
     padding: 2rem 1.55rem 1.65rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .assurance-solution-icon {
@@ -5077,6 +5234,13 @@ font-size: 1rem;
     padding: 0.7rem 0 3.7rem;
 }
 
+.assurance-process-block > .row {
+    max-width: 1440px;
+    margin-left: 8rem;
+    margin-right: 8rem;
+    padding-inline: clamp(0.75rem, 1.6vw, 1.5rem);
+}
+
 .assurance-process-card {
     background-color: #447192;
     border-radius: 14px;
@@ -5104,7 +5268,7 @@ font-size: 1rem;
 
 .assurance-process-card h3 {
     color: #ffffff;
-    font-size: 2rem;
+    font-size: 1.3rem;
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 0.75rem;
@@ -5139,8 +5303,10 @@ font-size: 1rem;
 }
 
 .assurance-included-list {
-    max-width: 1160px;
-    margin: 0 auto;
+    max-width: 1440px;
+    margin-left: 22rem;
+    margin-right: 22rem;
+    padding-inline: clamp(0.75rem, 1.6vw, 1.5rem);
     display: grid;
     gap: 0.88rem;
 }
@@ -5168,13 +5334,23 @@ font-size: 1rem;
     padding-bottom: 0;
 }
 
+.assurance-approach-block > .row {
+    max-width: 1440px;
+    margin-left: 8rem;
+    margin-right: 8rem;
+    padding-inline: clamp(0.75rem, 1.6vw, 1.5rem);
+}
+
 .assurance-approach-card {
     background-color: #f6f8fa;
     border: 1px solid #d3dce4;
     border-radius: 14px;
     box-shadow: 0 6px 16px rgba(18, 33, 48, 0.12);
     min-height: 246px;
+    height: 100%;
     padding: 1.9rem 1.2rem 1.4rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .assurance-approach-icon {
@@ -5255,6 +5431,10 @@ font-size: 1rem;
 
 .assurance-why-row {
     margin-top: 2.9rem;
+    max-width: 1440px;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    padding-inline: clamp(0.75rem, 1.6vw, 1.5rem);
 }
 
 .assurance-why-image-wrap {
@@ -5264,8 +5444,8 @@ font-size: 1rem;
 }
 
 .assurance-why-image {
-    width: 100%;
-    height: 520px;
+    width: 510px;
+    height: 460px;
     object-fit: cover;
     display: block;
 }

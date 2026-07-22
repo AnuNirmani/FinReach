@@ -9,7 +9,7 @@ import auditHero from '../assets/assets/audit1.jpg';
 import notForProfitsImage from '../assets/assets/audit2.jpg';
 import growthStageImage from '../assets/assets/audit3.jpg';
 import whyImage from '../assets/assets/audit4.jpg';
-import ctaBg from '../assets/assets/157858.jpg';
+import ctaBg from '../assets/assets/1384.jpg';
 import logoIpsum265 from '../assets/logo/logoipsum-265.png';
 import logoIpsum287 from '../assets/logo/logoipsum-287.png';
 import logoIpsum331 from '../assets/logo/logoipsum-331.png';
@@ -254,7 +254,7 @@ const NewAuditing = React.memo(() => {
 
 			<Header />
 
-			<main className="new-auditing-page">
+			<main className="new-auditing-page new-auditing-page--audit">
 				<section className="new-auditing-hero">
 					<div className="new-auditing-hero-media">
 						<img src={auditHero} alt="Auditing consultation" className="new-auditing-hero-image" />

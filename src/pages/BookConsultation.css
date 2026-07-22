@@ -210,6 +210,21 @@
 }
 
 @media (max-width: 1200px) {
+  .book-consult-page {
+    position: relative;
+    inset: auto;
+    height: auto;
+    min-height: calc(100dvh - 98px);
+    overflow: visible;
+    padding: 16px 12px 24px;
+  }
+
+  .book-consult-card {
+    height: auto;
+    min-height: calc(100dvh - 140px);
+    max-height: none;
+  }
+
   .book-consult-title {
     font-size: 26px;
   }
@@ -220,13 +235,9 @@
 }
 
 @media (max-width: 992px) {
-  .book-consult-page {
-    height: 100dvh;
-  }
-
   .book-consult-card {
     grid-template-columns: 1fr;
-    height: calc(100dvh - 20px);
+    min-height: 0;
     max-height: none;
   }
 
@@ -250,5 +261,34 @@
   .book-consult-groups,
   .book-consult-grid-2 {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .book-consult-page {
+    min-height: auto;
+    padding: 10px 8px 16px;
+  }
+
+  .book-consult-left,
+  .book-consult-scroll {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .book-consult-title {
+    font-size: 22px;
+  }
+
+  .book-consult-heading {
+    font-size: 21px;
+  }
+
+  .book-consult-actions {
+    justify-content: stretch;
+  }
+
+  .book-consult-continue {
+    width: 100%;
   }
 }

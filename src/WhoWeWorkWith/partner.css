@@ -41,7 +41,8 @@
 	letter-spacing: -0.02em;
 	margin: 0 0 1rem;
 	max-width: none;
-	white-space: nowrap;
+	white-space: normal;
+	text-wrap: balance;
 }
 
 .partner-hero-copy p {
@@ -242,7 +243,7 @@
 	font-size: 1.08rem;
 	line-height: 1.55;
 	max-width: none;
-	white-space: nowrap;
+	white-space: normal;
 	color: rgba(255, 255, 255, 0.94);
 }
 
@@ -260,6 +261,10 @@
 	.partner-hero-copy {
 		padding-top: 3.25rem;
 		padding-bottom: 3.75rem;
+	}
+
+	.partner-btn-primary {
+		min-width: 0;
 	}
 
 	.partner-split-grid {
@@ -299,6 +304,11 @@
 	.partner-intro-card {
 		border-radius: 0;
 		padding: 3rem 1.2rem 2.5rem;
+	}
+
+	.partner-btn-primary {
+		width: 100%;
+		text-align: center;
 	}
 
 	.partner-pill {
