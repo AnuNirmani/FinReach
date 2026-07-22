@@ -10,7 +10,7 @@ import notprofitImg2 from '../assets/assets/bookkeeping1.jpg';
 import notprofitImg3 from '../assets/assets/audit1.jpg';
 import notprofitImg4 from '../assets/assets/assurance1.jpg';
 import notprofitImg5 from '../assets/assets/cfo1.jpg';
-import directorImage from '../assets/assets/director.jpg';
+import directorImage from '../assets/assets/notprofit3.jpg';
 import ctaBg from '../assets/assets/157858.jpg';
 import logoIpsum265 from '../assets/logo/logoipsum-265.png';
 import logoIpsum287 from '../assets/logo/logoipsum-287.png';
@@ -184,7 +184,7 @@ const NotProfit = React.memo(() => {
         </Helmet>
       )}
       <Header />
-      <main className="assurance-page">
+      <main className="assurance-page assurance-page--notprofit">
         <section className="assurance-hero">
           <div className="assurance-hero-media">
             <img src={notprofitHero} alt="Not-for-profit consultation" className="assurance-hero-image" />
@@ -346,8 +346,8 @@ const NotProfit = React.memo(() => {
           <div className="new-auditing-final-cta-overlay"></div>
           <div className="container">
             <div className="new-auditing-final-cta-content">
-              <h2>Need assurance your stakeholders will trust?</h2>
-              <p>Tell us what&apos;s being asked of you, and we&apos;ll scope exactly what&apos;s needed.</p>
+              <h2>Ready for a financial partner who already understands the NFP world?</h2>
+              <p>Let&apos;s talk about your funding structure, your reporting obligations, and where you need support.</p>
               <button
                 type="button"
                 className="new-auditing-final-cta-btn"

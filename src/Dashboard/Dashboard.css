@@ -3009,231 +3009,6 @@ font-size: 1rem;
     }
 }
 
-
-/* ================= ABOUT PAGE STYLES ================= */
-
-/* Common Section Padding */
-.about-section-padding {
-    padding: 60px 0;
-}
-
-/* --- Section 1: Purpose (Gray Background) --- */
-.about-purpose-section {
-    background-color: #f8f9fa; /* Light Gray */
-    text-align: center;
-}
-
-.about-heading {
-    font-size: 2.25rem; /* Large clear heading */
-    font-weight: 700;
-    color: #1a1a1a;
-    margin-bottom: 1.5rem;
-}
-
-.about-subtext {
-    font-size: 1.05rem;
-    color: #546379;; /* Slate gray */
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
-/* --- Section 2: Structure (White Background) --- */
-.about-structure-section {
-    background-color: #ffffff;
-}
-
-/* Structure Cards */
-.structure-card {
-    background-color: #ffffff;
-    border: 1px solid #e2e8f0; /* Subtle border */
-    border-radius: 8px;
-    padding: 40px;
-    height: 100%;
-    transition: box-shadow 0.3s ease;
-}
-
-.structure-card:hover {
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-}
-
-.structure-title {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin-bottom: 1rem;
-}
-
-.structure-desc {
-    font-size: 1rem;
-    color: #546379;
-    line-height: 1.6;
-    margin: 0;
-}
-
-/* --- Section 3: Who We Serve (Gray Background) --- */
-.about-serve-section {
-    background-color: #f8f9fa;
-}
-
-/* Serve Cards */
-.serve-card-about {
-    background-color: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    padding: 40px 30px;
-    height: 100%;
-    text-align: center; /* Centered content */
-    transition: transform 0.2s;
-}
-
-.serve-card-about:hover {
-    transform: translateY(-5px);
-}
-
-.serve-icon {
-    font-size: 2.5rem;
-    color: #cddc39; /* FinReach Lime */
-    margin-bottom: 1.5rem;
-    display: inline-block;
-}
-
-.serve-title {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin-bottom: 1rem;
-}
-
-.serve-desc {
-    font-size: 1rem;
-    color: #546379;
-    line-height: 1.6;
-    margin: 0;
-}
-
-/* ================= ABOUT PAGE - VALUES & BOTTOM ================= */
-
-/* --- "What We Value" Section --- */
-.values-section {
-  background: linear-gradient(
-    135deg,
-    #0f3e5d 0%,
-    #123f5f 100%
-  );
-  padding: 100px 0;
-}
-
-/* Section heading */
-.values-section .about-heading {
-  color: #ffffff;
-}
-
-.values-container {
-  max-width: 900px;
-}
-
-/* Value row layout */
-.value-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 24px;
-  margin-bottom: 36px;
-}
-
-
-/* The Dark Teal Letter Box (R, E, A, C, H) */
-.value-letter-box {
-  width: 56px;
-  height: 56px;
-  background: #c7d300; /* FinReach green */
-  color: #0f3e5d;
-  font-weight: 700;
-  font-size: 22px;
-  border-radius: 12px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-/* Text content */
-.value-content h3 {
-  color: #ffffff;
-  margin-bottom: 6px;
-}
-
-.value-content p {
-  color: rgba(255, 255, 255, 0.85);
-  margin: 0;
-  line-height: 1.6;
-}
-
-/* Container width tightening (optional but recommended) */
-
-
-
-/* --- "How We Work" Section --- */
-.how-we-work-section {
-    background-color: #f8f9fa; /* Light Gray */
-    padding: 80px 0;
-    text-align: center;
-}
-
-.work-title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin-bottom: 1.5rem;
-}
-
-.work-desc {
-    font-size: 1rem;
-    color: #64748b;
-    max-width: 700px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
-/* --- Bottom Lime CTA Section --- */
-.bottom-cta-section {
-    background-color: #cddc39; /* FinReach Lime */
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.bottom-cta-heading {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin-bottom: 1rem;
-}
-
-.bottom-cta-sub {
-    font-size: 1rem;
-    color: #4b5563; /* Muted text for contrast on lime */
-    margin-bottom: 2.5rem;
-}
-
-.btn-bottom-dark {
-    background-color: #254053; /* Dark Slate */
-    color: #ffffff;
-    font-weight: 600;
-    padding: 14px 32px;
-    border-radius: 4px;
-    text-decoration: none;
-    border: none;
-    display: inline-block;
-    transition: background-color 0.2s;
-}
-
-.btn-bottom-dark:hover {
-    background-color: #1a2e3b;
-    color: #ffffff;
-}
-
-
 /* ================= BOOKKEEPING PAGE STYLES ================= */
 
 /* --- Section 1: Challenges (Gray BG) --- */
@@ -3446,6 +3221,16 @@ font-size: 1rem;
 
 .assurance-page--assurance .assurance-hero-media {
     min-height: calc(90vh - 88px);
+}
+
+.assurance-page--notprofit .assurance-hero,
+.assurance-page--growthstage .assurance-hero {
+    min-height: calc(100vh - 92px);
+}
+
+.assurance-page--notprofit .assurance-hero-image,
+.assurance-page--growthstage .assurance-hero-image {
+    min-height: calc(100vh - 92px);
 }
 
 /* Red Icon Styling */
@@ -5485,6 +5270,16 @@ font-size: 1rem;
         grid-template-columns: 1fr;
     }
 
+    .assurance-page--notprofit .assurance-hero,
+    .assurance-page--growthstage .assurance-hero {
+        min-height: auto;
+    }
+
+    .assurance-page--notprofit .assurance-hero-image,
+    .assurance-page--growthstage .assurance-hero-image {
+        min-height: 420px;
+    }
+
     .assurance-hero-content {
         padding: 2.3rem 1.35rem;
     }
@@ -5542,6 +5337,11 @@ font-size: 1rem;
 }
 
 @media (max-width: 767px) {
+    .assurance-page--notprofit .assurance-hero-image,
+    .assurance-page--growthstage .assurance-hero-image {
+        min-height: 300px;
+    }
+
     .assurance-heading {
         font-size: 1.9rem;
     }

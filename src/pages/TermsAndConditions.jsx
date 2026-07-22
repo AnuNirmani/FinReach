@@ -1,6 +1,7 @@
 import React from 'react';
 import SEO from '../utils/SEO';
 import '../Dashboard/Dashboard.css';
+import '../others/About.css';
 import Header from '../Dashboard/Header';
 import Footer from '../Dashboard/Footer';
 import aboutHero from '../assets/assets/about-hero-BEnMor4y.jpg';

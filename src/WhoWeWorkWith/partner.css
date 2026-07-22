@@ -7,7 +7,8 @@
 .partner-hero {
 	display: grid;
 	grid-template-columns: 0.96fr 1.04fr;
-	height: clamp(260px, 29vw, 540px);
+	height: calc(85vh - 86px);
+	min-height: calc(85vh - 86px);
 	background: #2e536b;
 }
 
@@ -255,7 +256,7 @@
 	}
 
 	.partner-hero-media {
-		min-height: 30vh;
+		min-height: 420px;
 	}
 
 	.partner-hero-copy {
@@ -286,6 +287,10 @@
 @media (max-width: 767px) {
 	.partner-hero-copy {
 		padding: 2.4rem 1.2rem 3rem;
+	}
+
+	.partner-hero-media {
+		min-height: 300px;
 	}
 
 	.partner-hero-copy h1 {

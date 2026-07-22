@@ -133,6 +133,17 @@
   color: #2f4c62;
 }
 
+.assurance-page--notprofit .assurance-why-image {
+  height: 680px;
+}
+
+@media (min-width: 1200px) {
+  .assurance-page--growthstage .assurance-why-image {
+    width: 500px;
+    height: 300px;
+  }
+}
+
 @media (max-width: 1199px) {
   .nfp-help-card-title {
     font-size: 1.75rem;

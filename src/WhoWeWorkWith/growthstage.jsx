@@ -5,7 +5,7 @@ import Header from '../Dashboard/Header.jsx';
 import Footer from '../Dashboard/Footer.jsx';
 import '../Dashboard/Dashboard.css';
 import './NotProfit.css';
-import notprofitHero from '../assets/assets/2.png';
+import notprofitHero from '../assets/assets/DSC03782.jpg';
 import notprofitImg2 from '../assets/assets/bookkeeping1.jpg';
 import notprofitImg3 from '../assets/assets/audit1.jpg';
 import notprofitImg4 from '../assets/assets/assurance1.jpg';
@@ -184,7 +184,7 @@ const GrowthStage = React.memo(() => {
         </Helmet>
       )}
       <Header />
-      <main className="assurance-page">
+      <main className="assurance-page assurance-page--growthstage">
         <section className="assurance-hero">
           <div className="assurance-hero-media">
             <img src={notprofitHero} alt="Growth stage company consultation" className="assurance-hero-image" />

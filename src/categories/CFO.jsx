@@ -8,7 +8,7 @@ import cfoHeroImage from '../assets/assets/cfo1.jpg';
 import nfpAudience from '../assets/assets/notforprofits.jpg';
 import growthStageAudience from '../assets/assets/growthstage.jpg';
 import directorImage from '../assets/assets/cfo2.jpg';
-import cfoCtaBg from '../assets/assets/157858.jpg';
+import cfoCtaBg from '../assets/assets/1384.jpg';
 import financialAssessmentImage from '../assets/icon/资源 32.png';
 import cashManagementImage from '../assets/icon/资源 33.png';
 import strategicReportingImage from '../assets/icon/资源 34.png';

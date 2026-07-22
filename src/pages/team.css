@@ -1,8 +1,8 @@
 /* ================= TEAM PAGE STYLES ================= */
 
-/* Hero — reduced height */
+/* Hero — maximized viewport height */
 .team-hero-section {
-  min-height: 480px !important;
+  min-height: calc(100vh - 92px) !important;
   padding: 80px 0 !important;
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
@@ -38,6 +38,11 @@
 .team-members-section {
   padding: 80px 0;
   background-color: #ffffff;
+}
+
+.team-members-section .container {
+  padding-left: 12rem;
+  padding-right: 12rem;
 }
 
 .team-member-row {
@@ -215,6 +220,11 @@
   .team-member-name {
     font-size: 1.6rem;
     margin-top: 1.2rem;
+  }
+
+  .team-members-section .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .team-cta-heading {
