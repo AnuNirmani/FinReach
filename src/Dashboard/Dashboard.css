@@ -44,6 +44,8 @@
 
         .finreach-navbar .container {
             max-width: 1760px;
+            padding-left: 6rem;
+            padding-right: 6rem;
         }
 
         .finreach-navbar-logo {
@@ -234,8 +236,8 @@
     background-repeat: no-repeat;
     /* Increased padding for better vertical spacing with the form */
     padding: 110px 0; 
-    min-height: calc(100vh - 98px);
-    min-height: calc(100svh - 98px);
+    min-height: 100vh;
+    min-height: 100svh;
     color: #ffffff;
 }
 
@@ -527,6 +529,14 @@
 
 .target-services-shell {
     max-width: 1680px;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+.target-who-section {
+    max-width: 1680px;
+    padding-left: 11rem;
+    padding-right: 11rem;
 }
 
 .target-services-badge {
@@ -543,7 +553,7 @@
 }
 
 .target-services-title {
-    font-size: clamp(1.85rem, 3vw, 2.75rem);
+    font-size: 2rem;
     font-weight: 700;
     color: #29495f;
     margin-bottom: 2.9rem;
@@ -559,7 +569,7 @@
     border-radius: 18px;
     box-shadow: 0 8px 20px rgba(17, 35, 52, 0.12);
     overflow: hidden;
-    height: 100%;
+    height: 500px;
     display: flex;
     flex-direction: column;
     transition: transform 0.22s ease, box-shadow 0.22s ease;
@@ -567,14 +577,14 @@
 
 .target-service-image {
     width: 100%;
-    height: 280px;
+    height: 220px;
     object-fit: cover;
     display: block;
 }
 
 .target-service-body {
     background-color: #f4f6f8;
-    padding: 1.2rem 1.7rem 1.35rem;
+    padding: 1rem 1.4rem 1.1rem;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -582,7 +592,7 @@
 }
 
 .target-service-title {
-    font-size: 2.05rem;
+    font-size: 1.65rem;
     line-height: 1.2;
     font-weight: 700;
     color: #2d4a5f;
@@ -595,7 +605,7 @@
 }
 
 .target-service-text {
-    font-size: 1.08rem;
+    font-size: 1.25rem;
     color: #4f6980;
     line-height: 1.55;
     margin-bottom: 1.1rem;
@@ -663,33 +673,40 @@
 
 .target-who-grid {
     --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+    gap: 0;
 }
 
 .target-who-card {
     height: 100%;
+     margin: 0 -0.5rem;
 }
 
 .target-who-image {
-    width: 80%;
-    height: 500px;
+    width: 85%;
+    height: 310px;
     object-fit: cover;
     display: block;
-    margin: 0 auto 1rem;
+    margin: 0 auto 1.5rem auto;
 }
 
 .target-who-card-title {
-    font-size: 2.05rem;
+    font-size: 1.65rem;
     font-weight: 700;
     color: #2d4a5f;
-    margin-bottom: 0.85rem;
+    margin-bottom: 0.75rem;
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .target-who-card-text {
-    max-width: 680px;
-    margin: 0 auto 1.1rem;
-    font-size: 1.08rem;
+    max-width: 80%;
+    margin: 0 auto 0.9rem auto;
+    font-size: 1.05rem;
+    font-weight: 500;
     line-height: 1.55;
-    color: #2f3f4b;
+    color: #000000;
 }
 
 .target-who-link {
@@ -930,6 +947,8 @@
 
 .painpoints-process-shell {
     max-width: 1720px;
+    padding-left: 5rem;
+    padding-right: 5rem;
 }
 
 .painpoints-process-badge {
@@ -953,9 +972,9 @@
 .painpoints-process-card {
     background-color: #f4f6f8;
     border-radius: 16px;
-    padding: 2.2rem 1.3rem 1.8rem;
+    padding: 1.6rem 1.1rem 1.4rem;
     box-shadow: 0 8px 18px rgba(17, 35, 52, 0.12);
-    height: 100%;
+    height: 350px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
@@ -971,27 +990,27 @@
     border-radius: 50%;
     background-color: #2d556f;
     color: #ffffff;
-    font-size: 2rem;
+    font-size: 1.6rem;
     line-height: 1;
     font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.45rem;
+    margin-bottom: 1.1rem;
 }
 
 .painpoints-step-title {
     color: #2b4a5f;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     line-height: 1.2;
     font-weight: 700;
-    margin-bottom: 1.1rem;
+    margin-bottom: 0.85rem;
 }
 
 .painpoints-step-text {
     color: #2f4c62;
-    font-size: 1.1rem;
-    line-height: 1.65;
+    font-size: 1.2rem;
+    line-height: 1.55;
     margin: 0;
 }
 

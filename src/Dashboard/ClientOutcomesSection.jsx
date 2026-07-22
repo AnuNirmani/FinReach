@@ -59,6 +59,8 @@ const ClientOutcomesSection = () => {
                     max-width: 1760px;
                     padding-top: 72px;
                     padding-bottom: 66px;
+                    padding-left: 9rem;
+                    padding-right: 9rem;
                 }
 
                 .fr-outcomes-badge {
@@ -89,7 +91,7 @@ const ClientOutcomesSection = () => {
                 .fr-outcome-card {
                     background: transparent;
                     border: none;
-                    padding: 0 1.4rem;
+                    padding: 0 1rem;
                 }
 
                 .fr-outcome-stars {
@@ -102,7 +104,7 @@ const ClientOutcomesSection = () => {
 
                 .fr-outcome-quote-title {
                     color: #2b4a5f;
-                    font-size: 1.08rem;
+                    font-size: 1.35rem;
                     line-height: 1.3;
                     font-weight: 700;
                     margin-bottom: 0.95rem;
@@ -110,7 +112,7 @@ const ClientOutcomesSection = () => {
 
                 .fr-outcome-quote {
                     color: #1e2228;
-                    font-size: 0.98rem;
+                    font-size: 1.15rem;
                     line-height: 1.6;
                     font-style: italic;
                     margin-bottom: 0.85rem;
@@ -118,14 +120,14 @@ const ClientOutcomesSection = () => {
 
                 .fr-outcome-author {
                     color: #2b4a5f;
-                    font-size: 0.95rem;
+                    font-size: 1.15rem;
                     font-weight: 700;
                     margin-bottom: 0.15rem;
                 }
 
                 .fr-outcome-role {
                     color: #2b4a5f;
-                    font-size: 0.94rem;
+                    font-size: 1.15rem;
                     margin: 0;
                 }
 

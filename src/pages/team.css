@@ -124,23 +124,59 @@
 
 /* CTA section */
 .team-cta-section {
-  background-color: #0f3e5d;
-  padding: 90px 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.team-cta-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(15, 62, 93, 0.65);
+  z-index: 1;
+}
+
+.team-cta-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 40px 20px;
+  max-width: 700px;
 }
 
 .team-cta-heading {
-  font-size: 2rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: #ffffff;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  line-height: 1.3;
 }
 
-.team-cta-sub {
+.btn-cta-enquire {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #0f3e5d;
+  font-weight: 700;
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.8);
-  max-width: 560px;
-  margin: 0 auto 2.5rem;
-  line-height: 1.7;
+  padding: 12px 40px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid #ffffff;
+}
+
+.btn-cta-enquire:hover {
+  background-color: transparent;
+  color: #ffffff;
 }
 
 /* Responsive */
@@ -183,5 +219,18 @@
 
   .team-cta-heading {
     font-size: 1.6rem;
+  }
+
+  .team-cta-section {
+    min-height: 350px;
+  }
+
+  .team-cta-content {
+    padding: 30px 15px;
+  }
+
+  .btn-cta-enquire {
+    padding: 10px 32px;
+    font-size: 0.9rem;
   }
 }

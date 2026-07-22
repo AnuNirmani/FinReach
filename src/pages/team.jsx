@@ -5,6 +5,7 @@ import './team.css'
 import Header from '../Dashboard/Header'
 import Footer from '../Dashboard/Footer'
 import teamHero from '../assets/assets/3e.png'
+import ctaImage from '../assets/assets/15628.jpg'
 import donPhoto from '../assets/assets/DSC03893.jpg'
 import directorPhoto from '../assets/assets/DSC03893.jpg'
 import seniorPhoto from '../assets/assets/DSC03899.jpg'
@@ -133,14 +134,15 @@ const Team = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="team-cta-section">
-        <div className="container text-center">
-          <h2 className="team-cta-heading">Work directly with our team</h2>
-          <p className="team-cta-sub">
-            Every engagement at FinReach is led by a qualified professional who understands your goals. Book a no-obligation consultation today.
-          </p>
-          <Link to="/book-consultation" className="btn btn-finreach-cta px-5 py-3">
-            Book a Consultation
+      <section 
+        className="team-cta-section"
+        style={{ backgroundImage: `url(${ctaImage})` }}
+      >
+        <div className="team-cta-overlay"></div>
+        <div className="team-cta-content">
+          <h2 className="team-cta-heading">Want to know exactly who'll be working on your file?</h2>
+          <Link to="/book-consultation" className="btn btn-cta-enquire">
+            Enquire Now
           </Link>
         </div>
       </section>
