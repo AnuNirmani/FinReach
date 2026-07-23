@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from '../../Dashboard/Header';
 import Footer from '../../Dashboard/Footer';
 import { Link } from 'react-router-dom';
+import { buildApiUrl } from '../../utils/api';
 import '../../Dashboard/Dashboard.css';
 
 const BookkeepingCashFlow = () => {
@@ -24,7 +25,7 @@ const BookkeepingCashFlow = () => {
     const fetchBookKeepings = async () => {
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:8001/api/posts/category/56');
+        const response = await fetch(buildApiUrl('posts/category/56'));
         
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);

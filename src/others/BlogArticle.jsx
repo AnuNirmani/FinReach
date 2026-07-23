@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import SEO from '../utils/SEO';
 import Header from '../Dashboard/Header';
 import Footer from '../Dashboard/Footer';
+import { buildApiUrl } from '../utils/api';
 import '../Dashboard/Dashboard.css';
 
 const BlogArticle = () => {
@@ -25,9 +26,15 @@ const BlogArticle = () => {
         const fetchPost = async () => {
             try {
                 setLoading(true);
-                const res = await fetch(`http://localhost:8000/api/post-details/${id}`);
-                if (!res.ok) throw new Error(`HTTP ${res.status}`);
-                const data = await res.json();
+          let res = await fetch(buildApiUrl(`post-details/${id}`));
+
+          if (res.status === 404) {
+            res = await fetch(buildApiUrl(`posts/${id}`));
+          }
+
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+          const data = await res.json();
                 setPost(data);
                 setError(null);
             } catch (err) {

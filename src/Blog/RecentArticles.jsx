@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { buildApiUrl } from '../utils/api';
+
+const ALLOWED_CATEGORY_IDS = [56, 57, 58, 59];
 
 const RecentArticles = () => {
     const [articles, setArticles] = useState([]);
@@ -24,29 +27,29 @@ const RecentArticles = () => {
     };
 
     useEffect(() => {
-        const endpoints = [
-            'http://localhost:8001/api/posts/category/56',
-            'http://localhost:8001/api/posts/category/57',
-            'http://localhost:8001/api/posts/category/58',
-            'http://localhost:8001/api/posts/category/59'
-        ];
-
-        const fetchAll = async () => {
+        const fetchLatest = async () => {
             try {
                 setLoading(true);
-                const results = await Promise.allSettled(endpoints.map(e => fetch(e)));
-                const jsonArrays = [];
-                for (const r of results) {
-                    if (r.status === 'fulfilled' && r.value.ok) {
-                        jsonArrays.push(await r.value.json());
-                    } else if (r.status === 'rejected') {
-                        console.error('Endpoint failed:', r.reason);
+                const results = await Promise.allSettled(
+                    ALLOWED_CATEGORY_IDS.map((id) =>
+                        fetch(buildApiUrl(`posts/category/${id}`))
+                    )
+                );
+
+                const merged = [];
+                for (const result of results) {
+                    if (result.status === 'fulfilled' && result.value.ok) {
+                        const data = await result.value.json();
+                        if (Array.isArray(data)) merged.push(...data);
                     }
                 }
-                const merged = jsonArrays.flat();
-                // Sort by created_at desc (fallback to now if missing)
-                merged.sort((a,b) => new Date(b.created_at || 0) - new Date(a.created_at || 0));
-                setArticles(merged.slice(0,6));
+
+                const latest3 = merged
+                    .filter((p) => p && (p.post_id || p.id))
+                    .sort((a, b) => new Date(b.created_at || 0) - new Date(a.created_at || 0))
+                    .slice(0, 3);
+
+                setArticles(latest3);
                 setError(null);
             } catch (err) {
                 console.error('Error fetching recent articles:', err);
@@ -55,7 +58,8 @@ const RecentArticles = () => {
                 setLoading(false);
             }
         };
-        fetchAll();
+
+        fetchLatest();
     }, []);
 
     return (
@@ -82,13 +86,13 @@ const RecentArticles = () => {
                 {!loading && !error && articles.length > 0 && (
                     <div className="row g-4">
                         {articles.map((article) => (
-                            <div key={article.post_id} className="col-lg-4 col-md-6">
+                            <div key={article.post_id || article.id} className="col-lg-4 col-md-6">
                                 <div className="article-card">
                                     <i className={`bi ${iconFor(article.category_name)} article-icon`}></i>
                                     <div className="article-category">{article.category_name}</div>
                                     <h3 className="article-title">{article.title}</h3>
                                     <p className="article-excerpt">{truncate(article.description)}</p>
-                                    <Link to={`/blog/article/${article.post_id}`} className="btn-read-more">
+                                    <Link to={`/blog/article/${article.post_id || article.id}`} className="btn-read-more">
                                         Read more <i className="bi bi-arrow-right"></i>
                                     </Link>
                                 </div>
