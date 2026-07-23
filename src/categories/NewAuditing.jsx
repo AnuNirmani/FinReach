@@ -425,6 +425,7 @@ const NewAuditing = React.memo(() => {
 					</div>
 				</section>
 
+				<div className="new-auditing-testimonials-bg-wrap">
 				<section className="new-auditing-testimonials-wrap new-auditing-testimonials-wrap-rounded">
 					<div className="container new-auditing-shell">
 						<div className="new-auditing-testimonials">
@@ -483,6 +484,7 @@ const NewAuditing = React.memo(() => {
 						</div>
 					</div>
 				</section>
+				</div>
 
 				{activeTestimonial && (
 					<div

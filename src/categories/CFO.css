@@ -150,7 +150,7 @@
   border-radius: 18px;
   box-shadow: 0 6px 16px rgba(28, 48, 64, 0.18);
   padding: 2.7rem 2rem 2.1rem;
-  width: 95%;
+  width: 100%;
   min-height: 360px;
   display: flex;
   flex-direction: column;
@@ -246,8 +246,8 @@
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
-    margin-left: 120rem;
-  margin-right: 12rem;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .cfo-process-card h3 {
@@ -521,6 +521,16 @@
     padding-inline: 0;
   }
 
+  .cfo-painpoints-list {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .cfo-why-section .cfo-why-row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
   .cfo-pill {
     font-size: 0.78rem;
   }
@@ -583,6 +593,11 @@
 
   .cfo-why-image {
     height: 420px;
+  }
+
+  .cfo-painpoints-list {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
   }
 }
 

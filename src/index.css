@@ -37,6 +37,32 @@ body {
   font-family: var(--contentfont);
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+video,
+svg,
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+iframe {
+  max-width: 100%;
+}
+
 h1,
 h2,
 h3,
@@ -77,6 +103,32 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (max-width: 991px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: clamp(1.35rem, 5.5vw, 2.2rem);
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 767px) {
+  p,
+  li,
+  a,
+  label,
+  input,
+  textarea,
+  select,
+  button {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
 }
 
 @media (prefers-color-scheme: light) {

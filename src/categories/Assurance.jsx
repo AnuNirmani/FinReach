@@ -392,6 +392,7 @@ const AssuranceFunding = React.memo(() => {
           </div>
         </section>
 
+        <div className="new-auditing-testimonials-bg-wrap">
         <section className="new-auditing-testimonials-wrap assurance-testimonials-wrap">
           <div className="container new-auditing-shell">
             <div className="new-auditing-testimonials">
@@ -450,6 +451,7 @@ const AssuranceFunding = React.memo(() => {
             </div>
           </div>
         </section>
+        </div>
 
         <section className="new-auditing-final-cta" style={{ backgroundImage: `url(${assuranceCtaBg})` }}>
           <div className="new-auditing-final-cta-overlay"></div>

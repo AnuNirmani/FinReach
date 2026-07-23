@@ -137,6 +137,20 @@
   height: 680px;
 }
 
+@media (max-width: 1199px) {
+  .assurance-page--notprofit .assurance-why-image {
+    height: 420px;
+  }
+}
+
+@media (max-width: 767px) {
+  .assurance-page--notprofit .assurance-why-image {
+    height: 300px;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
 @media (min-width: 1200px) {
   .assurance-page--growthstage .assurance-why-image {
     width: 500px;
