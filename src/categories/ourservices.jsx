@@ -5,13 +5,13 @@ import Header from '../Dashboard/Header.jsx';
 import Footer from '../Dashboard/Footer.jsx';
 import './ourservices.css';
 
-import heroImage from '../assets/assets/hero-home-DxzjKHhr.jpg';
+import heroImage from '../assets/assets/about2.webp';
 import auditImage from '../assets/assets/audit1.jpg';
 import assuranceImage from '../assets/assets/assurance1.jpg';
 import bookkeepingImage from '../assets/assets/bookkeeping1.jpg';
 import cfoImage from '../assets/assets/cfo1.jpg';
 import featureImage from '../assets/assets/DSC03573.jpg';
-import ctaImage from '../assets/assets/DSC03899.jpg';
+import ctaImage from '../assets/assets/2.png';
 
 const serviceCards = [
 	{

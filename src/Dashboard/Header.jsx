@@ -72,15 +72,20 @@ const Header = () => {
                 </ul>
               </li>
               <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Who We Work With
-                </a>
+                <div className="finreach-dropdown-split">
+                  <Link className="nav-link finreach-dropdown-link" to="/who-we-work-with">
+                    Who We Work With
+                  </Link>
+                  <button
+                    className="nav-link dropdown-toggle finreach-dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    aria-label="Open Who We Work With submenu"
+                  >
+                    <span className="visually-hidden">Open Who We Work With submenu</span>
+                  </button>
+                </div>
                 <ul className="dropdown-menu">
                   <li>
                     <Link className="dropdown-item" to="/not-profit">
@@ -100,15 +105,20 @@ const Header = () => {
                 </ul>
               </li>
               <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  About Us
-                </a>
+                <div className="finreach-dropdown-split">
+                  <Link className="nav-link finreach-dropdown-link" to="/about-us">
+                    About Us
+                  </Link>
+                  <button
+                    className="nav-link dropdown-toggle finreach-dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    aria-label="Open About Us submenu"
+                  >
+                    <span className="visually-hidden">Open About Us submenu</span>
+                  </button>
+                </div>
                 <ul className="dropdown-menu">
                   <li>
                     <Link className="dropdown-item" to="/team">
