@@ -31,15 +31,20 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav mx-auto mb-2 mb-xl-0 finreach-nav-list">
               <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Our Services
-                </a>
+                <div className="finreach-dropdown-split">
+                  <Link className="nav-link finreach-dropdown-link" to="/our-services">
+                    Our Services
+                  </Link>
+                  <button
+                    className="nav-link dropdown-toggle finreach-dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    aria-label="Open Our Services submenu"
+                  >
+                    <span className="visually-hidden">Open Our Services submenu</span>
+                  </button>
+                </div>
                 <ul className="dropdown-menu">
                   <li>
                     <Link className="dropdown-item" to="/auditing">

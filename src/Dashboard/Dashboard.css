@@ -94,6 +94,44 @@
             padding-right: 1rem !important;
         }
 
+        .finreach-dropdown-split {
+            display: flex;
+            align-items: center;
+            border-radius: 2px;
+            overflow: hidden;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .finreach-dropdown-link,
+        .finreach-dropdown-toggle {
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .finreach-dropdown-link {
+            text-decoration: none;
+            padding-right: 0.25rem !important;
+            border-top-right-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
+        }
+
+        .finreach-dropdown-toggle {
+            border: 0;
+            background: transparent;
+            padding-left: 0.35rem !important;
+            padding-right: 1rem !important;
+            cursor: pointer;
+            border-top-left-radius: 0 !important;
+            border-bottom-left-radius: 0 !important;
+        }
+
+        .finreach-dropdown-toggle::after {
+            margin-left: 0.35rem;
+        }
+
         .finreach-nav-list .dropdown-toggle::after {
             content: "";
             display: inline-block;
@@ -141,6 +179,23 @@
                 position: relative;
             }
 
+            .finreach-dropdown-split:hover,
+            .finreach-dropdown-split:focus-within,
+            .finreach-nav-list .dropdown:hover .finreach-dropdown-split {
+                background-color: #cddc39;
+                color: #ffffff !important;
+            }
+
+            .finreach-dropdown-split:hover > .finreach-dropdown-link,
+            .finreach-dropdown-split:hover > .finreach-dropdown-toggle,
+            .finreach-dropdown-split:focus-within > .finreach-dropdown-link,
+            .finreach-dropdown-split:focus-within > .finreach-dropdown-toggle,
+            .finreach-nav-list .dropdown:hover .finreach-dropdown-link,
+            .finreach-nav-list .dropdown:hover .finreach-dropdown-toggle {
+                background-color: #cddc39;
+                color: #ffffff !important;
+            }
+
             .finreach-nav-list .dropdown:hover > .dropdown-menu {
                 display: block;
                 margin-top: 0;
@@ -158,7 +213,9 @@
             }
 
             .finreach-nav-list .dropdown:hover > .nav-link::after,
-            .finreach-nav-list .dropdown > .nav-link.show::after {
+            .finreach-nav-list .dropdown > .nav-link.show::after,
+            .finreach-nav-list .dropdown:hover .finreach-dropdown-toggle::after,
+            .finreach-nav-list .dropdown:focus-within .finreach-dropdown-toggle::after {
                 transform: rotate(-135deg) translateY(1px);
             }
         }

@@ -9,6 +9,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 // Lazy load all page components
 const Dashboard = lazy(() => import('./Dashboard/Dashboard'))
 const Blog = lazy(() => import('./Blog/Blog'))
+const OurServices = lazy(() => import('./categories/ourservices.jsx'))
 const BookkeepingCashFlow = lazy(() => import('./categories/Bookkeeping&Accounting.jsx'))
 const AssuranceFunding = lazy(() => import('./categories/Assurance.jsx'))
 const NewAuditing = lazy(() => import('./categories/NewAuditing.jsx'))
@@ -54,6 +55,7 @@ function App() {
       <Suspense fallback={<Loading />}>
         <Routes>
           <Route path="/" element={<Dashboard />} />
+          <Route path="/our-services" element={<OurServices />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/bookkeeping-accounting" element={<BookkeepingCashFlow />} />
           <Route path="/assurance" element={<AssuranceFunding />} />
