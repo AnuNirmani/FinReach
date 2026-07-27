@@ -402,14 +402,14 @@ const NewAuditing = React.memo(() => {
 								))}
 							</div>
 
-							<div className="row g-4 align-items-center new-auditing-why-row">
-								<div className="col-lg-5">
+							<div className="row g-5 align-items-start new-auditing-why-row">
+								<div className="col-lg-6">
 									<div className="new-auditing-why-image-wrap">
 										<img src={whyImage} alt="FinReach principal" className="new-auditing-why-image" />
 									</div>
 								</div>
 
-								<div className="col-lg-7">
+								<div className="col-lg-6">
 									<div className="new-auditing-why-copy">
 										<p className="new-auditing-pill new-auditing-pill-left">Why FinReach for audit</p>
 										<h3>Big Four training. Boutique price.</h3>

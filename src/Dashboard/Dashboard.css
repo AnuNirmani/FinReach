@@ -3334,12 +3334,12 @@ font-size: 1rem;
 
 .assurance-page--notprofit .assurance-hero,
 .assurance-page--growthstage .assurance-hero {
-    min-height: calc(100vh - 92px);
+    min-height: calc(90vh - 88px);
 }
 
 .assurance-page--notprofit .assurance-hero-image,
 .assurance-page--growthstage .assurance-hero-image {
-    min-height: calc(100vh - 92px);
+    min-height: calc(90vh - 88px);
 }
 
 /* Red Icon Styling */
@@ -3690,11 +3690,11 @@ font-size: 1rem;
 }
 
 .new-auditing-page--audit .new-auditing-hero {
-    min-height: calc(100vh - 92px);
+    min-height: calc(90vh - 88px);
 }
 
 .new-auditing-page--audit .new-auditing-hero-image {
-    min-height: calc(100vh - 92px);
+    min-height: calc(90vh - 88px);
 }
 
 .new-auditing-content-wrap {
@@ -3901,8 +3901,8 @@ font-size: 1rem;
     background-color: #c7d300;
     color: #2d4a5f;
     font-weight: 700;
-    font-size: 0.84rem;
-    letter-spacing: 0.17em;
+    font-size: 0.82rem;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     padding: 0.38rem 1.3rem;
     border-radius: 999px;
@@ -4073,11 +4073,11 @@ font-size: 1rem;
 }
 
 .bookkeeping-page .new-auditing-hero {
-    min-height: calc(100vh - 92px);
+    min-height: calc(90vh - 88px);
 }
 
 .bookkeeping-page .new-auditing-hero-image {
-    min-height: calc(100vh - 92px);
+    min-height: calc(90vh - 88px);
 }
 
 .bookkeeping-lower-section {
@@ -4565,7 +4565,7 @@ font-size: 1rem;
 
 .new-auditing-why-image-wrap {
     width: 100%;
-    max-width: 500px;
+    max-width: 720px;
     aspect-ratio: 4 / 3;
     margin: 0 auto;
 }
@@ -4575,14 +4575,20 @@ font-size: 1rem;
     height: 100%;
     object-fit: cover;
     display: block;
+
+}
+
+.new-auditing-why-copy {
+    padding-top: 3.5rem;
 }
 
 .new-auditing-why-copy h3 {
     color: #2d4a5f;
-    font-size: clamp(2rem, 2.3vw, 3.1rem);
+    font-size: 2rem;
     font-weight: 700;
     line-height: 1.15;
-    margin-bottom: 1rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
 }
 
 .new-auditing-why-copy p {
@@ -4593,7 +4599,15 @@ font-size: 1rem;
 }
 
 .new-auditing-pill-left {
-    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.14em;
+    margin-bottom: 1.4rem;
+}
+
+.new-auditing-why-copy .new-auditing-pill.new-auditing-pill-left {
+    font-size: 0.85rem !important;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 1rem;
 }
 
 .new-auditing-testimonials-bg-wrap {
@@ -4994,6 +5008,7 @@ font-size: 1rem;
 
     .new-auditing-why-image-wrap {
         max-width: 440px;
+        aspect-ratio: 3 / 2;
     }
 
     .new-auditing-why-row {
@@ -5007,6 +5022,7 @@ font-size: 1rem;
 
     .new-auditing-why-copy {
         text-align: center;
+        padding-top: 0;
     }
 }
 
