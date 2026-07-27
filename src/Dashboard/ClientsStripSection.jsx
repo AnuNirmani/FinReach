@@ -53,9 +53,9 @@ const ClientsStripSection = () => {
                     font-weight: 700;
                     letter-spacing: 0.15em;
                     text-transform: uppercase;
-                    padding: 0.5rem 1.85rem;
+                    padding: 0.38rem 1.35rem;
                     border-radius: 999px;
-                    font-size: 1rem;
+                    font-size: 0.82rem;
                     margin-bottom: 2.25rem;
                 }
 

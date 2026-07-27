@@ -5,7 +5,7 @@
   --lato: 'Lato', sans-serif;
   --headlinefont: var(--montserrat);
   --contentfont: var(--lato);
-
+  --finreach-button-lift: -4px;
   font-family: var(--contentfont);
   line-height: 1.5;
   font-weight: 400;
@@ -95,14 +95,39 @@ button {
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
+  transition: border-color 0.25s, box-shadow 0.25s ease, transform 0.25s ease, filter 0.25s ease;
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+:is(
+  button,
+  input[type='button'],
+  input[type='submit'],
+  input[type='reset'],
+  a.btn,
+  [class*='btn'],
+  [class*='button']
+) {
+  font-family: var(--contentfont) !important;
+  transition: border-color 0.25s, box-shadow 0.25s ease, transform 0.25s ease, filter 0.25s ease;
+}
+
+@media (hover: hover) {
+  :is(
+    button,
+    input[type='button'],
+    input[type='submit'],
+    input[type='reset'],
+    a.btn,
+    [class*='btn'],
+    [class*='button']
+  ):hover {
+    transform: translateY(var(--finreach-button-lift)) !important;
+    filter: brightness(1.03);
+  }
 }
 
 @media (max-width: 991px) {
