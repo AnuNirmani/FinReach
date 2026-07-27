@@ -248,7 +248,7 @@ const Contact = () => {
 
       <section className="contact-cta-banner">
         <p className="contact-cta-text">The sooner we talk, the sooner you'll have peace of mind.</p>
-        <Link className="contact-cta-btn" to="/book-consultation">Book A Consultation</Link>
+        <Link className="contact-cta-btn" to="/book-consultation"><strong>Book A Consultation</strong></Link>
       </section>
 
       <Footer />

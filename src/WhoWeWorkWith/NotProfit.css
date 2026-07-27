@@ -35,17 +35,17 @@
 
 .nfp-help-card-title {
   color: #2d4a5f;
-  font-size: 2.1rem;
+  font-size: 1.8rem;
   font-weight: 700;
-  line-height: 1.2;
-  margin: 1rem 1rem 0.6rem;
+  line-height: 1.18;
+  margin: 0.9rem 1rem 0.55rem;
   text-align: center;
 }
 
 .nfp-help-card-text {
   color: #2f4c62;
-  font-size: 1.03rem;
-  line-height: 1.55;
+  font-size: 0.94rem;
+  line-height: 1.5;
   margin: 0 1.1rem;
   text-align: center;
   flex-grow: 1;
@@ -55,7 +55,7 @@
   display: inline-block;
   margin: 1rem auto 1.25rem;
   color: #4f7493;
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   font-weight: 700;
   text-decoration: none;
   border-bottom: 2px solid rgba(79, 116, 147, 0.65);
@@ -110,10 +110,14 @@
 
 .nfp-process-section .assurance-process-card h3 {
   color: #2d4a5f;
+  font-size: 1.18rem;
+  line-height: 1.22;
 }
 
 .nfp-process-section .assurance-process-card p {
   color: #2f4c62;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 .nfp-process-section .assurance-process-card:hover,
@@ -135,6 +139,11 @@
 
 .assurance-page--notprofit .assurance-why-image {
   height: 680px;
+}
+
+.assurance-page--notprofit .assurance-pill-left,
+.assurance-page--growthstage .assurance-pill-left {
+  color: #2f4c62;
 }
 
 @media (max-width: 1199px) {
@@ -160,7 +169,7 @@
 
 @media (max-width: 1199px) {
   .nfp-help-card-title {
-    font-size: 1.75rem;
+    font-size: 1.55rem;
   }
 }
 
@@ -183,10 +192,18 @@
   }
 
   .nfp-help-card-title {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
   }
 
   .nfp-help-card-text {
-    font-size: 0.96rem;
+    font-size: 0.9rem;
+  }
+
+  .nfp-process-section .assurance-process-card h3 {
+    font-size: 1.06rem;
+  }
+
+  .nfp-process-section .assurance-process-card p {
+    font-size: 0.9rem;
   }
 }

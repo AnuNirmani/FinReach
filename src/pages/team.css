@@ -2,7 +2,7 @@
 
 /* Hero — maximized viewport height */
 .team-hero-section {
-  min-height: calc(100vh - 92px) !important;
+  max-height: calc(80vh - 78px) !important;
   padding: 80px 0 !important;
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
@@ -16,9 +16,10 @@
 
 /* Hero card (text box on right) */
 .team-hero-card {
-  background: rgba(10, 30, 45, 0.72);
+  background: rgba(49, 74, 96, 0.78);
   backdrop-filter: blur(4px);
   border-radius: 24px;
+  margin-top: 7rem;
   padding: 4rem 3.5rem;
   color: #ffffff;
 }

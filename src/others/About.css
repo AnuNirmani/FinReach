@@ -328,11 +328,11 @@
   background-color: #ffffff;
   color: #2b516c;
   border: none;
-  border-radius: 14px;
-  font-size: clamp(0.98rem, 1.2vw, 1.5rem);
+  border-radius: 10px;
+  font-size: 0.9rem;
   font-weight: 700;
-  padding: 0.78rem 2.2rem;
-  min-width: min(100%, 430px);
+  padding: 0.5rem 1.4rem;
+  min-width: unset;
   text-align: center;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
