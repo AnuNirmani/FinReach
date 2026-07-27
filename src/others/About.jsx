@@ -154,7 +154,7 @@ const About = () => {
           <h2 className="about-cta-heading">Ready to see how this would work for your organisation?</h2>
           <button
             type="button"
-            className="about-cta-button"
+            className="about-cta-button enquire-now-btn-standard"
             onClick={() => window.dispatchEvent(new Event('open-consultation-modal'))}
           >
             Enquire Now

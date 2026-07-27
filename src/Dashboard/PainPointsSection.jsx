@@ -41,7 +41,7 @@ const PainPointsSection = () => {
                 </div>
 
                 <div className="painpoints-process-actions d-flex justify-content-center gap-3 flex-wrap mt-5">
-                    <Link to="/contact" className="btn painpoints-btn-dark">
+                    <Link to="/contact" className="btn painpoints-btn-dark enquire-now-btn-standard">
                         Enquire Now
                     </Link>
                     <Link to="/book-consultation" className="btn painpoints-btn-lime">

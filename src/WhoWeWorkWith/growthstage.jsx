@@ -196,7 +196,7 @@ const GrowthStage = React.memo(() => {
             </p>
             <button
               type="button"
-              className="assurance-hero-btn"
+              className="assurance-hero-btn enquire-now-btn-standard"
               onClick={() => window.dispatchEvent(new Event('open-consultation-modal'))}
             >
               Enquire Now
@@ -350,7 +350,7 @@ const GrowthStage = React.memo(() => {
               <p>Tell us where you are and where you're heading, and we'll show you how to get there financially intact.</p>
               <button
                 type="button"
-                className="new-auditing-final-cta-btn"
+                className="new-auditing-final-cta-btn enquire-now-btn-standard"
                 onClick={() => window.dispatchEvent(new Event('open-consultation-modal'))}
               >
                 Enquire Now

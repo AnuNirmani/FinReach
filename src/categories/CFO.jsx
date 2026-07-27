@@ -267,7 +267,7 @@ const CFO = () => {
 						</p>
 						<button
 							type="button"
-							className="cfo-hero-btn"
+							className="cfo-hero-btn enquire-now-btn-standard"
 							onClick={() => window.dispatchEvent(new Event('open-consultation-modal'))}
 						>
 							Enquire Now
@@ -471,7 +471,7 @@ const CFO = () => {
 								<p>Let's talk about where your organisation is heading and what it needs to get there.</p>
 								<button
 									type="button"
-									className="new-auditing-final-cta-btn"
+									className="new-auditing-final-cta-btn enquire-now-btn-standard"
 									onClick={() => window.dispatchEvent(new Event('open-consultation-modal'))}
 								>
 									Enquire Now

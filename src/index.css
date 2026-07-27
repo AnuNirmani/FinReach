@@ -115,6 +115,17 @@ button:focus-visible {
   transition: border-color 0.25s, box-shadow 0.25s ease, transform 0.25s ease, filter 0.25s ease;
 }
 
+.enquire-now-btn-standard {
+  width: 150px !important;
+  min-height: 46px !important;
+  padding: 0 18px !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.2;
+}
+
 @media (hover: hover) {
   :is(
     button,
@@ -153,6 +164,11 @@ button:focus-visible {
   button {
     overflow-wrap: anywhere;
     word-break: break-word;
+  }
+
+  .enquire-now-btn-standard {
+    width: 150px !important;
+    min-height: 44px !important;
   }
 }
 

@@ -219,7 +219,7 @@ const BookkeepingCashFlow = React.memo(() => {
             </p>
             <button
               type="button"
-              className="new-auditing-hero-btn"
+              className="new-auditing-hero-btn enquire-now-btn-standard"
               onClick={() => window.dispatchEvent(new Event('open-consultation-modal'))}
             >
               Enquire Now
@@ -450,7 +450,7 @@ const BookkeepingCashFlow = React.memo(() => {
               <p>Let&apos;s talk about what your books actually need.</p>
               <button
                 type="button"
-                className="new-auditing-final-cta-btn"
+                className="new-auditing-final-cta-btn enquire-now-btn-standard"
                 onClick={() => window.dispatchEvent(new Event('open-consultation-modal'))}
               >
                 Enquire Now

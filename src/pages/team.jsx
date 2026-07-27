@@ -141,7 +141,7 @@ const Team = () => {
         <div className="team-cta-overlay"></div>
         <div className="team-cta-content">
           <h2 className="team-cta-heading">Want to know exactly who'll be working on your file?</h2>
-          <Link to="/book-consultation" className="btn btn-cta-enquire">
+          <Link to="/book-consultation" className="btn btn-cta-enquire enquire-now-btn-standard">
             Enquire Now
           </Link>
         </div>

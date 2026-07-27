@@ -166,7 +166,7 @@ const OurServices = () => {
 							</p>
 							<button
 								type="button"
-								className="our-services-cta-btn"
+								className="our-services-cta-btn enquire-now-btn-standard"
 								onClick={() => window.dispatchEvent(new Event('open-consultation-modal'))}
 							>
 								Enquire Now

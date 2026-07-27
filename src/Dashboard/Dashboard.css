@@ -4080,6 +4080,10 @@ font-size: 1rem;
     min-height: calc(90vh - 88px);
 }
 
+.bookkeeping-page .new-auditing-hero-btn {
+    font-size: 0.9rem;
+}
+
 .bookkeeping-lower-section {
     background-color: #f4f6f8;
     padding: 1.4rem 0 2.8rem;

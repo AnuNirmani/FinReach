@@ -253,7 +253,7 @@ const AssuranceFunding = React.memo(() => {
             </p>
             <button
               type="button"
-              className="assurance-hero-btn"
+              className="assurance-hero-btn enquire-now-btn-standard"
               onClick={() => window.dispatchEvent(new Event('open-consultation-modal'))}
             >
               Enquire Now
@@ -461,7 +461,7 @@ const AssuranceFunding = React.memo(() => {
               <p>Tell us what&apos;s being asked of you, and we&apos;ll scope exactly what&apos;s needed.</p>
               <button
                 type="button"
-                className="new-auditing-final-cta-btn"
+                className="new-auditing-final-cta-btn enquire-now-btn-standard"
                 onClick={() => window.dispatchEvent(new Event('open-consultation-modal'))}
               >
                 Enquire Now

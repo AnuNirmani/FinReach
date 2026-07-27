@@ -53,7 +53,7 @@ const HeroWithForm = () => {
 
               <button
                 type="button"
-                className="btn btn-hero-secondary"
+                className="btn btn-hero-secondary enquire-now-btn-standard"
                 onClick={() => window.location.assign('/contact')}
               >
                 Enquire Now

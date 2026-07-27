@@ -46,7 +46,7 @@ const Partner = React.memo(() => {
 
 						<button
 							type="button"
-							className="partner-btn partner-btn-primary"
+							className="partner-btn partner-btn-primary enquire-now-btn-standard"
 							onClick={() => window.dispatchEvent(new Event('open-consultation-modal'))}
 						>
 							Enquire Now
@@ -116,7 +116,7 @@ const Partner = React.memo(() => {
 
 						<button
 							type="button"
-							className="partner-btn partner-btn-primary"
+							className="partner-btn partner-btn-primary enquire-now-btn-standard"
 							onClick={() => window.dispatchEvent(new Event('open-consultation-modal'))}
 						>
 							Enquire Now

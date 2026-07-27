@@ -519,7 +519,7 @@ const NewAuditing = React.memo(() => {
 							<p>Let&apos;s talk about your organisation&apos;s audit requirements and timeline.</p>
 							<button
 								type="button"
-								className="new-auditing-final-cta-btn"
+								className="new-auditing-final-cta-btn enquire-now-btn-standard"
 								onClick={() => window.dispatchEvent(new Event('open-consultation-modal'))}
 							>
 								Enquire Now

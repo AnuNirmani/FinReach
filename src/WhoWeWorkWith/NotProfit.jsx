@@ -196,7 +196,7 @@ const NotProfit = React.memo(() => {
             </p>
             <button
               type="button"
-              className="assurance-hero-btn"
+              className="assurance-hero-btn enquire-now-btn-standard"
               onClick={() => window.dispatchEvent(new Event('open-consultation-modal'))}
             >
               Enquire Now
@@ -350,7 +350,7 @@ const NotProfit = React.memo(() => {
               <p>Let&apos;s talk about your funding structure, your reporting obligations, and where you need support.</p>
               <button
                 type="button"
-                className="new-auditing-final-cta-btn"
+                className="new-auditing-final-cta-btn enquire-now-btn-standard"
                 onClick={() => window.dispatchEvent(new Event('open-consultation-modal'))}
               >
                 Enquire Now
