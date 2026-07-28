@@ -1,7 +1,7 @@
 /* About page specific styles */
 
 .about-section-padding {
-  padding: 60px 0;
+  padding: clamp(2rem, 8vw, 60px) 0;
 }
 
 .about-purpose-section {
@@ -10,10 +10,10 @@
 }
 
 .about-heading {
-  font-size: 2.25rem;
+  font-size: clamp(1.6rem, 5vw, 2.25rem);
   font-weight: 700;
   color: #2b516c;
-  margin-bottom: 1.5rem;
+  margin-bottom: clamp(0.8rem, 2vw, 1.5rem);
 }
 
 .about-subtext {
@@ -25,7 +25,7 @@
 }
 
 .about-intro-section {
-  padding: 78px 0 88px;
+  padding: clamp(3rem, 8vw, 78px) 0 clamp(3.5rem, 8vw, 88px);
   background-color: #ffffff;
 }
 
@@ -40,15 +40,15 @@
 
 .about-intro-heading {
   color: #2b516c;
-  font-size: 2.3rem;
+  font-size: clamp(1.5rem, 4vw, 2.3rem);
   line-height: 1.08;
   letter-spacing: -0.03em;
-  margin-bottom: 2rem;
+  margin-bottom: clamp(1rem, 2vw, 2rem);
 }
 
 .about-intro-subtext {
   max-width: 1175px;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
   line-height: 1.5;
   color: #20242b;
 }
@@ -76,13 +76,13 @@
 }
 
 .about-intro-card-title {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
   font-weight: 700;
   line-height: 1.08;
   letter-spacing: -0.03em;
   color: #2b516c;
   max-width: 440px;
-  margin: 0 auto 1.1rem;
+  margin: 0 auto clamp(0.8rem, 2vw, 1.1rem);
 }
 
 .about-intro-card-text {
@@ -105,7 +105,7 @@
   background-color: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 8px;
-  padding: 40px;
+  padding: clamp(20px, 4vw, 40px);
   height: 100%;
   transition: box-shadow 0.3s ease;
 }
@@ -115,7 +115,7 @@
 }
 
 .structure-title {
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 3vw, 1.25rem);
   font-weight: 700;
   color: #1a1a1a;
   margin-bottom: 1rem;
@@ -136,7 +136,7 @@
   background-color: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 8px;
-  padding: 40px 30px;
+  padding: clamp(20px, 4vw, 40px) clamp(15px, 4vw, 30px);
   height: 100%;
   text-align: center;
   transition: transform 0.2s;
@@ -169,7 +169,7 @@
 
 .values-section {
   background: linear-gradient(135deg, #0f3e5d 0%, #123f5f 100%);
-  padding: 100px 0;
+  padding: clamp(3rem, 8vw, 100px) 0;
 }
 
 .values-section .about-heading {
@@ -183,17 +183,17 @@
 .value-item {
   display: flex;
   align-items: flex-start;
-  gap: 24px;
-  margin-bottom: 36px;
+  gap: clamp(12px, 3vw, 24px);
+  margin-bottom: clamp(20px, 4vw, 36px);
 }
 
 .value-letter-box {
-  width: 56px;
-  height: 56px;
+  width: clamp(48px, 10vw, 56px);
+  height: clamp(48px, 10vw, 56px);
   background: #c7d300;
   color: #0f3e5d;
   font-weight: 700;
-  font-size: 22px;
+  font-size: clamp(18px, 4vw, 22px);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -214,15 +214,15 @@
 
 .how-we-work-section {
   background-color: #f8f9fa;
-  padding: 80px 0;
+  padding: clamp(3rem, 8vw, 80px) 0;
   text-align: center;
 }
 
 .work-title {
-  font-size: 2rem;
+  font-size: clamp(1.6rem, 5vw, 2rem);
   font-weight: 700;
   color: #1a1a1a;
-  margin-bottom: 1.5rem;
+  margin-bottom: clamp(0.8rem, 2vw, 1.5rem);
 }
 
 .work-desc {
@@ -235,7 +235,7 @@
 
 .about-cta-banner {
   position: relative;
-  min-height: 275px;
+  min-height: clamp(200px, 50vw, 275px);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -256,15 +256,15 @@
   z-index: 1;
   text-align: center;
   max-width: 980px;
-  padding: 2.6rem 1.25rem;
+  padding: clamp(1.5rem, 4vw, 2.6rem) clamp(1rem, 3vw, 1.25rem);
 }
 
 .about-cta-heading {
-  font-size: 1.7rem;
+  font-size: clamp(1.2rem, 4vw, 1.7rem);
   font-weight: 700;
   color: #ffffff;
   line-height: 1.2;
-  margin-bottom: 1.8rem;
+  margin-bottom: clamp(0.8rem, 2vw, 1.8rem);
 }
 
 .about-cta-button {
@@ -380,71 +380,106 @@
 
 @media (max-width: 767px) {
   .about-intro-section {
-    padding: 54px 0 60px;
+    padding: clamp(2rem, 5vw, 54px) 1rem clamp(2rem, 5vw, 60px);
   }
 
   .about-intro-copy {
-    margin-bottom: 2.8rem;
+    margin-bottom: 1.8rem;
+    padding: 0 1rem;
   }
 
   .about-intro-heading {
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
   }
 
   .about-intro-subtext {
-    font-size: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .about-intro-grid {
+    --bs-gutter-x: 1rem;
+    --bs-gutter-y: 2rem;
   }
 
   .about-intro-image {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
+    max-width: 100%;
   }
 
   .about-intro-card-title {
-    max-width: 100%;
-    margin-bottom: 0.9rem;
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
+    margin-bottom: 0.7rem;
   }
 
   .about-intro-card-text {
-    font-size: 0.98rem;
+    font-size: 0.95rem;
   }
 
   .about-cta-banner {
-    min-height: 240px;
+    min-height: clamp(160px, 40vw, 240px);
   }
 
   .about-cta-heading {
-    margin-bottom: 1.4rem;
+    margin-bottom: 1rem;
   }
 
   .about-cta-button {
-    min-width: 170px;
-    padding: 0.82rem 1.5rem;
+    min-width: auto;
+    padding: 0.65rem 1.2rem;
+    font-size: 0.95rem;
   }
 
   .about-hero-section {
-    min-height: calc(100svh - 92px) !important;
-    padding: 56px 0 !important;
+    min-height: auto;
+    padding: clamp(2rem, 5vw, 56px) 1rem !important;
   }
 
   .about-hero-card {
-    border-radius: 18px;
-    padding: 1.5rem 1.2rem;
+    border-radius: 16px;
+    padding: 1.2rem 1rem;
+    margin-right: 1rem;
   }
 
   .about-hero-title {
-    font-size: clamp(1.75rem, 8.2vw, 2.4rem);
+    font-size: clamp(1.5rem, 6vw, 2.2rem);
+    margin-bottom: 0.8rem;
   }
 
   .about-hero-subtitle {
-    margin-bottom: 1.3rem;
-    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-size: clamp(0.9rem, 3vw, 1rem);
   }
 
   .about-hero-cta {
     width: 100%;
     min-width: 0;
-    border-radius: 12px;
-    padding: 0.72rem 1rem;
-    font-size: 1rem;
+    border-radius: 10px;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .values-container {
+    padding: 0 1rem;
+  }
+
+  .value-item {
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .structure-card {
+    padding: 20px;
+  }
+
+  .structure-title {
+    font-size: 1.1rem;
+  }
+
+  .serve-card-about {
+    padding: 20px 15px;
+  }
+
+  .work-title {
+    font-size: clamp(1.4rem, 5vw, 1.8rem);
   }
 }

@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Dashboard.css'
 import logo from '../assets/sitelogo.webp'
 
 const Header = () => {
+  const [openDropdown, setOpenDropdown] = useState(null)
+
+  const toggleDropdown = (name) => {
+    setOpenDropdown(openDropdown === name ? null : name)
+  }
+
   return (
     <>
       <nav className="navbar navbar-expand-xl navbar-light fixed-top shadow-sm finreach-navbar">
@@ -38,14 +44,14 @@ const Header = () => {
                   <button
                     className="nav-link dropdown-toggle finreach-dropdown-toggle"
                     type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
+                    onClick={() => toggleDropdown('services')}
+                    aria-expanded={openDropdown === 'services'}
                     aria-label="Open Our Services submenu"
                   >
                     <span className="visually-hidden">Open Our Services submenu</span>
                   </button>
                 </div>
-                <ul className="dropdown-menu">
+                <ul className={`dropdown-menu ${openDropdown === 'services' ? 'show' : ''}`}>
                   <li>
                     <Link className="dropdown-item" to="/auditing">
                       Auditing
@@ -79,14 +85,14 @@ const Header = () => {
                   <button
                     className="nav-link dropdown-toggle finreach-dropdown-toggle"
                     type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
+                    onClick={() => toggleDropdown('who-work')}
+                    aria-expanded={openDropdown === 'who-work'}
                     aria-label="Open Who We Work With submenu"
                   >
                     <span className="visually-hidden">Open Who We Work With submenu</span>
                   </button>
                 </div>
-                <ul className="dropdown-menu">
+                <ul className={`dropdown-menu ${openDropdown === 'who-work' ? 'show' : ''}`}>
                   <li>
                     <Link className="dropdown-item" to="/not-profit">
                       Not-for-Profit
@@ -112,14 +118,14 @@ const Header = () => {
                   <button
                     className="nav-link dropdown-toggle finreach-dropdown-toggle"
                     type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
+                    onClick={() => toggleDropdown('about')}
+                    aria-expanded={openDropdown === 'about'}
                     aria-label="Open About Us submenu"
                   >
                     <span className="visually-hidden">Open About Us submenu</span>
                   </button>
                 </div>
-                <ul className="dropdown-menu">
+                <ul className={`dropdown-menu ${openDropdown === 'about' ? 'show' : ''}`}>
                   <li>
                     <Link className="dropdown-item" to="/team">
                       Our Team
