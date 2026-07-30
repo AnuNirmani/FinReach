@@ -353,8 +353,8 @@
 }
 
 .about-us-values-grid {
-  margin-left: 150px;
-  margin-right: 150px;
+  margin-left: clamp(0rem, 4.5vw, 150px);
+  margin-right: clamp(0rem, 4.5vw, 150px);
   margin-top: 3.2rem;
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -477,6 +477,8 @@
   }
 
   .about-us-values-grid {
+    margin-left: 0;
+    margin-right: 0;
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
@@ -608,6 +610,8 @@
   }
 
   .about-us-values-grid {
+    margin-left: 0;
+    margin-right: 0;
     margin-top: 2rem;
     grid-template-columns: 1fr;
     gap: 1rem;

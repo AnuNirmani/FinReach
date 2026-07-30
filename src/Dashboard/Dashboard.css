@@ -152,11 +152,6 @@
         .navbar-nav .nav-link:hover {
             color: var(--finreach-teal) !important;
         }
-        
-        /* Dropdown menu adjustment */
-        
-            display: none;
-        }
 
         .dropdown-item {
             border-radius: 8px;
@@ -4650,8 +4645,10 @@ font-size: 1rem;
 .new-auditing-why-row {
     margin-top: 3.6rem;
     text-align: left;
-    padding-left: 12rem;
-    padding-right: 12rem;
+    width: min(100%, 1280px);
+    margin-left: auto;
+    margin-right: auto;
+    padding-inline: clamp(0.75rem, 1.8vw, 1.25rem);
 }
 
 .new-auditing-why-image-wrap {
@@ -5103,6 +5100,7 @@ font-size: 1rem;
     }
 
     .new-auditing-why-row {
+        margin-top: 2.6rem;
         text-align: center;
     }
 
@@ -5210,6 +5208,7 @@ font-size: 1rem;
     .new-auditing-why-row {
         margin-top: 2.4rem;
         row-gap: 1.2rem;
+        padding-inline: 0.4rem;
     }
 
     .new-auditing-why-image-wrap {
@@ -5543,9 +5542,9 @@ font-size: 1rem;
 }
 
 .assurance-solutions-block > .row {
-    max-width: 1440px;
-    margin-left: 6rem;
-    margin-right: 6rem;
+    width: min(100%, 1280px);
+    margin-left: auto;
+    margin-right: auto;
     padding-inline: clamp(0.75rem, 1.6vw, 1.5rem);
 }
 
@@ -5610,9 +5609,9 @@ font-size: 1rem;
 }
 
 .assurance-process-block > .row {
-    max-width: 1440px;
-    margin-left: 8rem;
-    margin-right: 8rem;
+    width: min(100%, 1280px);
+    margin-left: auto;
+    margin-right: auto;
     padding-inline: clamp(0.75rem, 1.6vw, 1.5rem);
 }
 
@@ -5678,9 +5677,9 @@ font-size: 1rem;
 }
 
 .assurance-included-list {
-    max-width: 1440px;
-    margin-left: 22rem;
-    margin-right: 22rem;
+    width: min(100%, 1120px);
+    margin-left: auto;
+    margin-right: auto;
     padding-inline: clamp(0.75rem, 1.6vw, 1.5rem);
     display: grid;
     gap: 0.88rem;
@@ -5710,9 +5709,9 @@ font-size: 1rem;
 }
 
 .assurance-approach-block > .row {
-    max-width: 1440px;
-    margin-left: 8rem;
-    margin-right: 8rem;
+    width: min(100%, 1280px);
+    margin-left: auto;
+    margin-right: auto;
     padding-inline: clamp(0.75rem, 1.6vw, 1.5rem);
 }
 
@@ -5806,9 +5805,9 @@ font-size: 1rem;
 
 .assurance-why-row {
     margin-top: 2.9rem;
-    max-width: 1440px;
-    margin-left: 10rem;
-    margin-right: 10rem;
+    width: min(100%, 1280px);
+    margin-left: auto;
+    margin-right: auto;
     padding-inline: clamp(0.75rem, 1.6vw, 1.5rem);
 }
 
@@ -5995,11 +5994,13 @@ font-size: 1rem;
     .assurance-why-row {
         margin-left: 0;
         margin-right: 0;
+        padding-inline: 0.4rem;
     }
 
     .assurance-included-list {
         margin-left: 0;
         margin-right: 0;
+        padding-inline: 0.4rem;
     }
 
     .assurance-why-image {

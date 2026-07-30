@@ -59,8 +59,8 @@ const ClientOutcomesSection = () => {
                     max-width: 1760px;
                     padding-top: 72px;
                     padding-bottom: 66px;
-                    padding-left: 9rem;
-                    padding-right: 9rem;
+                    padding-left: clamp(1rem, 4vw, 9rem);
+                    padding-right: clamp(1rem, 4vw, 9rem);
                 }
 
                 .fr-outcomes-badge {
@@ -136,6 +136,11 @@ const ClientOutcomesSection = () => {
                         border-radius: 28px;
                     }
 
+                    .fr-outcomes-shell {
+                        padding-left: 1.25rem;
+                        padding-right: 1.25rem;
+                    }
+
                     .fr-outcome-card {
                         padding: 0 0.6rem;
                     }
@@ -150,6 +155,8 @@ const ClientOutcomesSection = () => {
                     .fr-outcomes-shell {
                         padding-top: 56px;
                         padding-bottom: 52px;
+                        padding-left: 0.9rem;
+                        padding-right: 0.9rem;
                     }
 
                     .fr-outcomes-title {
@@ -161,7 +168,8 @@ const ClientOutcomesSection = () => {
                     }
 
                     .fr-outcome-quote-title {
-                        font-size: 1.02rem;
+                        font-size: 1.1rem;
+                        line-height: 1.35;
                     }
 
                     .fr-outcome-quote,
