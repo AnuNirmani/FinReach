@@ -99,6 +99,11 @@
 	color: #274c64;
 }
 
+.partner-hero-copy .partner-btn {
+	align-self: flex-start;
+	width: auto;
+}
+
 .partner-intro-card-wrap {
 	position: relative;
 	z-index: 2;
