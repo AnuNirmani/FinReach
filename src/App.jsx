@@ -1,6 +1,7 @@
 import './App.css'
-import { lazy, Suspense, useEffect } from 'react'
+import { lazy, Suspense, useEffect, useState, useCallback } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import EnquireModal from './utils/EnquireModal'
 import TermsAndConditions from './pages/TermsAndConditions';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 
@@ -51,10 +52,34 @@ const ScrollToTop = () => {
 }
 
 function App() {
+  const [enquireOpen, setEnquireOpen] = useState(false)
+
+  const openEnquire = useCallback((e) => {
+    const target = e.target.closest('.enquire-now-btn-standard')
+    if (target) {
+      e.preventDefault()
+      e.stopPropagation()
+      setEnquireOpen(true)
+    }
+  }, [])
+
+  useEffect(() => {
+    document.addEventListener('click', openEnquire, true)
+    // Also support the legacy custom event
+    const onEvent = () => setEnquireOpen(true)
+    window.addEventListener('open-consultation-modal', onEvent)
+    return () => {
+      document.removeEventListener('click', openEnquire, true)
+      window.removeEventListener('open-consultation-modal', onEvent)
+    }
+  }, [openEnquire])
+
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <Suspense fallback={<Loading />}>
+    <>
+      <EnquireModal isOpen={enquireOpen} onClose={() => setEnquireOpen(false)} />
+      <BrowserRouter>
+        <ScrollToTop />
+        <Suspense fallback={<Loading />}>
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/our-services" element={<OurServices />} />
@@ -85,8 +110,9 @@ function App() {
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
-      </Suspense>
-    </BrowserRouter>
+        </Suspense>
+      </BrowserRouter>
+    </>
   )
 }
 

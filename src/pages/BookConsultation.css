@@ -11,234 +11,31 @@
 .book-consult-card {
   max-width: 1120px;
   width: 100%;
-  height: auto;
-  max-height: none;
+  height: calc(100dvh - 20px);
+  max-height: 900px;
   margin: 0 auto;
   background: #fff;
   border: 1px solid #dcdcdc;
   border-radius: 8px;
   box-shadow: 0 8px 24px rgba(15, 23, 42, 0.1);
   overflow: hidden;
-  display: grid;
-  grid-template-columns: 1fr;
-  min-height: calc(100dvh - 140px);
-}
-
-@media (min-width: 992px) {
-  .book-consult-card {
-    grid-template-columns: 310px 1fr;
-    height: calc(100dvh - 20px);
-    max-height: 760px;
-    min-height: auto;
-  }
-}
-
-.book-consult-left {
-  background: #f4f5f6;
-  border-right: none;
-  border-bottom: 1px solid #dfdfdf;
-  padding: clamp(20px, 4vw, 36px) clamp(15px, 3vw, 22px);
-}
-
-@media (min-width: 992px) {
-  .book-consult-left {
-    border-right: 1px solid #dfdfdf;
-    border-bottom: none;
-    padding: 36px 22px;
-  }
-}
-
-.book-consult-logo {
-  width: 86px;
-  height: auto;
-  margin-bottom: 8px;
-}
-
-.book-consult-title {
-  font-size: clamp(22px, 5vw, 30px);
-  line-height: 1.08;
-  font-weight: 700;
-  margin: clamp(4px, 2vw, 6px) 0 clamp(10px, 2vw, 14px);
-  color: #11253b;
-  letter-spacing: -0.5px;
-}
-
-.book-consult-duration {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #6b7280;
-  font-size: 16px;
-  margin-bottom: 18px;
-}
-
-.book-consult-duration .bi {
-  font-size: 16px;
-}
-
-.book-consult-note {
-  color: #6b7280;
-  font-size: 14px;
-  line-height: 1.5;
-  margin: 0;
 }
 
 .book-consult-right {
   height: 100%;
-  overflow: hidden;
+  overflow: auto;
   background: #fff;
+  padding: clamp(16px, 3vw, 24px);
 }
 
-.book-consult-scroll {
-  height: 100%;
-  overflow-y: auto;
-  padding: clamp(20px, 4vw, 36px) clamp(15px, 3vw, 40px) clamp(20px, 4vw, 26px);
-}
-
-.book-consult-heading {
-  color: #14263f;
-  font-size: clamp(20px, 5vw, 26px);
-  font-weight: 700;
-  margin: 0 0 clamp(16px, 3vw, 24px);
-}
-
-.book-consult-grid-2 {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 18px 22px;
-}
-
-@media (min-width: 768px) {
-  .book-consult-grid-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-.book-consult-field {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.book-consult-label {
-  color: #1f3551;
-  font-size: 14px;
-  font-weight: 500;
-  margin: 0;
-}
-
-.book-consult-input {
+.book-consult-iframe {
   width: 100%;
-  height: 44px;
-  border: 2px solid #244a68;
-  border-radius: 7px;
-  padding: 10px 12px;
-  font-size: 14px;
-  color: #1f2937;
-  outline: none;
-  background: #fff;
-}
-
-.book-consult-input::placeholder {
-  color: #7a7f88;
-}
-
-.book-consult-full {
-  margin-top: 14px;
-}
-
-.book-consult-groups {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(15px, 3vw, 28px);
-  margin-top: 20px;
-}
-
-@media (min-width: 768px) {
-  .book-consult-groups {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 28px;
-  }
-}
-
-.book-consult-group-title {
-  margin: 0 0 12px;
-  color: #1f3551;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.book-consult-option {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin-bottom: 12px;
-  color: #1f3551;
-  font-size: 13px;
-}
-
-.book-consult-checkbox {
-  width: 16px;
-  height: 16px;
-  margin-top: 2px;
-  accent-color: #0f3756;
-}
-
-.book-consult-extra {
-  margin-top: 14px;
-}
-
-.book-consult-textarea,
-.book-consult-select {
-  width: 100%;
-  border: 1.5px solid #244a68;
-  border-radius: 7px;
-  padding: 10px 12px;
-  font-size: 14px;
-  color: #1f2937;
-  outline: none;
-  background: #fff;
-}
-
-.book-consult-textarea {
-  min-height: 72px;
-  resize: vertical;
-}
-
-.book-consult-select {
-  height: 44px;
-  appearance: none;
-  background-image: linear-gradient(45deg, transparent 50%, #7b8088 50%),
-    linear-gradient(135deg, #7b8088 50%, transparent 50%);
-  background-position: calc(100% - 18px) calc(50% - 2px), calc(100% - 12px) calc(50% - 2px);
-  background-size: 6px 6px, 6px 6px;
-  background-repeat: no-repeat;
-}
-
-.book-consult-field-select {
-  margin-top: 10px;
-}
-
-.book-consult-option-consent {
-  margin-top: 8px;
-  margin-bottom: 0;
-  line-height: 1.5;
-}
-
-.book-consult-actions {
-  margin-top: 18px;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.book-consult-continue {
+  min-height: 860px;
   border: none;
-  background: #c9cc28;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 700;
-  padding: 10px 22px;
-  border-radius: 10px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #fff;
+  display: block;
 }
 
 @media (max-width: 1200px) {
@@ -253,46 +50,19 @@
 
   .book-consult-card {
     height: auto;
-    min-height: calc(100dvh - 140px);
     max-height: none;
-  }
-
-  .book-consult-title {
-    font-size: 26px;
-  }
-
-  .book-consult-heading {
-    font-size: 24px;
   }
 }
 
 @media (max-width: 992px) {
   .book-consult-card {
-    grid-template-columns: 1fr;
-    min-height: 0;
+    height: auto;
     max-height: none;
   }
 
-  .book-consult-left {
-    border-right: none;
-    border-bottom: 1px solid #dfdfdf;
-    padding: 24px 20px;
-  }
-
   .book-consult-right {
-    overflow: hidden;
-    height: 100%;
-  }
-
-  .book-consult-scroll {
-    overflow-y: auto;
-    height: 100%;
-    padding: 24px 20px 18px;
-  }
-
-  .book-consult-groups,
-  .book-consult-grid-2 {
-    grid-template-columns: 1fr;
+    height: auto;
+    padding: 18px;
   }
 }
 
@@ -302,8 +72,7 @@
     padding: clamp(8px, 2vw, 10px) clamp(6px, 2vw, 8px) clamp(12px, 2vw, 16px);
   }
 
-  .book-consult-left,
-  .book-consult-scroll {
+  .book-consult-right {
     padding-left: clamp(12px, 3vw, 14px);
     padding-right: clamp(12px, 3vw, 14px);
   }
@@ -312,21 +81,7 @@
     font-size: clamp(18px, 4vw, 22px);
   }
 
-  .book-consult-heading {
-    font-size: clamp(18px, 4vw, 21px);
-  }
-
-  .book-consult-input,
-  .book-consult-textarea,
-  .book-consult-select {
-    font-size: 16px;
-  }
-
-  .book-consult-actions {
-    justify-content: stretch;
-  }
-
-  .book-consult-continue {
-    width: 100%;
+  .book-consult-iframe {
+    min-height: 980px;
   }
 }
