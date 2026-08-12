@@ -1,16 +1,16 @@
 import React from 'react';
 import './Dashboard.css';
-import auditOne from '../assets/assets/audit1.jpg';
+import don from '../assets/assets/don.png';
 import directorImage from '../assets/assets/director.jpg';
 import senioraccountantImage from '../assets/assets/senioraccountant.jpg';
-import senioraccountant2Image from '../assets/assets/senioraccountant2.webp';
-import accountantImage from '../assets/assets/accountant.jpg';
+import senioraccountant2Image from '../assets/assets/dileep.png';
+import accountantImage from '../assets/assets/lahiru.png';
 import cfoImage from '../assets/assets/cfo1.jpg';
 
 const ProcessSection = () => {
   const teamMembers = [
     {
-      image: auditOne,
+      image: don,
       name: 'Don Siriwardana',
       role: 'Director',
       location: 'Canberra, ACT',

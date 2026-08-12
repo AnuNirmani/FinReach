@@ -6,11 +6,11 @@ import Header from '../Dashboard/Header'
 import Footer from '../Dashboard/Footer'
 import teamHero from '../assets/assets/3e.png'
 import ctaImage from '../assets/assets/15628.jpg'
-import donPhoto from '../assets/assets/DSC03893.jpg'
+import donPhoto from '../assets/assets/DSC03893.png'
 import directorPhoto from '../assets/assets/DSC03893.jpg'
-import seniorPhoto from '../assets/assets/DSC03899.jpg'
-import accountantPhoto from '../assets/assets/DSC03913.png'
-import seniorAcctPhoto from '../assets/assets/DSC03897.jpg'
+import seniorPhoto from '../assets/assets/senioraccountant.jpg'
+import accountantPhoto from '../assets/assets/thilak.png'
+import seniorAcctPhoto from '../assets/assets/dil01.png'
 
 const teamMembers = [
   {
@@ -38,12 +38,13 @@ const teamMembers = [
   },
   {
     id: 3,
-    name: 'Sri Lanka',
-    role: 'Our Delivery Team',
+    name: 'Thilak Perera',
+    role: 'Head of Offshore Operations & Strategic Partnerships',
     photo: accountantPhoto,
     bio: [
-      'Behind every FinReach client is a technically trained delivery team based in Sri Lanka, coordinated by Thilak and Lahiru. They bring deep technical training and genuine rigour to the bookkeeping, reconciliation and reporting work that underpins everything we deliver, working in close step with the Canberra team, most of the day, every day.',
-      "This is the part of FinReach that makes the model work: it's how we deliver senior-level quality without a senior-level price tag. It's not a back office - it's half of who we are.",
+      'Thilak leads FinReach\'s Colombo-based team of ACCA and CIMA-qualified accountants, delivering technical, detailed work for not-for-profits and growth-stage businesses.',
+      'Thilak runs the operations with senior-level expertise without the overhead of a big firm. Thilak also works the NFP and SME pipeline directly, partnering with organisations to give them financial confidence.',
+      'Most accounting firms hide their delivery team. I run mine in the open, because it\'s our biggest advantage, real people, ACCA and CIMA-qualified, delivering work built to the same standard whether it\'s checked in Colombo or Canberra."',
     ],
     quote: null,
     quoteAttribution: null,
@@ -54,7 +55,7 @@ const teamMembers = [
     role: null,
     photo: seniorAcctPhoto,
     bio: [
-      'A finance and supply chain leader with over 16 years of cross-industry experience spanning consumer goods, food & beverages, packaging, information technology, and manufacturing sectors. Proven expertise in driving financial stewardship, operational excellence, and enterprise-wide transformation initiatives.',
+      'Dileep\'s bio',
     ],
     quote: null,
     quoteAttribution: null,

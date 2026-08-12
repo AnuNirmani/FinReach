@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import bannerImage from '../assets/assets/team-collaboration-Dfr1_auB.jpg';
+import bannerImage from '../assets/assets/team.png';
 
 const FinanceHealthCheckSection = () => {
     const [isNFPModalOpen, setIsNFPModalOpen] = useState(false);
@@ -49,7 +49,7 @@ const FinanceHealthCheckSection = () => {
             <section
                 className="fr-finance-check-section"
                 style={{
-                    backgroundImage: `
+                    '--fr-finance-check-bg': `
                         linear-gradient(to top, rgba(32, 58, 76, 0.72) 0%, rgba(32, 58, 76, 0.72) 100%),
                         url(${bannerImage})
                     `,
@@ -142,12 +142,14 @@ const FinanceHealthCheckSection = () => {
 
             <style>{`
                 .fr-finance-check-section {
+                    background-image: var(--fr-finance-check-bg);
                     margin: 22px 0 0;
                     min-height: 340px;
                     width: 100%;
                     background-size: cover;
                     background-position: center;
                     background-repeat: no-repeat;
+                    background-attachment: fixed;
                     border-radius: 0;
                     display: flex;
                     align-items: center;
@@ -292,6 +294,7 @@ const FinanceHealthCheckSection = () => {
                 @media (max-width: 991px) {
                     .fr-finance-check-section {
                         min-height: 310px;
+                        background-attachment: scroll;
                     }
 
                     .fr-finance-check-btn {

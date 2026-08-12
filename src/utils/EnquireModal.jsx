@@ -3,8 +3,9 @@ import './EnquireModal.css'
 
 export default function EnquireModal({ isOpen, onClose }) {
   const overlayRef = useRef(null)
+  const iframeRef = useRef(null)
 
-  // Inject the GHL embed script once
+  // Inject the GHL embed script and trigger iFrameResize when modal opens
   useEffect(() => {
     const SCRIPT_SRC = 'https://link.finreach.com.au/js/form_embed.js'
     if (!document.querySelector(`script[src="${SCRIPT_SRC}"]`)) {
@@ -14,6 +15,18 @@ export default function EnquireModal({ isOpen, onClose }) {
       document.body.appendChild(script)
     }
   }, [])
+
+  useEffect(() => {
+    if (!isOpen || !iframeRef.current) return
+    const tryResize = () => {
+      if (window.iFrameResize) {
+        window.iFrameResize({ log: false, checkOrigin: false, scrolling: true }, iframeRef.current)
+      }
+    }
+    // Retry until the script has loaded
+    const id = setInterval(() => { if (window.iFrameResize) { tryResize(); clearInterval(id) } }, 200)
+    return () => clearInterval(id)
+  }, [isOpen])
 
   // Lock body scroll while open
   useEffect(() => {
@@ -53,21 +66,13 @@ export default function EnquireModal({ isOpen, onClose }) {
           &times;
         </button>
         <iframe
-          src="https://link.finreach.com.au/widget/form/OH4TZEDANc9WMRdRr8x8"
-          style={{ width: '100%', height: '100%', border: 'none', borderRadius: '8px' }}
-          id="inline-OH4TZEDANc9WMRdRr8x8"
-          data-layout='{"id":"INLINE"}'
-          data-trigger-type="alwaysShow"
-          data-trigger-value=""
-          data-activation-type="alwaysActivated"
-          data-activation-value=""
-          data-deactivation-type="neverDeactivate"
-          data-deactivation-value=""
-          data-form-name="Partner With Us — Enquiry Form - Brandscape"
-          data-height="877"
-          data-layout-iframe-id="inline-OH4TZEDANc9WMRdRr8x8"
-          data-form-id="OH4TZEDANc9WMRdRr8x8"
-          title="Partner With Us — Enquiry Form - Brandscape"
+          ref={iframeRef}
+          src="https://link.finreach.com.au/widget/booking/BJoQPqSKhkjd5wiK5ZV1"
+          allow="payment"
+          style={{ width: '100%', border: 'none', borderRadius: '8px', display: 'block' }}
+          id="BJoQPqSKhkjd5wiK5ZV1"
+          scrolling="no"
+          title="Book a No Obligation Consultation"
         />
       </div>
     </div>
