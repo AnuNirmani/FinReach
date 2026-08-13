@@ -118,9 +118,9 @@ button:focus-visible {
 }
 
 .enquire-now-btn-standard {
-  min-width: 175px !important;
-  min-height: 46px !important;
-  padding: 10px 28px !important;
+  width: clamp(130px, 90vw, 150px) !important;
+  min-height: clamp(40px, 10vw, 46px) !important;
+  padding: 0 clamp(12px, 3vw, 18px) !important;
   display: inline-flex !important;
   align-items: center;
   justify-content: center;
@@ -185,19 +185,8 @@ button:focus-visible {
 
   .enquire-now-btn-standard {
     width: 100% !important;
-    min-height: 46px !important;
-  }
-
-  .about-cta-button,
-  .about-us-cta-btn,
-  .btn-cta-enquire,
-  .our-services-cta-btn {
-    width: 100% !important;
-    max-width: 175px !important;
-    min-width: 175px !important;
-    min-height: 46px !important;
-    padding: 10px 28px !important;
-    box-sizing: border-box;
+    max-width: 150px !important;
+    min-height: 40px !important;
   }
 }
 

@@ -38,16 +38,15 @@ const teamMembers = [
   },
   {
     id: 3,
-    name: 'Thilak Perera',
+    name: 'Thilak Ranasinghe',
     role: 'Head of Offshore Operations & Strategic Partnerships',
     photo: accountantPhoto,
     bio: [
       'Thilak leads FinReach\'s Colombo-based team of ACCA and CIMA-qualified accountants, delivering technical, detailed work for not-for-profits and growth-stage businesses.',
       'Thilak runs the operations with senior-level expertise without the overhead of a big firm. Thilak also works the NFP and SME pipeline directly, partnering with organisations to give them financial confidence.',
-      'Most accounting firms hide their delivery team. I run mine in the open, because it\'s our biggest advantage, real people, ACCA and CIMA-qualified, delivering work built to the same standard whether it\'s checked in Colombo or Canberra."',
     ],
-    quote: null,
-    quoteAttribution: null,
+    quote: '"Most accounting firms hide their delivery team. I run mine in the open, because it\'s our biggest advantage, real people, ACCA and CIMA-qualified, delivering work built to the same standard whether it\'s checked in Colombo or Canberra."',
+    quoteAttribution: 'Thilak',
   },
   {
     id: 4,
@@ -55,10 +54,11 @@ const teamMembers = [
     role: null,
     photo: seniorAcctPhoto,
     bio: [
-      'Dileep\'s bio',
+      'Dileep brings more than 16 years experience in management and financial reporting, budgeting and resource planning, financial analysis, and digital transformation. He supports FinReach\'s clients, both not-for-profit and growth-stage businesses.',
+      'He turns the numbers into insight the team can actually use; budgets that hold up, reporting that flags what matters, and analysis that supports real decisions. Comfortable in the detail (ERP systems, working capital, pricing and margin, procurement) and just as comfortable explaining it to the people who need to act on it.',
     ],
-    quote: null,
-    quoteAttribution: null,
+    quote: '"Numbers only matter if someone can act on them. My job is to make sure the people running these organisations always know exactly where they stand."',
+    quoteAttribution: 'Dileep',
   },
 ]
 

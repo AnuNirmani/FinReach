@@ -1,9 +1,11 @@
 import React from 'react';
-import avenLogo from '../assets/logo/aven.webp';
-import circleLogo from '../assets/logo/circle.webp';
-import lightAiLogo from '../assets/logo/lightai.webp';
-import livaLogo from '../assets/logo/liva.webp';
-import stariLogo from '../assets/logo/stari.webp';
+import avenLogo from '../assets/logo/1.png';
+import circleLogo from '../assets/logo/2.png';
+import lightAiLogo from '../assets/logo/3.png';
+import livaLogo from '../assets/logo/4.png';
+import stariLogo from '../assets/logo/5.png';
+import anotherLogo from '../assets/logo/6.png';
+import yetAnotherLogo from '../assets/logo/7.png';
 
 const clientLogos = [
     { src: stariLogo, name: 'Stari' },
@@ -11,6 +13,8 @@ const clientLogos = [
     { src: avenLogo, name: 'Aven' },
     { src: circleLogo, name: 'Circle' },
     { src: lightAiLogo, name: 'Light AI' },
+    { src: anotherLogo, name: 'Another Company' },
+    { src: yetAnotherLogo, name: 'Yet Another Company' },
 ];
 
 const ClientsStripSection = () => {
