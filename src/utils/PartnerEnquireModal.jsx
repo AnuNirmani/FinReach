@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import './EnquireModal.css'
 
-export default function EnquireModal({ isOpen, onClose }) {
+export default function PartnerEnquireModal({ isOpen, onClose }) {
   const overlayRef = useRef(null)
   const iframeRef = useRef(null)
 
@@ -54,7 +54,7 @@ export default function EnquireModal({ isOpen, onClose }) {
       onClick={(e) => { if (e.target === overlayRef.current) onClose() }}
       role="dialog"
       aria-modal="true"
-      aria-label="Enquiry Form"
+      aria-label="Partner Enquiry Form"
     >
       <div className="enquire-modal-container">
         <button
@@ -67,9 +67,9 @@ export default function EnquireModal({ isOpen, onClose }) {
         </button>
         <iframe
           ref={iframeRef}
-          src="https://link.finreach.com.au/widget/form/hPxv7LyJok2C2nFTNeYB"
-          style={{ width: '100%', height: '1050px', border: 'none', borderRadius: '8px', display: 'block' }}
-          id="inline-hPxv7LyJok2C2nFTNeYB"
+          src="https://link.finreach.com.au/widget/form/OH4TZEDANc9WMRdRr8x8"
+          style={{ width: '100%', height: '100%', border: 'none', borderRadius: '8px' }}
+          id="inline-OH4TZEDANc9WMRdRr8x8"
           data-layout="{'id':'INLINE'}"
           data-trigger-type="alwaysShow"
           data-trigger-value=""
@@ -77,11 +77,11 @@ export default function EnquireModal({ isOpen, onClose }) {
           data-activation-value=""
           data-deactivation-type="neverDeactivate"
           data-deactivation-value=""
-          data-form-name="FinReach Contact Form - Brandscape"
-          data-height="1050"
-          data-layout-iframe-id="inline-hPxv7LyJok2C2nFTNeYB"
-          data-form-id="hPxv7LyJok2C2nFTNeYB"
-          title="FinReach Contact Form - Brandscape"
+          data-form-name="Partner With Us — Enquiry Form - Brandscape"
+          data-height="859"
+          data-layout-iframe-id="inline-OH4TZEDANc9WMRdRr8x8"
+          data-form-id="OH4TZEDANc9WMRdRr8x8"
+          title="Partner With Us — Enquiry Form - Brandscape"
         />
       </div>
     </div>

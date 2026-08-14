@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Header from '../Dashboard/Header.jsx';
 import Footer from '../Dashboard/Footer.jsx';
+import PartnerEnquireModal from '../utils/PartnerEnquireModal.jsx';
 import './partner.css';
 import heroImage from '../assets/assets/DSC03803.jpg';
 import introImage from '../assets/assets/tmpt9og_3fn.jpg';
@@ -9,6 +10,7 @@ import partnerImage from '../assets/assets/tmph6w507ot.jpg';
 import ctaImage from '../assets/assets/157858.jpg';
 
 const Partner = React.memo(() => {
+	const [partnerEnquireOpen, setPartnerEnquireOpen] = useState(false)
 	const collaborationPoints = [
 		'A direct line to Don or the Canberra team',
 		'Clear visibility on how your referred clients are going',
@@ -47,7 +49,7 @@ const Partner = React.memo(() => {
 						<button
 							type="button"
 							className="partner-btn partner-btn-primary enquire-now-btn-standard"
-							onClick={() => window.dispatchEvent(new Event('open-consultation-modal'))}
+							onClick={() => setPartnerEnquireOpen(true)}
 						>
 							Enquire Now
 						</button>
@@ -117,7 +119,7 @@ const Partner = React.memo(() => {
 						<button
 							type="button"
 							className="partner-btn partner-btn-primary enquire-now-btn-standard"
-							onClick={() => window.dispatchEvent(new Event('open-consultation-modal'))}
+							onClick={() => setPartnerEnquireOpen(true)}
 						>
 							Enquire Now
 						</button>
@@ -126,6 +128,7 @@ const Partner = React.memo(() => {
 
 			</main>
 
+			<PartnerEnquireModal isOpen={partnerEnquireOpen} onClose={() => setPartnerEnquireOpen(false)} />
 			<Footer />
 		</>
 	);

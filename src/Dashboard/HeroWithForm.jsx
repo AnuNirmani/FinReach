@@ -54,7 +54,7 @@ const HeroWithForm = () => {
               <button
                 type="button"
                 className="btn btn-hero-secondary enquire-now-btn-standard"
-                onClick={() => window.location.assign('/contact')}
+                onClick={() => window.dispatchEvent(new Event('open-consultation-modal'))}
               >
                 Enquire Now
               </button>
