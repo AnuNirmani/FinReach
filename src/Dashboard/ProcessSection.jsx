@@ -2,9 +2,9 @@ import React from 'react';
 import './Dashboard.css';
 import don from '../assets/assets/don.png';
 import directorImage from '../assets/assets/director.jpg';
-import senioraccountantImage from '../assets/assets/senioraccountant.jpg';
 import senioraccountant2Image from '../assets/assets/dileep.png';
 import accountantImage from '../assets/assets/lahiru.png';
+import thilak from '../assets/assets/thilak.png';
 import cfoImage from '../assets/assets/cfo1.jpg';
 
 const ProcessSection = () => {
@@ -13,12 +13,6 @@ const ProcessSection = () => {
       image: don,
       name: 'Don Siriwardana',
       role: 'Director',
-      location: 'Canberra, ACT',
-    },
-    {
-      image: senioraccountantImage,
-      name: 'Sam Herath',
-      role: 'Senior Accountant',
       location: 'Canberra, ACT',
     },
     {
@@ -31,6 +25,12 @@ const ProcessSection = () => {
       image: senioraccountant2Image,
       name: 'Dileep Subramaniam',
       role: 'Senior Accountant',
+      location: 'Canberra, ACT',
+    },
+    {
+      image: thilak,
+      name: 'Thilak Ranasinghe',
+      role: 'Head of Offshore Operations & Strategic Partnerships',
       location: 'Canberra, ACT',
     },
   ];

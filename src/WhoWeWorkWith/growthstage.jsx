@@ -87,26 +87,18 @@ const GrowthStage = React.memo(() => {
     {
       text: 'This platform has completely transformed how we manage our marketing campaigns. The ease of use and powerful features have made a significant impact on our ROI.',
       author: 'Anonymous Client',
-      logo: logoIpsum265,
-      logoAlt: 'Client logo 1',
     },
     {
       text: 'The automation capabilities are incredible. We\'ve saved countless hours and improved our customer engagement significantly.',
       author: 'Anonymous Client',
-      logo: logoIpsum287,
-      logoAlt: 'Client logo 2',
     },
     {
       text: 'The analytics and reporting features give us insights we never had before. Our conversion rates have improved by 40%.',
       author: 'Anonymous Client',
-      logo: logoIpsum331,
-      logoAlt: 'Client logo 3',
     },
     {
       text: 'This platform has revolutionized our business operations. The seamless integration and powerful features have helped us scale our marketing efforts efficiently.',
       author: 'Anonymous Client',
-      logo: logoIpsum214,
-      logoAlt: 'Client logo 4',
     },
   ];
 

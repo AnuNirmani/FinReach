@@ -2,25 +2,25 @@ import React from 'react';
 
 const testimonials = [
     {
-        quoteTitle: '"Finally, an accountant that actually gets us."',
+        quoteTitle: '"Reliable AP & Payroll Outsourcing"',
         quoteText:
-            '"We’d struggled for years with accountants who treated us like a small fish. Finreach came in with genuine Big Four knowledge but actually took the time to understand our mission. Our financial reporting has never been cleaner, and our board finally feels confident in the numbers."',
-        author: 'Sarah M.',
-        role: '— CEO, Community Health NFP',
+            '"Great experience with FinReach for AP and Payroll outsourcing. Their reliable, detail-oriented approach has significantly improved our operations—streamlining processes, reducing errors, and freeing up our team to focus on higher-value work. They ensure accurate, on-time processing every cycle and act as a true extension of our business. Highly recommended."',
+        author: 'Blessy PGutierrez',
+        role: null,
     },
     {
-        quoteTitle: '"The expertise we needed, without the price tag we feared."',
+        quoteTitle: '"Quality Financial Management at a Fair Price"',
         quoteText:
-            '"As a growing business, we couldn’t justify the cost of a Big Four firm — but we needed that level of rigour. Finreach gave us exactly that. They’ve helped us scale with confidence, and their advice has been instrumental in our last two rounds of growth."',
-        author: 'James T.',
-        role: '— Founder, Greenfield Consulting',
+            '"Don and the FinReach team do a great job on our annual financial review. I highly recommend them to anyone who is looking for good quality financial management at a very reasonable price."',
+        author: 'Accounts Office',
+        role: null,
     },
     {
-        quoteTitle: '"They speak our language — and they actually care."',
+        quoteTitle: '"Thorough and Professional Payroll Auditing"',
         quoteText:
-            '"What sets Finreach apart is how seamlessly they integrate with our team. They understand the unique pressures of running a not-for-profit — compliance, funding cycles, board reporting — and they handle it all with expertise and genuine care. Worth every cent."',
-        author: 'Michelle R.',
-        role: '— CFO, Horizon Community Services',
+            '"Don and his team delivered a thorough and professional payroll audit, providing valuable insights, identifying risks, and offering practical recommendations. Their expertise, reliability, and attention to detail made the entire process smooth and efficient."',
+        author: 'Angie Ng',
+        role: null,
     },
 ];
 

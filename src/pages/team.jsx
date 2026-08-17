@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import '../Dashboard/Dashboard.css'
 import './team.css'
@@ -7,10 +7,9 @@ import Footer from '../Dashboard/Footer'
 import teamHero from '../assets/assets/3e.png'
 import ctaImage from '../assets/assets/15628.jpg'
 import donPhoto from '../assets/assets/DSC03893.png'
-import directorPhoto from '../assets/assets/DSC03893.jpg'
-import seniorPhoto from '../assets/assets/senioraccountant.jpg'
 import accountantPhoto from '../assets/assets/thilak.png'
 import seniorAcctPhoto from '../assets/assets/dil01.png'
+import lahiru from '../assets/assets/lahiru.png'
 
 const teamMembers = [
   {
@@ -27,42 +26,86 @@ const teamMembers = [
   },
   {
     id: 2,
-    name: 'Sam Herath',
-    role: 'SENIOR ACCOUNTANT',
-    photo: seniorPhoto,
+    name: 'Thilak Ranasinghe',
+    role: 'Head of Offshore Operations & Strategic Partnerships',
+    photo: accountantPhoto,
     bio: [
-      'Sam is based here in Canberra and works directly with clients day to day - across bookkeeping, accounting and the ongoing relationship that keeps your numbers accurate and your reporting on time.',
+      "Thilak Ranasinghe is the Head of Offshore Operations and Strategic Partnerships at FinReach, where he leads the firm's Colombo-based team of ACCA/CIMA-qualified accounting professionals. In this role, Thilak is responsible for the governance, performance management, and strategic growth of FinReach's offshore delivery capability, the operational engine that enables Australian NFP organisations, dental and allied health practices, and growth-stage SMEs to access senior-firm accounting expertise at a fraction of the cost of an in-house team.",
+
+      "Thilak brings more than 30 years of experience spanning IT solutions, BPO and KPO development, business operations, and executive leadership. His career has been defined by building things that work: delivery teams capable of operating at professional standard, commercial partnerships that generate lasting value, and operational frameworks that hold up under scrutiny. He has held COO-level responsibility across digital services and IT infrastructure businesses, founded and led a private business institute from inception, and delivered executive education across MBA programmes affiliated with leading UK universities.",
+
+      "At FinReach, Thilak was the architect of the Australia–Sri Lanka hybrid delivery model, designing the workflow systems, quality control frameworks, capacity planning structure, and performance governance that make the model credible and compliant in the Australian regulatory environment. He leads go-to-market strategy across FinReach's NFP and healthcare verticals, overseeing CRM pipeline design, LinkedIn-led outreach, and the prospecting and nurture programmes that bring the right clients to the firm.",
+
+      "Sri Lanka holds the largest pool of British-certified accountants outside the UK. Thilak's role is to make sure that credential depth translates into delivery excellence and that FinReach's clients experience the full benefit of it, with Australian professional oversight at every step.",
     ],
     quote: null,
     quoteAttribution: null,
   },
   {
     id: 3,
-    name: 'Thilak Ranasinghe',
-    role: 'Head of Offshore Operations & Strategic Partnerships',
-    photo: accountantPhoto,
-    bio: [
-      'Thilak leads FinReach\'s Colombo-based team of ACCA and CIMA-qualified accountants, delivering technical, detailed work for not-for-profits and growth-stage businesses.',
-      'Thilak runs the operations with senior-level expertise without the overhead of a big firm. Thilak also works the NFP and SME pipeline directly, partnering with organisations to give them financial confidence.',
-    ],
-    quote: '"Most accounting firms hide their delivery team. I run mine in the open, because it\'s our biggest advantage, real people, ACCA and CIMA-qualified, delivering work built to the same standard whether it\'s checked in Colombo or Canberra."',
-    quoteAttribution: 'Thilak',
-  },
-  {
-    id: 4,
     name: 'Dileep Subramanium',
-    role: null,
+    role: 'Senior Accountant',
     photo: seniorAcctPhoto,
     bio: [
-      'Dileep brings more than 16 years experience in management and financial reporting, budgeting and resource planning, financial analysis, and digital transformation. He supports FinReach\'s clients, both not-for-profit and growth-stage businesses.',
-      'He turns the numbers into insight the team can actually use; budgets that hold up, reporting that flags what matters, and analysis that supports real decisions. Comfortable in the detail (ERP systems, working capital, pricing and margin, procurement) and just as comfortable explaining it to the people who need to act on it.',
+      "With more than sixteen years of experience across management accounting, financial reporting and business partnering, Dileep, a CPA Australia member, brings to FinReach the same standard of technical rigour and clear-headed judgement that defines the firm's approach to client work.",
+
+"His career spans complex, high-growth organisations across manufacturing, FMCG and listed-company environments, where he has consistently turned dense financial detail into insight that boards and executives can act on with confidence.",
+
+      "At Star Garments Group, a USD 200 million apparel manufacturer, Dileep led financial planning and analysis across a demanding operational environment, monitoring performance against budget, driving cost efficiency through data-led decision-making, and strengthening internal controls across the business. His work reduced the cash conversion cycle by ten days and delivered a 10–15% reduction in logistics overhead costs, outcomes built on the same disciplined, numbers-first approach he brings to every engagement.",
+
+      "Earlier in his career, at Sunshine Holdings PLC, a listed FMCG joint venture between Tata Global Beverages, Pyramid Wilmar and Sunshine Holdings, Dileep produced consolidated management accounts for the Board, led budget processes across multiple stakeholders, and supported the CEO and CFO in modelling the financial impact of major strategic decisions. He maintained gross profit margins between 38–40% through disciplined pricing, cost control and supply chain coordination, and strengthened credit control processes to reduce receivables risk.",
+
+      "That breadth of experience from board-level reporting to hands-on process improvement gives Dileep a rare ability to move between the big picture and the fine detail without losing sight of either.",
+
+      "At FinReach, Dileep applies this experience to the organisations that matter most: not-for-profits navigating funding complexity and board obligations, and growth-stage Canberra businesses that need reliable numbers behind every decision. He brings the same proactive, no-surprises approach to every client relationship, showing up consistently, flagging issues early, and making sure the numbers are never the reason a good decision gets delayed.",
+
+      "Skilled across ERP and financial systems and driven by continuous improvement, Dileep is focused on giving FinReach's clients the clarity and confidence to make their next move with certainty.",
+
     ],
-    quote: '"Numbers only matter if someone can act on them. My job is to make sure the people running these organisations always know exactly where they stand."',
-    quoteAttribution: 'Dileep',
+    quote: null,
+    quoteAttribution: null,
+  },
+    {
+    id: 3,
+    name: 'Lahiru Perera',
+    role: 'Accountant',
+    photo: lahiru,
+    bio: [
+      "no bio",
+
+    ],
+    quote: null,
+    quoteAttribution: null,
   },
 ]
 
 const Team = () => {
+  const [selectedMember, setSelectedMember] = useState(null)
+  const [bioPreviewHeights, setBioPreviewHeights] = useState({})
+  const imageWrapRefs = useRef({})
+
+  useEffect(() => {
+    const updatePreviewHeights = () => {
+      const updatedHeights = {}
+
+      teamMembers.forEach((member) => {
+        const imageWrap = imageWrapRefs.current[member.id]
+        if (imageWrap) {
+          updatedHeights[member.id] = imageWrap.clientHeight
+        }
+      })
+
+      setBioPreviewHeights(updatedHeights)
+    }
+
+    updatePreviewHeights()
+    window.addEventListener('resize', updatePreviewHeights)
+
+    return () => {
+      window.removeEventListener('resize', updatePreviewHeights)
+    }
+  }, [])
+
   return (
     <>
       <Header />
@@ -95,14 +138,19 @@ const Team = () => {
       {/* Team Members */}
       <section className="team-members-section">
         <div className="container">
-          {teamMembers.map((member, index) => (
+          {teamMembers.map((member) => (
             <div
               key={member.id}
               className={`row align-items-center team-member-row team-member-${member.id}`}
             >
               {/* Photo */}
               <div className="col-md-5 col-lg-5 mb-4 mb-md-0">
-                <div className="team-member-photo-wrap">
+                <div
+                  className="team-member-photo-wrap"
+                  ref={(el) => {
+                    imageWrapRefs.current[member.id] = el
+                  }}
+                >
                   <img
                     src={member.photo}
                     alt={member.name}
@@ -115,19 +163,31 @@ const Team = () => {
               <div className="col-md-7 col-lg-6 offset-lg-1 ps-md-5">
                 <h2 className="team-member-name">{member.name}</h2>
                 {member.role && <span className="team-member-badge">{member.role}</span>}
-                <div className="team-member-bio mt-4">
-                  {member.bio.map((para, i) => (
-                    <p key={i}>{para}</p>
-                  ))}
-                  {member.quote && (
-                    <p className="team-member-quote">
-                      {member.quote}
-                      {member.quoteAttribution && (
-                        <span className="team-member-quote-attribution"> - {member.quoteAttribution}</span>
-                      )}
-                    </p>
-                  )}
+                <div
+                  className="team-member-bio team-member-bio-preview mt-4"
+                  style={{ maxHeight: bioPreviewHeights[member.id] ? `${bioPreviewHeights[member.id]}px` : '360px' }}
+                >
+                  <div className="team-member-bio-preview-content">
+                    {member.bio.map((para, i) => (
+                      <p key={i}>{para}</p>
+                    ))}
+                    {member.quote && (
+                      <p className="team-member-quote">
+                        {member.quote}
+                        {member.quoteAttribution && (
+                          <span className="team-member-quote-attribution"> - {member.quoteAttribution}</span>
+                        )}
+                      </p>
+                    )}
+                  </div>
                 </div>
+                <button
+                  type="button"
+                  className="btn team-see-more-btn"
+                  onClick={() => setSelectedMember(member)}
+                >
+                  See more
+                </button>
               </div>
             </div>
           ))}
@@ -147,6 +207,46 @@ const Team = () => {
           </button>
         </div>
       </section>
+
+      {selectedMember && (
+        <div
+          className="team-bio-modal-backdrop"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="teamBioModalTitle"
+          onClick={(event) => {
+            if (event.target === event.currentTarget) {
+              setSelectedMember(null)
+            }
+          }}
+        >
+          <div className="team-bio-modal">
+            <button
+              type="button"
+              className="team-bio-modal-close"
+              aria-label="Close"
+              onClick={() => setSelectedMember(null)}
+            >
+              ×
+            </button>
+            <h3 id="teamBioModalTitle" className="team-bio-modal-title">{selectedMember.name}</h3>
+            {selectedMember.role && <p className="team-bio-modal-role">{selectedMember.role}</p>}
+            <div className="team-bio-modal-content">
+              {selectedMember.bio.map((para, i) => (
+                <p key={i}>{para}</p>
+              ))}
+              {selectedMember.quote && (
+                <p className="team-member-quote">
+                  {selectedMember.quote}
+                  {selectedMember.quoteAttribution && (
+                    <span className="team-member-quote-attribution"> - {selectedMember.quoteAttribution}</span>
+                  )}
+                </p>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
 
       <Footer />
     </>
