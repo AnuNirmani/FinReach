@@ -18,7 +18,7 @@ const ProcessSection = () => {
     {
       image: accountantImage,
       name: 'Lahiru Perera',
-      role: 'Accountant',
+      role: 'Manager Audit and Assurance',
       location: 'Canberra, ACT',
     },
     {

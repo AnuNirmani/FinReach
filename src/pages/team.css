@@ -171,8 +171,7 @@
 .team-bio-modal-close {
   position: absolute;
   top: 0.8rem;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 1rem;
   width: 36px;
   height: 36px;
   padding: 0;

@@ -68,10 +68,24 @@ const teamMembers = [
     {
     id: 3,
     name: 'Lahiru Perera',
-    role: 'Accountant',
+    role: 'Manager Audit and Assurance',
     photo: lahiru,
     bio: [
-      "no bio",
+      "With over sixteen years of experience spanning audit, financial management, corporate reporting, and operational finance leadership, Lahiru Perera brings to FinReach a deeply practical and execution-focused approach to financial management, shaped by years of working across complex industries, high-pressure reporting environments, and large-scale organisational structures.",
+
+      "A Chartered Accountant (ACA) of CA, Lahiru has built his career at the intersection of financial discipline, operational control, and business performance. His expertise extends across auditing, financial planning and analysis, internal controls, compliance, treasury oversight, budgeting, and group financial reporting, allowing him to support organisations not only from a compliance perspective, but from a broader strategic and operational lens.",
+
+      "At KPMGSri Lanka, Lahiru managed a diversified portfolio of more than 40 entities, including listed companies, banking and financial institutions, and businesses operating across manufacturing, healthcare, tourism, construction, trading, and investment management. Over the years, he led multidisciplinary audit teams, supervised large engagements, and worked closely with boards, management teams, and audit committees to strengthen governance, improve financial visibility, and support sound decision-making.",
+
+      "His experience also extends internationally through his tenure with KPMG Qatar, where he worked on audit engagements across sectors including manufacturing, construction, automotive, and investment management while operating within demanding reporting timelines and multicultural business environments.",
+
+      "Beyond audit and assurance, Lahiru has held senior corporate finance leadership roles at organisations including Viluxur Holidays and Courtaulds Clothing Group, where he was responsible for overseeing finance operations, consolidated reporting, budgeting, forecasting, treasury management, payroll oversight, tax compliance, and the implementation of internal control frameworks. He has also played a key role in strengthening financial systems and bridging operational control gaps across group entities, helping organisations move from fragmented financial processes towards more structured and reliable finance functions.",
+
+      "Known for his ability to balance technical precision with practical execution, Lahiru approaches finance as more than a reporting function. His focus lies in helping businesses build financial clarity, operational consistency, and stronger decision-making foundations while supporting sustainable growth.",
+
+      "Throughout his career, Lahiru has been recognised for performance excellence, receiving KPMG’s highest year-end performance rating across four consecutive performance cycles.",
+
+      "At FinReach, Lahiru works closely with businesses to strengthen financial operations, improve reporting quality, enhance internal controls, and create finance structures that support long-term business stability and growth. Combining audit discipline with hands-on commercial finance experience, he helps organisations navigate complexity with greater confidence, visibility, and control.",
 
     ],
     quote: null,
