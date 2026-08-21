@@ -48,7 +48,7 @@ const Partner = React.memo(() => {
 
 						<button
 							type="button"
-							className="partner-btn partner-btn-primary enquire-now-btn-standard"
+							className="partner-btn partner-btn-primary"
 							onClick={() => setPartnerEnquireOpen(true)}
 						>
 							Enquire Now
@@ -118,7 +118,7 @@ const Partner = React.memo(() => {
 
 						<button
 							type="button"
-							className="partner-btn partner-btn-primary enquire-now-btn-standard"
+							className="partner-btn partner-btn-primary"
 							onClick={() => setPartnerEnquireOpen(true)}
 						>
 							Enquire Now

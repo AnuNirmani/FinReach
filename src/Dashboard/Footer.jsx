@@ -20,16 +20,36 @@ const Footer = () => {
             </ul>
 
             <div className="footer-socials" aria-label="Social media links">
-              <a href="#" className="footer-social-link" aria-label="Facebook">
-                <i className="bi bi-facebook"></i>
-              </a>
-              <a href="#" className="footer-social-link" aria-label="Instagram">
-                <i className="bi bi-instagram"></i>
-              </a>
-              <a href="#" className="footer-social-link" aria-label="LinkedIn">
-                <i className="bi bi-linkedin"></i>
-              </a>
-            </div>
+  <a
+    href="https://www.facebook.com/FinReachAu"
+    className="footer-social-link"
+    aria-label="Facebook"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <i className="bi bi-facebook"></i>
+  </a>
+
+  <a
+    href="https://www.instagram.com/finreachau/"
+    className="footer-social-link"
+    aria-label="Instagram"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <i className="bi bi-instagram"></i>
+  </a>
+
+  <a
+    href="https://www.linkedin.com/company/finreach-pty-limited/"
+    className="footer-social-link"
+    aria-label="LinkedIn"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <i className="bi bi-linkedin"></i>
+  </a>
+</div>
           </div>
 
           <div className="col-lg-3 col-md-6">
@@ -47,7 +67,7 @@ const Footer = () => {
             <ul className="footer-links-list">
               <li><Link to="/not-profit" className="footer-link">Not-for-profits</Link></li>
               <li><Link to="/growth-stage" className="footer-link">Growth-stage SMEs</Link></li>
-              <li><Link to="/contact" className="footer-link">Partner With Us</Link></li>
+              <li><Link to="/partner" className="footer-link">Partner With Us</Link></li>
             </ul>
           </div>
 

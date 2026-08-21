@@ -78,7 +78,7 @@ export default function PartnerEnquireModal({ isOpen, onClose }) {
           data-deactivation-type="neverDeactivate"
           data-deactivation-value=""
           data-form-name="Partner With Us — Enquiry Form - Brandscape"
-          data-height="859"
+          data-height="868"
           data-layout-iframe-id="inline-OH4TZEDANc9WMRdRr8x8"
           data-form-id="OH4TZEDANc9WMRdRr8x8"
           title="Partner With Us — Enquiry Form - Brandscape"

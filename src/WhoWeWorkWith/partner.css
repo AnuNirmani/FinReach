@@ -87,6 +87,8 @@
 	text-decoration: none;
 	cursor: pointer;
 	transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+	max-width: fit-content;
+	width: fit-content;
 }
 
 .partner-btn-primary {
@@ -283,11 +285,6 @@
 
 	.partner-hero-copy p {
 		font-size: 0.98rem;
-	}
-
-	.partner-btn {
-		width: 100%;
-		max-width: 190px;
 	}
 
 	.partner-section {

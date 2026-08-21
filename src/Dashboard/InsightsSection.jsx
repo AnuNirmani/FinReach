@@ -33,7 +33,7 @@ const InsightsSection = () => {
                 const sortedLatest = mergedPosts
                     .filter((post) => post && (post.post_id || post.id))
                     .sort((a, b) => new Date(b.created_at || 0) - new Date(a.created_at || 0))
-                    .slice(0, 3);
+                    .slice(0, 4);
 
                 setPosts(sortedLatest);
                 setError(null);
@@ -76,7 +76,7 @@ const InsightsSection = () => {
                         <>
                             <div className="row g-4 text-start">
                                 {posts.map((post) => (
-                                    <div key={post.post_id || post.id} className="col-lg-4 col-md-6">
+                                    <div key={post.post_id || post.id} className="col-lg-3 col-md-6">
                                         <article className="fr-insights-card">
                                             {post.image && (
                                                 <img src={post.image} alt={post.title} className="fr-insights-image" />
@@ -86,9 +86,6 @@ const InsightsSection = () => {
                                                 {post.sub_topic && (
                                                     <p className="fr-insights-subtopic">{post.sub_topic}</p>
                                                 )}
-                                                <div className="fr-insights-meta">
-                                                    {post.created_at ? new Date(post.created_at).toLocaleDateString() : ''}
-                                                </div>
                                                 <Link to={`/blog/article/${post.post_id || post.id}`} className="fr-insights-readmore">
                                                     Read more <i className="bi bi-arrow-right"></i>
                                                 </Link>
