@@ -1,5 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --montserrat: 'Montserrat', sans-serif;
+  --lato: 'Lato', sans-serif;
+  --headlinefont: var(--montserrat);
+  --contentfont: var(--lato);
+  --finreach-button-lift: -4px;
+  font-family: var(--contentfont);
   line-height: 1.5;
   font-weight: 400;
 
@@ -27,30 +34,160 @@ body {
   min-width: 320px;
   min-height: 100vh;
   width: 100%;
+  font-family: var(--contentfont);
 }
 
-h1 {
-  font-size: 3.2em;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+video,
+svg,
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+iframe {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--headlinefont);
+  font-size: clamp(1.5rem, 5vw, 3.2em);
   line-height: 1.1;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+p,
+span,
+li,
+a,
+button,
+input,
+textarea,
+select,
+label {
+  font-family: var(--contentfont);
 }
 
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+  padding: clamp(0.5em, 2vw, 0.6em) clamp(0.8em, 3vw, 1.2em);
+  font-size: clamp(0.9rem, 2vw, 1em);
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
+  transition: border-color 0.25s, box-shadow 0.25s ease, transform 0.25s ease, filter 0.25s ease;
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+:is(
+  button,
+  input[type='button'],
+  input[type='submit'],
+  input[type='reset'],
+  a.btn,
+  [class*='btn'],
+  [class*='button']
+) {
+  font-family: var(--contentfont) !important;
+  transition: border-color 0.25s, box-shadow 0.25s ease, transform 0.25s ease, filter 0.25s ease;
+}
+
+.enquire-now-btn-standard {
+  width: clamp(130px, 90vw, 150px) !important;
+  min-height: clamp(40px, 10vw, 46px) !important;
+  padding: 0 clamp(12px, 3vw, 18px) !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.2;
+}
+
+@media (hover: hover) {
+  :is(
+    button,
+    input[type='button'],
+    input[type='submit'],
+    input[type='reset'],
+    a.btn,
+    [class*='btn'],
+    [class*='button']
+  ):hover {
+    transform: translateY(var(--finreach-button-lift)) !important;
+    filter: brightness(1.03);
+  }
+}
+
+@media (max-width: 991px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: clamp(1.35rem, 5.5vw, 2.2rem);
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 767px) {
+  p,
+  li,
+  a,
+  label,
+  input,
+  textarea,
+  select,
+  button {
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: clamp(0.5rem, 2vw, 1rem);
+    margin-bottom: clamp(0.5rem, 2vw, 1rem);
+  }
+
+  p {
+    line-height: 1.6;
+    margin: 0.5rem 0;
+  }
+
+  .enquire-now-btn-standard {
+    width: 100% !important;
+    max-width: 150px !important;
+    min-height: 40px !important;
+  }
 }
 
 @media (prefers-color-scheme: light) {

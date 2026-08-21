@@ -1,51 +1,47 @@
 import React from 'react';
 import './Dashboard.css';
+import auditHero from '../assets/assets/director.jpg';
 
 const WhyChooseSection = () => {
-    const benefits = [
-        {
-            text: "25+ years of real-world experience across SMEs, not-for-profits, government and listed entities – we've seen what works and what doesn't."
-        },
-        {
-            text: "Right-sized assurance and audits – we help you choose the most cost-effective level of assurance that still meets your stakeholders' expectations."
-        },
-        {
-            text: 'Budget-friendly bookkeeping & accounting through our offshore delivery model.'
-        },
-        {
-            text: 'Strategic fractional CFO support that gives you a financial compass, robust internal controls and forward-looking cash and scenario planning.'
-        },
-        {
-            text: "Continuity and care – you're not explaining your business to a new team every year; we stay with you and build deep knowledge of how you operate."
-        }
-    ];
-
     return (
-        <>
-            <div className="why-choose-banner" style={{
-                backgroundImage: "linear-gradient(to top, rgba(15, 62, 93, 0.2) 0%, rgba(15, 62, 93, 0.5) 100%), url('https://finreach.ultimatemarketing.com.au/assets/financial-analysis-BQaM4ht9.jpg')"
-            }}></div>
+        <section className="director-message-section">
+            <div className="container director-message-shell">
+                <div className="row g-0 align-items-stretch director-message-row">
+                    <div className="col-lg-5">
+                        <img
+                            src={auditHero}
+                            alt="Don, Director of FinReach"
+                            className="director-message-image"
+                        />
+                    </div>
 
-            <section className="why-choose-content">
-                <div className="container">
-                    <h2 className="why-choose-title text-center">Why organisations choose FinReach over "just getting by"</h2>
+                    <div className="col-lg-7">
+                        <div className="director-message-content">
+                            <span className="director-message-badge">Hear From Don, Our Director</span>
+                            <h2 className="director-message-title">Why I built FinReach the way I did.</h2>
 
-                    <div className="row">
-                        {benefits.map((benefit, index) => (
-                            <div key={index} className="col-md-4">
-                                <div className="benefit-item">
-                                    <i className="bi bi-check-circle benefit-icon"></i>
-                                    <p className="benefit-text">
-                                        {benefit.text}
-                                    </p>
-                                </div>
-                            </div>
-                        ))}
-                        <div className="col-md-4"></div>
+                            <p className="director-message-text">
+                                "Most accounting firms go one of two ways - big corporates or small businesses. The organisations in the middle get forgotten.
+                            </p>
+
+                            <p className="director-message-text">FinReach exists for them.</p>
+
+                            <p className="director-message-text">
+                                We work with medium-sized not-for-profits managing grants, reporting to boards, navigating audits - and they deserve Big Four thinking without the Big Four price tag.
+                            </p>
+
+                            <p className="director-message-text">
+                                That's the hybrid model. Our Directorship is in Canberra. Our delivery team is in Sri Lanka - qualified, experienced, and fully integrated into how we work. Our local team will attend on site meetings to deliver the service and our international team will join via video-link. In addition, while local resources are required to attend on site to deliver the service, we are still in a position to support and assist you.
+                            </p>
+
+                            <p className="director-message-text mb-0">
+                                The organisations that matter most to our communities deserve better. That's what we're here to change."
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </section>
-        </>
+            </div>
+        </section>
     );
 };
 

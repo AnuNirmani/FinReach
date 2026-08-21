@@ -9,7 +9,11 @@ import ServicesSection from './ServicesSection';
 import PainPointsSection from './PainPointsSection';
 import WhyChooseSection from './WhyChooseSection';
 import ProcessSection from './ProcessSection';
-import CTABanners from './CTABanners';
+import LocationsSection from './LocationsSection';
+import InsightsSection from './InsightsSection';
+import ClientOutcomesSection from './ClientOutcomesSection';
+import ClientsStripSection from './ClientsStripSection';
+import FinanceHealthCheckSection from './FinanceHealthCheckSection';
 import Footer from './Footer';
 import './Dashboard.css';
 
@@ -47,7 +51,11 @@ const Dashboard = React.memo(() => {
                 <PainPointsSection />
                 <WhyChooseSection />
                 <ProcessSection />
-                <CTABanners />
+                <LocationsSection />
+                <InsightsSection />
+                <ClientOutcomesSection />
+                <ClientsStripSection />
+                <FinanceHealthCheckSection />
             </main>
             <Footer />
             <a 

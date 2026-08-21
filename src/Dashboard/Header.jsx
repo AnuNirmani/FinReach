@@ -1,32 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Dashboard.css'
 import logo from '../assets/sitelogo.webp'
 
 const Header = () => {
-  const [isConsultOpen, setIsConsultOpen] = useState(false)
+  const [openDropdown, setOpenDropdown] = useState(null)
 
-  // Load external embed script once (optional but safe)
- useEffect(() => {
-  // load external script once
-  if (!document.querySelector('script[data-finreach-form]')) {
-    const script = document.createElement('script')
-    script.src = 'https://link.finreach.com.au/js/form_embed.js'
-    script.async = true
-    script.setAttribute('data-finreach-form', 'true')
-    document.body.appendChild(script)
+  const toggleDropdown = (name) => {
+    setOpenDropdown(openDropdown === name ? null : name)
   }
-
-  // listen for global "open consult" event
-  const handleOpen = () => setIsConsultOpen(true)
-  window.addEventListener('open-consultation-modal', handleOpen)
-
-  // cleanup
-  return () => {
-    window.removeEventListener('open-consultation-modal', handleOpen)
-  }
-}, [])
-
 
   return (
     <>
@@ -55,16 +37,21 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav mx-auto mb-2 mb-xl-0 finreach-nav-list">
               <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Our Services
-                </a>
-                <ul className="dropdown-menu">
+                <div className="finreach-dropdown-split">
+                  <Link className="nav-link finreach-dropdown-link" to="/our-services">
+                    Our Services
+                  </Link>
+                  <button
+                    className="nav-link dropdown-toggle finreach-dropdown-toggle"
+                    type="button"
+                    onClick={() => toggleDropdown('services')}
+                    aria-expanded={openDropdown === 'services'}
+                    aria-label="Open Our Services submenu"
+                  >
+                    <span className="visually-hidden">Open Our Services submenu</span>
+                  </button>
+                </div>
+                <ul className={`dropdown-menu ${openDropdown === 'services' ? 'show' : ''}`}>
                   <li>
                     <Link className="dropdown-item" to="/auditing">
                       Auditing
@@ -91,51 +78,61 @@ const Header = () => {
                 </ul>
               </li>
               <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Who We Work With
-                </a>
-                <ul className="dropdown-menu">
+                <div className="finreach-dropdown-split">
+                  <Link className="nav-link finreach-dropdown-link" to="/who-we-work-with">
+                    Who We Work With
+                  </Link>
+                  <button
+                    className="nav-link dropdown-toggle finreach-dropdown-toggle"
+                    type="button"
+                    onClick={() => toggleDropdown('who-work')}
+                    aria-expanded={openDropdown === 'who-work'}
+                    aria-label="Open Who We Work With submenu"
+                  >
+                    <span className="visually-hidden">Open Who We Work With submenu</span>
+                  </button>
+                </div>
+                <ul className={`dropdown-menu ${openDropdown === 'who-work' ? 'show' : ''}`}>
                   <li>
-                    <Link className="dropdown-item" to="/about">
+                    <Link className="dropdown-item" to="/not-profit">
                       Not-for-Profit
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="/about">
+                    <Link className="dropdown-item" to="/growth-stage">
                       Growth-Stage SME
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="/about">
+                    <Link className="dropdown-item" to="/partner">
                       Partner With Us
                     </Link>
                   </li>
                 </ul>
               </li>
               <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  About Us
-                </a>
-                <ul className="dropdown-menu">
+                <div className="finreach-dropdown-split">
+                  <Link className="nav-link finreach-dropdown-link" to="/about-us">
+                    About Us
+                  </Link>
+                  <button
+                    className="nav-link dropdown-toggle finreach-dropdown-toggle"
+                    type="button"
+                    onClick={() => toggleDropdown('about')}
+                    aria-expanded={openDropdown === 'about'}
+                    aria-label="Open About Us submenu"
+                  >
+                    <span className="visually-hidden">Open About Us submenu</span>
+                  </button>
+                </div>
+                <ul className={`dropdown-menu ${openDropdown === 'about' ? 'show' : ''}`}>
                   <li>
-                    <Link className="dropdown-item" to="/about">
+                    <Link className="dropdown-item" to="/team">
                       Our Team
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="/contact">
+                    <Link className="dropdown-item" to="/about">
                       How We Work
                     </Link>
                   </li>
@@ -152,63 +149,13 @@ const Header = () => {
               <Link to="/contact" className="btn btn-finreach-outline">
                 Contact Us
               </Link>
-              <button
-                type="button"
-                className="btn btn-finreach-cta"
-                onClick={() => setIsConsultOpen(true)}
-              >
+              <Link to="/book-consultation" className="btn btn-finreach-cta">
                 Book a Consultation
-              </button>
+              </Link>
             </div>
           </div>
         </div>
       </nav>
-
-           {/* Popup Modal */}
-      {isConsultOpen && (
-        <div
-          className="fr-modal-backdrop"
-          onClick={() => setIsConsultOpen(false)} // click outside to close
-        >
-          <div
-            className="fr-modal"
-            onClick={(e) => e.stopPropagation()} // don't close when clicking inside
-          >
-            <button
-              type="button"
-              className="fr-modal-close"
-              onClick={() => setIsConsultOpen(false)}
-            >
-              ×
-            </button>
-
-            <div className="fr-modal-body">
-              <iframe
-                src="https://link.finreach.com.au/widget/form/PvN5tiD5wIDmJRPeox5Q"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  border: 'none',
-                  borderRadius: '3px',
-                }}
-                id="inline-PvN5tiD5wIDmJRPeox5Q"
-                data-layout="{'id':'INLINE'}"
-                data-trigger-type="alwaysShow"
-                data-trigger-value=""
-                data-activation-type="alwaysActivated"
-                data-activation-value=""
-                data-deactivation-type="neverDeactivate"
-                data-deactivation-value=""
-                data-form-name="Website Final  NOV 25"
-                data-height="undefined"
-                data-layout-iframe-id="inline-PvN5tiD5wIDmJRPeox5Q"
-                data-form-id="PvN5tiD5wIDmJRPeox5Q"
-                title="Website Final  NOV 25"
-              />
-            </div>
-          </div>
-        </div>
-      )}
 
     </>
   )

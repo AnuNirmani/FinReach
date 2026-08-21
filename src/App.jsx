@@ -1,6 +1,7 @@
 import './App.css'
-import { lazy, Suspense, useEffect } from 'react'
+import { lazy, Suspense, useEffect, useState, useCallback } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import EnquireModal from './utils/EnquireModal'
 import TermsAndConditions from './pages/TermsAndConditions';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 
@@ -9,13 +10,22 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 // Lazy load all page components
 const Dashboard = lazy(() => import('./Dashboard/Dashboard'))
 const Blog = lazy(() => import('./Blog/Blog'))
+const OurServices = lazy(() => import('./categories/ourservices.jsx'))
+const WhoWeWorkWith = lazy(() => import('./WhoWeWorkWith/whowework.jsx'))
 const BookkeepingCashFlow = lazy(() => import('./categories/Bookkeeping&Accounting.jsx'))
 const AssuranceFunding = lazy(() => import('./categories/Assurance.jsx'))
-const AuditReadiness = lazy(() => import('./categories/Auditing.jsx'))
-const FractionalCFOInsights = lazy(() => import('./categories/FractionalCFO.jsx'))
+const NewAuditing = lazy(() => import('./categories/NewAuditing.jsx'))
+const FractionalCFOInsights = lazy(() => import('./categories/CFO.jsx'))
 const About = lazy(() => import('./others/About.jsx'))
+const AboutUs = lazy(() => import('./others/aboutus.jsx'))
 const Contact = lazy(() => import('./others/Contact.jsx'))
 const BlogArticle = lazy(() => import('./others/BlogArticle.jsx'))
+const BookConsultation = lazy(() => import('./pages/BookConsultation.jsx'))
+const NotProfit = lazy(() => import('./WhoWeWorkWith/NotProfit.jsx'))
+const GrowthStage = lazy(() => import('./WhoWeWorkWith/growthstage.jsx'))
+const Partner = lazy(() => import('./WhoWeWorkWith/partner.jsx'))
+
+const Team = lazy(() => import('./pages/team.jsx'))
 
 // Blog category pages
 const BlogBookkeepingCashFlow = lazy(() => import('./Blog/blog/BookkeepingCashFlow.jsx'))
@@ -42,19 +52,52 @@ const ScrollToTop = () => {
 }
 
 function App() {
+  const [enquireOpen, setEnquireOpen] = useState(false)
+
+  const openEnquire = useCallback((e) => {
+    const target = e.target.closest('.enquire-now-btn-standard')
+    if (target) {
+      e.preventDefault()
+      e.stopPropagation()
+      setEnquireOpen(true)
+    }
+  }, [])
+
+  useEffect(() => {
+    document.addEventListener('click', openEnquire, true)
+    // Also support the legacy custom event
+    const onEvent = () => setEnquireOpen(true)
+    window.addEventListener('open-consultation-modal', onEvent)
+    return () => {
+      document.removeEventListener('click', openEnquire, true)
+      window.removeEventListener('open-consultation-modal', onEvent)
+    }
+  }, [openEnquire])
+
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <Suspense fallback={<Loading />}>
+    <>
+      <EnquireModal isOpen={enquireOpen} onClose={() => setEnquireOpen(false)} />
+      <BrowserRouter>
+        <ScrollToTop />
+        <Suspense fallback={<Loading />}>
         <Routes>
           <Route path="/" element={<Dashboard />} />
+          <Route path="/our-services" element={<OurServices />} />
+          <Route path="/who-we-work-with" element={<WhoWeWorkWith />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/bookkeeping-accounting" element={<BookkeepingCashFlow />} />
           <Route path="/assurance" element={<AssuranceFunding />} />
-          <Route path="/auditing" element={<AuditReadiness />} />
+          <Route path="/auditing" element={<NewAuditing />} />
+          <Route path="/newauditing" element={<NewAuditing />} />
+          <Route path="/new-auditing" element={<NewAuditing />} />
           <Route path="/fractional-cfo" element={<FractionalCFOInsights />} />
+          <Route path="/about-us" element={<AboutUs />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/book-consultation" element={<BookConsultation />} />
+          <Route path="/not-profit" element={<NotProfit />} />
+          <Route path="/growth-stage" element={<GrowthStage />} />
+          <Route path="/partner" element={<Partner />} />
           <Route path="/blog/financial-resilience" element={<BlogArticle />} />
           <Route path="/blog/article/:id" element={<BlogArticle />} />
           
@@ -63,11 +106,13 @@ function App() {
           <Route path="/blog/assurance-funding" element={<BlogAssuranceFunding />} />
           <Route path="/blog/audit-readiness" element={<BlogAuditReadiness />} />
           <Route path="/blog/fractional-cfo-insights" element={<BlogFractionalCFOInsights />} />
+          <Route path="/team" element={<Team />} />
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
-      </Suspense>
-    </BrowserRouter>
+        </Suspense>
+      </BrowserRouter>
+    </>
   )
 }
 

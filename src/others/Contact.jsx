@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import { useMeta } from '../utils/useMeta';
 import '../Dashboard/Dashboard.css';
 import Header from '../Dashboard/Header';
 import Footer from '../Dashboard/Footer';
+import cfo1Image from '../assets/assets/cfo1.jpg';
 
 const Contact = () => {
   const { meta } = useMeta(4);
@@ -45,30 +47,65 @@ const Contact = () => {
 
       <Header />
 
-      {/* Contact Form Section */}
-      <section className="contact-form-section">
-        <div className="container">
-          <div className="contact-border-wrapper">
-            <h1 className="contact-page-title">
-              Book your 30-minute, obligation-free consultation
+      <section
+        className="contact-hero-section"
+        style={{ backgroundImage: `url(${cfo1Image})` }}
+      >
+        <div className="contact-hero-overlay"></div>
+
+        <div className="container contact-hero-content">
+          <div className="contact-hero-card">
+            <h1 className="contact-hero-title">
+              Let's Talk About What Your Organisation Actually Needs.
             </h1>
 
-            <p className="contact-page-subtitle">
-              Tell us a little about your organisation and what you're looking for.
-              We'll be in touch to confirm a time and let you know what to have for the call.
+            <p className="contact-hero-subtitle">
+              No forms into a void, no call centre. You'll hear from Don directly.
             </p>
 
-            <div className="contact-white-card">
+            <Link className="btn contact-hero-btn" to="/book-consultation">
+              Book A No-Obligation Consultation
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact-embed-section" className="contact-info-form-section">
+        <div className="contact-info-form-container">
+          {/* Left column */}
+          <div className="contact-info-col">
+            <h2 className="contact-info-heading">What happens when you get in touch</h2>
+            <p className="contact-info-body">
+              Fill in the form below and Don will personally call you, usually within a couple of hours, always within one business day. No account managers, no hand-offs. You'll be speaking with the person who actually leads your engagement from day one.
+            </p>
+
+            <p className="contact-info-direct-label">Prefer to call or email directly? That's fine too.</p>
+
+            <p className="contact-info-detail">PH: (02) 6105 9300</p>
+            <p className="contact-info-detail">E: info@finreach.com.au</p>
+            <p className="contact-info-detail">A: Level 1, 11-17 Swanson Court, Belconnen ACT 2617 Australia</p>
+
+            <div className="contact-map-wrapper">
               <iframe
-                src="https://link.finreach.com.au/widget/form/1j6lMFNrccoaSNpTKVEU"
-                style={{
-                  width: '100%',
-                  height: '749px',
-                  border: 'none',
-                  borderRadius: '3px',
-                  display: 'block',
-                }}
-                id="inline-1j6lMFNrccoaSNpTKVEU"
+                src="https://maps.google.com/maps?q=Level+1,+11-17+Swanson+Court,+Belconnen+ACT+2617+Australia&output=embed"
+                width="100%"
+                height="220"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Finreach Location"
+              ></iframe>
+            </div>
+          </div>
+
+          {/* Right column – Contact form */}
+          <div className="contact-form-col">
+            <div className="contact-embed-wrapper">
+              <iframe
+                src="https://link.finreach.com.au/widget/form/hPxv7LyJok2C2nFTNeYB"
+                style={{ width: '100%', height: '100%', border: 'none', borderRadius: '8px', minHeight: '1060px' }}
+                id="inline-hPxv7LyJok2C2nFTNeYB"
                 data-layout="{'id':'INLINE'}"
                 data-trigger-type="alwaysShow"
                 data-trigger-value=""
@@ -76,67 +113,20 @@ const Contact = () => {
                 data-activation-value=""
                 data-deactivation-type="neverDeactivate"
                 data-deactivation-value=""
-                data-form-name="Contact Us Form"
-                data-height="749"
-                data-layout-iframe-id="inline-1j6lMFNrccoaSNpTKVEU"
-                data-form-id="1j6lMFNrccoaSNpTKVEU"
-                title="Contact Us Form"
+                data-form-name="FinReach Contact Form - Brandscape"
+                data-height="1060"
+                data-layout-iframe-id="inline-hPxv7LyJok2C2nFTNeYB"
+                data-form-id="hPxv7LyJok2C2nFTNeYB"
+                title="FinReach Contact Form - Brandscape"
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Direct Contact Section */}
-      <section className="direct-contact-section">
-        <div className="container">
-          <h2 className="direct-contact-title">Prefer to reach out directly?</h2>
-
-          <div className="row g-4 justify-content-center">
-            {/* Email */}
-            <div className="col-lg-4 col-md-6">
-              <div className="contact-info-card">
-                <i className="bi bi-envelope contact-card-icon"></i>
-                <h3 className="contact-card-title">Email</h3>
-
-                <a
-                  href="mailto:info@finreach.com.au"
-                  className="contact-card-link contact-link-black"
-                >
-                  info@finreach.com.au
-                </a>
-              </div>
-            </div>
-
-            {/* Phone */}
-            <div className="col-lg-4 col-md-6">
-              <div className="contact-info-card">
-                <i className="bi bi-telephone contact-card-icon"></i>
-                <h3 className="contact-card-title">Phone</h3>
-
-                <a
-                  href="tel:+61261059300"
-                  className="contact-card-link contact-link-black"
-                >
-                  (02) 6105 9300
-                </a>
-              </div>
-            </div>
-
-            {/* Address */}
-            <div className="col-lg-4 col-md-6">
-              <div className="contact-info-card">
-                <i className="bi bi-geo-alt contact-card-icon"></i>
-                <h3 className="contact-card-title">Address</h3>
-                <p className="contact-card-text">
-                  Level 1, 11-17 Swanson Court,
-                  <br />
-                  Belconnen ACT 2617 Australia
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+      <section className="contact-cta-banner">
+        <p className="contact-cta-text">The sooner we talk, the sooner you'll have peace of mind.</p>
+        <Link className="contact-cta-btn" to="/book-consultation"><strong>Book A Consultation</strong></Link>
       </section>
 
       <Footer />
